@@ -1,9 +1,6 @@
 # OGC-ISG-Sprint-Sep-2020
 
-September 2020 OGC Interoperable Simulation and Gaming (ISG) Sprint
-===================================================================
-
-[<img src="https://portal.ogc.org/files/?artifact_id=93177" width="200"/>](https://www.opengeospatial.org)
+[<img src="https://portal.ogc.org/files/?artifact_id=93177" width="400"/>](https://www.opengeospatial.org)
 
 This repository is for the September 2020 OGC Interoperable Simulation and Gaming (ISG) Sprint.
 
