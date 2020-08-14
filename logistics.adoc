@@ -1,0 +1,14 @@
+== Sprint Logistics
+
+*Gotomeeting*
+
+** Meeting Room 1 (GTM1) TBA
+
+
+*GitHub*
+
+* Public repo https://github.com/opengeospatial/OGC-API-Sprint-July-2020
+
+*Gitter*
+
+* https://gitter.im/opengeospatial/OGC-API-Sprint-July-2020

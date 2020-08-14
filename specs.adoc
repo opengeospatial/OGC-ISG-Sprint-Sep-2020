@@ -1,0 +1,19 @@
+== API Specs
+
+=== Focus of the Sprint
+
+* OGC API - Maps
+** spec https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Maps/blob/master/core/standard/OAPI_Maps.html
+** repository https://github.com/opengeospatial/OGC-API-Maps
+
+=== Other related specs
+
+* OGC API - Common
+** repository https://github.com/opengeospatial/oapi_common
+
+* OGC API - Tiles
+** spec https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
+** repository https://github.com/opengeospatial/OGC-API-Tiles
+
+* OpenAPI
+** spec https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.1.md

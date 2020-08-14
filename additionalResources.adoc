@@ -1,0 +1,5 @@
+== Additional Resources
+
+A list of previous OGC sprints and hackathons is available at https://www.ogc.org/projects/initiatives/ogcsprints
+
+OS Open Zoomstack, https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack

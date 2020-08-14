@@ -1,0 +1,9 @@
+== Frequently Asked Questions (FAQs)
+
+*Q: Will it be a complete development project or we have to solve a problem?*
+
+A: Development and testing of the draft OGC API - Maps specification.
+
+*Q: What examples exist of servers that have already implemented the draft OGC API - Maps specification?*
+
+A: Examples of implementations are listed at https://github.com/opengeospatial/OGC-API-Sprint-July-2020/blob/master/implementations.adoc

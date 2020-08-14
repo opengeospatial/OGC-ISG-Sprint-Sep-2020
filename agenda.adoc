@@ -1,0 +1,42 @@
+== Tentative Schedule / Agenda
+
+All times on the agenda are in UTC-4/EDT (Washington D.C. time).
+
+&#10036; means that the session will have a Gotomeeting virtual room.
+
+[cols="3,7,7a",options="header",]
+|===
+|*Time* (UTC-4) |*What* |*Who*
+
+3+|*28 July 2020*
+|09:00-09:15 |Welcome & objectives &#10036; | TBA
+|09:15-10:00
+a|
+Demonstration from prototype(s)
+
+|Facilitator:  TBA
+|10:00-10:15 |Sprint programme & way of working &#10036; |  TBA
+|Break||
+|10:30-13:00 |Practical work| TBA
+|Break| |
+|13:30-14:30 |Issues / concerns &#10036; | Facilitator:  TBA
+|14:30-16:30 |Practical work|TBA
+|16:30-17:30
+a|“Stand up” &#10036; :
+
+* Demo(s)
+
+|Facilitator: TBA
+3+|*29 July 2020*
+|09:00-09:30 |Re-group - a short stand-up &#10036; |Facilitator: TBA
+|Break ||
+|10:00-13:00 |Practical work|
+|13:00-15:00 |Lunch & practical work|
+|15:00-16:00
+a|Demonstrations & open forum &#10036;
+
+
+|Facilitator: TBA
+|16:00-16:45 |Wrap-up 1: immediate lessons & next steps &#10036; | TBA
+|16:45-17:00 |Wrap-up 2: thanks, goodbyes &#10036; | TBA
+|===
