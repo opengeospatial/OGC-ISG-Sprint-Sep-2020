@@ -1,5 +1,7 @@
 # OGC Interoperable Simulation and Gaming (ISG) Sprint
 
+[![Join the chat at https://gitter.im/opengeospatial/OGC-ISG-Sprint-Sep-2020](https://badges.gitter.im/opengeospatial/OGC-ISG-Sprint-Sep-2020.svg)](https://gitter.im/opengeospatial/OGC-ISG-Sprint-Sep-2020?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [<img src="https://portal.ogc.org/files/?artifact_id=93177" width="800"/>](https://www.opengeospatial.org)
 
 This is the participant repository for the OGC Interoperable Simulation and Gaming (ISG) Sprint.
