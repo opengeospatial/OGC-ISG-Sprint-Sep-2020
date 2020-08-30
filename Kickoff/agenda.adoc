@@ -1,6 +1,8 @@
 == (DRAFT) ISG Sprint Kickoff Agenda
 === Tuesday, September 1, 2020
 
+(Revised August 30 11:27.)
+
 All times EDT = UTC-4.
 
 [cols="1,3,8a",options="header",]
