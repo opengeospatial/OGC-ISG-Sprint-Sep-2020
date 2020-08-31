@@ -1,9 +1,11 @@
 == (DRAFT) ISG Sprint Kickoff Agenda
 === Tuesday, September 1, 2020
 
-(Revised August 30 11:27.)
+(Revised August 31 14:03)
 
 All times EDT = UTC-4.
+
+Link to https://portal.ogc.org/files/?artifact_id=94059[Call for Participation].
 
 [cols="1,3,8a",options="header",]
 |===
