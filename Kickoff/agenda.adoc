@@ -18,7 +18,7 @@ All times EDT = UTC-4.
 |10:20 |Scott |Review of Goals, Activities, and Deliverables
 |10:40 |Leonard & Scott |Resources and Tools
 
-* API - GeoVolumes, CDB, glTF
+* API - GeoVolumes, CDB, glTF, other OGC OpenAPI specs
 * GitHub repo, Slack, OGC Portal
 
 |11:00 2+|Break
