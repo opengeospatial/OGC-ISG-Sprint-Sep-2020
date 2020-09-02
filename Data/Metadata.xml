@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<tdf:TrustedDataObject xmlns:addr="http://www.fgdc.gov/schema/address/addr" xmlns:addrtype="http://www.fgdc.gov/schema/address/addr_type" xmlns:arh="urn:us:gov:ic:arh" xmlns:cdpeenv="urn:us:mil:osd:msco:rdg:cdpe:v0:cdpe-env" xmlns:ddms="urn:us:mil:ces:metadata:ddms:5" xmlns:edh="urn:us:gov:ic:edh" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gml33="http://www.opengis.net/gml/3.3/ce" xmlns:ism="urn:us:gov:ic:ism" xmlns:iso19112="http://www.isotc211.org/19112" xmlns:ntk="urn:us:gov:ic:ntk" xmlns:tspi="http://metadata.ces.mil/mdr/ns/GSIP/tspi/2.0" xmlns:tspicore="http://metadata.ces.mil/mdr/ns/GSIP/tspi/2.0/core" xmlns:tspiext="http://metadata.ces.mil/mdr/ns/GSIP/tspi/2.0/ext" xmlns:virt="urn:us:gov:ic:virt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tdf="urn:us:gov:ic:tdf">
+	<tdf:HandlingAssertion tdf:scope="TDO">
+		<tdf:HandlingStatement>
+			<edh:Edh arh:DESVersion="2" edh:DESVersion="2" ntk:DESVersion="8">
+				<edh:Identifier></edh:Identifier>
+				<edh:DataItemCreateDateTime></edh:DataItemCreateDateTime>
+				<edh:ResponsibleEntity>
+					<edh:Country></edh:Country>
+					<edh:Organization></edh:Organization>
+				</edh:ResponsibleEntity>
+				<arh:Security arh:DESVersion="2" ism:classification="U" ism:createDate="" ism:ownerProducer="USA" ntk:DESVersion="8">
+					<ism:NoticeList ism:classification="U" ism:ownerProducer="USA">
+					</ism:NoticeList>
+				</arh:Security>
+			</edh:Edh>
+		</tdf:HandlingStatement>
+	</tdf:HandlingAssertion>
+	<tdf:Assertion tdf:scope="PAYL" tdf:type="Discovery">
+		<tdf:StatementMetadata>
+			<arh:Security arh:DESVersion="2" ism:classification="U" ism:createDate="" ism:ownerProducer="USA" ntk:DESVersion="8">
+				<ism:NoticeList ism:classification="U" ism:ownerProducer="USA">
+				</ism:NoticeList>
+			</arh:Security>
+		</tdf:StatementMetadata>
+		<tdf:StructuredStatement>
+			<ddms:resource>
+				<ddms:metacardInfo>
+					<ddms:identifier ddms:qualifier="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365247%28v=vs.85%29.aspx" ddms:value="" />
+					<ddms:dates ddms:created="07-04-1776" />
+					<ddms:creator>
+						<ddms:organization>
+							<ddms:name />
+						</ddms:organization>
+					</ddms:creator>
+				</ddms:metacardInfo>
+				<ddms:identifier ddms:qualifier="http://msdn.microsoft.com/en-us/library/windows/desktop/aa365247%28v=vs.85%29.aspx" ddms:value="" />
+				<ddms:title ism:classification="U" ism:ownerProducer="USA" />
+				<ddms:description ism:classification="U" ism:ownerProducer="USA" />
+				<ddms:creator>
+					<ddms:organization>
+						<ddms:name />
+					</ddms:organization>
+				</ddms:creator>
+				<ddms:subjectCoverage>
+					<ddms:keyword ddms:value="Geospatial" />
+				</ddms:subjectCoverage>
+				<ddms:geospatialCoverage>
+					<ddms:boundingGeometry>
+						<tspi:Polygon gml:id="Geocell_32_-118">
+							<gml:exterior>
+								<gml:LinearRing>
+									<gml:coordinates>32 -118 32 -117 33 -117 33 -118 32 -118</gml:coordinates>
+								</gml:LinearRing>
+							</gml:exterior>
+						</tspi:Polygon>
+					</ddms:boundingGeometry>
+					<ddms:geographicIdentifier>
+						<ddms:name />
+						<ddms:region />
+						<ddms:countryCode ddms:code="" ddms:codespace="urn:us:gov:dod:nga:def:geo-political:GENC:2:ed1" />
+					</ddms:geographicIdentifier>
+					<ddms:geographicIdentifier>
+						<ddms:name>Mexico</ddms:name>
+						<ddms:countryCode ddms:code="MX" ddms:codespace="urn:us:gov:dod:nga:def:geo-political:GENC:2:ed1" />
+					</ddms:geographicIdentifier>
+					<ddms:geographicIdentifier>
+						<ddms:name>United States</ddms:name>
+						<ddms:countryCode ddms:code="US" ddms:codespace="urn:us:gov:dod:nga:def:geo-political:GENC:2:ed1" />
+					</ddms:geographicIdentifier>
+				</ddms:geospatialCoverage>
+				<ddms:type ddms:qualifier="001_Elevat">7</ddms:type>
+				<ddms:type ddms:qualifier="004_Imager">9</ddms:type>
+				<ddms:type ddms:qualifier="100_GSFeat">4</ddms:type>
+				<ddms:type ddms:qualifier="101_GTFeat">3</ddms:type>
+				<ddms:type ddms:qualifier="200_VecMat">0</ddms:type>
+				<ddms:type ddms:qualifier="201_RoadNe">7</ddms:type>
+				<ddms:type ddms:qualifier="204_Hydrog">0</ddms:type>
+			</ddms:resource>
+		</tdf:StructuredStatement>
+	</tdf:Assertion>
+</tdf:TrustedDataObject>
