@@ -5,9 +5,12 @@ This chapter investigates how model and terrain updates, originating from a CDB 
 store and delivered as glTF or elevation, are integrated with background elevation and OGC 3D Tiles
 into the client environment.
 
-For a large data set, We start by converting all the meshes from a CDB data store to an OGC 3DTiles tileset.
-Displaying the resulting OGC 3DTiles offers performance and visual quality advantages over reading the CDB data store
-directly. The increased efficiency is due to a better tiling scheme and mesh simplification.
+For a large data set, all the meshes from the CDB data store are converted to an OGC 3DTiles tileset.
+Displaying the resulting pre-processed OGC 3DTiles offers performance and visual quality advantages over reading the
+CDB data store directly. The increased efficiency is due to a better tiling scheme and mesh simplification.
+
+The question of generating tiles on the fly from the CDB data store is explored but the implementation could not
+be finished in time for the sprint.
 
 OGC 3DTiles can be automatically adapted to elevation updates, whether they come from a CDB data store or another source.
 This is achieved by adjusting the height of the mesh vertices at render time using expressions that are evaluated on the GPU.
@@ -20,13 +23,13 @@ dataset to create a single coherent OGC 3DTiles tileset.
 
 
 === Test Data
-We base our research on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
+The research is based on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
 models and a variety of vector data.
 
 image::images/SanDiegoCDBFileSystem.png[]
 
 === Organization of CDB for 3D Models
-In this section we recap the organization of CDB data for 3D models.
+This section recaps the organization of CDB data for 3D models.
 
 ==== GSFeatures and GSModelGeometry
 GSFeatures and GSModelGeometry are two folders containing matching Level Of Detail (LOD) folders.
@@ -53,26 +56,27 @@ many GTFeatures.
 Based on the San Diego CDB data set, the compression of
 OpenFlight data through zip leads to a minimal gain in hard-drive memory usage (on the order of 5%).
 
-A much greater compression can be achieved on textures that in our case were mostly encoded in SGI .rgb format.
-On top of that, the SGI .rgb format isn't a default format like JPEG or PNG which means developers will usually need to
+A much greater compression can be achieved on textures that in this case were mostly encoded in SGI .rgb format.
+The SGI .rgb format isn't a default format like JPEG or PNG which means developers will usually need to
 include 3rd party libraries or write extra code.
 
 The relative path to the 3D model can be inserted in the parameters of the GSFeatures rather than
 a short name. This would waste a few bytes of memory but would reduce the complexity of the decoder code.
 
-We also advise for a flat single DBF file accompanying every feature SHP file. This point of view is
-directed by the limited capabilities offered by some APIs relative to this format and the belief that this is
-a case where it is better to waste a few bytes of data for the sake of simplifying decoder code.
+A flat single DBF file accompanying every feature SHP file could be envisaged rather than multiple ones with
+many-to-one relations. This would help with the limited capabilities offered by some APIs relative to this format and
+this might be a case where it is better to waste a few bytes of data for the sake of simplifying decoder code.
 
 === Pre-processing CDB 3D models to OGC 3DTiles
 image::images/3DTilesWithMap.png[align="center"]
 
 CDB uses a tiling system where higher Levels Of Detail (LOD) add mesh models. Single buildings may also have
 several LODs embedded in a single file. While this gives the flexibility to achieve anything visually, it is complex to
-decode on the client or to process on the fly. In this section we investigate an approach to convert the entire CDB 3D
-models to a more efficient OGC 3DTiles tileset.
+decode on the client or to process on the fly. This section describes an approach to convert the entire CDB 3D
+models to a more efficient OGC 3DTiles tileset through a pre-processing stage.
 
-When converting to 3DTiles, we take only the highest LOD into account and re-generate a complete tileset.
+When converting to 3DTiles, only the highest LOD for every 3D model is taken into account to re-generate a complete
+tileset.
 
 image::images/octree.png[width=800,align="center"]
 The new LOD structure is an octree where child nodes entirely replace parent nodes.
@@ -127,9 +131,8 @@ converting the entire San Diego dataset took several hours.
 CDB provides referencing and orientation of 3D models through point features. The height of the 3D models is either
 given as a parameter of the point-features or can be inferred from elevation data provided in the CDB data store.
 
-We use the referencing information but dismiss the heights during creation of OGC 3DTiles. The height is inferred at
-render time through GPU evaluated expressions on any loaded elevation data.
-
+The referencing information is used but the heights is dismissed during creation of OGC 3DTiles. The height is
+inferred at render time through GPU evaluated expressions on any loaded elevation data.
 
 ==== 3D data organization recommendations
 The ideal pre-processed dataset doesn't use the raw files but rather simplifies, splits
@@ -162,7 +165,7 @@ At startup, the server creates a tileset.json file by decoding and indexing the 
 octree structure. This process takes around 5 minutes on the San Diego Dataset which contains about 6Gb of mesh data.
 Each node is given a name and a tileset.json file is generated. The client therefore requests tiles that don't
 exist yet because the server generates them on the fly.
-We do not use the LOD structure of the CDB data store because in this particular case, it is inadequate. If the CDB
+The LOD structure of the CDB data store isn't used because in this particular case, it is inadequate. If the CDB
 data store LOD structure could be used, the process would become almost instantaneous. A good LOD structure is one
 that is deep and has small tiles of approximately the same size.
 
@@ -173,10 +176,14 @@ The approach of simplifying meshes for lower LODs cannot be done in real-time be
 out smaller buildings for lower LODs will have to be used.
 
 ==== Speed
-We expect that the speed of the server will be good enough to call real-time. There are however several challenges
-in respect to the client. If the tiles are additive, it is impossible to use different levels of detail for
+The speed of the server is expected to be good enough to call real-time.
+
+==== quality
+Mesh simplification will be too slow to generate tiles on the fly. Instead, dropping out smaller models at low LODs
+must be used.
+If the tiles are additive, it is impossible to use different levels of detail for
 textures. It's expected that a compromise would have to be done in respect to texture quality. A replacement tactic
-will be better suited but require more computation on the server.
+will be better suited but requires more computation on the server.
 
 ==== updates
 Updates may be implemented by having a file watcher on the CDB GSFeature and GTFeature folders.
@@ -252,4 +259,3 @@ data set that are inside the bounding box of the new model are pushed down below
 ===== Deleted model
 When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing
 the vertices that correspond to the deleted model down.
-
