@@ -1,0 +1,20 @@
+@startuml
+autonumber
+actor User
+User -> Client: start client
+Client ->  Server: Landing Page Request (3D_GeoVolumes_server/)
+Server --> Client: Landing Page Response
+Client ->  Server: Content Request (3D_GeoVolumes_server/collections)
+Server --> Client: Collections Response
+Client ->  Server: Content Request (3D_GeoVolumes_server/collections/3dcontainerid)
+Server --> Client: 3D Container Response
+Client ->  Server: BVH Request (3D_GeoVolumes_server/collections/3dcontainerid/3dtiles)
+Server --> Client: 3D Tiles tileset.json Response
+User -> Client: navigate in 3D scene
+note left 
+loop
+end note
+Client ->  Server: BVH content Request (3D_GeoVolumes_server/collections/3dcontainerid/3DTiles/xxx.b3dm)
+Server --> Client: Batched 3D Model Response
+Client --> User: render
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+start
+partition ConvertData {
+:convert CDB model to 3D Tiles;
+}
+partition publish3DGeoVolumes {
+:calculate spatial extend;
+:set up 3D GeoVolumes Server
+:add 3D Tiles bvh to 3D container;
+:add 3D container to collection;
+:publish collection on server;
+}
+end
+@enduml
