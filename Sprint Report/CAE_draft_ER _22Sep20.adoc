@@ -62,7 +62,7 @@ generating a point cloud from the FMV, segmenting the point cloud to and indepen
 
 The model was then translated to glTF format using an FG3D data translator for glTF.
 
-image::images/CAE_GRID_export.png[align="center"][CAE glTF Translation and Export]
+image::images/CAE_GRID_Export_Data.png[align="center"][CAE glTF Translation and Export]
 
 The 3D Tiles and the glTF model were then brought together for rendering.  The glTF model was geopositioned at coordinate N32.704 W117.164 in order to reside
 within the same San Diego focus area for the experiment. 
