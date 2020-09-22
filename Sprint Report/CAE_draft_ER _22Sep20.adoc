@@ -40,7 +40,7 @@ From the full CDB geocell, a smaller subset of data was used as a focus for this
 |Southeast Corner N32.702 W117.153
 |===
 
-image::images/CAE_GRID_AOI[CAE GRID AOI]
+image::images/CAE_GRID_AOI.png[CAE GRID AOI]
 
 Two independent workflows were employed for CDB data generation and conversion.  One for the translation of CDB datasets to 3D Tiles.  The other
 for the creation of a new CDB Openflight model from full motion video converted to glTF.
