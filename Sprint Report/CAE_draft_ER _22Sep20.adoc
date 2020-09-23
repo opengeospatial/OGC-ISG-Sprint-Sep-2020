@@ -78,7 +78,7 @@ image::images/CAE_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
 Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness 
 the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set. 
  
-image::images/CAE_tile_dark.JPG[align="center"][CAE 3D Tile Dark Rendering]
+image::images/CAE_tile dark.JPG[align="center"][CAE 3D Tile Dark Rendering]
 image::images/CAE_tile_light.JPG[align="center"][CAE 3D Tile Modified Rendering]
 
 The glTF model generated using FMV source was visually no different then the CDB Openflight model.
