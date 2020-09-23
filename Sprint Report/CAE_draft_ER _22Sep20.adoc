@@ -50,7 +50,7 @@ image::images/CAE_Workflow.png[align="center"][CAE Data Production Workflow]
 ==== CDB to OGC 3D Tiles
 The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from within the Rapid3D architecture.  
 
-image::images/CAE_R3D_workflow1.png[align="center"][CAE R3D 3D Tile CDB Conversion]
+image::images/CAE_R3D_workflow1.jpg[align="center"][CAE R3D 3D Tile CDB Conversion]
 
 The CDB data was hosted in an S3 container on the Amazon Web Service Cloud.  The conversion was conducted within the AWS environment.
 
