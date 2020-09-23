@@ -72,14 +72,14 @@ Original CDB content rendered in Presagis VegaPrime shows no apparent content lo
 The comparison was made as rendered in Cesium ion and Cognitics Dragonfly.
 
 image::images/CAE_CDB_sd_petco_tv.png[align="center"][CAE CDB VegaPrime]
-image::images/CAE_CDB_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
+image::images/CAE_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
 *************image::images/CAE_CDB_sd_petco_dragonfly.png[align="center"][CAE 3D Tiles Dragonfly]
 
 Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness 
 the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set. 
  
-image::images/CAE_tile_dark.png[align="center"][CAE 3D Tile Dark Rendering]
-image::images/CAE_tile_light.png[align="center"][CAE 3D Tile Modified Rendering]
+image::images/CAE_tile_dark.JPG[align="center"][CAE 3D Tile Dark Rendering]
+image::images/CAE_tile_light.JPG[align="center"][CAE 3D Tile Modified Rendering]
 
 The glTF model generated using FMV source was visually no different then the CDB Openflight model.
 image::images/CAE_fmv.png[align="center"][CAE Full Motion Video Source]
