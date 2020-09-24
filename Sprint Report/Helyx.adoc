@@ -1,0 +1,15 @@
+Helyx Sprint Report
+
+Did you retest anything that was tested in the Pilot, but with a slight variation (and what was the outcome)?
+
+Did you test any gaps in what was tested in the Pilot (and what was the outcome)?
+
+Did you test any extensions to the Pilot Spec?
+
+Did you test anything in cooperation with another participant?
+
+In cases where the Pilot Spec was defective or confusing, contained a gap, or needs to be extended, did you document your findings so that a Change Request can be written against the Pilot Spec?
+
+Did you conduct any performance testing to gain insight into what bottlenecks might hinder scalability?
+
+Other testing that doesn’t fall into any of these categories?
