@@ -15,7 +15,7 @@ Can happen at the API level (collection level - 3d tiles), can you have alternat
 === Representing alternate distributions at the API level
 This considers the mechanism by which clients request and get responses from a server as a particular type of distribution. The goal is to have a common starting point and landing page, and to display the collections within, but then to differentiate based on the particular structure of the distribution format.
 
-image::images/3D_data.PNG[]
+image::images/3D_Data.PNG[]
 
 So the 3d data has the potential to be in scope of the GeoVolumes API, but it also has the potential to be in scope of other OGC APIs such as the Tiles API or Features API.
 The GeoVolumes API has so far covered 3d Tiles and i3S community specifications. But this could be extended with for instance the draft 3d Tiles implicit tiling schemefootnote:[ https://github.com/CesiumGS/3d-tiles/issues/92] discussed by Cesium. This would be the equivalent of the tiling schemes that fall under the Tiles API, but tailored for working with 3D data.
