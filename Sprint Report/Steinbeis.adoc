@@ -26,7 +26,13 @@ The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as s
 image::images/Steinbeis-ClientUI.png[User Interface of the Steinbeis Client Implementation]
 
 ==== SensorThings API Server for Urban Mobility
-In this sprint, we used the FROST-Server (https://github.com/FraunhoferIOSB/FROST-Server); an open-source implementation of SensorThings API part 1: Sensing, developed by the Fraunh-ofer IOSB as our SensorThings server for managing the dynamic dataset. This server is available at https://steinbeis-3dps.eu/sta-isg-sprint/ and managed the synthetic 3D routes in the area of San Diego.
+In this sprint, we used the OGC SensorThings standard () as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in a figure below:
+
+image::images/Steinbeis-SensorThingsDataModel.png[Steinbies SensorThings Data Modelling]
+
+For the server implementation, we used the FROST-Server (https://github.com/FraunhoferIOSB/FROST-Server); an open-source implementation of SensorThings API part 1: Sensing, developed by the Fraunh-ofer IOSB as our SensorThings server for managing the dynamic dataset. This server is available at https://steinbeis-3dps.eu/sta-isg-sprint/ collecting the synthetic 3D routes in the area of San Diego. 
+
+
 
 === Client Implementation
 The client (https://steinbeis-3dps.eu/STT3DClient/) application was based on CesiumJS framework. It was partially based on the implementation from the Steinbeis OGC 3D Container and Tiles pilot client. The User Interface menu is shown in the image below which allows users to do following interacations:
