@@ -25,14 +25,14 @@ The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as s
 
 [#Steinbeis-ClientUI,reftext='{figure-caption} {counter:figure-num}']
 .Areal Taxi on Steinbeis Client.
-image::images/Steinbeis-ClientUI.PNG[width=800,align="center"]
+image::images/Steinbeis-ClientUI.png[width=800,align="center"]
 
 ==== SensorThings API Server for Urban Mobility
 In this sprint, we used the OGC SensorThings standard (https://docs.opengeospatial.org/is/15-078r6/15-078r6.html) as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in <<Steinbeis-SensorThingsDataModel>>:
 
 [#Steinbeis-SensorThingsDataModel,reftext='{figure-caption} {counter:figure-num}']
 .Steinbies SensorThings Data Modelling.
-image::images/Steinbeis-SensorThingsDataModel.PNG[width=800,align="center"]
+image::images/Steinbeis-SensorThingsDataModel.png[width=800,align="center"]
 
 For the server implementation, we used the FROST-Server (https://github.com/FraunhoferIOSB/FROST-Server); an open-source implementation of SensorThings API part 1: Sensing, developed by the Fraunh-ofer IOSB as our SensorThings server for managing the dynamic dataset. This server is available at https://steinbeis-3dps.eu/sta-isg-sprint/ collecting the synthetic 3D routes in the area of San Diego. 
 
@@ -62,32 +62,32 @@ The datasets that are referenced in the content.json are shown in the dashboard 
 +
 [#Steinbeis-Client-to-Steinbeis-Server-RoadNetwork,reftext='{figure-caption} {counter:figure-num}']
 .San Diego Road Model (Steinbeis server).
-image::images/Steinbeis-Client-to-Steinbeis-Server-RoadNetwork.PNG[width=800,align="center"]
+image::images/Steinbeis-Client-to-Steinbeis-Server-RoadNetwork.png[width=800,align="center"]
 
 * Visualizing San Diego 3D Building models from the Steinbeis GeoVolumes Server 
 +
 [#Steinbeis-Client-to-Steinbeis-Server-LoD2Texture,reftext='{figure-caption} {counter:figure-num}']
 .San Diego 3D Building models LoD2 (Steinbeis server).
-image::images/Steinbeis-Client-to-Steinbeis-Server-LoD2Texture.PNG[width=800,align="center"]
+image::images/Steinbeis-Client-to-Steinbeis-Server-LoD2Texture.png[width=800,align="center"]
 
 * Visualizing San Diego 3D Building models (LoD1 based on OSM) from the Cesium GeoVolumes Server 
 +
 [#Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego,reftext='{figure-caption} {counter:figure-num}']
 .San Diego 3D Building models LoD1 (Cesium server).
-image::images/Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego.PNG[width=800,align="center"]
+image::images/Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego.png[width=800,align="center"]
 
 * Visualizing San Diego 3D models (only Building layer LOD2) from the Ecere GeoVolumes Server 
 +
-image::images/Steinbeis-Client-to-Ecere-Server-LoD2Texture.png[Visualization of LoD2 Models with Textures from Ecere Server]
+[Visualization of LoD2 Models with Textures from Ecere Server]
 [#Steinbeis-Client-to-Ecere-Server-LoD2Texture,reftext='{figure-caption} {counter:figure-num}']
 .San Diego 3D Building models LoD2 with textures (Ecere server).
-image::images/Steinbeis-Client-to-Ecere-Server-LoD2Texture.PNG[width=800,align="center"]
+image::images/Steinbeis-Client-to-Ecere-Server-LoD2Texture.png[width=800,align="center"]
 
 * Visualizing San Diego 3D Building models from the Helyx GeoVolumes Server 
 +
 [#Steinbeis-Client-to-Helyx-Server-LoD2Texture,reftext='{figure-caption} {counter:figure-num}']
 .San Diego 3D Building models LoD2 with textures (Helyx server).
-image::images/Steinbeis-Client-to-Helyx-Server-LoD2Texture.PNG[width=800,align="center"]
+image::images/Steinbeis-Client-to-Helyx-Server-LoD2Texture.png[width=800,align="center"]
 
 ==== Mobility Routes
 To show different kinds of mobility, such as bike routes and air taxi routes, different synthetic urban routes were visualized on the client. By adjusting the height of the track to replicate a flight path with starting and landing maneuvers a air taxi route can be simulated. An Air Taxi moves presumably around 300 meters above the terrain, except for starting and landing.
@@ -142,3 +142,15 @@ During the sprint week, we have loaded and renders numbers of 3D contents from t
 image::images/Steinbeis-Client-intersected-layers.png[width=800,align="center"]
 
 In this case, we do not need the LoD1 layer to be loaded in a smaller bounding area which already render by the texture layer. The query capability for requesting the contents as a polygon with hole (or donut polygon) would help to filter the content on the server-side and save the bandwidth to client.
+
+==== 2. 3D GeoVolumes API organization different semantic parts.
+Currently, there is no concrete rule on how to name the different semantic parts. For example, the building models in the San Diego area can be hosted on
+
+* https://LandingURL/collections/California/SanDiego/buildings/...
+
+* https://LandingURL/collections/California/SanDiegoBuildings/...
+
+* https://LandingURL/collections/California/SanDiegoCDB:Buildings/...
+
+These gaps should be discussed and evaluated in the future developement of the 3D GeoVolumes API specification.
+
