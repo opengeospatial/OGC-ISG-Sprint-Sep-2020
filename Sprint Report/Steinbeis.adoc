@@ -47,15 +47,15 @@ The datasets that are referenced in the content.json are shown in the dashboard 
 
 * Visualizing San Diego Road from the Steinbeis GeoVolumes Server 
 +
-image::images/Steinbeis-Client-to-Steinbeis-Server-RoadNetwork.PNG[Road Network provided by the Steinbeis Server]
+image::images/Steinbeis-Client-to-Steinbeis-Server-RoadNetwork.png[Road Network provided by the Steinbeis Server]
 
 * Visualizing San Diego 3D Building models from the Steinbeis GeoVolumes Server 
 +
-image::images/Steinbeis-Client-to-Steinbeis-Server-LoD2Texture.PNG[Visualization of San Diego 3D Building models from Steinbeis Server]
+image::images/Steinbeis-Client-to-Steinbeis-Server-LoD2Texture.png[Visualization of San Diego 3D Building models from Steinbeis Server]
 
 * Visualizing San Diego 3D Building models (LoD1 based on OSM) from the Cesium GeoVolumes Server 
 +
-image::images/Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego.PNG[Visualization of San Diego 3D Building models LoD1 from Cesium Server]
+image::images/Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego.png[Visualization of San Diego 3D Building models LoD1 from Cesium Server]
 
 * Visualizing San Diego 3D models (only Building layer LOD2) from the Ecere GeoVolumes Server 
 +
