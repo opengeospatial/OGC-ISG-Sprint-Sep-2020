@@ -21,11 +21,11 @@ We tested and evaluated the different organization of the underlying 3D data at 
 ** Trees : http://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DTrees/3dtiles
 ** Terrain as Quantized Mesh : https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DTerrain/quantized-mesh/
 
-The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as shown in <<Steinbeis-ClientUI>>.
+The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as shown in <<Steinbeis-GeoVolumeServers>>.
 
-[#Steinbeis-ClientUI,reftext='{figure-caption} {counter:figure-num}']
+[#Steinbeis-GeoVolumeServers,reftext='{figure-caption} {counter:figure-num}']
 .Areal Taxi on Steinbeis Client.
-image::images/Steinbeis-ClientUI.png[width=800,align="center"]
+image::images/Steinbeis-GeoVolumeServers.png[width=800,align="center"]
 
 ==== SensorThings API Server for Urban Mobility
 In this sprint, we used the OGC SensorThings standard (https://docs.opengeospatial.org/is/15-078r6/15-078r6.html) as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in <<Steinbeis-SensorThingsDataModel>>:
