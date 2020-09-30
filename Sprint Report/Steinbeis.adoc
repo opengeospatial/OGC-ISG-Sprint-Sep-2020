@@ -26,7 +26,7 @@ The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as s
 image::images/Steinbeis-ClientUI.png[User Interface of the Steinbeis Client Implementation]
 
 ==== SensorThings API Server for Urban Mobility
-In this sprint, we used the OGC SensorThings standard () as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in a figure below:
+In this sprint, we used the OGC SensorThings standard (https://docs.opengeospatial.org/is/15-078r6/15-078r6.html) as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in a figure below:
 
 image::images/Steinbeis-SensorThingsDataModel.png[Steinbies SensorThings Data Modelling]
 
@@ -85,19 +85,19 @@ To visualize these tracks in Cesium the route data is loaded from the SensorThin
     "position": {
       "epoch": "2020-09-20T10:00:00Z",
       "cartographicDegrees": [
-                    <time_0>,
-                    <lon_0>,
-                    <lat_0>,
-                    <h_0>,
-                    <time_1>,
-                    <lon_1>,
-                    <lat_1>,
-                    <h_1>,
-                    ...,
-                    <time_n>,
-                    <lon_n>,
-                    <lat_n>,
-                    <h_n>,
+                    "<time_0>",
+                    "<lon_0>",
+                    "<lat_0>",
+                    "<h_0>",
+                    "<time_1>",
+                    "<lon_1>",
+                    "<lat_1>",
+                    "<h_1>",
+                    "...",
+                    "<time_n>",
+                    "<lon_n>",
+                    "<lat_n>",
+                    "<h_n>",
         ]
     }
 }
