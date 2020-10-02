@@ -268,18 +268,21 @@ rendering a 3D tile but in the system used, elevation and meshes are rendered in
 has access to both at the same time. It would take deeper modifications to the rendering engine in order to achieve
 this.
 
-=== On the fly vertex displacement: a solution to handle CDB model updates
+=== handling CDB model updates
 3D Meshes can be displaced at render time using GPU evaluated expressions. This technique allows handling 3D model
 updates and ensuring that there is no overlap or mismatch between data sets.
 
-==== Handling 3D model updates with elevation and background OGC 3DTiles
 When 3D data is served <<Serving OGC 3DTiles from CDB with on the fly tiling, on the fly>> from a CDB data store,
 updates are taken into account automatically.
 However, <<Pre-processing CDB 3D models to OGC 3DTiles, pre-processing>> a large data set has several advantages in
-terms of visual appearance and performance. In
-addition, model updates may originate from other sources than the CDB store itself.
+terms of visual appearance and performance. In addition, model updates may originate from other sources than the CDB
+store itself.
 
-On the fly vertex displacement offers a solution for small model updates.
+On the fly vertex displacement offers a solution for small model updates where the new data is processed into a
+separate 3DTiles tileset. The original vertices that are part of the base 3DTiles tileset are squashed below the new
+data and the result is a perfect integration. This tactic is only useable for smaller updates like a single building
+or a small area. For a more general solution, <<Serving OGC 3DTiles from CDB with on the fly tiling>> offers the most
+flexibility.
 
 image::images/AddUpdateDelete.png[align="center"]
 
@@ -288,10 +291,19 @@ When a model is deleted, it should be removed from the pre-processed background 
 the vertices that correspond to the deleted model down.
 
 ===== Updated model
-In the case where a model is updated with a newer version, it cannot simply be loaded alongside the background
-3DTiles because it would overlap with the previous version of itself. To resolve this, the vertices of the background
-data set that are inside the bounding box of the new model are pushed down below the new one.
+In the case where a model is updated with a newer version, the new version is processed in a separate 3DTiles tileset.
+The new tileset cannot simply be loaded alongside the background 3DTiles because it would overlap with the previous
+version of itself. To resolve this, the vertices of the background
+data set that are inside the bounding box of the new model are squashed below the new one.
 
 ===== Added model
 In the case that a completely new model is added, it is converted into a separate OGC 3DTiles tileset and loaded
-alongside the background data. this conversion to 3D Tiles can be very fast for small models.
+alongside the background data. this conversion to 3D Tiles is very fast for small models.
+
+=== Future Work
+On the fly tiling of CDB 3D data is the next step and although it couldn't be achieved in this sprint, there is
+no blocking issue going forward. On the fly tiling will remove the overhead of the slow conversion to OGC 3DTiles and
+will offer a more elegant solution to handling data-store model updates.
+
+Automatically adapting 3DTiles tilesets to elevation model updates has been proven to work. More effort is needed to
+achieve this as a client only solution which would be more efficient and easier to work with.
