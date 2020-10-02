@@ -1,5 +1,5 @@
 == Hexagon GSP
-
+image::images/hexagonTitleScreen.png[]
 === Abstract
 This chapter investigates how model and terrain updates, originating from a CDB data
 store and delivered as glTF or elevation, are integrated with background elevation and OGC 3D Tiles
@@ -13,14 +13,15 @@ The question of generating tiles on the fly from the CDB data store is explored 
 be finished in time for the sprint.
 
 OGC 3DTiles can be automatically adapted to elevation updates, whether they come from a CDB data store or another source.
-This is achieved by adjusting the height of the mesh vertices at render time using expressions that are evaluated on the GPU.
-The result is that meshes will always match to any elevation model loaded in the client.
+This is achieved through a proxy service that reads B3DM files and
+adjusts the height of the vertices before forwarding them to the client. The possibility to do this at render time,
+on the client, using GPU evaluated expressions is also explored.
 
-Using the same technique, mesh updates coming form a CDB data store or any other source can automatically push down
+Using GPU evaluated expressions, deletions/updates/additions in the CDB data store are handled by pushing down
 background OGC 3DTiles. The old and new models integrate seamlessly and there is no need to reprocess the entire
 dataset to create a single coherent OGC 3DTiles tileset.
 
-
+image::images/HexagonCommunicationDiagram.png[]
 
 === Test Data
 The research is based on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
@@ -172,7 +173,7 @@ that is deep and has small tiles of approximately the same size.
 When a tile is requested, the relevant meshes are loaded, converted to gltf, wrapped in a B3DM file and sent back to
 the client. This last part could not be integrated in an OGC 3DTiles service in time for the sprint.
 
-The approach of simplifying meshes for lower LODs cannot be done in real-time because it is too slow. simply dropping
+The approach of simplifying meshes for lower LODs cannot be done in real-time because it is too slow. Simply dropping
 out smaller buildings for lower LODs will have to be used.
 
 ==== Speed
@@ -204,10 +205,10 @@ Depending on the dataset, an octree, quadTree or even an R-tree can be used for 
 structure that is ideal for frequent updates is a regular grid of cells. The grid of cells doesn't need to be rebuilt
 for every update but it is uncertain if such a structure can be leveraged to serve 3D-tiles efficiently.
 
-==== 3D data organization recommendations
-In this approach, a tileset.json is generated on the fly at startup of the server or when an update happens.
+==== CDB 3D data organization recommendations
+In this approach, a tileset.json tree is generated on the fly at startup of the server or when an update happens.
 The tiles themselves are generated upon request.
-Having OpenFlight meshes that are already organized in coherent LODs can improve the time it takes to build a
+Having OpenFlight meshes that are already organized in coherent LODs can improve the time it takes to build the
 tileset.json.
 
 A general recommendation is to split LODs into a regular grid of cells and to make sure that cells are small. A general
@@ -221,41 +222,76 @@ A Replacement approach is better in that respect. It implies that some features 
 detail (only the point features are repeated, not the 3D models inside the CDB data store). A drawback is that updating
 the CDB data store becomes more complex.
 
-=== On the fly vertex displacement: a solution to handle CDM model and elevation updates
-3D Meshes can be displaced at render time using GPU evaluated expressions. This technique allows handling
-updates of terrain and 3D models and ensuring that there is no overlap or mismatch between data sets.
+=== Handling terrain updates
 
-==== Integrating terrain updates with OGC 3DTiles tileset
-Whether CDB 3D Models are pre-processed into an OGC 3DTiles tileset or served on the fly directly from the data store,
-the height of the verices is calculated based on a pre-defined elevation model. It is also possible to serve tiles
-without any elevation and to adjust the height of the 3D meshes when they are rendered based on GPU evaluated
-expressions. As a result, the pre-processed OGC 3DTiles tileset can adapt to any elevation model loaded in the client
-whether it originates from a CDB data store or otherwise.
+A common issue is mismatch between terrain and 3D models that are typically served through different services.
 
-===== Evaluating the height of a vertex based on an elevation model
-Because the height of the vertices is calculated based on a specific elevation model, both the meshes and a
-representation of the elevation need to be provided to the GPU. The difference in height between the elevation
-model and the ellipsoid is calculated at the location of the vertex and the vertex is displaced by that amount.
+In order to circumvent this issue, CDB datastores provide the elevation model that the 3D meshes should fit onto.
 
-===== Evaluating the height of the terrain
-Rather than displacing the mesh, it's also possible to displace the terrain itself.
+However, In order to serve very large 3D mesh datasets, they are pre-processed with embedded elevation.
+When the elevation model in the CDB datastore is updated, the 3D Meshes need to be re-processed accordingly and this
+is a time-consuming task that can be avoided.
+
+image::images/ElevationMissmatch.png[align="center"]
+The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a
+perfect match between the two.
+
+==== proxy server approach
+The solution is to start by processing the 3D Meshes to OGC 3DTiles without taking the elevation into
+account. Buildings are therefore on the ellipsoid with the assumption that the ellipsoid stays constant. When the
+client requests tiles, they are automatically shifted up or down according to a loaded elevation model, therefore
+providing a perfect match.
+
+Practically, this was achieved through a proxy server that forwards requests to the OGC 3DTiles dataset but before
+returning the B3DM files, shifts all the vertices according to an elevation model.
+The server must also decode the tileset.json files and shift the bounding boxes of the tiles.
+
+image::images/AutomaticElevation.png[align="center"]
+The top image shows the raw OGC 3DTiles that have no elevation. The bottom image shows the same dataset that
+automatically adapts to the loaded elevation model on the fly.
+
+The result is highly efficient with minimal performance impact.
+
+The disadvantage of this approach is that the proxy server needs to be made aware of the elevation model loaded in
+the client.
+
+==== GPU Expression approach
+It is possible to match 3DTiles with elevation without a proxy server by using GPU evaluated expressions to
+shift vertices up or down at render time, although this was not achieved. This is a similar approach to the one used
+to handle <<On the fly vertex displacement: a solution to handle CDB model updates,CDB model updates>>.
+
+A Proxy server isn't needed anymore and the client can consume the original 3DTiles.
+The solution would also be more efficient since the vertex shifting operation would be done on the highly efficient GPU.
+
+This was not achievable in this sprint on technicalities. The GPU needs to have access to the elevation when
+rendering a 3D tile but in the system used, elevation and meshes are rendered in different passes and the GPU never
+has access to both at the same time. It would take deeper modifications to the rendering engine in order to achieve
+this.
+
+=== On the fly vertex displacement: a solution to handle CDB model updates
+3D Meshes can be displaced at render time using GPU evaluated expressions. This technique allows handling 3D model
+updates and ensuring that there is no overlap or mismatch between data sets.
 
 ==== Handling 3D model updates with elevation and background OGC 3DTiles
-When 3D data is served on the fly from a CDB data store, updates should be taken into account automatically.
-However, pre-processing a large data set has several advantages in terms of visual appearance and performance. In
+When 3D data is served <<Serving OGC 3DTiles from CDB with on the fly tiling, on the fly>> from a CDB data store,
+updates are taken into account automatically.
+However, <<Pre-processing CDB 3D models to OGC 3DTiles, pre-processing>> a large data set has several advantages in
+terms of visual appearance and performance. In
 addition, model updates may originate from other sources than the CDB store itself.
 
-On the fly vertex displacement offers a solution to small model updates.
+On the fly vertex displacement offers a solution for small model updates.
 
-===== Added model
-In the case that a completely new model is added, it is converted into a separate OGC 3DTiles tileset and loaded
-alongside the background data. this conversion to 3D Tiles can be very fast for small models.
+image::images/AddUpdateDelete.png[align="center"]
+
+===== Deleted model
+When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing
+the vertices that correspond to the deleted model down.
 
 ===== Updated model
 In the case where a model is updated with a newer version, it cannot simply be loaded alongside the background
 3DTiles because it would overlap with the previous version of itself. To resolve this, the vertices of the background
 data set that are inside the bounding box of the new model are pushed down below the new one.
 
-===== Deleted model
-When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing
-the vertices that correspond to the deleted model down.
+===== Added model
+In the case that a completely new model is added, it is converted into a separate OGC 3DTiles tileset and loaded
+alongside the background data. this conversion to 3D Tiles can be very fast for small models.
