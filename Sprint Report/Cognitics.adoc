@@ -1,3 +1,24 @@
+===Cognitics Sprint Report
+
+==Scenario Summary Description
+In cooperation with CAE and Cesium, we will be using GeoVolumes to enhance integration between our Global Situational Awareness (GSA) and Rapid3D (R3D) efforts. The current phase of the GSA effort has produced a prototype infrastructure/service called Dragonfly.
+
+Within Dragonfly, a user has the ability to send full motion video (FMV) into Rapid3D for the generation of 3D content. When a production task has completed, Rapid3D provides the content back into Dragonfly for visualization in 2D and 3D (Cesium).
+
+Currently, all content produced in this manner is incorporated into the visualization. It lacks any method for organizing the content for user filtering.
+
+In this sprint, we intend to:
+
+implement a GeoVolumes service providing Rapid3D result content.
+
+implement a GeoVolumes client in the Dragonfly web interface, allowing a user to select content based on source or geographic area.
+
+This provides a realistic scenario for the sprint while also solving a real SOCOM need.
+
+
+
+
+
 
 
 1.	Did you retest anything that was tested in the Pilot, but with a slight variation (and what was the outcome)?
