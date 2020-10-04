@@ -14,7 +14,28 @@ But before we get into the weeds, let's show the results.
 
 === Source Data: Display and Tie Tables
 
-Need to gather images of results from latest servers
+Here are the images from the TIE table
+
+.Ecere's San Diego 3D Tiles
+image::images/InfoDao/ecereSanDiegoPassing.png[align="center",width="800"]
+
+.Ecere's New York 3D Tiles
+image::images/InfoDao/ecereNewYorkPassing.png[align="center",width="800"]
+
+.Steinbeis' New York 3D Tiles
+image::images/InfoDao/steinbeisNewYorkPassing.png[align="center",width="800"]
+
+.Steinbeis' San Diego 3D Tiles
+image::images/InfoDao/steinbeisSanDiegoPassing.png[align="center",width="800"]
+
+.Helyx's San Diego 3D Tiles
+image::images/InfoDao/helyxSanDiegoPassing.png[align="center",width="800"]
+
+.Helyx's New York 3D Tiles
+image::images/InfoDao/helyxNewYorkPassing.png[align="center",width="800"]
+
+.Cesium's New York 3D Tiles
+image::images/InfoDao/cesiumNewYorkPassing.png[align="center",width="800"]
 
 === Future Discussion
 
