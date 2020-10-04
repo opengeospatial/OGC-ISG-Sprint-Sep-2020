@@ -20,21 +20,21 @@ This provides a realistic scenario for the sprint while also solving a real SOCO
 
 Dragonfly is a web based user interface currently hosted at https://dragonfly.caeusa.com/.  It contains a client that utilizes the GeoVolumes API for selection of 3D content. This client is found in the main menu under Overlays, GeoVolumes while in the 3D view.
 
-image::images/CogniticsDragonflyGeoVolumes.png[scale=110, align="center"]
+image::images/CogniticsDragonflyGeoVolumes.png[align="center"]
 
 When the user is zoomed out to the globe level, the effective bounding box is the entire globe, and all available GeoVolumes overlays are displayed in the table of contents.
 
-image::images/CogniticsDragonflyGlobe.png[scale=110, align="center"]
+image::images/CogniticsDragonflyGlobe.png[align="center"]
 
 As the user zooms in, the bounding box encompasses only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown.  In the figure below, the bounding box includes Beirut and Damascus.  When the user hovers over a GeoVolumes overlay, the extent of that overlay is highlighted, as seen in the figure below of the Damasuc overlay.
 
-image::images/CogniticsDragonflyDamascus.png[scale=110, align="center"]
+image::images/CogniticsDragonflyDamascus.png[align="center"]
 
 == Architecture
 
 Dragonfly is a web based user interface that supports both 2D and 3D content.
 
-image::images/CogniticsArchitectureDiag.PNG[scale=50, align="center"]
+image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 
 == Damascus, Syria Vricon SurfaceMesh
 
