@@ -25,7 +25,7 @@ The Dragonfly datastore contains both static 3D content and processded content f
 image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 
 
-Dragonfly utilizes the GeoVolumes API for selection and of 3D content based on bounding box, rather than displaying all content at all zoom levels. Whilein 3D view, go to the main menu under Overlays, and select GeoVolumes.
+Dragonfly utilizes the GeoVolumes API for selection and of 3D content based on bounding box, rather than displaying all content at all zoom levels. While in 3D view, GeoVolumes is displayed under Overlays in the Main Menu.
 
 image::images/CogniticsDragonflyGeoVolumes.png[align="center",width=75%]
 
