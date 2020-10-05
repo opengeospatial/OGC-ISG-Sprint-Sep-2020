@@ -49,7 +49,7 @@ image::images/CogniticsDragonflyDamascus3.png[align="center"]
 
 The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.
 
-image::images/CogniticsFortStory1.png[align="center"]
+
 
 
 image::images/CogniticsFortStory2.png[align="center"]
