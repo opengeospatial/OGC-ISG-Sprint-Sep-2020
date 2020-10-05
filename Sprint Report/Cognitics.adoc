@@ -20,7 +20,7 @@ This provides a realistic scenario for the sprint while also solving a real SOCO
 
 Dragonfly is a web based user interface currently hosted at https://dragonfly.caeusa.com/.  It contains a client that utilizes the GeoVolumes API for selection of 3D content. This client is found in the main menu under Overlays, GeoVolumes while in the 3D view.
 
-image::images/CogniticsDragonflyGeoVolumes.png[align="center",width=125%]
+image::images/CogniticsDragonflyGeoVolumes.png[align="center"]
 
 When the user is zoomed out to the globe level, the effective bounding box is the entire globe, and all available GeoVolumes overlays are displayed in the table of contents.
 
@@ -41,18 +41,17 @@ image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 The 3D content of Damascus, Syria is a SurfaceMesh provided by Vricon.
 
 
-image::images/CogniticsDragonflyDamascus2.png[align="center"]
+image::images/CogniticsDragonflyDamascus2.png[align="center",width=66%]
 
-image::images/CogniticsDragonflyDamascus3.png[align="center"]
+image::images/CogniticsDragonflyDamascus3.png[align="center",width=66%]
 
 == Fort Story Rapid 3D Data
 
 The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.
 
+image::images/CogniticsFortStory1.png[align="center", width=65%]
 
-Add fort story 1 image here
-
-image::images/CogniticsFortStory2.png[align="center"]
+image::images/CogniticsFortStory2.png[align="center"width=66%]
 
 1.	Did you retest anything that was tested in the Pilot, but with a slight variation (and what was the outcome)?
 2.	Did you test any gaps in what was tested in the Pilot (and what was the outcome)?
