@@ -9,9 +9,9 @@ Currently, all content produced in this manner is incorporated into the visualiz
 
 In this sprint, we:
 
-*Implemented a GeoVolumes service providing Rapid3D result content.
+* Implemented a GeoVolumes service providing Rapid3D result content.
 
-*Implemented a GeoVolumes client in the Dragonfly web interface, allowing a user to select content based on source or geographic area.
+* Implemented a GeoVolumes client in the Dragonfly web interface, allowing a user to select content based on source or geographic area.
 
 This provides a realistic scenario for the sprint while also solving a real SOCOM need.
 
@@ -32,7 +32,7 @@ image::images/CogniticsDragonflyDamascus.png[align="center"]
 
 == Architecture
 
-Dragonfly is a web based user interface that supports both 2D and 3D content.
+Dragonfly is a web based user interface that supports both 2D and 3D content.  Cesium ion a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings. Combine these assets with your own data to provide more context or see it on a 3D map of the world.
 
 image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 
@@ -41,9 +41,18 @@ image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 The 3D content of Damascus, Syria is a SurfaceMesh provided by Vricon.
 
 
+image::images/CogniticsDamascus2.png[align="center"]
+
+image::images/CogniticsDamascus3.png[align="center"]
+
 == Fort Story Rapid 3D Data
 
 The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.
+
+image::images/CogniticsFortStory1.png[align="center"]
+
+
+image::images/CogniticsFortStory2.png[align="center"]
 
 1.	Did you retest anything that was tested in the Pilot, but with a slight variation (and what was the outcome)?
 2.	Did you test any gaps in what was tested in the Pilot (and what was the outcome)?
