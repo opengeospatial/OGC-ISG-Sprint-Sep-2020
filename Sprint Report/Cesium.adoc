@@ -1,10 +1,9 @@
-== CesiumGS
+== Cesium
 
 === Introduction
-In this sprint, we focused on investigating the optimal method of serving 3D content from a CDB dataset into a web viewer. We achieved this by converting the 3D data from the San Diego CDB into the OGC 3D Tiles format, and then evaluating the runtime performance of the result in the CesiumJS viewer. The idea of converting the test data to 3D Tiles on-the-fly was explored, however, there was not enough time to implement that in this sprint.
+In this sprint, we focused on investigating the optimal method of serving 3D content from a CDB dataset into a web viewer. We achieved this by developing a CDB to 3D Tiles converter and evaluating runtime performance by loading the converted San Diego test data in CesiumJS. The idea of converting the test data to 3D Tiles on-the-fly with partial updates was explored, however, there was not enough time to implement that in this sprint.
 
 A parallel stream of effort involved building on our work in the 3D Container and Tiles API Pilot and integrating the GeoVolumes API into Dragonfly, a web based 2D/3D common operational picture (COP) platform built in support of the Global Situational Awareness (GSA) program.
-
 
 === CDB to OGC 3D Tiles
 
@@ -68,7 +67,7 @@ image::images/Cesium-San-Diego-GSModels.png[700,700]
 
 ==== Future Improvements
 
-To support on fly conversion, listed below are some improvements we would need to make to our conversion pipeline:
+To support on-the-fly conversion, listed below are some improvements we would need to make to our conversion pipeline:
 
 - Provide concurrency support. Currently, our converter works on a single thread. The conversion time for the San Diego CDB  is about 35 minutes. With concurrency support, we can reduce the runtime further, and fortunately, the CDB database scheme is suitable for such architecture.
 - Since CDB specification defines the fixed extent a tile can cover, we can generate tileset.json quickly without reading into the data files of each layer
@@ -84,3 +83,9 @@ On the backend, we set up the GeoVolumes API to enable querying data on the clie
 .GeoVolumes UI in Dragonfly
 [caption="Figure 5: "]
 image::images/Cesium-GeoVolumesUI.png[700,700]
+
+=== Conclusion
+
+Cesium worked on two different tracks during the sprint - CDB to 3D Tiles conversion and GeoVolumes experimentation in Dragonfly - and a future goal is to see how these two efforts converge, for example, extend the GeoVolumes API to support on-the-fly CDB to 3D Tiles conversion when a particular area of interest is selected.
+
+Another future goal is to explore the conversion process from CDB X to 3D Tiles Next once those specifications are further along. This would improve interopability between CDB and the Well-Formed Format for One World Terrain. Efforts are already underway to use glTF in both formats, and this sprint helped us identify other areas that need more convergance - specifically implicit tiling schemes, raster layers, and per-texel metadata.
