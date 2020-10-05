@@ -19,7 +19,7 @@ This provides a realistic scenario for the sprint while also solving a real SOCO
 == Architecture
 
 Dragonfly is a web based user interface that supports 2D and 3D content, currently hosted at https://dragonfly.caeusa.com/. 
-The Dragonfly datastore contains both static 3D content and processded content from Rapid3D which is indexed using GeoVolumes and filtered by a visible bounding box. Dragonfly utilizes Cesium ion, a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings.
+The Dragonfly datastore contains both static 3D content and processed content from Rapid3D which is indexed using GeoVolumes and filtered by a visible bounding box. Dragonfly utilizes Cesium ion, a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings.
 
 
 image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
