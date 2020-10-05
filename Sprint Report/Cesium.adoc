@@ -4,9 +4,12 @@
 The focus of this sprint is to investigate the optimal method to serve 3D content of different formats to a rendering client. In this Sprint, the San Diego CDB database is used for the analysis. It is first exported to the OGC 3D Tiles format. Then, the result of the conversion is served to a CesiumJS client to examine any anomalies and runtime rendering performance. In addition, the idea of converting the test data to 3D Tiles on the fly is explored; however, there is not enough time to implement in this Sprint.
 
 === Organization of Test Data
-image::images/Cesium-San-Diego-Structure.png[]
+.Structure of the San-Diego CDB database
+[caption="Figure 1: "]
+image::images/Cesium-San-Diego-Structure.png[600,600]
 
 The San Diego CDB database’s size is approximately 26 GB. It contains a single GeoCell that covers the San Diego area. The GeoCell contains:
+
 - The Elevation layer which is approximately 1.7 GB and stored in the TIF format
 - The Imagery layer which is approximately 17.2 GB and stored in the jp2 format
 - The 3D Model layer which is approximately 6.0 GB and stored in the OpenFlight format. Their features, orientations, and positions are stored in GSFeatures and GTFeatures directories and in the ESRI Shapefile format
@@ -22,31 +25,45 @@ In this Sprint, we focus only on the Elevation, Imagery, and GSModel layer. Each
 
 For the 3D Tiles structure, each node that represents a negative level will only have one child node with the bounding region being the region of the GeoCell. For positive levels, a node will have a maximum of 4 children representing a quadtree data structure. Each child only covers a quarter region of the parent node.
 
-image::images/Cesium-San-Diego-Tiling-Scheme.png[]
+.Structure of the converted tileset
+[caption="Figure 2: "]
+image::images/Cesium-San-Diego-Tiling-Scheme.png[700, 700]
 
 ==== Elevation and Imagery Conversion
 
 The Elevation and Imagery are converted together into one tileset. The heightmap of each tile in the Elevation layer is triangulated into a mesh, and the imagery of the tile will be used as the texture of the mesh. 
 
-image::images/Cesium-San-Diego-Terrain-Imagery.png[]
+.San-Diego terrain and imagery
+[caption="Figure 3: "]
+image::images/Cesium-San-Diego-Terrain-Imagery.png[700,700]
 
+{nbsp} +
 There are 2 edge cases for the above tiling scheme. We notice that for the Elevation layer, the children nodes do not necessarily cover the full area occupied by the parent. As the camera zooms in close to the surface, there are holes appearing due to missing data for higher levels. The solution for this case is to sample the parent’s vertices where the child node doesn’t have data. This solution, however, is wasteful.
 
-image::images/Cesium-San-Diego-Terrain-Holes.png[]
+.Gaps between tiles appear due to missing data in the higher levels 
+[caption="Figure 4: "]
+image::images/Cesium-San-Diego-Terrain-Holes.png[700,700]
 
+{nbsp} +
 Another edge case that we encounter is that the Imagery layer can have more levels than the Elevation layer. The solution is to repeat the elevation mesh in the child node until there are no more levels for imagery. It is also a wasteful solution.
 
-image::images/Cesium-San-Diego-Terrain-Holes.png[]
+.This figure shows the difference in levels of detail between the elevation and imagery dataset. Notice that the elevation's maximum level is 7, whereas imagery's maximum level is 9
+[caption="Figure 5: "]
+image::images/Cesium-San-Diego-Terrain-Imagery-LOD-Diff.png[width=500, align="center"]
+
 
 ==== GSModel Conversion
 
 For the 3D Model, we combine multiple OpenFlight files within a tile into one single b3dm file and organize the tileset similar to the tileset of terrain and imagery. We also batch models that have the same material into one single mesh to reduce the number of draw calls in the runtime rendering. As a result, we are able to obtain 40-60 Frames per seconds that is suitable for runtime performance. However, due to combining multiple files into one single b3dm, the file can become large at a higher level of detail. For example, at level 4, there are b3dm files whose sizes are approximately 50 to 100 MB. As a result, the user has to wait 1 or 2 seconds to see the models appear. Better tiling schemes should be investigated in the future to reduce the tile size and still have low impact on the rendering performance.
 
-image::images/Cesium-San-Diego-GSModels.png[]
+.San-Diego's GSModels
+[caption="Figure 4: "]
+image::images/Cesium-San-Diego-GSModels.png[700,700]
 
 === Future Improvements
 
-To support on fly conversion, below are the ways we would like to improve our converter
+To support on fly conversion, below are the ways we would like to improve our converter:
+
 - Provide concurrency support. Currently, our converter works on a single threaded. The conversion time for the whole database is about 35 minutes. With concurrency support, we can reduce the runtime further, and fortunately, the CDB database scheme is suitable for such architecture.
 - Since CDB specification defines the fixed extent a tile can cover, we can generate tileset.json quickly without reading into the data files of each layer
 - We also notice that San Diego contains a lot of OpenFlight and Imagery files, so it is essential to reduce the number of IO operations to increase performance of our converter. It also helps if the multiple 3D models can be combined into one single OpenFlight file.
