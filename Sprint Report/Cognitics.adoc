@@ -1,4 +1,4 @@
-=== Cognitics Sprint Report
+= Cognitics Sprint Report
 
 == Abstract
 In cooperation with CAE and Cesium, we used GeoVolumes to enhance integration between our Global Situational Awareness (GSA) and Rapid3D (R3D) efforts. The current phase of the GSA effort has produced a prototype infrastructure/service called Dragonfly.
