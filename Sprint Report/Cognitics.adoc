@@ -27,30 +27,30 @@ image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 
 Dragonfly utilizes the GeoVolumes API for selection and of 3D content based on bounding box, rather than displaying all content at all zoom levels. Whilein 3D view, go to the main menu under Overlays, and select GeoVolumes.
 
-image::images/CogniticsDragonflyGeoVolumes.png[align="center"]
+image::images/CogniticsDragonflyGeoVolumes.png[align="center",width=75%]
 
 When the user is zoomed out to the globe level, the effective bounding box is the entire globe, and all available GeoVolumes overlays are displayed in the table of contents.
 
-image::images/CogniticsDragonflyGlobe.png[align="center"]
+image::images/CogniticsDragonflyGlobe.png[align="center",width=75%]
 
 As the user zooms in, the bounding box encompasses only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown.  In the figure below, the bounding box includes Beirut and Damascus.  When the user hovers over a GeoVolumes overlay, the extent of that overlay is highlighted, as seen in the figure below of the Damasuc overlay.
 
-image::images/CogniticsDragonflyDamascus.png[align="center"]
+image::images/CogniticsDragonflyDamascus.png[align="center",width=75%]
 
 
 == Damascus, Syria Vricon SurfaceMesh
 
 The Vricon SurfaceMesh of Damascus, Syria is static 3D content in the Dragonfly datastore. The figures below show the data in directly overhead and oblique views.
 
-image::images/CogniticsDragonflyDamascus2.png[align="center",width=66%]
+image::images/CogniticsDragonflyDamascus2.png[align="center",width=75%]
 
-image::images/CogniticsDragonflyDamascus3.png[align="center",width=66%]
+image::images/CogniticsDragonflyDamascus3.png[align="center",width=75%]
 
 
 == Fort Story Rapid 3D Data
 
 The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.  The figures below show the data in directly overhead and oblique views.
 
-image::images/CogniticsFortStory1.png[align="center", width=65%]
+image::images/CogniticsFortStory1.png[align="center", width=75%]
 
-image::images/CogniticsFortStory2.png[align="center"width=65%]
+image::images/CogniticsFortStory2.png[align="center"width=75%]
