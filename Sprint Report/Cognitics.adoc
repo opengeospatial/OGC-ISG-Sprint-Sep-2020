@@ -38,28 +38,19 @@ As the user zooms in, the bounding box encompasses only the area shown in the us
 image::images/CogniticsDragonflyDamascus.png[align="center"]
 
 
-
-
 == Damascus, Syria Vricon SurfaceMesh
 
-The 3D content of Damascus, Syria is a SurfaceMesh provided by Vricon.
-
+The Vricon SurfaceMesh of Damascus, Syria is static 3D content in the Dragonfly datastore. The figures below show the data in directly overhead and oblique views.
 
 image::images/CogniticsDragonflyDamascus2.png[align="center",width=66%]
 
 image::images/CogniticsDragonflyDamascus3.png[align="center",width=66%]
 
+
 == Fort Story Rapid 3D Data
 
-The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.
+The Fort Story dataset is constructed from full motion video (FMV) that has been sent through the Rapid3D process to generate the 3D content.  The figures below show the data in directly overhead and oblique views.
 
 image::images/CogniticsFortStory1.png[align="center", width=65%]
 
-image::images/CogniticsFortStory2.jpg[align="center"width=65%]
-
-1.	Did you retest anything that was tested in the Pilot, but with a slight variation (and what was the outcome)?
-2.	Did you test any gaps in what was tested in the Pilot (and what was the outcome)?
-
-5.	In cases where the Pilot Spec was defective or confusing, contained a gap, or needs to be extended, did you document your findings so that a Change Request can be written against the Pilot Spec?
-6.	Did you conduct any performance testing to gain insight into what bottlenecks might hinder scalability?
-7.	Other testing that doesn’t fall into any of these categories?
+image::images/CogniticsFortStory2.png[align="center"width=65%]
