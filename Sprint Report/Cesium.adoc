@@ -8,6 +8,7 @@ The focus of this sprint is to investigate the optimal method to serve 3D conten
 [caption="Figure 1: "]
 image::images/Cesium-San-Diego-Structure.png[600,600]
 
+{nbsp} +
 The San Diego CDB database’s size is approximately 26 GB. It contains a single GeoCell that covers the San Diego area. The GeoCell contains:
 
 - The Elevation layer which is approximately 1.7 GB and stored in the TIF format
