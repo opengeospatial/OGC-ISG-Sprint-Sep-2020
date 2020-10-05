@@ -16,9 +16,16 @@ In this sprint, we:
 This provides a realistic scenario for the sprint while also solving a real SOCOM need.
 
 
-== Dragonfly
+== Architecture
 
-Dragonfly is a web based user interface currently hosted at https://dragonfly.caeusa.com/.  It contains a client that utilizes the GeoVolumes API for selection of 3D content. This client is found in the main menu under Overlays, GeoVolumes while in the 3D view.
+Dragonfly is a web based user interface that supports 2D and 3D content, currently hosted at https://dragonfly.caeusa.com/. 
+The Dragonfly datastore contains both static 3D content and processded content from Rapid3D which is indexed using GeoVolumes and filtered by a visible bounding box. Dragonfly utilizes Cesium ion, a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings.
+
+
+image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
+
+
+Dragonfly utilizes the GeoVolumes API for selection and of 3D content based on bounding box, rather than displaying all content at all zoom levels. Whilein 3D view, go to the main menu under Overlays, and select GeoVolumes.
 
 image::images/CogniticsDragonflyGeoVolumes.png[align="center"]
 
@@ -30,11 +37,8 @@ As the user zooms in, the bounding box encompasses only the area shown in the us
 
 image::images/CogniticsDragonflyDamascus.png[align="center"]
 
-== Architecture
 
-Dragonfly is a web based user interface that supports both 2D and 3D content.  Cesium ion a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings. Combine these assets with your own data to provide more context or see it on a 3D map of the world.
 
-image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 
 == Damascus, Syria Vricon SurfaceMesh
 
