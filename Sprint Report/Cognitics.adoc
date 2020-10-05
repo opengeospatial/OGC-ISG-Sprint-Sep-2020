@@ -41,9 +41,9 @@ image::images/CogniticsArchitectureDiag.PNG[align="center",width=65%]
 The 3D content of Damascus, Syria is a SurfaceMesh provided by Vricon.
 
 
-image::images/CogniticsDamascus2.png[align="center"]
+image::images/CogniticsDragonflyDamascus2.png[align="center"]
 
-image::images/CogniticsDamascus3.png[align="center"]
+image::images/CogniticsDragonflyDamascus3.png[align="center"]
 
 == Fort Story Rapid 3D Data
 
