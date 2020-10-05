@@ -68,7 +68,7 @@ image::images/Cesium-San-Diego-GSModels.png[700,700]
 
 ==== Future Improvements
 
-To support on fly conversion, listed below are some improvements we would need to make to our conversion pipleine:
+To support on fly conversion, listed below are some improvements we would need to make to our conversion pipeline:
 
 - Provide concurrency support. Currently, our converter works on a single thread. The conversion time for the San Diego CDB  is about 35 minutes. With concurrency support, we can reduce the runtime further, and fortunately, the CDB database scheme is suitable for such architecture.
 - Since CDB specification defines the fixed extent a tile can cover, we can generate tileset.json quickly without reading into the data files of each layer
@@ -79,7 +79,7 @@ To support on fly conversion, listed below are some improvements we would need t
 
 In collaboration with Cognitics and CAE, we aimed to build on our work done in the OGC 3D Container and Tile API Pilot. Our goal was to integrate the GeoVolumes API into Dragonfly, a common operational picture platform built to provide global situational awareness. Dragonfly uses WMS as the vehicle for organizing and serving 2D data, but there was a need for a container for all the 3D data that is available to the user. Our chosen format for 3D data was the OGC 3D Tiles format.
 
-On the backend, we set up the GeoVolumes API to enable querying data on the client side, based on the bounding box of the current view of the map. The second part of our work involved setting up an endpoint to ingest 3D Tiles created by Rapid3D, a tool to used to generate 3D data from full motion video, and adding it to the available GeoVolumes collections. In the user inteface, we added the ability for a user to "discover" the bounding box of a 3D collection by hovering over it in the GeoVolumes list, as shown below.
+On the backend, we set up the GeoVolumes API to enable querying data on the client side, based on the bounding box of the current view of the map. The second part of our work involved setting up an endpoint to ingest 3D Tiles created by Rapid3D, a tool to used to generate 3D data from full motion video, and adding it to the available GeoVolumes collections. In the user interface, we added the ability for a user to "discover" the bounding box of a 3D collection by hovering over it in the GeoVolumes list, as shown below.
 
 .GeoVolumes UI in Dragonfly
 [caption="Figure 5: "]
