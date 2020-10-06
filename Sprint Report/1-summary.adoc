@@ -5,9 +5,13 @@
 
 (( This section shall be between 2-3 sentences and not longer than 140 words total.))
 
+(( _The **Executive Summary** and **Document Contributor** sections need to be filled in._ ))
+
 == Executive Summary
 
 (( The following is, as all texts in double square brackets, a helper text. Please remove this and all other helper texts once done. ))
+
+(( **This can only be written after the Findings and Future Recommendations.** ))
 
 (( The Executive Summary clause shall contain the key findings and results in a concise form. A more detailed description of the findings should be in the body of the report. ))
 
@@ -27,8 +31,17 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 |Name |Organization | Role
-|((Full Name)) | (( from org )) | ((Editor/Contributor))
-|((Full Name)) | ((from org)) |((Editor/Contributor))
+| Scott Serich | Open Geospatial Consortium | Editor
+| Leonard Daly | Khronos Group / Daly Realism | Editor
+| alpha | CAE | Contributor
+| alpha | Cesium | Contributor
+| alpha | Cognitics | Contributor
+| alpha | Ecere | Contributor
+| alpha | Helyx | Contributor
+| alpha | Hexagon | Contributor
+| alpha | InfoDao | Contributor
+| alpha | SimBlocks | Contributor
+| alpha | Steinbeis | Contributor
 |====================
 
 

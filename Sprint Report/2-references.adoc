@@ -9,4 +9,9 @@ The following normative documents are referenced in this document.
 
 .NOTE: All references are here, but need to be split out according to the instructions in ./_A-example.adoc[5-example]
 
-* 
+* ISG Sprint Call for Participation
+* ISG Pilot Engineering Report
+* San Diego CDB
+* Other OGC reports (either reference Sprint CFP or individually list)
+* NYC CDB
+* CDB documentation
