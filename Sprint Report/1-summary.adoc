@@ -28,10 +28,10 @@ All questions regarding this document should be directed to the editor or the co
 |====================
 |Name |Organization | Role
 |((Full Name)) | (( from org )) | ((Editor/Contributor))
-|Volker Coors | Steinbeis, HFT STuttgart |Contributor
-|Thunyathep Santhanavanich (Joe) | Steinbeis, HFT STuttgart |Contributor
-|Harpreet Singh | Steinbeis, HFT STuttgart |Contributor
-|Patrick Würstle | Steinbeis, HFT STuttgart |Contributor
+|Volker Coors | Steinbeis, HFT Stuttgart |Contributor
+|Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart |Contributor
+|Harpreet Singh | Steinbeis, HFT Stuttgart |Contributor
+|Patrick Würstle | Steinbeis, HFT Stuttgart |Contributor
 |====================
 
 
