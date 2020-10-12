@@ -11,6 +11,62 @@ This section describes everything that was used to set up the Sprint. It either 
 * Data set(s)
 * 3D GeoVolume servers
 * GeoVolume API Pilot Engineering Report
-* System architecture diagram
-* Other OGC reports
+* Service architecture diagram
 * Discussion of scenarios
+
+=== Call for Participation
+
+The "ISG Sprint: Call for Participation (CfP)" [^1] was released on 7 July 2020 by Open Geospatial Consortium for the purpose of obtaining proposals from organizations interested in furthering study of the GeoVolumes draft specification [^2b]. The CfP provided all of the material necessary for organizations to make a proposal for participation either by direct inclusion in the document or publicly available links.
+
+The CfP specified a schedule from kick off meeting (1 September) through the Sprint Week (21-25 September), and final report (5 October). The Sprint was originally desired to be in-person; however, the epidemic required that all work be done in the participants own facilities during the alloted week. This decision was made prior to the due date for proposals.
+
+=== Data Sets
+
+The primary data set for the Sprint is known as San Diego CDB. It was collected using a number of sensors and methods from <start> to <end> and encompased nearly all of the downtown San Diego and vacinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
+
+[NOTE]
+====
+_A picture of this would be really good (probably necessary)._
+====
+
+All participants could elect to use other datasets, particularly any of those from the OGC 3D Data Container and Tiles API Pilot (aka Pilot) [^2abc]. In particular much use was made of the New York data set.
+
+[NOTE]
+====
+_A picture of this would be nice._
+====
+
+The San Diego CDB was available for download by all participants. The Pilot Net York data was available through multiple servers built during the Pilot using the API from the Pilot.
+
+== 3D GeoVolume Servers
+
+Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data. 
+
+[NOTE]
+====
+_A list/table of the available servers._
+====
+
+=== GeoVolume API Pilot Engineering Report
+
+The entirity of the 3D Data Container and Tiles API Pilot engineering report (aka Pilot ER)[^2abc] was made available to all participants prior to the kick off meeting. Subsequent to the start of the Sprint, the Pilot ER was made publicly available. The draft specification is part 2 [^2b] of the document set. This is the API specification that is the primary target of the Sprint.
+
+=== Architecture diagrams
+
+[#img_mindMap,reftext='{figure-caption} {counter:figure-num}']
+.The architecture of the various Pilot capabilities is shown with connecting arrows indicating request flow. Each client has a built-in Globe model that provides a base coordinate system for all additional data.
+image::images/OGC-Pilot-ServiceArchitecture.jpg[width=600,align="center"]
+
+[#img_mindMap,reftext='{figure-caption} {counter:figure-num}']
+.Pilot data architecture illustrating access to datasets for two North American cities (Montreal and New York). The architecture supporting New York City is shown in detail.
+image::images/OGC-Pilot-ResourceArchitecture.jpg[width=600,align="center"]
+
+=== Discussion of scenarios
+
+
+=== References
+* ^1: https://portal.ogc.org/files/?artifact_id=94059[ISG Sprint: Call for Participation]
+* ^2: OGC 3D Data Container and Tiles API Pilot Engineering Report
+** a: https://portal.ogc.org/files/?artifact_id=94028[D001 3D Data Container ER (aka Pilot Implementation Experiences)]
+** b: https://portal.ogc.org/files/?artifact_id=94029[D002 OGC API GeoVolumes ER (aka Draft Specification)]
+** c: https://portal.ogc.org/files/?artifact_id=94030[D003 Pilot Summary ER (aka Extended Executive Summary)]
