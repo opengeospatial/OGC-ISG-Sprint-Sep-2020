@@ -1,0 +1,47 @@
+[[ToDo]]
+= ToDo
+
+[NOTE]
+.Instructions
+====
+This section describes items that need to be done in the report so those sections are easily identified and not forgotten.
+====
+
+* Summary
+** Subject (2-3 sentences)
+** Executive Summary
+** Contributors (names from the participants)
+
+* References
+** Include CDB, glTF, 3D Tiles, and Draft GeoVolumes
+
+* Terms
+** Add terms and definitions
+** Sprint
+** Pilot
+** CDB
+
+* Overview
+** Update after draft version written
+
+* Setup
+** In progress
+** Include dataset images
+** Discuss Architecture
+** Discuss scenarios
+** Footnotes to Bibliography
+
+* Findings
+** TBD
+
+* Participant reports
+** Review for syntax
+** Review for content
+
+* Futures
+** Updatess for glTF
+** Extract and summarize particpants
+** TBD
+
+* Bibliography
+** Extract and assemble from all sections

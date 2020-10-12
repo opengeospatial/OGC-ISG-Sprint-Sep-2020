@@ -7,12 +7,6 @@
 This section describes everything that was used to set up the Sprint. It either includes directly or by reference all material that the participants had available to them. There was nothing hidden from the participants.
 ====
 
-* Call for Proposals
-* Data set(s)
-* 3D GeoVolume servers
-* GeoVolume API Pilot Engineering Report
-* Service architecture diagram
-* Discussion of scenarios
 
 === Call for Participation
 
@@ -38,7 +32,7 @@ _A picture of this would be nice._
 
 The San Diego CDB was available for download by all participants. The Pilot Net York data was available through multiple servers built during the Pilot using the API from the Pilot.
 
-== 3D GeoVolume Servers
+=== 3D GeoVolume Servers
 
 Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data. 
 
@@ -63,8 +57,23 @@ image::images/OGC-Pilot-ResourceArchitecture.jpg[width=600,align="center"]
 
 === Discussion of scenarios
 
+The CfP described three possible scenarios. Participants could choose to work on any number of these, any variant of these, or one (or more) of their choosing. The three provided scenarios were [^1]:
 
-=== References
+. Investigate how model and terrain updates, originating (preferred) from a CDB data store and delivered as glTF, are integrated with 3D Tiles into the client environment. The questions to be examined should include:
+.. How are terrain changes handled with existing structures?
+.. How are new models integrated with existing elevation terrain?
+.. How are existing models handled when CDB updates indicate change (additions/deletions/configurations)?
+
+. Containers may specify 0 or 1 datasets. A dataset indicates a primary and potentially one or more alternate distributions. Investigate whether there are implementation issues with accessing multiple distributions.
+
+. What should be the organization of the underlying 3D data? It is unlikely that there is a single best solution to these problems, so identifying use cases for particular choices will be important.
+.. Is there one bounding volume hierarchy per county, region, city, or some other geo-political boundaries?
+.. How are features (buildings, vegetation, transportation networks, etc.) structured in the data store? Are they layers in geo-political sets, or are geo-political data layers in feature sets?
+
+
+
+
+=== References (move to Bibliography Annex)
 * ^1: https://portal.ogc.org/files/?artifact_id=94059[ISG Sprint: Call for Participation]
 * ^2: OGC 3D Data Container and Tiles API Pilot Engineering Report
 ** a: https://portal.ogc.org/files/?artifact_id=94028[D001 3D Data Container ER (aka Pilot Implementation Experiences)]
