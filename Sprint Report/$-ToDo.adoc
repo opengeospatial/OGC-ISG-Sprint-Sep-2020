@@ -2,46 +2,45 @@
 = ToDo
 
 [NOTE]
-.Instructions
 ====
-This section describes items that need to be done in the report so those sections are easily identified and not forgotten.
+_This section describes items that need to be done in the report so those sections are easily identified and not forgotten._
 ====
 
-* Summary
+* *Summary*
 ** Subject (2-3 sentences)
 ** Executive Summary
 ** Contributors (names from the participants)
 
-* References
-** Include CDB, glTF, 3D Tiles, and Draft GeoVolumes
+* *References*
+** +++<s>Include CDB, glTF, 3D Tiles, and Draft GeoVolumes</s>+++
 
-* Terms
+* *Terms*
 ** Add terms and definitions
 ** Sprint
 ** Pilot
 ** CDB
 
-* Overview
+* *Overview*
 ** Update after draft version written
 
-* Setup
+* *Setup*
 ** In progress
 ** Include dataset images
 ** +++<s>Discuss Architecture</s>+++
-** Discuss scenarios
+** +++<s>Discuss scenarios</s>+++
 ** Footnotes to Bibliography
 
-* Findings
+* *Findings*
 ** TBD
 
-* Participant reports
+* *Participant reports*
 ** Review for syntax
 ** Review for content
 
-* Futures
+* *Futures*
 ** Updatess for glTF
 ** Extract and summarize particpants
 ** TBD
 
-* Bibliography
+* *Bibliography*
 ** Extract and assemble from all sections

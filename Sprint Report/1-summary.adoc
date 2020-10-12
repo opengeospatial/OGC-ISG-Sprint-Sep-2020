@@ -31,17 +31,17 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 |Name |Organization | Role
-| Scott Serich | Open Geospatial Consortium | Editor
-| Leonard Daly | Khronos Group / Daly Realism | Editor
-| alpha | CAE | Contributor
-| alpha | Cesium | Contributor
-| alpha | Cognitics | Contributor
-| alpha | Ecere | Contributor
-| alpha | Helyx | Contributor
-| alpha | Hexagon | Contributor
-| alpha | InfoDao | Contributor
-| alpha | SimBlocks | Contributor
-| alpha | Steinbeis | Contributor
+| Scott Serich | Open Geospatial Consortium | Contributor & Editor
+| Leonard Daly | Khronos Group / Daly Realism | Contributor & Editor
+| Holly Black | CAE | Contributor
+| Sean Lilley | Cesium | Contributor
+| Michala Hill | Cognitics | Contributor
+| _tbd_ | Ecere | Contributor
+| Anneley Hadland | Helyx | Contributor
+| Emeric Beaufays | Hexagon | Contributor
+| Joshua Rentrope | InfoDao | Contributor
+| Jordan Dauble | SimBlocks | Contributor
+| Volker Coors | Steinbeis | Contributor
 |====================
 
 

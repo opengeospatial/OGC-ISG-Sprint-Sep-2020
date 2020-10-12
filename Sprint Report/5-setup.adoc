@@ -76,7 +76,7 @@ The CfP described three possible scenarios. Participants could choose to work on
 .. Is there one bounding volume hierarchy per county, region, city, or some other geo-political boundaries?
 .. How are features (buildings, vegetation, transportation networks, etc.) structured in the data store? Are they layers in geo-political sets, or are geo-political data layers in feature sets?
 
-
+These scenarios were designed to test and explore portions of the draft GeoVolumes specification that OGC and the sponsors felt were not sufficiently explored in the Pilot. They derive directly from the discussion from Chapter 10 of the Extended Executive Summary [^2c]. In addition to the listed scenarios, participants were invited to explore other areas that fit within the oppotunities described in Chapter 10. Some of the participants did use this option to explore other capabilities, especially related to game-engine integration. The Findings chapter of this report discusses the participant's scenario choices.
 
 
 === References (move to Bibliography Annex)
