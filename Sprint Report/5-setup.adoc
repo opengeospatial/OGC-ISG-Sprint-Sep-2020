@@ -22,6 +22,13 @@ The primary data set for the Sprint is known as San Diego CDB. It was collected 
 ====
 _A picture of this would be really good (probably necessary)._
 ====
+[#img_SanDiegoOverview,reftext='{figure-caption} {counter:figure-num}']
+.An  overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
+image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
+
+[#img_SanDiegoRendered,reftext='{figure-caption} {counter:figure-num}']
+.A rendering of a portion of this dataset. Up is approximately north-east with the San Diego Convention Center at bottom center-right.
+image::images/CAE_CDB_SD_HighRes4.png[width=800,align="center"]
 
 All participants could elect to use other datasets, particularly any of those from the OGC 3D Data Container and Tiles API Pilot (aka Pilot) [^2abc]. In particular much use was made of the New York data set.
 

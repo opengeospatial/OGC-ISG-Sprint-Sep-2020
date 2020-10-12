@@ -11,21 +11,22 @@ _This section describes items that need to be done in the report so those sectio
 ** Executive Summary
 ** Contributors (names from the participants)
 
-* *References*
+* *+++<s>References</s>+++*
 ** +++<s>Include CDB, glTF, 3D Tiles, and Draft GeoVolumes</s>+++
 
 * *Terms*
 ** Add terms and definitions
-** Sprint
-** Pilot
-** CDB
+*** Sprint
+*** Pilot
+*** CDB
 
 * *Overview*
 ** Update after draft version written
 
 * *Setup*
 ** In progress
-** Include dataset images
+** +++<s>Include SD dataset images</s>+++
+** Include NYC dataset images
 ** +++<s>Discuss Architecture</s>+++
 ** +++<s>Discuss scenarios</s>+++
 ** Footnotes to Bibliography
