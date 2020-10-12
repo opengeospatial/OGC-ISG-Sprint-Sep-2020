@@ -47,13 +47,19 @@ The entirity of the 3D Data Container and Tiles API Pilot engineering report (ak
 
 === Architecture diagrams
 
-[#img_mindMap,reftext='{figure-caption} {counter:figure-num}']
+These architecture diagrams were provided with the CfP. Figure <<#img_ServiceArchitecture>> illustrate the service architecture of the 3D Data Container and Tiles environment that includes the GeoVolume API. Figure <<#img_ResourceArchitecture>> illistrates access to city-based datasets (in particular for New York, US and Montreal, CA), but only showing the detail for New York City. 
+
+[#img_ServiceArchitecture,reftext='{figure-caption} {counter:figure-num}']
 .The architecture of the various Pilot capabilities is shown with connecting arrows indicating request flow. Each client has a built-in Globe model that provides a base coordinate system for all additional data.
 image::images/OGC-Pilot-ServiceArchitecture.jpg[width=600,align="center"]
 
-[#img_mindMap,reftext='{figure-caption} {counter:figure-num}']
+Arrows show the potential paths of requests from the clients; data flow is in the reverse direction. The connecting lines indicate conceptual requests and data flows. The actual connections may be distributed across several physical devices. 
+
+[#img_ResourceArchitecture,reftext='{figure-caption} {counter:figure-num}']
 .Pilot data architecture illustrating access to datasets for two North American cities (Montreal and New York). The architecture supporting New York City is shown in detail.
 image::images/OGC-Pilot-ResourceArchitecture.jpg[width=600,align="center"]
+
+This figure is presented as an illustration of possible connections. It is not intended to be a complete illustration of all connections, nor possible data sets.
 
 === Discussion of scenarios
 

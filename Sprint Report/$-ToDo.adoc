@@ -27,7 +27,7 @@ This section describes items that need to be done in the report so those section
 * Setup
 ** In progress
 ** Include dataset images
-** Discuss Architecture
+** +++<s>Discuss Architecture</s>+++
 ** Discuss scenarios
 ** Footnotes to Bibliography
 
