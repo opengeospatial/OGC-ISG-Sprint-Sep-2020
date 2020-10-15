@@ -258,14 +258,14 @@ image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
 Example Trees 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb
 
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF Palm tree model visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb[glTF model viewer]:
+.glTF Palm tree model visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb[glTF model viewer]
 image::images/Ecere/glbTree.jpg[align="center",width="800"]
 '''
 
 Coronado Bridge 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb
 
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF Coronado Bridge visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb[glTF model viewer]:
+.glTF Coronado Bridge visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb[glTF model viewer]
 image::images/Ecere/glbBridge.jpg[align="center",width="800"]
 '''
 
