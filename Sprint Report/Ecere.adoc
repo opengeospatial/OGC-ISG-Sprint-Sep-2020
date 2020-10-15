@@ -128,7 +128,7 @@ San Diego CDB elevation data layer: https://maps.ecere.com/ogcapi/collections/Sa
 
 San Diego CDB geotypical trees data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees
 
-San Diego CDB Coronado bridge layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge
+San Diego CDB Coronado bridge data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge
 
 NOTE: It is odd that this 3D model of a very specific bridge was found in the geotypical man-made features CDB dataset component selector.
 
@@ -150,7 +150,7 @@ The following end-points implement a Bounding Volume Hierarchy tileset based on 
 
 Example Batched 3D Models 3D Tile: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/tiles/GNOSISGlobalGrid/13/5229/5730.b3dm
 
-These tilesets work can be used directly with clients based on CesiumJS, or other clients supporting 3D Tiles.
+These tilesets can be used directly with clients based on CesiumJS, or other clients supporting 3D Tiles.
 
 [#Ecere-API-3DTiles,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB 3D Tiles tileset visualized in CesiumJS
@@ -164,7 +164,8 @@ also coincide with the _OGC API - Tiles_ end-points described below.
 In additions to tilesets of 3D Tiles organized as a Bounding Volume Hierarchy, the GNOSIS Map Server implements an alternative approach to accessing the
 3D data which is closer to the CDB access and data model. For example, tiles contain reference points with transformation information which reference
 individual 3D models. These models are available at `/models/{modelID}` resources. This approach was first introduced and used in the
-_OGC - Testbed 14 - CityGML and Augmented Reality_ work package, tested with a detailed CDB of New York City from Flight Safety, and detailed in the
+_OGC - Testbed 14 - CityGML and Augmented Reality_ work package, as a continuation of work done in _OGC - Testbed 13 - 3D Performance Clients_ https://docs.ogc.org/per/17-046.html#Experiment7[work package],
+tested with a detailed CDB of New York City from Flight Safety, and detailed in the
 http://docs.opengeospatial.org/per/18-025.html#ClientServerCommunication[engineering report].
 
 It was demonstrated again in the _3D Container & Tiles_ pilot with the Camp Pendleton CDB from Presagis (see https://www.youtube.com/watch?v=mzGy2nRLgzY[video]),
@@ -228,7 +229,7 @@ Example Roads Map Tile (JPG): https://maps.ecere.com/ogcapi/collections/SanDiego
 image::images/Ecere/roadsMapTile.jpg[align="center",width="256"]
 
 The following end-points also are standard 2D tiles end-points, but binary glTF and Batched 3D Models formats allow to retrieve 3D content tiled according
-to a tile matrix set defined by the 2DTiled Matrix Set standard:
+to a tile matrix set defined by the 2D Tiled Matrix Set http://docs.opengeospatial.org/is/17-083r2/17-083r2.html[standard]:
 
 Example E3D Batched 3D Models tile: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/tiles/GNOSISGlobalGrid/13/5229/5730.e3d
 
