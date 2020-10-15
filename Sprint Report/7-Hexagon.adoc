@@ -30,7 +30,7 @@ dataset to create a single coherent OGC 3DTiles tileset.
 *_Need title_*
 [#img_Hexagon-1,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
-image::images/Hexagon-CommunicationDiagram.png[width=800,align="center"]
+image::images/Hexagon-CommunicationDiagram.png[width=400,align="center"]
 
 ////
 image::images/HexagonCommunicationDiagram.png[]

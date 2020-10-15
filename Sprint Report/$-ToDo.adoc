@@ -37,6 +37,10 @@ _This section describes items that need to be done in the report so those sectio
 * *Participant reports*
 ** Review for syntax
 ** Review for content
+** All Participants
+*** Review all content
+*** Add titles/captions for figures and tables as needed
+*** InfoDao: Comment to 'Insert image here'
 
 * *Futures*
 ** Updatess for glTF
