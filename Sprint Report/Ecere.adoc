@@ -1,5 +1,9 @@
 == Ecere
 
+[#Ecere-Client-0,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB data visualized in Ecere's GNOSIS Cartographer (Petco Park)
+image::images/Ecere/SanDiego1.jpg[align="center",width="800"]
+
 === Overview
 
 In the OGC Interoperable Simulation and Gaming Sprint, Ecere improved its _GeoVolumes API_ service implementation, based on its
