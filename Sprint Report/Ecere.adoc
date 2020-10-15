@@ -511,7 +511,7 @@ a number of TIEs with _GeoVolumes API_ implementations from all other participan
 the GNOSIS Map Server using the Tiles API and associated extensions for 3D data.
 The result of those TIEs are demonstrated in a https://www.youtube.com/watch?v=mzGy2nRLgzY[video] and discussed in the _3DC&T_ engineering report.
 
-For the ISG sprint, Ecere spent efforts mainly spent on improving the server component and investigating a mechanism to update the 3D data.
+For the ISG sprint, Ecere spent efforts mainly on improving the server component and investigating a mechanism to update the 3D data.
 
 However some performance improvements were done on the client to better accommodate the large amount of detailed models and
 full resolution textures of the San Diego CDB dataset. An issue with the rendering of referenced 3D models, where an applied orientation
