@@ -6,7 +6,14 @@ exercised the National Geospatial Intelligence Agency's Foundation in GEOINT 3D 
 Operation Command Rapid 3D (R3D) architecture. The resultant data was reviewed for anomalies encountered with those 3D formats 
 from the original CDB content. 
 
+*CAE High Level Workflow*
+[#img_CAE-1,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_Workflow_highlevel.png[width=800,align="center"]
+
+////
 image::images/CAE_Workflow_highlevel.png[400,400,align="center"][CAE High Level Workflow]
+////
 
 === Data
 CAE provided the San Diego v4.1 CDB for participant use in the OGC ISG Sprint.
@@ -14,15 +21,45 @@ CAE provided the San Diego v4.1 CDB for participant use in the OGC ISG Sprint.
 The San Diego CDB v4.1 is a single geocell (1° latitude by 1° longitude) with the southwest corner at N33 W118.
 The CDB coverage is considered Medium Resolution and contains a High Resolution inset in the San Diego area.
 
+*CAE San Diego Coverage*
+[#img_CAE-2,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
+
+////
 image::images/CAE_CDB_SD_coverage.png[400,400,align="center"][CAE San Diego Coverage]
+////
 
 The CDB dataset contained elevation (GeoTIFF), imagery (jpeg2000), 3D models with textures (Openflight), road and hydrography 
 vectors (ESRI shapefiles). The 3D models were a mixture of GSFeature and GTFeature representations.  
 The base imagery is populated in the high resolution area to CDB Level of Detail 9; equivalent to 0.0212354 meter resolution.
 
+*CAE San Diego High Resolution Area Views*
+[#img_CAE-3,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_SD_HighRes2.png[width=800,align="center"]
+
+////
 image::images/CAE_CDB_SD_HighRes2.png[800,800,align="center"][CAE San Diego High Resolution Area Views]
+////
+
+*_Need title_*
+[#img_CAE-4,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_SD_HighRes3.png[width=800,align="center"]
+
+////
 image::images/CAE_CDB_SD_HighRes3.png[800,800,align="center"]
+////
+
+*_Need title_*
+[#img_CAE-5,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_SD_HighRes4.png[width=800,align="center"]
+
+////
 image::images/CAE_CDB_SD_HighRes4.png[800,800,align="center"]
+////
 
 The dataset was created with open source data provided by the United States Geological Survey and the San Diego Geographic
 Information Source.
@@ -40,17 +77,37 @@ From the full CDB geocell, a smaller subset of data was used as a focus for this
 |Southeast Corner N32.702 W117.153
 |===
 
+*_Need title_*
+[#img_CAE-6,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_GRID_AOI.png[width=400,align="center"]
+
+////
 image::images/CAE_GRID_AOI.png[400,400,CAE GRID AOI]
+////
 
-Two independent workflows were employed for CDB data generation and conversion.  One for the translation of CDB datasets to 3D Tiles.  The other
-for the creation of a new CDB Openflight model from full motion video converted to glTF.
+Two independent workflows were employed for CDB data generation and conversion.  One for the translation of CDB datasets to 3D Tiles.  The other for the creation of a new CDB Openflight model from full motion video converted to glTF.
 
+*CAE Data Production Workflow*
+[#img_CAE-7,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_Workflow.png[width=800,align="center"]
+
+////
 image::images/CAE_Workflow.png[align="center"][CAE Data Production Workflow]
+////
 
 ==== CDB to OGC 3D Tiles
 The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from within the Rapid3D architecture.  
 
+*CAE R3D 3D Tile CDB Conversion*
+[#img_CAE-8,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_R3D_workflow1.JPG[width=800,align="center"]
+
+////
 image::images/CAE_R3D_workflow1.JPG[300,300,align="center"][CAE R3D 3D Tile CDB Conversion]
+////
 
 The CDB data was hosted in an S3 container on the Amazon Web Service Cloud.  The conversion was conducted within the AWS environment.
 
@@ -62,7 +119,14 @@ generating a point cloud from the FMV, segmenting the point cloud to and indepen
 
 The model was then translated to glTF format using an FG3D data translator for glTF.
 
+*CAE glTF Translation and Export*
+[#img_CAE-9,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_GRID_Export_Data.png[width=400,align="center"]
+
+////
 image::images/CAE_GRID_Export_Data.png[400,400,align="center"][CAE glTF Translation and Export]
+////
 
 The 3D Tiles and the glTF model were then brought together for rendering.  The glTF model was geopositioned at coordinate N32.704 W117.164 in order to reside
 within the same San Diego focus area for the experiment. 
@@ -73,31 +137,86 @@ The comparison was made as rendered in Cesium ion and Cognitics Dragonfly.
 
 .CDB Displayed in VegaPrime
 [caption="Figure: "]
+
+*CAE CDB VegaPrime*
+[#img_CAE-10,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_sd_petco_tv.png[width=1100,align="center"]
+
+////
 image::images/CAE_CDB_sd_petco_tv.png[1100,1100,align="center"][CAE CDB VegaPrime]
+////
 
 .3D Tiles Displayed in Cesium ion
 [caption="Figure: "]
+
+*AE 3D Tiles Cesium Ion*
+[#img_CAE-11,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_Tile_sd_petco_ion.png[width=800,align="center"]
+
+////
 image::images/CAE_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
+////
 
 .3D Tiles Displayed in Cognitics Dragonfly
 [caption="Figure: "]
+
+*CAE 3D Tiles Dragonfly*
+[#img_CAE-12,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_sd_petco_dragonfly.png[width=800,align="center"]
+
+////
 image::images/CAE_CDB_sd_petco_dragonfly.png[align="center"][CAE 3D Tiles Dragonfly]
+////
 
 Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness 
 the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set. 
  
+*CAE 3D Tile Dark Rendering*
+[#img_CAE-13,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_tile dark.JPG[width=500,align="center"]
+
+////
 image::images/CAE_tile dark.JPG[500,500,align="left"][CAE 3D Tile Dark Rendering]
+////
+
+*CAE 3D Tile Modified Rendering*
+[#img_CAE-14,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_tile_light.JPG[width=500,align="center"]
+
+////
 image::images/CAE_tile_light.JPG[500,500,align="right"][CAE 3D Tile Modified Rendering]
+////
 
 The glTF model generated using FMV source was visually no different then the CDB Openflight model.
 
 .Full Motion Video Source
+
+*CAE Full Motion Video Source*
+[#img_CAE-15,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_fmv.png[width=400,align="center"]
+
+////
 [caption="Figure: "]
 image::images/CAE_fmv.png[400,400][CAE Full Motion Video Source]
+////
 
 .glTF Model From FMV
+
+*CAE glTF Model*
+[#img_CAE-16,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_glTF_lighthouse.png[width=400,align="center"]
+
+////
 [caption="Figure: "]
 image::images/CAE_glTF_lighthouse.png[400,400][CAE glTF Model]
+////
 
 Our original CDB to glTF convertor utilized in the FG3D data translation service, placed all textures associated with the glTF in a subfolder.  This proved problematic for several
 of the glTF rendering platforms we used to very glTF compliance.  Therefore, modifications were completed to collocate the textures with the model geometry.
@@ -105,7 +224,14 @@ of the glTF rendering platforms we used to very glTF compliance.  Therefore, mod
 The final result of placing the glTF model in the 3D Tile scene required manual editing for geopositional placement.  In CDB a corresponding shapefile would provide the 
 positioning information for transmission.
 
+*CAE glTF Rendered in Dragonfly with 3D Tiles*
+[#img_CAE-17,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/CAE_CDB_dragonfly_lighthouse.png[width=800,align="center"]
+
+////
 image::images/CAE_CDB_dragonfly_lighthouse.png[align="center"][CAE glTF Rendered in Dragonfly with 3D Tiles]
+////
 
 === Recommendations
 
