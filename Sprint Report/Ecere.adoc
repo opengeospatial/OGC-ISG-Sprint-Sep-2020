@@ -247,15 +247,6 @@ Example 3D Tile Batched 3D Models tile: https://maps.ecere.com/ogcapi/collection
 
 The following end-points implement a proposed extension specific to 3D Models, consisting primarily of `/models/{modelID}`:
 
-Example Buildings 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1476625110.e3d
-
-Example Buildings 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb
-
-[#Ecere-API-BuildingModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb[glTF model viewer]
-image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
-'''
-
 Example Trees 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb
 
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
@@ -268,6 +259,15 @@ Coronado Bridge 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDi
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
 .glTF Coronado Bridge visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb[glTF model viewer]
 image::images/Ecere/glbBridge.jpg[align="center",width="800"]
+'''
+
+Petco Park (Buildings) 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.e3d
+
+Petco Park (Buildings) 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb
+
+[#Ecere-API-BuildingModel,reftext='{figure-caption} {counter:figure-num}']
+.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb[glTF model viewer]
+image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
 '''
 
 _Currently, model identifiers are stored in `model::id` property of vector points, while orientation is stored in `model::orientation`, and scaling
