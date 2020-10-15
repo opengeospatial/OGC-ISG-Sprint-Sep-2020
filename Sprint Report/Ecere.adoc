@@ -28,7 +28,7 @@ The server provided by Ecere is based on its GNOSIS Map Server which implements 
 The _GeoVolumes API_ defines the bridge between the _OGC API - Common - Part 2: Geospatial data_ and 3D data.
 This 3D data is typically defined as Bounding Volume Hierarchy to facilitate culling out data outside the view frustum
 as well as to retrieve and display the right amount of detail. This is the case with both the 3D Tiles and i3s OGC Community Standards.
-However the same _collection_ of data could also be accessibled using other OGC API specifications, such as _Features_ and _Tiles_,
+However the same _collection_ of data could also be accessed using other OGC API specifications, such as _Features_ and _Tiles_,
 as demonstrated in this implementation.
 The GNOSIS Map Server implementation currently support generation of 3D Tiles on-the-fly from a source data store.
 
@@ -647,7 +647,7 @@ deliver 3D features or 3D coverages content in vector or raster form. A better n
 It would also be worthwhile to note that all that the specifications define so far are a relation type and media types, which would be also be defined by the
 OGC Naming Authority and/or IANA.
 Therefore, until more advanced capabilities specific to 3D are defined as part of the specifications, perhaps the _3D Data API_ could consist simply of a
-Best Practice document on how to use OGC API - Common (Part 1: Core and Part 2: Geospatial data), as well as the 3D Tiles and i3s OGC community standards to
+Best Practice document on how to use _OGC API - Common_ (_Part 1: Core_ and _Part 2: Geospatial data_), as well as the 3D Tiles and i3s OGC community standards to
 efficiently deliver 3D content in an interoperable manner?
 
 ==== Tiles API & 3D Models Extension
