@@ -327,7 +327,7 @@ Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/defau
 
 [#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB roads map
-image::images/Ecere/roads.jpg[align="center",width="800"]
+image::images/Ecere/roads.jpg[align="center",height="1000"]
 
 ===== Coverages
 
@@ -335,7 +335,7 @@ Elevation (GeoTIFF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Eleva
 
 [#Ecere-API-Coverage,reftext='{figure-caption} {counter:figure-num}']
 .Coverage for San Diego CDB elevation visualized in QGIS
-image::images/Ecere/coverage.jpg[align="center",height="1000"]
+image::images/Ecere/coverage.jpg[align="center",width="800"]
 
 ==== Technology Integration Experiments
 
