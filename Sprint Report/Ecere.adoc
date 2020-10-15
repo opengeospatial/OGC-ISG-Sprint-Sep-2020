@@ -136,27 +136,11 @@ San Diego CDB geospecific buildings data layer: https://maps.ecere.com/ogcapi/co
 
 San Diego CDB hydrography vector data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydrography
 
-[#Ecere-API-Hydro,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB hydrography data layer
-image::images/Ecere/hydrography.jpg[align="center",width="342"]
-
 San Diego CDB roads vector data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads
-
-[#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB roads data layer
-image::images/Ecere/roads.jpg[align="center",width="800"]
 
 San Diego CDB medium resolution imagery data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL07
 
-[#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB medium resolution imagery
-image::images/Ecere/imagery7.jpg[align="center",width="800"]
-
 San Diego CDB higher resolution imagery data layer: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL09
-
-[#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB high resolution imagery
-image::images/Ecere/imagery9.jpg[align="center",width="800"]
 
 ==== 3D Tiles Bounding Volume Hierarchy end-points
 
@@ -264,23 +248,26 @@ The following end-points implement a proposed extension specific to 3D Models, c
 
 Example Buildings 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1476625110.e3d
 
-Example Buildings 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1476625110.glb
+Example Buildings 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb
 
 [#Ecere-API-BuildingModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1476625110.glb[glTF model viewer]
+.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb[glTF model viewer]
 image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
+'''
 
 Example Trees 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb
 
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
 .glTF Palm tree model visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/models/1207959554.glb[glTF model viewer]:
 image::images/Ecere/glbTree.jpg[align="center",width="800"]
+'''
 
 Coronado Bridge 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb
 
 [#Ecere-API-TreeModel,reftext='{figure-caption} {counter:figure-num}']
 .glTF Coronado Bridge visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:CoronadoBridge/models/1207959553.glb[glTF model viewer]:
 image::images/Ecere/glbBridge.jpg[align="center",width="800"]
+'''
 
 _Currently, model identifiers are stored in `model::id` property of vector points, while orientation is stored in `model::orientation`, and scaling
 in `model::scaling`._
@@ -312,19 +299,43 @@ Hydrography Features: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydr
 
 Imagery Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL09/map/default.png
 
+[#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB medium resolution imagery
+image::images/Ecere/imagery7.jpg[align="center",height="1000"]
+'''
+
+[#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB high resolution imagery
+image::images/Ecere/imagery9.jpg[align="center",width="800"]
+'''
+
 Elevation Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Elevation/map/default.png
+
+[#Ecere-API-Elevation,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB elevation map
+image::images/Ecere/elevation.jpg[align="center",width="800"]
+'''
 
 Hydrography Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydrography/map/default.jpg
 
+[#Ecere-API-Hydro,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB hydrography map
+image::images/Ecere/hydrography.jpg[align="center",width="342"]
+'''
+
 Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/default.jpg?width=2048
+
+[#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB roads map
+image::images/Ecere/roads.jpg[align="center",width="800"]
 
 ===== Coverages
 
 Elevation (GeoTIFF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Elevation/coverage.tif
 
-[#Ecere-API-Texture,reftext='{figure-caption} {counter:figure-num}']
+[#Ecere-API-Coverage,reftext='{figure-caption} {counter:figure-num}']
 .Coverage for San Diego CDB elevation visualized in QGIS
-image::images/Ecere/coverage.jpg[align="center",width="800"]
+image::images/Ecere/coverage.jpg[align="center",height="1000"]
 
 ==== Technology Integration Experiments
 
@@ -392,7 +403,7 @@ image::images/Ecere/CesiumSanDiego8.jpg[align="center",width="800"]
 
 ==== Simple Transactions
 
-Ecere proposed that a straightforward way to support updates of 3D models would be t osupport the _Simple Transactions_ extension originally defined for _OGC API - Features_.
+Ecere proposed that a straightforward way to support updates of 3D models would be to support the _Simple Transactions_ extension originally defined for _OGC API - Features_.
 This is especially appropriate if the server exposes the collection of data as both a GeoVolumes / Bounding Volume Hierarchy, and vector _Features_, as is
 the case for the GNOSIS Map Server implementation. This would work well with data stores originating from different types of data sources, such as
 CDB, CityGML or OpenStreetMap 3D buildings, which all involve vector features definitions for the data. In CDB, for both geotypical and geospecific models,
