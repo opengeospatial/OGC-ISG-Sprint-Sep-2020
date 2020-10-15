@@ -169,7 +169,7 @@ tested with a detailed CDB of New York City from Flight Safety, and detailed in 
 http://docs.opengeospatial.org/per/18-025.html#ClientServerCommunication[engineering report].
 
 It was demonstrated again in the _3D Container & Tiles_ pilot with the Camp Pendleton CDB from Presagis (see https://www.youtube.com/watch?v=mzGy2nRLgzY[video]),
-and again in this ISG pilot with the sample San Diego CDB from CAE.
+and again in this ISG sprint with the sample San Diego CDB from CAE.
 
 A variation of this approach still implements a Tiles API, but rather than vector points referencing 3D models, the models contained within a tile
 are all embedded in a single 3D model making up the whole tile. This is supported for E3D, binary glTF, and Batched 3D Models.
