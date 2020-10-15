@@ -1,5 +1,11 @@
 == Hexagon GSP
+
+image::images/Hexagon-TitleScreen.png[width=100%,align="center"]
+
+////
 image::images/hexagonTitleScreen.png[]
+////
+
 === Abstract
 This chapter investigates how model and terrain updates, originating from a CDB data
 store and delivered as glTF or elevation, are integrated with background elevation and OGC 3D Tiles
@@ -21,13 +27,27 @@ Using GPU evaluated expressions, deletions/updates/additions in the CDB data sto
 background OGC 3DTiles. The old and new models integrate seamlessly and there is no need to reprocess the entire
 dataset to create a single coherent OGC 3DTiles tileset.
 
+*_Need title_*
+[#img_Hexagon-1,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-CommunicationDiagram.png[width=800,align="center"]
+
+////
 image::images/HexagonCommunicationDiagram.png[]
+////
 
 === Test Data
 The research is based on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
 models and a variety of vector data.
 
+*_Need title_*
+[#img_Hexagon-2,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-SanDiegoCDBFileSystem.png[width=800,align="center"]
+
+////
 image::images/SanDiegoCDBFileSystem.png[]
+////
 
 === Organization of CDB for 3D Models
 This section recaps the organization of CDB data for 3D models.
@@ -69,7 +89,15 @@ many-to-one relations. This would help with the limited capabilities offered by 
 this might be a case where it is better to waste a few bytes of data for the sake of simplifying decoder code.
 
 === Pre-processing CDB 3D models to OGC 3DTiles
+
+*_Need title_*
+[#img_Hexagon-3,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-3DTilesWithMap.png[width=800,align="center"]
+
+////
 image::images/3DTilesWithMap.png[align="center"]
+////
 
 CDB uses a tiling system where higher Levels Of Detail (LOD) add mesh models. Single buildings may also have
 several LODs embedded in a single file. While this gives the flexibility to achieve anything visually, it is complex to
@@ -79,35 +107,85 @@ models to a more efficient OGC 3DTiles tileset through a pre-processing stage.
 When converting to 3DTiles, only the highest LOD for every 3D model is taken into account to re-generate a complete
 tileset.
 
+*_Need title_*
+[#img_Hexagon-4,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-octree.png[width=800,align="center"]
+
+////
 image::images/octree.png[width=800,align="center"]
+////
+
 The new LOD structure is an octree where child nodes entirely replace parent nodes.
 
 Creating this structure is recursive process that repeats the following steps:
 tiling -> grouping tiles -> simplifying -> re-texture
 
+*_Need title_*
+[#img_Hexagon-5,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-3DTilesWithoutMap.png[width=800,align="center"]
+
+////
 image::images/3DTilesWithoutMap.png[align="center"]
+////
+
 The pre-processed tileset can display more buildings at low LODs than would be possible by loading the raw files from
 the CDB data store even if the distant buildings are simplified meshes with just a basic texture.
 
 
 ==== Mesh simplification
+
+*_Need title_*
+[#img_Hexagon-6,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-simplification.png[width=800,align="center"]
+
+////
 image::images/simplification.png[width=800,align="center"]
+////
+
 In lower LODs, the models are simplified using quadric edge collapse decimation.
 
 Cluster simplification or dropping out smaller independent groups of faces are faster alternatives.
 
 ==== Parameterization and texture baking
+
+*_Need title_*
+[#img_Hexagon-7,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-Parameterization.png[width=800,align="center"]
+
+////
 image::images/Parameterization.png[align="center"]
+////
+
 Meshes are re-parametrized (compute new texture coordinates). This is a
 process of unfolding 3D meshes to 2D space while splitting it in the least amount of pieces and wasting the least
 amount of space.
 
+*_Need title_*
+[#img_Hexagon-8,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-baking.png[width=800,align="center"]
+
+////
 image::images/baking.png[align="center"]
+////
+
 texture baking is the process of using bits and pieces from the original textures to create a texture atlas. Having a
 single texture per tile rather than one or more texture for every building decreases the overhead of having to pass
 several textures to the GPU.
 
+*_Need title_*
+[#img_Hexagon-9,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-repeatingTextures.png[width=800,align="center"]
+
+////
 image::images/repeatingTextures.png[align="center"]
+////
+
 This task is made more complex by the use of repeating textures where UV texture coordinates go beyond the normal
 0 to 1 range as in the example above. Repeating textures are common and seem appealing because they can cover a large
 area with apparent detail. However, they cannot be used to create texture atlasses and look unrealistic if overused.
@@ -148,11 +226,27 @@ dealing with very large files can use too much memory and they need to be split 
 
 It is also helpful if meshes cover a limited area. Consider the following scenario:
 
+*_Need title_*
+[#img_Hexagon-10,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-meshTopologyA.png[width=800,align="center"]
+
+////
 image::images/meshTopologyA.png[align="center"]
+////
+
 The 2 meshes are made up of several parts that span a large area and as a result, when Tile 1 or Tile 2 is generated,
 both mesh files need to be loaded, split and merged.
 
+*_Need title_*
+[#img_Hexagon-11,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-meshTopologyB.png[width=800,align="center"]
+
+////
 image::images/meshTopologyB.png[align="center"]
+////
+
 In this scenario, the mesh files are also made up of several parts but because they are close to each other
 generating a tile only requires loading one file at a time.
 
@@ -232,7 +326,15 @@ However, In order to serve very large 3D mesh datasets, they are pre-processed w
 When the elevation model in the CDB datastore is updated, the 3D Meshes need to be re-processed accordingly and this
 is a time-consuming task that can be avoided.
 
+*_Need title_*
+[#img_Hexagon-12,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-ElevationMissmatch.png[width=800,align="center"]
+
+////
 image::images/ElevationMissmatch.png[align="center"]
+////
+
 The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a
 perfect match between the two.
 
@@ -246,7 +348,15 @@ Practically, this was achieved through a proxy server that forwards requests to 
 returning the B3DM files, shifts all the vertices according to an elevation model.
 The server must also decode the tileset.json files and shift the bounding boxes of the tiles.
 
+*_Need title_*
+[#img_Hexagon-13,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-AutomaticElevation.png[width=800,align="center"]
+
+////
 image::images/AutomaticElevation.png[align="center"]
+////
+
 The top image shows the raw OGC 3DTiles that have no elevation. The bottom image shows the same dataset that
 automatically adapts to the loaded elevation model on the fly.
 
@@ -284,7 +394,14 @@ data and the result is a perfect integration. This tactic is only useable for sm
 or a small area. For a more general solution, <<Serving OGC 3DTiles from CDB with on the fly tiling>> offers the most
 flexibility.
 
+*_Need title_*
+[#img_Hexagon-14,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/Hexagon-AddUpdateDelete.png[width=800,align="center"]
+
+////
 image::images/AddUpdateDelete.png[align="center"]
+////
 
 ===== Deleted model
 When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing

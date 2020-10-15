@@ -4,9 +4,26 @@ For the OGC Interoperable Simulation and Gaming (ISG) Sprint with glTF, Helyx to
 The San Diego dataset was incorporated in two formats, in the 3D Tiles format and the CDB format. This is alongside the previously added data for New York and Montreal, in the i3s and 3D Tiles format. The API used to expose the data in the server is the draft specification of the GeoVolumes API as currently best defined here: https://app.swaggerhub.com/apis/timothy-miller/OGC_3DContainer_Tile_API_Pilot/0.0.1.
 Helyx then tested their server using the Steinbeis STT client. Results from the test proved fruitful with all of their datasets served in their server displaying correctly in the client meaning the server was able to provide data in the format expected from the client. Helyx have therefore shown that the draft specification of the GeoVolumes API can work end to end from the backend server to the frontend client whilst also displaying relevant data to the user of the client. The conversion of CDB data to 3D tiles proves the interoperability and efficiency by which data can be transformed and served, even by simple static servers.
 
+*_Need title_*
+[#img_Helyx-1,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/HelyxSanDiegoBuildings.PNG[width=800,align="center"]
+
+*_Need title_*
+[#img_Helyx-2,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/HelyxSanDiegoStadium.PNG[width=800,align="center"]
+
+*_Need title_*
+[#img_Helyx-3,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/HelyxSanDiegoTrees.PNG[width=800,align="center"]
+
+////
 image::images/HelyxSanDiegoBuildings.PNG[]
 image::images/HelyxSanDiegoStadium.PNG[]
 image::images/HelyxSanDiegoTrees.PNG[]
+////
 
 As well as the 3d Tiles version of the data being published to the server, the original data was also served. When considering how the CDB data could be shared, Helyx decided to treat the CDB format as another 3d media type that could be served using the OpenAPI Common core structure, on the same footing as i3s and 3D Tiles. In this way, a client could just pull in or download the raw data as opposed to the 3D Tiles version. However, 3D Tiles and other specifications such as the 2D Tiles standards are used due to their lightweight and efficient serving versus the raw data. For this reason it is recommended that a 2D Tiles API front end may be the better route to serve this data in future than the raw data.
 No testing was possible for the data in the server however it did raise questions such as whether  CDB could be treated as a media type (or CDB X), and whether a JSON response to an endpoint calling the CDB data, be used to describe the CDB data structure?
@@ -27,7 +44,14 @@ At the OpenAPI Common level, alternate distributions are only really discussed i
 The following sections discuss how alternate representations can be found at different levels, and potential issues and recommendations around this that can be put forward to the DWG.
 The below diagram summaries what we believe to be the different levels of decision point when creating a GeoVolumes resource, of which all of them have the potential to represent the same data in different ways, thus creating alternate distributions.
 
+*_Need title_*
+[#img_Helyx-4,reftext='{figure-caption} {counter:figure-num}']
+._Need caption_
+image::images/HelyxHierarchyDiagram.png[width=800,align="center"]
+
+////
 image::images/HelyxHierarchyDiagram.png[]
+////
 
 === Representing Alternate Distributions at the Data Level
 The most instinctive way to thing about alternate distributions is to think about alternate data types. For instance in terms of 3ddata this may be gLTF data, it may be CityGML, it may be as CDB, or as a tileset. It could be that the same city model can be presented using different formats. In this way, an alternate distribution can occur purely considering the data level.
