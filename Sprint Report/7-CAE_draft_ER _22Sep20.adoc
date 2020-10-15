@@ -9,7 +9,7 @@ from the original CDB content.
 *CAE High Level Workflow*
 [#img_CAE-1,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
-image::images/CAE_Workflow_highlevel.png[width=800,align="center"]
+image::images/CAE_Workflow_highlevel.png[align="center"]
 
 ////
 image::images/CAE_Workflow_highlevel.png[400,400,align="center"][CAE High Level Workflow]
@@ -103,7 +103,7 @@ The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from 
 *CAE R3D 3D Tile CDB Conversion*
 [#img_CAE-8,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
-image::images/CAE_R3D_workflow1.JPG[width=800,align="center"]
+image::images/CAE_R3D_workflow1.jpg[width=800,align="center"]
 
 ////
 image::images/CAE_R3D_workflow1.JPG[300,300,align="center"][CAE R3D 3D Tile CDB Conversion]
@@ -162,7 +162,7 @@ image::images/CAE_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
 .3D Tiles Displayed in Cognitics Dragonfly
 [caption="Figure: "]
 
-*CAE 3D Tiles Dragonfly*
+*CAE 3D Tiles Dragonfly _(Missing)_*
 [#img_CAE-12,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/CAE_CDB_sd_petco_dragonfly.png[width=800,align="center"]
@@ -208,10 +208,10 @@ image::images/CAE_fmv.png[400,400][CAE Full Motion Video Source]
 
 .glTF Model From FMV
 
-*CAE glTF Model*
+*CDB glTF Model*
 [#img_CAE-16,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
-image::images/CAE_glTF_lighthouse.png[width=400,align="center"]
+image::images/CDB_glTF_lighthouse.png[width=400,align="center"]
 
 ////
 [caption="Figure: "]
@@ -224,7 +224,7 @@ of the glTF rendering platforms we used to very glTF compliance.  Therefore, mod
 The final result of placing the glTF model in the 3D Tile scene required manual editing for geopositional placement.  In CDB a corresponding shapefile would provide the 
 positioning information for transmission.
 
-*CAE glTF Rendered in Dragonfly with 3D Tiles*
+*CAE glTF Rendered in Dragonfly with 3D Tiles _(Missing)_*
 [#img_CAE-17,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/CAE_CDB_dragonfly_lighthouse.png[width=800,align="center"]
