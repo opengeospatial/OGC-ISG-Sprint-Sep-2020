@@ -52,7 +52,7 @@ The 3D models themselves are encoded following the https://docs.ogc.org/per/18-0
 
 Ecere's GNOSIS Cartographer can import CDB to a GNOSIS Data Store in a preprocesing step.
 Issues with this process were identified and resolved during the sprint.
-Among these issues, one caused an inconsistent data store, which resulted in broken links from the Features API access to the 3D buildings data.
+Among these issues, one caused an inconsistent data store, which resulted in broken links from the _Features API_ access to the 3D buildings data.
 
 ==== Improvements to 3D Tiles generation
 
@@ -95,7 +95,7 @@ suffers from a number of critical performance issues. As an example of the scale
 exporting the same model to glTF 2 using the _libassimp_ would take over a minute.
 
 Ecere reached out to the developers community of that library and performed profiling to identify bottlenecks in the export process.
-For the most important bottleneck (the library wasting a lot of processing power generating glTF unique buffer identifiers),
+For the most important bottleneck (the library wasting a lot of processing power generating unique glTF buffer identifiers),
 a work around was implemented, and an https://github.com/assimp/assimp/issues/3444[issue] was filed with the project.
 
 The second most important bottleneck has also been identified as being the merging of all meshes of a single node (even if they use different materials),
