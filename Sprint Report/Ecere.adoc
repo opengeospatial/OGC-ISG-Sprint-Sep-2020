@@ -297,6 +297,20 @@ Hydrography Features: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydr
 
 ===== Maps
 
+Hydrography Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydrography/map/default.jpg
+
+[#Ecere-API-Hydro,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB hydrography map
+image::images/Ecere/hydrography.jpg[align="center",width="342"]
+'''
+
+Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/default.jpg?width=2048
+
+[#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB roads map
+image::images/Ecere/roads.jpg[align="center",height="1000"]
+'''
+
 Imagery Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL09/map/default.png
 
 [#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
@@ -314,20 +328,6 @@ Elevation Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Elevation/m
 [#Ecere-API-Elevation,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB elevation map
 image::images/Ecere/elevation.jpg[align="center",width="800"]
-'''
-
-Hydrography Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Hydrography/map/default.jpg
-
-[#Ecere-API-Hydro,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB hydrography map
-image::images/Ecere/hydrography.jpg[align="center",width="342"]
-'''
-
-Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/default.jpg?width=2048
-
-[#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
-.San Diego CDB roads map
-image::images/Ecere/roads.jpg[align="center",height="1000"]
 
 ===== Coverages
 
