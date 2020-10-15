@@ -43,6 +43,7 @@ _This section describes items that need to be done in the report so those sectio
 *** Add titles/captions for figures and tables as needed
 *** Helyx: Footnotes/references
 *** InfoDao: Comment to 'Insert image here'
+*** Steinbeis: Some images need a title
 
 * *Futures*
 ** Updatess for glTF
