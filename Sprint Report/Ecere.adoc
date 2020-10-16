@@ -436,7 +436,7 @@ to the terrain, they can also be clamped to the latest terrain elevation model.
 Transactions could also be supported to update the terrain elevation model, in a number of possible ways which a server could decide to support, based on
 what best fits its data model:
 
-- Updates could be done on a tile-by-tile basis, i.e. doing a `PUT` on `/tiles/{tileMatrixSetID}/{{tileMatrix}/{row}/{column}`.
+- Updates could be done on a tile-by-tile basis, i.e. doing a `PUT` on `/tiles/{tileMatrixSetID}/{tileMatrix}/{row}/{column}`.
 - The concept of _coverage scenes_ (gridded elevation coverage parts covering arbitrary extents) could be used to add, remove or update specific regions of the data.
   This concept was explored in the _Testbed 15 - Open Portrayal Framework_ http://docs.opengeospatial.org/per/19-070.html#ogc-api-images-transactional[_Images API_], where those scenes were called images.
 - A _Coverages Transactions_ extension could also potentially be specified which maps an array of new elevation values to a spatial extent.
