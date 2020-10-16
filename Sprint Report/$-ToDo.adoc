@@ -41,6 +41,7 @@ _This section describes items that need to be done in the report so those sectio
 *** Review all content
 *** Space characters in (image) file names replaced with '-'
 *** Add titles/captions for figures and tables as needed
+*** Ecere: Some images need a title
 *** Helyx: Footnotes/references
 *** InfoDao: Comment to 'Insert image here'
 *** Steinbeis: Some images need a title
