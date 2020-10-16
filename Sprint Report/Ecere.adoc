@@ -167,11 +167,11 @@ also coincide with the _OGC API - Tiles_ end-points described below.
 
 In additions to tilesets of 3D Tiles organized as a Bounding Volume Hierarchy, the GNOSIS Map Server implements an alternative approach to accessing the
 3D data which is closer to the CDB access and data model. For example, tiles contain reference points with transformation information which reference
-individual 3D models. These models are available at `/models/{modelID}` resources. This approach was first introduced and used in the
-_OGC - Testbed 14 - CityGML and Augmented Reality_ work package, as a continuation of work done in _OGC - Testbed 13 - 3D Performance Clients_ https://docs.ogc.org/per/17-046.html#Experiment7[work package],
-tested with a detailed CDB of New York City from Flight Safety, and detailed in the
-http://docs.opengeospatial.org/per/18-025.html#ClientServerCommunication[engineering report].
+individual 3D models. These models are available at `/models/{modelID}` resources.
 
+This approach was first introduced and used in the _OGC - Testbed 14 - CityGML and Augmented Reality_ work package (detailed in the
+http://docs.opengeospatial.org/per/18-025.html#ClientServerCommunication[engineering report]), tested with a detailed CDB of New York City from Flight Safety,
+as a continuation of work done in _OGC - Testbed 13 - 3D Performance Clients_ https://docs.ogc.org/per/17-046.html#Experiment7[work package].
 It was demonstrated again in the _3D Container & Tiles_ pilot with the Camp Pendleton CDB from Presagis (see https://www.youtube.com/watch?v=mzGy2nRLgzY[video]),
 and again in this ISG sprint with the sample San Diego CDB from CAE.
 
