@@ -648,7 +648,7 @@ Partly because of disagreeing with the fact that the API is space-centric, Ecere
 Just like 2D content is retrieved via _OGC API - Features_ or _OGC API - Coverages_, and those APIs are not called _GeoExtents_. In fact, those APIs can also
 deliver 3D features or 3D coverages content in vector or raster form. A better name for the new API might be something like _3D Data_.
 
-It would also be worthwhile to note that all that the specifications define so far are a relation type and media types, which would be also be defined by the
+It would also be worthwhile to note that all that the specifications define so far are a relation type and media types, which would also be defined by the
 OGC Naming Authority and/or IANA.
 Therefore, until more advanced capabilities specific to 3D are defined as part of the specifications, perhaps the _3D Data API_ could consist simply of a
 Best Practice document on how to use _OGC API - Common_ (_Part 1: Core_ and _Part 2: Geospatial data_), as well as the 3D Tiles and i3s OGC community standards to
