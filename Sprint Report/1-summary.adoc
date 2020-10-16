@@ -30,18 +30,21 @@ All questions regarding this document should be directed to the editor or the co
 *Contacts*
 [width="80%",options="header",caption=""]
 |====================
-|Name |Organization | Role
+| Name | Organization | Role
 | Scott Serich | Open Geospatial Consortium | Contributor & Editor
 | Leonard Daly | Khronos Group / Daly Realism | Contributor & Editor
 | Holly Black | CAE | Contributor
 | Sean Lilley | Cesium | Contributor
 | Michala Hill | Cognitics | Contributor
-| _tbd_ | Ecere | Contributor
+| Jerome St-Louis | Ecere | Contributor
 | Anneley Hadland | Helyx | Contributor
 | Emeric Beaufays | Hexagon | Contributor
 | Joshua Rentrope | InfoDao | Contributor
 | Jordan Dauble | SimBlocks | Contributor
-| Volker Coors | Steinbeis | Contributor
+| Volker Coors | Steinbeis, HFT Stuttgart  | Contributor
+| Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart | Contributor
+| Harpreet Singh | Steinbeis, HFT Stuttgart | Contributor
+| Patrick Würstle | Steinbeis, HFT Stuttgart | Contributor
 |====================
 
 
