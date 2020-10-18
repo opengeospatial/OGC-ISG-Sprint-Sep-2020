@@ -370,7 +370,7 @@ Participants also re-tested the older _GeoVolumes API_ end-point from 3D Contain
 a simple instance of Apache serving the New York 3D Buildings 3D Tiles dataset as static content.
 
 [#Ecere-TIE-InfoDaoNYC,reftext='{figure-caption} {counter:figure-num}']
-.InfoDao Client accessing New York CDB as 3D Tiles from Ecere's static 3D Tiles server
+.InfoDao Client accessing New York City buildings as 3D Tiles from Ecere's static 3D Tiles server
 image::images/InfoDao/ecereNewYorkPassing.png[align="center",width="800"]
 '''
 
