@@ -1,12 +1,6 @@
 [[Overview]]
 == Overview
 
-[NOTE]
-.Instructions
-====
-This section describes everything that was used to set up the Sprint. It either includes directly or by reference all material that the participants had available to them. There was nothing hidden from the participants.
-====
-
 
 === Call for Participation
 
@@ -18,10 +12,6 @@ The CfP specified a schedule from kick off meeting (1 September) through the Spr
 
 The primary data set for the Sprint is known as San Diego CDB. It was collected using a number of sensors and methods from <start> to <end> and encompased nearly all of the downtown San Diego and vacinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
 
-[NOTE]
-====
-_A picture of this would be really good (probably necessary)._
-====
 [#img_SanDiegoOverview,reftext='{figure-caption} {counter:figure-num}']
 .An  overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
 image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
@@ -34,7 +24,7 @@ All participants could elect to use other datasets, particularly any of those fr
 
 [#img_NewYorkRendered,reftext='{figure-caption} {counter:figure-num}']
 .A rendering of a portion of the New York City dataset. The rendering was done by InfoDao using the Ecere data server.
-image::images/infoDao/ecereNewYorkPassing.png[width=800,align="center"]
+image::images/InfoDao/ecereNewYorkPassing.png[width=800,align="center"]
 
 The San Diego CDB was available for download by all participants. Many of the participants made that data available to all participants through the GeoVolume API on their servers. The Pilot Net York data was available through multiple servers built during the Pilot using the API from the Pilot. See <<table->> for a list of avaiable servers.
 
@@ -43,10 +33,22 @@ The San Diego CDB was available for download by all participants. Many of the pa
 Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data. 
 
 [#table_summary-servers,reftext='{table-caption} {counter:table-num}']
-.Servers providing GeoVolume API access to the indicated dataset.
-[cols="50e,^25m,>25s",width="75%",options="header",align="center"]
+.Servers providing GeoVolume API access to the indicated dataset
+[cols="2,4,8a",options="header",align="center"]
 |===
-|Country | Population | Size
+|*Organization* |*URL*  |*Notes* 
+|Cesium |https://3d.hypotheticalhorse.com | Server
+|Cesium | https://map.hypotheticalhorse.com/ | Client
+|Cognitics |http://cdb.cognitics.net:3000/ | _n/a_
+.2+|Ecere | http://maps.ecere.com/ogcapi |/collections/SanDiegoCDB in particular, with Tiles API and GeoVolumes/3D Tiles
+ |https://maps.ecere.com/3DAPI/ |New York City 3D Tiles dataset (static server)
+|Helyx |http://helyxapache2.eastus.azurecontainer.io/ | _n/a_
+|InfoDao |http://pygeoapi.isg-sprint-hub.infodaollc.com/stac | PyGeoAPI serving San Diego and Copenhagen CDB (base url has rest of API)
+|Skymantics |http://13.82.99.186:5050/ | _n/a_
+.4+|Steinbeis |https://steinbeis-3dps.eu/3DGeoVolumes | New Steinbeis 3D GeoVolumes server for OGC-ISG 
+ |http://steinbeis-3dps.eu:8080/3DContainerTile/ | Existing Steinbeis 3D GeoVolumes server from the 3D Container and Tiles pilot, containing New York City 3D Tiles dataset, New York City I3S dataset 
+ |http://steinbeis-3dps.eu/STT3DClient/ |STT 3D Client (based on CesiumJS & ArcGIS for JavaScript)
+ |https://ogc3dc.igd.fraunhofer.de/ |STT 3D Client (by Fraunhofer and GeoRocket)
 |===
 
 
