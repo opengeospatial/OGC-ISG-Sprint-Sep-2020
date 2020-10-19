@@ -25,26 +25,26 @@ _This section describes items that need to be done in the report so those sectio
 
 * *Setup*
 ** In progress
-** +++<s>Include SD dataset images</s>+++
 ** Include NYC dataset images
+** +++<s>Include SD dataset images</s>+++
 ** +++<s>Discuss Architecture</s>+++
 ** +++<s>Discuss scenarios</s>+++
-** Footnotes to Bibliography
+** +++<s>Footnotes to Bibliography</s>+++
 
 * *Findings*
 ** TBD
 
 * *Participant reports*
-** Review for syntax
+** +++<s>Review for syntax</s>+++
 ** Review for content
 ** All Participants
 *** Review all content
 *** Space characters in (image) file names replaced with '-'
-*** Add titles/captions for figures and tables as needed
-*** Ecere: Some images need a title
-*** Helyx: Footnotes/references
+*** Add captions for figures and tables as needed
 *** InfoDao: Comment to 'Insert image here'
-*** Steinbeis: Some images need a title
+*** +++<s>Ecere: Some images need a title</s>+++
+*** +++<s>Helyx: Footnotes/references</s>+++
+*** +++<s>Steinbeis: Some images need a title</s>+++
 
 * *Futures*
 ** Updatess for glTF

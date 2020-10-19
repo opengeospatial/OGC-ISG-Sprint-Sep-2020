@@ -4,31 +4,22 @@ For the OGC Interoperable Simulation and Gaming (ISG) Sprint with glTF, Helyx to
 The San Diego dataset was incorporated in two formats, in the 3D Tiles format and the CDB format. This is alongside the previously added data for New York and Montreal, in the i3s and 3D Tiles format. The API used to expose the data in the server is the draft specification of the GeoVolumes API as currently best defined here: https://app.swaggerhub.com/apis/timothy-miller/OGC_3DContainer_Tile_API_Pilot/0.0.1.
 Helyx then tested their server using the Steinbeis STT client. Results from the test proved fruitful with all of their datasets served in their server displaying correctly in the client meaning the server was able to provide data in the format expected from the client. Helyx have therefore shown that the draft specification of the GeoVolumes API can work end to end from the backend server to the frontend client whilst also displaying relevant data to the user of the client. The conversion of CDB data to 3D tiles proves the interoperability and efficiency by which data can be transformed and served, even by simple static servers.
 
-*_Need title_*
 [#img_Helyx-1,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/HelyxSanDiegoBuildings.PNG[width=800,align="center"]
 
-*_Need title_*
 [#img_Helyx-2,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/HelyxSanDiegoStadium.PNG[width=800,align="center"]
 
-*_Need title_*
 [#img_Helyx-3,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/HelyxSanDiegoTrees.PNG[width=800,align="center"]
 
-////
-image::images/HelyxSanDiegoBuildings.PNG[]
-image::images/HelyxSanDiegoStadium.PNG[]
-image::images/HelyxSanDiegoTrees.PNG[]
-////
-
 As well as the 3d Tiles version of the data being published to the server, the original data was also served. When considering how the CDB data could be shared, Helyx decided to treat the CDB format as another 3d media type that could be served using the OpenAPI Common core structure, on the same footing as i3s and 3D Tiles. In this way, a client could just pull in or download the raw data as opposed to the 3D Tiles version. However, 3D Tiles and other specifications such as the 2D Tiles standards are used due to their lightweight and efficient serving versus the raw data. For this reason it is recommended that a 2D Tiles API front end may be the better route to serve this data in future than the raw data.
 No testing was possible for the data in the server however it did raise questions such as whether  CDB could be treated as a media type (or CDB X), and whether a JSON response to an endpoint calling the CDB data, be used to describe the CDB data structure?
 
- Helyx feels that these questions have not been addressed previously and should be considered before a ratified version of the GeoVolumes API is released.
+TIP: Helyx feels that these questions have not been addressed previously and should be considered before a ratified version of the GeoVolumes API is released.
 
 
 === Types of alternate distribution in scope of GeoVolumes API
@@ -37,21 +28,16 @@ The formats that were handled by the draft GeoVolumes API in the previous pilot 
 The term we use here for serving different representations of the same data as different services, formats or links is an alternate distribution. In the sprint we consider some issues around alternate distributions.
 We did this with the assistance of a survey tool, to poll sprint participants on their views of how the draft specification is structured, and what defines an alternate distribution. Unfortunately there was not a lot of uptake of the survey, however some useful information was gained. It is recommended that if this type of survey were used wider it could provide useful insight into the general consensus around specification issues.
 
- It is suggested that the OGC community could use these type of polls more to understand the nuances of opinions and consensus when building new specifications.
+TIP: It is suggested that the OGC community could use these type of polls more to understand the nuances of opinions and consensus when building new specifications.
 
 === What is an alternate distribution?
 At the OpenAPI Common level, alternate distributions are only really discussed in terms of JSON or Html representations of server responses. However, it can be posited that the different OGC API standards are all alternate distributions of a collection of geospatial data. So the same source data could be converted and served in different ways – either with a manual conversion or on the fly (e.g. to 3D tiles, i3s, a 2D representation of the data, or as features).
 The following sections discuss how alternate representations can be found at different levels, and potential issues and recommendations around this that can be put forward to the DWG.
 The below diagram summaries what we believe to be the different levels of decision point when creating a GeoVolumes resource, of which all of them have the potential to represent the same data in different ways, thus creating alternate distributions.
 
-*_Need title_*
 [#img_Helyx-4,reftext='{figure-caption} {counter:figure-num}']
 ._Need caption_
 image::images/HelyxHierarchyDiagram.png[width=500,align="center"]
-
-////
-image::images/HelyxHierarchyDiagram.png[]
-////
 
 === Representing Alternate Distributions at the Data Level
 The most instinctive way to thing about alternate distributions is to think about alternate data types. For instance in terms of 3ddata this may be gLTF data, it may be CityGML, it may be as CDB, or as a tileset. It could be that the same city model can be presented using different formats. In this way, an alternate distribution can occur purely considering the data level.
@@ -104,21 +90,19 @@ http://server.com/collections/SanDiego/SanDiego-buildings?f=3dTiles
 
 referenced the 3d Tiles endpoint is not agreed upon. Also please note that this does not preclude also changing the parameter value further down the path (for instance f=b3dm to bring back the final bounding volume)
 
- It is recommended that the DWG discuss and provide more guidance on endpoints and parameter use with 3D data and services
+TIP: It is recommended that the DWG discuss and provide more guidance on endpoints and parameter use with 3D data and services
 
 === A note on path format
-It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes.
- A ‘:’ structure has been proposed for hierarchy structures cite:[ColonHierarchy] ////footnote:[https://github.com/opengeospatial/oapi_common/issues/11#issuecomment-677947387]////, however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
+It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[ColonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
 
- It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
+TIP: It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
 
 === Representing Alternate Distributions within one API - Link Relations
-As discussed, from within a single API, defining a resource or sub-resource as an alternate distribution can typically be done using a link relation. OGC API Common refers to IANA’s definition that an ‘alternate’ link relation is ‘a substitute for this context’. Link relations are also discussed within the 3D Container ER, with a slight extension to include parent and root link relation types cite:[LinkRelations] ////footnote:[http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_link_relations]////.
-If we consider the IANA guidance around link relations, a couple of points are made:
+As discussed, from within a single API, defining a resource or sub-resource as an alternate distribution can typically be done using a link relation. OGC API Common refers to IANA’s definition that an ‘alternate’ link relation is ‘a substitute for this context’. Link relations are also discussed within the 3D Container ER, with a slight extension to include parent and root link relation types cite:[LinkRelations]. If we consider the IANA guidance around link relations, a couple of points are made:
 
 _‘The *alternate* keyword creates a hyperlink referencing an alternate representation of the current document. The nature of the referenced document is given by the *href*, and type attributes. If the *alternate* keyword is used with the type attribute, it indicates that the referenced document is a reformulation of the current document in the specified format.
 The *href* and *type* attributes can be combined when specified with the alternate keyword.
-This relationship is transitive — that is, if a document links to two other documents with the link type "alternate", then, in addition to implying that those documents are alternative representations of the first document, it is also implying that those two documents are alternative representations of each other. cite:[LinkTypeAlternate] ////footnote:[https://html.spec.whatwg.org/multipage/links.html#link-type-alternate]////_
+This relationship is transitive — that is, if a document links to two other documents with the link type "alternate", then, in addition to implying that those documents are alternative representations of the first document, it is also implying that those two documents are alternative representations of each other cite:[LinkTypeAlternate]._
 
 The last paragraph is interesting, as it suggests that more than one alternate distribution can be present for a particular resource, but that they are all alternative representations of the original. So the original could be served as 3D Tiles, but a second alternative distribution can be served as i3s, and a 3rd as an implicit tiling scheme, for instance.
 So putting endpoints, parameters and link relations together the endpoint of each alternate distribution should also reference the endpoint of other representations of the same data using link relations. These can be chosen using the href of the link or by a url parameter.
