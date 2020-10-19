@@ -60,7 +60,7 @@ In terms of what is in scope of the GeoVolumes API from an alternate distributio
 •	Or whether the end client simply needs to be able to extract 3d data from the API call.
 Our thoughts are that what differentiates the GeoVolumes API is the ‘bounding volume hierarchy’ structure of the two community standards. If this were the distinction, in this case neither does serving 3d data as 2d tiles, and so the OGC Tiles API, despite serving 3d data, would also not be in scope of the GeoVolumes API. Indeed the Features API could also serve features that have 3D content, but does not have a bounding volume hierarchy.
 
- Our recommendation is that the precise definition and its separation or aggregation with the other related OGC APIs is taken forward to the appropriate DWG.
+TIP: Our recommendation is that the precise definition and its separation or aggregation with the other related OGC APIs is taken forward to the appropriate DWG.
 
 === Representing Alternate Distributions at the Collection(s) Level.
 At the collections and collection level, the response from the API is typically either a JSON or Html response. This is the most common case where alternative distributions are found within many APIs. At this point in the GeoVolumes API, the collections are listed, along with link relations and media types that tell the client what format to expect.
