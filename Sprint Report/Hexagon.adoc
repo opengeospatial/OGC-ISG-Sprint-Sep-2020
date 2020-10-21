@@ -1,4 +1,6 @@
 == Hexagon GSP
+[#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
+.San Diego CDB meshes converted and served by the Luciad Fusion platform.
 image::images/hexagonTitleScreen.png[]
 === Abstract
 This chapter investigates how model and terrain updates, originating from a CDB data
@@ -22,7 +24,7 @@ background OGC 3DTiles. The old and new models integrate seamlessly and there is
 dataset to create a single coherent OGC 3DTiles tileset.
 
 [#img_Architecture,reftext='{figure-caption} {counter:figure-num}']
-.Architecture of the OGC server with proxy for on the fly 3DTiles height adjustment
+.Architecture of the OGC server with proxy for on the fly 3DTiles height adjustment.
 image::images/HexagonCommunicationDiagram.png[align="center"]
 
 === Test Data
@@ -30,7 +32,7 @@ The research is based on the San Diego CDB sample dataset provided for this spri
 models and a variety of vector data.
 
 [#img_CDB_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
-.CDB organization
+.CDB organization in file system.
 image::images/SanDiegoCDBFileSystem.png[]
 
 === Organization of CDB for 3D Models
@@ -75,7 +77,7 @@ this might be a case where it is better to waste a few bytes of data for the sak
 === Pre-processing CDB 3D models to OGC 3DTiles
 
 [#img_SANDIEGO_ILLUSTRATION_1,reftext='{figure-caption} {counter:figure-num}']
-.San Diego as 3DTiles with background imagery
+.San Diego as 3DTiles with background imagery.
 image::images/3DTilesWithMap.png[align="center"]
 
 CDB uses a tiling system where higher Levels Of Detail (LOD) add mesh models. Single buildings may also have
@@ -95,7 +97,7 @@ Creating this structure is recursive process that repeats the following steps:
 tiling -> grouping tiles -> simplifying -> re-texture
 
 [#img_SANDIEGO_ILLUSTRATION_2,reftext='{figure-caption} {counter:figure-num}']
-.San Diego as 3DTiles with background imagery
+.San Diego as 3DTiles with background imagery.
 image::images/3DTilesWithoutMap.png[align="center"]
 The pre-processed tileset can display more buildings at low LODs than would be possible by loading the raw files from
 the CDB data store even if the distant buildings are simplified meshes with just a basic texture.
@@ -128,7 +130,7 @@ single texture per tile rather than one or more texture for every building decre
 several textures to the GPU.
 
 [#img_Repeating textures,reftext='{figure-caption} {counter:figure-num}']
-.Example of repeating textures
+.Examples of repeating textures.
 image::images/repeatingTextures.png[align="center"]
 This task is made more complex by the use of repeating textures where UV texture coordinates go beyond the normal
 0 to 1 range as in the example above. Repeating textures are common and seem appealing because they can cover a large
@@ -171,13 +173,13 @@ dealing with very large files can use too much memory and they need to be split 
 It is also helpful if meshes cover a limited area. Consider the following scenario:
 
 [#img_BAD_MESH_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
-.sub-optimal repartition of meshes between files
+.Sub-optimal repartition of meshes between files.
 image::images/meshTopologyA.png[align="center"]
 The 2 meshes are made up of several parts that span a large area and as a result, when Tile 1 or Tile 2 is generated,
 both mesh files need to be loaded, split and merged.
 
 [#img_GOOD_MESH_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
-.optimal repartition of meshes between files
+.Optimal repartition of meshes between files.
 image::images/meshTopologyB.png[align="center"]
 In this scenario, the mesh files are also made up of several parts but because they are close to each other
 generating a tile only requires loading one file at a time.
@@ -259,7 +261,7 @@ When the elevation model in the CDB datastore is updated, the 3D Meshes need to 
 is a time-consuming task that can be avoided.
 
 [#img_ELEVATION_MISMATCH,reftext='{figure-caption} {counter:figure-num}']
-.Mismatch between the elevation and the meshes on the left vs perfect match on the right
+.Mismatch between the elevation and the meshes on the left vs perfect match on the right.
 image::images/ElevationMissmatch.png[align="center"]
 The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a
 perfect match between the two.
@@ -315,7 +317,7 @@ or a small area. For a more general solution, <<Serving OGC 3DTiles from CDB wit
 flexibility.
 
 [#img_ADD_UPDATE_DELETE,reftext='{figure-caption} {counter:figure-num}']
-.Small updates to the CDB datastore can be handled in separate 3DTiles tilesets
+.Small updates to the CDB datastore can be handled in separate 3DTiles tilesets.
 image::images/AddUpdateDelete.png[align="center"]
 
 ==== Deleted model
