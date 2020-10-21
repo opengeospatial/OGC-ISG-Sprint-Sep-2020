@@ -72,15 +72,15 @@ Original CDB content rendered in Presagis VegaPrime shows no apparent content lo
 The comparison was made as rendered in Cesium ion and Cognitics Dragonfly.
 
 .CDB Displayed in VegaPrime
-[caption="Figure: "]
+[caption="Figure: 1 "]
 image::images/CAE_CDB_sd_petco_tv.png[1100,1100,align="center"][CAE CDB VegaPrime]
 
 .3D Tiles Displayed in Cesium ion
-[caption="Figure: "]
+[caption="Figure: 2 "]
 image::images/CAE_Tile_sd_petco_ion.png[align="center"][CAE 3D Tiles Cesium Ion]
 
 .3D Tiles Displayed in Cognitics Dragonfly
-[caption="Figure: "]
+[caption="Figure: 3 "]
 image::images/CAE_CDB_sd_petco_dragonfly.png[align="center"][CAE 3D Tiles Dragonfly]
 
 Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness 
@@ -92,11 +92,11 @@ image::images/CAE_tile_light.JPG[500,500,align="right"][CAE 3D Tile Modified Ren
 The glTF model generated using FMV source was visually no different then the CDB Openflight model.
 
 .Full Motion Video Source
-[caption="Figure: "]
+[caption="Figure: 4 "]
 image::images/CAE_fmv.png[400,400][CAE Full Motion Video Source]
 
 .glTF Model From FMV
-[caption="Figure: "]
+[caption="Figure: 5 "]
 image::images/CAE_glTF_lighthouse.png[400,400][CAE glTF Model]
 
 Our original CDB to glTF convertor utilized in the FG3D data translation service, placed all textures associated with the glTF in a subfolder.  This proved problematic for several
