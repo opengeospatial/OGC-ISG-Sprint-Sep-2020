@@ -49,7 +49,7 @@ image::images/Cesium-San-Diego-Terrain-Holes.png[width="700", align="center"]
 Another edge case we encountered was that the Imagery layer can have more levels than the Elevation layer. The solution is to repeat the elevation mesh in the child node until there are no more levels for imagery. This is also a wasteful solution.
 
 .Difference in levels of detail between the elevation and imagery dataset.
-image::images/Cesium-San-Diego-Terrain-Imagery-LOD-Diff.png[width="700", align="center"]
+image::images/Cesium-San-Diego-Terrain-Imagery-LOD-Diff.png[width="500", align="center"]
 
 
 ===== GSModel Conversion
