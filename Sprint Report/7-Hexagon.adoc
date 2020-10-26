@@ -133,7 +133,7 @@ several textures to the GPU.
 
 [#img_Repeating textures,reftext='{figure-caption} {counter:figure-num}']
 .Examples of repeating textures.
-image::images/repeatingTextures.png[align="center"]
+image::images/Hexagon/repeatingTextures.png[align="center"]
 This task is made more complex by the use of repeating textures where UV texture coordinates go beyond the normal
 0 to 1 range as in the example above. Repeating textures are common and seem appealing because they can cover a large
 area with apparent detail. However, they cannot be used to create texture atlasses and look unrealistic if overused.
