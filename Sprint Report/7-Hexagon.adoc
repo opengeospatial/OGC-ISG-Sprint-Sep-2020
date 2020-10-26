@@ -1,7 +1,7 @@
 == Hexagon GSP
 [#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB meshes converted and served by the Luciad Fusion platform.
-image::images/hexagonTitleScreen.png[]
+image::images/Hexagon/TitleScreen.png[]
 
 === Abstract
 This chapter investigates how model and terrain updates, originating from a CDB data
@@ -26,7 +26,7 @@ dataset to create a single coherent OGC 3DTiles tileset.
 
 [#img_Architecture,reftext='{figure-caption} {counter:figure-num}']
 .Architecture of the OGC server with proxy for on the fly 3DTiles height adjustment.
-image::images/HexagonCommunicationDiagram.png[align="center"]
+image::images/Hexagon/CommunicationDiagram.png[align="center"]
 
 === Test Data
 The research is based on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
@@ -34,7 +34,7 @@ models and a variety of vector data.
 
 [#img_CDB_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
 .CDB organization in file system.
-image::images/SanDiegoCDBFileSystem.png[]
+image::images/Hexagon/SanDiegoCDBFileSystem.png[]
 
 === Organization of CDB for 3D Models
 This section recaps the organization of CDB data for 3D models.
@@ -79,7 +79,7 @@ this might be a case where it is better to waste a few bytes of data for the sak
 
 [#img_SANDIEGO_ILLUSTRATION_1,reftext='{figure-caption} {counter:figure-num}']
 .San Diego as 3DTiles with background imagery.
-image::images/3DTilesWithMap.png[align="center"]
+image::images/Hexagon/3DTilesWithMap.png[align="center"]
 
 CDB uses a tiling system where higher Levels Of Detail (LOD) add mesh models. Single buildings may also have
 several LODs embedded in a single file. While this gives the flexibility to achieve anything visually, it is complex to
@@ -91,7 +91,7 @@ tileset.
 
 [#img_Octree,reftext='{figure-caption} {counter:figure-num}']
 .Octree data structure
-image::images/octree.png[width=800,align="center"]
+image::images/Hexagon/octree.png[width=800,align="center"]
 The new LOD structure is an octree where child nodes entirely replace parent nodes.
 
 Creating this structure is recursive process that repeats the following steps:
@@ -117,7 +117,7 @@ Cluster simplification or dropping out smaller independent groups of faces are f
 
 [#img_MESH_Parameterization,reftext='{figure-caption} {counter:figure-num}']
 .Mesh parameterization
-image::images/Parameterization.png[align="center"]
+image::images/Hexagon/Parameterization.png[align="center"]
 
 Meshes are re-parametrized (compute new texture coordinates). This is a
 process of unfolding 3D meshes to 2D space while splitting it in the least amount of pieces and wasting the least
@@ -125,7 +125,7 @@ amount of space.
 
 [#img_TEXTURE_BAKING,reftext='{figure-caption} {counter:figure-num}']
 .Texture baking
-image::images/baking.png[align="center"]
+image::images/Hexagon/baking.png[align="center"]
 
 Texture baking is the process of using bits and pieces from the original textures to create a texture atlas. Having a
 single texture per tile rather than one or more texture for every building decreases the overhead of having to pass
@@ -176,7 +176,7 @@ It is also helpful if meshes cover a limited area. Consider the following scenar
 
 [#img_BAD_MESH_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
 .Sub-optimal repartition of meshes between files.
-image::images/meshTopologyA.png[align="center"]
+image::images/Hexagon/meshTopologyA.png[align="center"]
 The 2 meshes are made up of several parts that span a large area and as a result, when Tile 1 or Tile 2 is generated,
 both mesh files need to be loaded, split and merged.
 
@@ -264,7 +264,7 @@ is a time-consuming task that can be avoided.
 
 [#img_ELEVATION_MISMATCH,reftext='{figure-caption} {counter:figure-num}']
 .Mismatch between the elevation and the meshes on the left vs perfect match on the right.
-image::images/ElevationMissmatch.png[align="center"]
+image::images/Hexagon/ElevationMissmatch.png[align="center"]
 The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a
 perfect match between the two.
 
@@ -280,7 +280,7 @@ The server must also decode the tileset.json files and shift the bounding boxes 
 
 [#img_On_THE_FLY_ELEVATION,reftext='{figure-caption} {counter:figure-num}']
 .Adapting pre-processed 3DTiles to an elevation model on the fly.
-image::images/AutomaticElevation.png[align="center"]
+image::images/Hexagon/AutomaticElevation.png[align="center"]
 The top image shows the raw OGC 3DTiles that have no elevation. The bottom image shows the same dataset that
 automatically adapts to the loaded elevation model on the fly.
 
@@ -320,7 +320,7 @@ flexibility.
 
 [#img_ADD_UPDATE_DELETE,reftext='{figure-caption} {counter:figure-num}']
 .Small updates to the CDB datastore can be handled in separate 3DTiles tilesets.
-image::images/AddUpdateDelete.png[align="center"]
+image::images/Hexagon/AddUpdateDelete.png[align="center"]
 
 ==== Deleted model
 When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing
