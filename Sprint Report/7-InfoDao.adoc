@@ -68,8 +68,6 @@ While the CDB and GeoVolumes API are two separate OGC standards, participants sh
     1. The server does not know what the CDB standard is. This leaves clients to understand how to access geospatial information in the CDB without any guidance or helper functions from the server.
     2. The client does not know what the data formats inside the CDB are. It was helpful to have an on-the-fly converter endpoint for images (e.g. JPEG2000 to JPEG/PNG), and it could be extended to other helper functions for 3D geometry, etc.
     
----Insert image here
-
 ==== Wrapping it up
 In this sprint, GeoVolume API's straight forward approach to 3D data along with flexible helper functions at the core (bbox querys and data distribution methods) enabled the participants to consume data in convenient ways. There are great concurrent discussions about the more technical aspects of this proposition. Helyx's sprint report features investigations on how to handle multiple data distributions and which should be supported. Also, Ecere's works also highlight parallels between GeoVolumes and other OGC APIs like the Tiles and Features APIs. As a newcomer to the OGC, GeoVolumes API was straightforward to consume and did not lend itself to errors due to easily accessible data formats and the lack of conversion.
 
