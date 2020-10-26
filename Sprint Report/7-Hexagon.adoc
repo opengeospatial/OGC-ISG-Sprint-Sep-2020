@@ -99,7 +99,7 @@ tiling -> grouping tiles -> simplifying -> re-texture
 
 [#img_SANDIEGO_ILLUSTRATION_2,reftext='{figure-caption} {counter:figure-num}']
 .San Diego as 3DTiles with background imagery.
-image::images/3DTilesWithoutMap.png[align="center"]
+image::images/Hexagon/3DTilesWithoutMap.png[align="center"]
 The pre-processed tileset can display more buildings at low LODs than would be possible by loading the raw files from
 the CDB data store even if the distant buildings are simplified meshes with just a basic texture.
 
@@ -108,7 +108,7 @@ the CDB data store even if the distant buildings are simplified meshes with just
 
 [#img_MESH_SIMPLIFICATION,reftext='{figure-caption} {counter:figure-num}']
 .Mesh simplification
-image::images/simplification.png[width=800,align="center"]
+image::images/Hexagon/simplification.png[width=800,align="center"]
 In lower LODs, the models are simplified using quadric edge collapse decimation.
 
 Cluster simplification or dropping out smaller independent groups of faces are faster alternatives.
@@ -182,7 +182,7 @@ both mesh files need to be loaded, split and merged.
 
 [#img_GOOD_MESH_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
 .Optimal repartition of meshes between files.
-image::images/meshTopologyB.png[align="center"]
+image::images/Hexagon/meshTopologyB.png[align="center"]
 In this scenario, the mesh files are also made up of several parts but because they are close to each other
 generating a tile only requires loading one file at a time.
 

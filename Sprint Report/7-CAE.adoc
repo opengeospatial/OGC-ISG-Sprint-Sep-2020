@@ -6,7 +6,6 @@ exercised the National Geospatial Intelligence Agency's Foundation in GEOINT 3D 
 Operation Command Rapid 3D (R3D) architecture. The resultant data was reviewed for anomalies encountered with those 3D formats 
 from the original CDB content. 
 
-*CAE High Level Workflow*
 [#img_CAE-1,reftext='{figure-caption} {counter:figure-num}']
 .CAE High Level Workflow
 image::images/CAE_Workflow_highlevel.png[width=400,align="center"]
@@ -64,7 +63,6 @@ image::images/CAE_GRID_AOI.png[width=400,align="center"]
 Two independent workflows were employed for CDB data generation and conversion.  One for the translation of CDB datasets to 3D Tiles.  The other
 for the creation of a new CDB Openflight model from full motion video converted to glTF.
 
-*CAE Data Production Workflow*
 [#img_CAE-7,reftext='{figure-caption} {counter:figure-num}']
 .CAE Data Production Workflow
 image::images/CAE_Workflow.png[width=1100,align="center"]
@@ -73,7 +71,6 @@ image::images/CAE_Workflow.png[width=1100,align="center"]
 ==== CDB to OGC 3D Tiles
 The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from within the Rapid3D architecture.  
 
-*CAE R3D 3D Tile CDB Conversion*
 [#img_CAE-8,reftext='{figure-caption} {counter:figure-num}']
 .CAE R3D 3D Tile CDB Conversion
 image::images/CAE_R3D_workflow1.jpg[width=300,align="center"]
@@ -102,17 +99,17 @@ Original CDB content rendered in Presagis VegaPrime shows no apparent content lo
 The comparison was made as rendered in Cesium ion and Cognitics Dragonfly.
 
 [#img_CAE-10,reftext='{figure-caption} {counter:figure-num}']
-.CAE CDB VegaPrime
+.CDB Displayed in VegaPrime
 image::images/CAE_CDB_sd_petco_tv.png[width=1100,align="center"]
 
 
 [#img_CAE-11,reftext='{figure-caption} {counter:figure-num}']
-.CAE 3D Tiles Cesium Ion
+.3D Tiles Displayed in Cesium ion
 image::images/CAE_Tile_sd_petco_ion.png[width=1100,align="center"]
 
 
 [#img_CAE-12,reftext='{figure-caption} {counter:figure-num}']
-.CAE 3D Tiles Dragonfly
+.3D Tiles Displayed in Cognitics Dragonfly
 image::images/CAE_CDB_sd_petco_dragonfly.png[width=1100,align="center"]
 
 
@@ -120,18 +117,16 @@ Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the ori
 the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set. 
  
 [#img_CAE-13,reftext='{figure-caption} {counter:figure-num}']
-.CAE 3D Tile Dark Rendering
+.3D Tile Dark Rendering
 image::images/CAE_tile dark.JPG[width=500,align="center"]
 
 [#img_CAE-14,reftext='{figure-caption} {counter:figure-num}']
-.CAE 3D Tile Modified Rendering
+.3D Tile Modified Rendering
 image::images/CAE_tile_light.JPG[width=500,align="center"]
 
 
 The glTF model generated using FMV source was visually no different then the CDB Openflight model.
 
-.Full Motion Video Source
-[caption="Figure: 4 "]
 [#img_CAE-15,reftext='{figure-caption} {counter:figure-num}']
 .CAE Full Motion Video Source
 image::images/CAE_fmv.png[width=400,align="center"]
