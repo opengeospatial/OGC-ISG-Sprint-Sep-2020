@@ -23,25 +23,25 @@ Drgonfly is deployed in the commercial Amazozn Web Services cloud as a series of
 
 
 [#img_Cognitics-1,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.High level system architecture for CAE's Dragonfly and Cesium ion.
 image::images/CogniticsArchitectureDiag.PNG[width=400,align="center"]
 
 Dragonfly utilizes the GeoVolumes API for selection and of 3D content based on bounding box, rather than displaying all content at all zoom levels. While in 3D view, GeoVolumes is displayed under Overlays in the Main Menu.
 
 [#img_Cognitics-2,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.User interface (UI) to 3D mode in Dragonfly
 image::images/CogniticsDragonflyGeoVolumes.png[width=800,align="center"]
 
 When the user is zoomed out to the globe level, the effective bounding box is the entire globe, and all available GeoVolumes overlays are displayed in the table of contents.
 
 [#img_Cognitics-3,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.3D mode in Dragonfly showing all available GeoVolume overlays.
 image::images/CogniticsDragonflyGlobe.png[width=800,align="center"]
 
 As the user zooms in, the bounding box encompasses only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown.  In the figure below, the bounding box includes Beirut and Damascus.  When the user hovers over a GeoVolumes overlay, the extent of that overlay is highlighted, as seen in the figure below of the Damasuc overlay.
 
 [#img_Cognitics-4,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.Dragonfly changes the UI to only display the GeoVolumes that are currently visible.
 image::images/CogniticsDragonflyDamascus.png[width=800,align="center"]
 
 == Damascus, Syria Vricon SurfaceMesh
@@ -49,11 +49,11 @@ image::images/CogniticsDragonflyDamascus.png[width=800,align="center"]
 The Vricon SurfaceMesh of Damascus, Syria is static 3D content in the Dragonfly datastore. The figures below show the data in directly overhead and oblique views.
 
 [#img_Cognitics-5,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.Overhead view of static 3D content in Dragonfly.
 image::images/CogniticsDragonflyDamascus2.png[width=800,align="center"]
 
 [#img_Cognitics-6,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.Oblique view of static 3D content in Dragonfly.
 image::images/CogniticsDragonflyDamascus3.png[width=800,align="center"]
 
 == Fort Story Rapid 3D Data
@@ -61,9 +61,9 @@ image::images/CogniticsDragonflyDamascus3.png[width=800,align="center"]
 The Fort Story dataset is constructed from full motion video (FMV) that has been uploaded via the Dragonfly user interface and sent through the Rapid3D process to generate the 3D content.  The figures below show the data in directly overhead and oblique views.
 
 [#img_Cognitics-7,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.An overhead view of a dataset (Fort Story) constructed from full motion video (FMV).
 image::images/CogniticsFortStory1.png[width=800,align="center"]
 
 [#img_Cognitics-8,reftext='{figure-caption} {counter:figure-num}']
-._Need caption_
+.An oblique view of a dataset (Fort Story) constructed from full motion video (FMV).
 image::images/CogniticsFortStory2.png[width=800,align="center"]

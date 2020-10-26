@@ -11,10 +11,12 @@ _This section describes items that need to be done in the report so those sectio
 *** Sprint
 *** Pilot
 *** CDB
+*** Full Motion Video (FMV)
+*** GeoVolume
 
 * *Tables & Images*
-** Review all images for correct syntax use
-** Review all tables for correct syntax use
+** +++<s>Review all images for correct syntax use</s>+++
+** +++<s>Review all tables for correct syntax use</s>+++
 *** https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points
 
 * *Findings*
@@ -23,19 +25,22 @@ _This section describes items that need to be done in the report so those sectio
 ** TBD
 
 * *Participant reports*
-** +++<s>Review for syntax</s>+++
 ** Review for content
-** All Participants
-*** Review all content
-*** Space characters in (image) file names replaced with '-'
-*** Add captions for figures and tables as needed
-*** InfoDao: Comment to 'Insert image here'
-*** +++<s>Ecere: Some images need a title</s>+++
-*** +++<s>Helyx: Footnotes/references</s>+++
-*** +++<s>Steinbeis: Some images need a title</s>+++
+** All Participants (all changes via PR to master)
+*** Cognitics
+**** Review all images captions
+*** InfoDao
+**** Comment near end for "Insert image here" removed
+*** +++<s>CAE</s>+++
+*** +++<s>Cesium</s>+++
+*** +++<s>Ecere</s>+++
+*** +++<s>Helyx</s>+++
+*** +++<s>Hexagon</s>+++
+*** +++<s>SimBlocks</s>+++
+*** +++<s>Steinbeis</s>+++
 
 * *Futures*
-** Updatess for glTF
+** Updates for glTF
 ** Extract and summarize particpants
 ** TBD
 
@@ -45,18 +50,10 @@ _This section describes items that need to be done in the report so those sectio
 * *Summary*
 ** Subject (2-3 sentences)
 ** Executive Summary
-** +++<s>Contributors (names from the participants)</s>+++
 
 * *Bibliography*
 ** Extract and assemble from all sections
 
 * *+++<s>Setup</s>+++*
-** +++<s>In progress</s>+++
-** +++<s>Include NYC dataset image</s>+++s
-** +++<s>Include SD dataset images</s>+++
-** +++<s>Discuss Architecture</s>+++
-** +++<s>Discuss scenarios</s>+++
-** +++<s>Footnotes to Bibliography</s>+++
 
 * *+++<s>References</s>+++*
-** +++<s>Include CDB, glTF, 3D Tiles, and Draft GeoVolumes</s>+++
