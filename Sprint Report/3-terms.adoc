@@ -6,17 +6,13 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 
 .NOTE: Delete the first three terms because they are examples.
 
-&#9679; coordinate reference system ::
+&#9679; OGC Pilot ::
 
- coordinate system that is related to the real world by a datum term name (source: ISO 19111)
+ OGC Pilots apply and test OGC standards in real world environments. Pilot projects are an opportunity for users to understand how to best address their requirements using standards-based architectures. A Pilot evaluates the feasibility of implementing a standards-based architecture and provides valuable requirements for defining and developing solicitations or tenders for implementation of an operational system. Pilots usually work with prototypes or pre-production products that are explored in realistic scenarios.
 
-&#9679; portrayal ::
+ &#9679; OGC Sprint ::
 
- presentation of information to humans (source: ISO 19117)
-
-&#9679; LiDAR ::
-
- *Light Detection and Ranging* -- a common method for acquiring point clouds through aerial, terrestrial, and mobile acquisition methods.
+  OGC Sprints experiment with emerging ideas in the context of geospatial standards, help improve interoperability of existing standards by experimenting with new extensions or profiles, are used as proof of concept for other OGC Innovation Program initiatives, or support OGC Standards Program activities. OGC Sprints are very short and focused initiatives that are often executed within few days to weeks. Sprints put most of their emphasis on the agile development phase that is usually executed during a physical meeting.
 
 &#9679; term name ::
 

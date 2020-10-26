@@ -5,9 +5,13 @@
 
 (( This section shall be between 2-3 sentences and not longer than 140 words total.))
 
+(( _The **Executive Summary** and **Document Contributor** sections need to be filled in._ ))
+
 == Executive Summary
 
 (( The following is, as all texts in double square brackets, a helper text. Please remove this and all other helper texts once done. ))
+
+(( **This can only be written after the Findings and Future Recommendations.** ))
 
 (( The Executive Summary clause shall contain the key findings and results in a concise form. A more detailed description of the findings should be in the body of the report. ))
 
@@ -26,13 +30,25 @@ All questions regarding this document should be directed to the editor or the co
 *Contacts*
 [width="80%",options="header",caption=""]
 |====================
-|Name |Organization | Role
-|((Full Name)) | (( from org )) | ((Editor/Contributor))
-|Volker Coors | Steinbeis, HFT Stuttgart |Contributor
-|Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart |Contributor
-|Harpreet Singh | Steinbeis, HFT Stuttgart |Contributor
-|Patrick Würstle | Steinbeis, HFT Stuttgart |Contributor
-|Jerome St-Louis | Ecere | Contributor
+| Name | Organization | Role
+| Scott Serich | Open Geospatial Consortium | Contributor & Editor
+| Leonard Daly | Khronos Group / Daly Realism | Contributor & Editor
+| Holly Black | CAE | Contributor
+| Sean Lilley | Cesium | Contributor
+| Michala Hill | Cognitics | Contributor
+| Jerome St-Louis | Ecere | Contributor
+| Anneley Hadland | Helyx | Contributor
+| Emeric Beaufays | Hexagon | Contributor
+| Joshua Rentrope | InfoDao | Contributor
+| Jordan Dauble   | SimBlocks.io | Contributor
+| Patrick Caughey | SimBlocks.io | Contributor
+| Barbara Cotter  | SimBlocks.io | Contributor
+| Glenn Johnson   | SimBlocks.io | Contributor
+| Joseph Kaile    | SimBlocks.io | Contributor
+| Volker Coors                    | Steinbeis, HFT Stuttgart | Contributor
+| Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart | Contributor
+| Harpreet Singh                  | Steinbeis, HFT Stuttgart | Contributor
+| Patrick Würstle                 | Steinbeis, HFT Stuttgart | Contributor
 |====================
 
 

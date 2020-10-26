@@ -1,0 +1,62 @@
+[[ToDo]]
+= ToDo
+
+[NOTE]
+====
+_This section describes items that need to be done in the report so those sections are easily identified and not forgotten._
+====
+
+* *Terms*
+** Add terms and definitions
+*** Sprint
+*** Pilot
+*** CDB
+
+* *Tables & Images*
+** Review all images for correct syntax use
+** Review all tables for correct syntax use
+*** https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points
+
+* *Findings*
+** No defects were uncovered in the GeoVolumes draft spec
+** Used a previously OGC-unused CDB with success
+** TBD
+
+* *Participant reports*
+** +++<s>Review for syntax</s>+++
+** Review for content
+** All Participants
+*** Review all content
+*** Space characters in (image) file names replaced with '-'
+*** Add captions for figures and tables as needed
+*** InfoDao: Comment to 'Insert image here'
+*** +++<s>Ecere: Some images need a title</s>+++
+*** +++<s>Helyx: Footnotes/references</s>+++
+*** +++<s>Steinbeis: Some images need a title</s>+++
+
+* *Futures*
+** Updatess for glTF
+** Extract and summarize particpants
+** TBD
+
+* *Overview*
+** Update after draft version written
+
+* *Summary*
+** Subject (2-3 sentences)
+** Executive Summary
+** +++<s>Contributors (names from the participants)</s>+++
+
+* *Bibliography*
+** Extract and assemble from all sections
+
+* *+++<s>Setup</s>+++*
+** +++<s>In progress</s>+++
+** +++<s>Include NYC dataset image</s>+++s
+** +++<s>Include SD dataset images</s>+++
+** +++<s>Discuss Architecture</s>+++
+** +++<s>Discuss scenarios</s>+++
+** +++<s>Footnotes to Bibliography</s>+++
+
+* *+++<s>References</s>+++*
+** +++<s>Include CDB, glTF, 3D Tiles, and Draft GeoVolumes</s>+++
