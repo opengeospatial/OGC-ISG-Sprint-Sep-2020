@@ -46,7 +46,7 @@ image::images/InfoDao/cesiumNewYorkPassing.png[width=800,align="center"]
 
 === Future Discussion
 
-GeoVolumes performs well and is easy to implement, however it is not free from issues. While it is easy to see it as a wrapper for accessing geospatial data, the OGC already has such containers (via the OGC API for instance) for other data formats. This sprint highlights the roles and limits of GeoVolumes and its supported data formats (GLTF and JSON) by taking its contrast with CDB. InfoDao's experience with the sprint also discovered similar enquiries to Ecere's issues in using the OGC API as a potential bridge between the two standards (whether by extension specification or with the core specification)
+GeoVolumes performs well and is easy to implement, however it is not free from issues. While it is easy to see it as a wrapper for accessing geospatial data, the OGC already has such containers (via the OGC API for instance) for other data formats. This Sprint highlights the roles and limits of GeoVolumes and its supported data formats (GLTF and JSON) by taking its contrast with CDB. InfoDao's experience with the Sprint also discovered similar enquiries to Ecere's issues in using the OGC API as a potential bridge between the two standards (whether by extension specification or with the core specification)
 
 ==== GeoVolumes API Discussion: CDB comparisons and OGC API discussion
 
@@ -55,13 +55,13 @@ InfoDao stood up a test server to quickly simulate server client transactions fo
     1. Access the Metadata to get the extents of the data set. This was usually the boundaries as a polygon of LatLng points. Needed to convert from XML to JSON and also reference the CDB spec.
     2. Fetch raster tiles that were available at specific LODs. Because of the data formats of the tiles (JPEG2000 for raster imagery, and TIFF for elevation data), InfoDao also stood up a small conversion service that would convert imagery into a consumable format
     3. Fetch Geometry from the server. The 3D models were in OpenFlight format and not immediately accessible for 3D rendering in our clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
-    4. Display convert geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
+    4. Display converted geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
     
 In comparison, we used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the sprint. The operations were:
 
     0. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
     1. Fetch Raster tiles at a specific LOD, no conversion needed since two supported distributions were available (.jpg and .png)
-    2. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and GLTF were available.
+    2. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and glTF were available.
 
 While the CDB and GeoVolumes API are two separate OGC standards, participants showed that these standards have a pathway to become interoperable together rather than interoperability among members in each standard. During implementation of the CDB layer highlighted two problems:
 
@@ -69,6 +69,6 @@ While the CDB and GeoVolumes API are two separate OGC standards, participants sh
     2. The client does not know what the data formats inside the CDB are. It was helpful to have an on-the-fly converter endpoint for images (e.g. JPEG2000 to JPEG/PNG), and it could be extended to other helper functions for 3D geometry, etc.
     
 ==== Wrapping it up
-In this sprint, GeoVolume API's straight forward approach to 3D data along with flexible helper functions at the core (bbox querys and data distribution methods) enabled the participants to consume data in convenient ways. There are great concurrent discussions about the more technical aspects of this proposition. Helyx's sprint report features investigations on how to handle multiple data distributions and which should be supported. Also, Ecere's works also highlight parallels between GeoVolumes and other OGC APIs like the Tiles and Features APIs. As a newcomer to the OGC, GeoVolumes API was straightforward to consume and did not lend itself to errors due to easily accessible data formats and the lack of conversion.
+In this sprint, GeoVolume API's straight forward approach to 3D data along with flexible helper functions at the core (bbox querys and data distribution methods) enabled the participants to consume data in convenient ways. There are great concurrent discussions about the more technical aspects of this proposition. Helyx's Sprint report features investigations on how to handle multiple data distributions and which should be supported. Also, Ecere's works also highlight parallels between GeoVolumes and other OGC APIs like the Tiles and Features APIs. As a newcomer to the OGC, GeoVolumes API was straightforward to consume and did not lend itself to errors due to easily accessible data formats and the lack of conversion.
 
 

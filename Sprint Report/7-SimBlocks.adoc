@@ -82,25 +82,11 @@ The purpose of our third approach was to leverage more of our C++ codebase witho
 image::images/SimBlocks_3D_Tiles_Unity.PNG[width=800,align="center"]
 
 == Future Work
-The SimBlocks team found the OGC GeoVolumes sprint to be very useful, and there is additional work that we would like to continue as we experiment with processing geospatial content using real-time 3D game engine technologies.
-* GeoVolumes Bounding Volumes Queries
-* Runtime Conversion Performance Improvements
-* Terrain clamping Improvements
+The SimBlocks team found the OGC GeoVolumes Sprint to be very useful. Additional work items that we would like to continue as we experiment with processing geospatial content using real-time 3D game engine technologies are:
 
-After discussing with Unity’s geospatial team, we have identified a 4th method of conversion that promises to be event even faster than method 3 while also allow us to use native C++ code.
+* GeoVolumes bounding volumes queries
+* Runtime conversion performance improvements
+* Terrain clamping improvements
 
-
-===	Contributors
-
-*Contacts*
-[width="80%",options="header",caption=""]
-|====================
-|Name |Organization | Role
-|((Jordan Dauble))    | ((SimBlocks.io)) | ((Contributor))
-|((Glenn Johnson))    | ((SimBlocks.io)) | ((Contributor))
-|((Joseph Kaile))     | ((SimBlocks.io)) | ((Contributor))
-|((Barbara Cotter))   | ((SimBlocks.io)) | ((Contributor))
-|((Patrick Caughey))  | ((SimBlocks.io)) | ((Contributor))
-|====================
-
+After discussing with Unity’s geospatial team, we have identified a 4th method of conversion that promises to be even faster than Method 3 (Directly load B3DM) while also allow us to use native C++ code.
 

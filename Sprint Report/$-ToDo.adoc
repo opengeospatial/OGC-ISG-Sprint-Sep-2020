@@ -4,45 +4,110 @@
 [NOTE]
 ====
 _This section describes items that need to be done in the report so those sections are easily identified and not forgotten._
+267 Oct: 20:15-20:45
 ====
 
 * *Terms*
 ** Add terms and definitions
-*** Sprint
-*** Pilot
+*** 3D Tiles
+*** b3dm
 *** CDB
 *** Full Motion Video (FMV)
 *** GeoVolume
+*** jp2
+*** OpenFlight
+*** Pilot
+*** Sprint
 
 * *Tables & Images*
 ** +++<s>Review all images for correct syntax use</s>+++
 ** +++<s>Review all tables for correct syntax use</s>+++
 *** https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points
 
-* *Findings*
-** No defects were uncovered in the GeoVolumes draft spec
-** Used a previously OGC-unused CDB with success
-** TBD
 
 * *Participant reports*
 ** Review for content
 ** All Participants (all changes via PR to master)
+*** Use "Sprint"
 *** Cognitics
 **** Review all images captions
+*** Helyx
+**** Link to SwaggerHub for draft spec. Should be changed to OGC ER
+**** Is it "3d" or "3D" Tiles?
+**** Generate captions for all images
 *** InfoDao
 **** Comment near end for "Insert image here" removed
+**** Use "glTF". Need to check on "GLB"
+*** SimBlocks.io
+**** Please clarify the 2nd paragraph at https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-SimBlocks.adoc#server-testing. Providing examples would be good. You are highlighting an inconsistency in operation that should be cleared up.
+**** Need to provide proper link to TIE Table in Findings section (tbd)
 *** +++<s>CAE</s>+++
 *** +++<s>Cesium</s>+++
 *** +++<s>Ecere</s>+++
-*** +++<s>Helyx</s>+++
 *** +++<s>Hexagon</s>+++
 *** +++<s>SimBlocks</s>+++
 *** +++<s>Steinbeis</s>+++
 
+* *Findings*
+** No defects were uncovered in the GeoVolumes draft spec
+** Used a previously OGC-unused CDB with success
+** Successul demonstration of multiple participants server resources
+** CAE
+*** Use AWS for service hosting
+*** Dragonfly (Cognitics) rendering was too dark & required manual lighting for region
+*** Full Motion Video object generation worked, but required manual placement in scene
+** Cesium
+*** On-the-fly CDB to glTF converter requires more effort
+*** Mismatch in resolution between elecation and imagery (terrain covering) led to gaps in data or duplicated data
+*** High-detail building files are very large (50-100MB). Need to improve tiling scheme (reduce tile sizes) to maintain/increase rendering performance.
+*** More convergence needed for implicit tiling schemes, raster layers, and per-texel metadata.
+** Helyx
+*** _Need to read in more depth. Most of the discussion is about alternate datasets and how they should be accessed._
+** Hexagon
+*** CDB recommendations (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Hexagon.adoc#cdb-technical-specification-recommendations)
+*** Generated model CRUD using on-the-fly approach
+*** Handled terrain updates with proxy server to adjust model elevations
+** InfoDao
+*** Ease of accessing 3D Tiles data via GeoVolumes API.
+*** Agree with issues raised by Helyx regarding data structure and alternate datasets
+*** CDB is not interperted on server. Major work for client
+*** CDB internal data format is not known to the client until it arrives
+** SimBlocks.io
+*** Found inconsistencies between the various servers (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-SimBlocks.adoc#server-testing) and 
+*** Imported glTF and 3D Tiles into Unity using a mix of custom and licensed solutions
+** Steinbeis
+*** Able to use GeoVOlumes and SensorThings APIs to produce a working emulation demo
+*** Examined two cases for storage of #D & terrain data: all in one & by feature type
+*** Conversion from CDB (data-store format) to 3D Tiles (rendering format) is complex and time-consuming
+*** Able to add or delete structures
+
+
+
 * *Futures*
 ** Updates for glTF
 ** Extract and summarize particpants
-** TBD
+** CAE (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-CAE.adoc#recommendations)
+*** Dealing with data disparity issues between CDB, 3D Tiles, and glTF
+*** Batch converter from CDB models to glTF
+*** Handling geoposition information for glTF
+** Cesium
+*** Rendering performance can be improved if multiple 3D models are combined into a single OpenFlight file
+** Cognitics
+** Hexagon
+*** On the fly tiling of CDB to eliminate need to pre-process CDB to 3D Tiles and provide a better solution to data-store updates
+** InfoDao
+*** Further investigation is necessary along lines of Helyx's and Ecere's comments.
+** SimBlocks.io
+*** Improve Unity loading of content (glTF, 3D Tiles)
+*** Additional investigation of GeoVolumes bounding volume queries
+** Steinbeis
+*** New API for "Feature Transaction" that covers updates to scenes when features within a scene undergo an update. [Note: Other participants indicate that this needs to include terrain updates.]
+*** Batch conversion of CDB to 3D Tiles. 
+*** GeoVolumes may need a bounding box with a hole as described in https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#1-3d-geovolumes-api-query---polygon-with-a-hole
+*** Potential inconsistency in naming conventions when looking at resolutions finer than region. See https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#2-3d-geovolumes-api-organization-different-semantic-parts
+
+
+
 
 * *Overview*
 ** Update after draft version written
