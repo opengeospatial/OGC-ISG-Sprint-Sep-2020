@@ -18,7 +18,7 @@ This provides a realistic scenario for the sprint while also solving a real SOCO
 
 == Architecture
 
-Drgonfly is deployed in the commercial Amazozn Web Services cloud as a series of Docker containers.  The Dragonfly web based user interface supports 2D and 3D content and is currently hosted at https://dragonfly.caeusa.com/. The Dragonfly datastore contains both static 3D content and processed content from Rapid3D which is indexed using GeoVolumes and filtered by a visible bounding box. Dragonfly utilizes GeoServer for 2D streaming and Cesium Ion for streaming of 3D Tiles.  Ion is a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings. PostgreSQL/PostGIS, OGC CDB, 3D Tiles are all used for data storage.
+Drgonfly is deployed in the commercial Amazon Web Services cloud as a series of Docker containers.  The Dragonfly web based user interface supports 2D and 3D content and is currently hosted at https://dragonfly.caeusa.com/. The Dragonfly datastore contains both static 3D content and processed content from Rapid3D which is indexed using GeoVolumes and filtered by a visible bounding box. Dragonfly utilizes GeoServer for 2D streaming and Cesium Ion for streaming of 3D Tiles.  Ion is a robust, scalable, and secure platform for 3D geospatial data that optimizes and tiles it for the web, serves it up in the cloud, and streams it to any device. Cesium 3D content shown in Dragonfly includes Cesium World Terrain, and Cesium OSM Buildings. PostgreSQL/PostGIS, OGC CDB, 3D Tiles are all used for data storage.
 
 
 
@@ -38,7 +38,7 @@ When the user is zoomed out to the globe level, the effective bounding box is th
 .3D mode in Dragonfly showing all available GeoVolume overlays.
 image::images/CogniticsDragonflyGlobe.png[width=800,align="center"]
 
-As the user zooms in, the bounding box encompasses only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown.  In the figure below, the bounding box includes Beirut and Damascus.  When the user hovers over a GeoVolumes overlay, the extent of that overlay is highlighted, as seen in the figure below of the Damasuc overlay.
+As the user zooms in, the bounding box encompasses only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown.  In the figure below, the bounding box includes Beirut and Damascus.  When the user hovers over a GeoVolumes overlay, the extent of that overlay is highlighted, as seen in the figure below of the Damascus overlay.
 
 [#img_Cognitics-4,reftext='{figure-caption} {counter:figure-num}']
 .Dragonfly changes the UI to only display the GeoVolumes that are currently visible.

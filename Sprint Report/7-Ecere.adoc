@@ -9,7 +9,7 @@ image::images/Ecere/SanDiego1.jpg[align="center",width="800"]
 In the OGC Interoperable Simulation and Gaming Sprint, Ecere improved its _GeoVolumes API_ service implementation, based on its
 GNOSIS Map Server. Some issues were resolved with the CDB importing process. The 3D Tiles tileset generation was improved with support for textures.
 Caching and other optimizations were also implemented to achieve better performance.
-Other sprint participants were able to successfully access and display the 3D data from the San Diego CDB served by the service.
+Other Sprint participants were able to successfully access and display the 3D data from the San Diego CDB served by the service.
 
 Ecere, in collaboration with Steinbeis, also investigated a mechanism to update 3D content, such as adding, removing or updating 3D models,
 based on the _Simple Transactions_ extension defined for the _OGC API - Features_ specifications.
@@ -72,12 +72,12 @@ to minimize the amount of texture memory required, since many buildings in the S
 Another improvement concerned avoiding to list empty tiles in the tilesets, which resulted in error mesages being printed out in the CesiumJS console when
 the library attempted to load these tiles and received an empty file.
 
-The testing by other participants during the sprint allowed to identify and resolve other issues with the dymamic 3D data server.
-This was a welcomed opportunity as this dynamic server was not ready in time for Technology Integration Experiments during the _3D Container & Tiles_ pilot.
+The testing by other participants during the Sprint allowed us to identify and resolve other issues with the dymamic 3D data server.
+This was a welcomed opportunity as this dynamic server was not ready in time for Technology Integration Experiments during the _3D Container & Tiles_ Pilot.
 
 It was originally planned to improve additional aspects of the 3D Tiles tileset generation,
 such as generating multiple Level of Details and improving the accuracy of the bounding volumes,
-but as there was not enough time to complete this during the sprint, it will be the subject of further development.
+but as there was not enough time to complete this during the Sprint, it will be the subject of further development.
 
 ===== Vertical datum implications of CDB and 3D Tiles
 
@@ -94,16 +94,16 @@ Because the GNOSIS Map Server generates 3D Tiles on-the-fly as they are being re
 However, this requires this generation capability to be very fast. Especially because multiple level of details are not yet provided, the performance
 turned out to be an important issue with the TIEs.
 
-Ecere identified that the https://assimp.org[Open Asset Import Library] (_libassimp_) currently used by the GNOSIS Map Server to export glTF 2 3D models
+Ecere identified that the https://assimp.org[Open Asset Import Library] (_libassimp_) currently used by the GNOSIS Map Server to export glTF 2.0 3D models
 suffers from a number of critical performance issues. As an example of the scale of the problem, while exporting a 3D model to E3D takes a fraction of a second,
-exporting the same model to glTF 2 using the _libassimp_ would take over a minute.
+exporting the same model to glTF 2.0 using the _libassimp_ would take over a minute.
 
 Ecere reached out to the developers community of that library and performed profiling to identify bottlenecks in the export process.
 For the most important bottleneck (the library wasting a lot of processing power generating unique glTF buffer identifiers),
 a work around was implemented, and an https://github.com/assimp/assimp/issues/3444[issue] was filed with the project.
 
 The second most important bottleneck has also been identified as being the merging of all meshes of a single node (even if they use different materials),
-prior to exporting to glTF 2. The meshes must be provided separately to _libassimp_, as its model definition structures require each mesh to have a single material.
+prior to exporting to glTF 2.0. The meshes must be provided separately to _libassimp_, as its model definition structures require each mesh to have a single material.
 
 To further mitigate the performance issues, caching of the glTF 2 models was implemented in the GNOSIS Map Server.
 As a result, any affected cached model should be cleared when updates to the source data occur.
@@ -244,7 +244,6 @@ Example binary glTF Batched 3D Models tile: https://maps.ecere.com/ogcapi/collec
 image::images/Ecere/glbTile.jpg[align="center",width="800"]
 
 Example 3D Tile Batched 3D Models tile: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/tiles/GNOSISGlobalGrid/13/5229/5730.b3dm
-
 (the b3dm tiles are what the 3D Tiles tilesets refer to).
 
 ===== Referenced 3D Models Extensions
@@ -442,7 +441,7 @@ what best fits its data model:
 - A _Coverages Transactions_ extension could also potentially be specified which maps an array of new elevation values to a spatial extent.
 
 Regardless of the approach used to update, the server can provide the latest version of the terrain elevation in the same way, whether as 2D coverage tiles, or
-3D Tiles quantized terrain mesh. As of the time of the sprint, the GNOSIS Map Server only generates 3D Tiles for the models, but support for generating
+3D Tiles quantized terrain mesh. As of the time of the Sprint, the GNOSIS Map Server only generates 3D Tiles for the models, but support for generating
 quantized terrain mesh from the gridded elevation is planned, based on the internal terrain tesselation capabilities used in Ecere's GNOSIS library.
 
 ==== Change Sets
