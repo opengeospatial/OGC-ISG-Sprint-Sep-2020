@@ -264,12 +264,12 @@ Coronado Bridge 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDi
 image::images/Ecere/glbBridge.jpg[align="center",width="800"]
 '''
 
-Petco Park (Buildings) 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.e3d
+Petco Park (Buildings) 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.e3d
 
-Petco Park (Buildings) 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb
+Petco Park (Buildings) 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.glb
 
 [#Ecere-API-BuildingModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb[glTF model viewer]
+.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.glb[glTF model viewer]
 image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
 '''
 
@@ -476,7 +476,7 @@ The following GeoJSON was used to describe the feature to be added:
       ]
    },
    "properties": {
-      "model::id": 1745156142,
+      "model::id": 1745156899,
       "model::orientation": [ 0, 0, 0 ]
    }
 }
@@ -502,7 +502,7 @@ The following GeoJSON was used to update the feature:
       ]
    },
    "properties": {
-      "model::id": 1745156142,
+      "model::id": 1745156899,
       "model::orientation": [ 180, 0, 0 ]
    }
 }
