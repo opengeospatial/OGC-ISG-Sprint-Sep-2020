@@ -13,7 +13,7 @@ Displaying the resulting pre-processed OGC 3DTiles offers performance and visual
 CDB data store directly. The increased efficiency is due to a better tiling scheme and mesh simplification.
 
 The question of generating tiles on the fly from the CDB data store is explored but the implementation could not
-be finished in time for the sprint.
+be finished in time for the Sprint.
 
 OGC 3DTiles can be automatically adapted to elevation updates, whether they come from a CDB data store or another source.
 This is achieved through a proxy service that reads B3DM files and
@@ -29,7 +29,7 @@ dataset to create a single coherent OGC 3DTiles tileset.
 image::images/Hexagon/CommunicationDiagram.png[align="center"]
 
 === Test Data
-The research is based on the San Diego CDB sample dataset provided for this sprint. It provides imagery, elevation, 3D
+The research is based on the San Diego CDB sample dataset provided for this Sprint. It provides imagery, elevation, 3D
 models and a variety of vector data.
 
 [#img_CDB_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
@@ -188,8 +188,8 @@ generating a tile only requires loading one file at a time.
 
 === Serving OGC 3DTiles from CDB with on the fly tiling
 Serving 3D Models on the fly means that whenever a client application looks at the data from a certain angle, it will
-send a request to the server that must gather the data to be visualized and convert it to gltf on the fly. This task
-has not been completed within the sprint but will help handle updates more easily than using the previously
+send a request to the server that must gather the data to be visualized and convert it to glTF on the fly. This task
+has not been completed within the Sprint but will help handle updates more easily than using the previously
 described pre-processing approach.
 
 At startup, the server creates a tileset.json file by decoding and indexing the bounds of all the 3D models into an
@@ -200,8 +200,8 @@ The LOD structure of the CDB data store isn't used because in this particular ca
 data store LOD structure could be used, the process would become almost instantaneous. A good LOD structure is one
 that is deep and has small tiles of approximately the same size.
 
-When a tile is requested, the relevant meshes are loaded, converted to gltf, wrapped in a B3DM file and sent back to
-the client. This last part could not be integrated in an OGC 3DTiles service in time for the sprint.
+When a tile is requested, the relevant meshes are loaded, converted to glTF, wrapped in a B3DM file and sent back to
+the client. This last part could not be integrated in an OGC 3DTiles service in time for the Sprint.
 
 The approach of simplifying meshes for lower LODs cannot be done in real-time because it is too slow. Simply dropping
 out smaller buildings for lower LODs will have to be used.

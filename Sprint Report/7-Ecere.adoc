@@ -14,7 +14,7 @@ Other Sprint participants were able to successfully access and display the 3D da
 Ecere, in collaboration with Steinbeis, also investigated a mechanism to update 3D content, such as adding, removing or updating 3D models,
 based on the _Simple Transactions_ extension defined for the _OGC API - Features_ specifications.
 
-Although Ecere focused on the server-side aspect during the ISG sprint,
+Although Ecere focused on the server-side aspect during the ISG Sprint,
 some performance improvements were still made to the client to better deal with the large dataset used.
 
 In this report, Ecere also presents some considerations for the standardization of the _GeoVolumes API_ based on its experience as both
@@ -55,7 +55,7 @@ For 3D models, point geometry tiles encode 3D positions, orientations, scaling a
 The 3D models themselves are encoded following the https://docs.ogc.org/per/18-025.html#E3DSpecs[E3D specifications].
 
 Ecere's GNOSIS Cartographer can import CDB to a GNOSIS Data Store in a preprocesing step.
-Issues with this process were identified and resolved during the sprint.
+Issues with this process were identified and resolved during the Sprint.
 Among these issues, one caused an inconsistent data store, which resulted in broken links from the _Features API_ access to the 3D buildings data.
 
 ==== Improvements to 3D Tiles generation
@@ -66,7 +66,7 @@ image::images/Ecere/3DTilesGeneration.png[align="center",width="800"]
 
 ===== Improved functionality
 
-One important improvement made to the 3D Tiles and glTF generation for the sprint is support for textures, including referencing shared external textures
+One important improvement made to the 3D Tiles and glTF generation for the Sprint is support for textures, including referencing shared external textures
 to minimize the amount of texture memory required, since many buildings in the San Diego CDB dataset re-use the same textures.
 
 Another improvement concerned avoiding to list empty tiles in the tilesets, which resulted in error mesages being printed out in the CesiumJS console when
@@ -173,13 +173,13 @@ tested with a detailed CDB of New York City from Flight Safety, and detailed in 
 http://docs.opengeospatial.org/per/18-025.html#ClientServerCommunication[engineering report].
 
 It was demonstrated again in the _3D Container & Tiles_ pilot with the Camp Pendleton CDB from Presagis (see https://www.youtube.com/watch?v=mzGy2nRLgzY[video]),
-and again in this ISG sprint with the sample San Diego CDB from CAE.
+and again in this ISG Sprint with the sample San Diego CDB from CAE.
 
 A variation of this approach still implements a Tiles API, but rather than vector points referencing 3D models, the models contained within a tile
 are all embedded in a single 3D model making up the whole tile. This is supported for E3D, binary glTF, and Batched 3D Models.
 The batched 3D models resources are referenced by the 3D Tile tileset nodes, so the two approaches are not entirely separate.
 
-A notable improvement to the implementation of this approach in the sprint is the new support for glTF and Batched 3D Models 3D Tiles in addition to E3D,
+A notable improvement to the implementation of this approach in the Sprint is the new support for glTF and Batched 3D Models 3D Tiles in addition to E3D,
 including support for textures.
 
 In both variations, as well as in the 3D Tiles tileset approach, the tiles and individual models reference shared textures at the `/textures` end-point.
@@ -343,7 +343,7 @@ image::images/Ecere/coverage.jpg[align="center",width="800"]
 
 ==== Technology Integration Experiments
 
-Several of the other sprint participants were able to succesfully access and display the dynamic 3D Tiles tilest generated from the San Diego CDB
+Several of the other Sprint participants were able to succesfully access and display the dynamic 3D Tiles tilest generated from the San Diego CDB
 data on-the-fly by the new Ecere service end-point (https://maps.ecere.com/ogcapi) for the GNOSIS Map Server, specfically the
 https://maps.ecere.com/ogcapi/collections/SanDiegoCDB[San Diego CDB set of data layers].
 Hexagon, InfoDao, Simblocks and Steinbeis all reported that their clients were able to successfully access and visualize the data.
@@ -453,8 +453,8 @@ http://docs.opengeospatial.org/per/19-070.html#_requirement_class_changeset_core
 
 ==== Implementation progress
 
-During the ISG sprint there was not enough time to implement these Transactions on the server, however development towards that goal started the following week
-during the OGC sprint for _OGC API - Features Simple Transactions_.
+During the ISG Sprint there was not enough time to implement these Transactions on the server, however development towards that goal started the following week
+during the OGC Sprint for _OGC API - Features Simple Transactions_.
 Some progress on the implementation of the addition, replacement and removal of point features placing 3D models at the data store level was achieved,
 testing with the San Diego CDB datasets, as seen in the following screen captures.
 
@@ -526,7 +526,7 @@ a number of TIEs with _GeoVolumes API_ implementations from all other participan
 the GNOSIS Map Server using the Tiles API and associated extensions for 3D data.
 The result of those TIEs are demonstrated in a https://www.youtube.com/watch?v=mzGy2nRLgzY[video] and discussed in the _3DC&T_ engineering report.
 
-For the ISG sprint, Ecere spent efforts mainly on improving the server component and investigating a mechanism to update the 3D data.
+For the ISG Sprint, Ecere spent efforts mainly on improving the server component and investigating a mechanism to update the 3D data.
 
 However some performance improvements were done on the client to better accommodate the large amount of detailed models and
 full resolution textures of the San Diego CDB dataset. An issue with the rendering of referenced 3D models, where an applied orientation
@@ -622,7 +622,7 @@ An approach to implement hierarchies in this extensible manner is proposed in
 https://github.com/opengeospatial/oapi_common/issues/11#issuecomment-677947387[_Common_ issue #11],
 and was also the original demonstration of hierarchies in the _3D Container & Tiles_ pilot in TIEs between Ecere and Helyx
 (though at the time `/` was used rather than `:` as hierarchy separators).
-In the sprint this was also discussed with Steinbeis in https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/issues/5[issue #5].
+In the Sprint this was also discussed with Steinbeis in https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/issues/5[issue #5].
 
 ==== GeoVolumes API's raison d'être and name
 
@@ -655,7 +655,7 @@ efficiently deliver 3D content in an interoperable manner?
 
 ==== Tiles API & 3D Models Extension
 
-During the sprint and the 3D Container & Tile pilot, other participants did not directly experiment with the _OGC API - Tiles_ approach and extensions
+During the Sprint and the 3D Container & Tile pilot, other participants did not directly experiment with the _OGC API - Tiles_ approach and extensions
 as implemented by the Ecere service (such as the `/models` end-point) to deliver and access 3D content, although they were used by others in Testbed 14.
 Ecere feels that these end-points would be excellent candidates for defining additional conformance classes which could be tested in future interoperability
 experiments. Specifically, these end-points are much closer to the CDB data model, yet provide much more efficient access mechanism to visualize the 3D data

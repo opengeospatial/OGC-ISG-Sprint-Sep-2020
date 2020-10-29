@@ -20,7 +20,7 @@ SimBlocks has been operating for over 4 years and is located in Orlando, Florida
 
 
 == Architecture
-The OGC GeoVolumes architecture separates visual client applications from servers holding the 3D model content. The exact format of the models is hidden from the client. From the perspective of the client, the main benefit of the GeoVolumes API is that fewer 3D model formats need to be supported and accessing the models for a known area becomes very simple. From reviewing the 3D models provided by the servers, 3D tiles content (including glTF) is the primary format that was necessary to be supported by our Unity-based client.
+The OGC GeoVolumes architecture separates visual client applications from servers holding the 3D model content. The exact format of the models is hidden from the client. From the perspective of the client, the main benefit of the GeoVolumes API is that fewer 3D model formats need to be supported and accessing the models for a known area becomes very simple. From reviewing the 3D models provided by the servers, 3D Tiles content (including glTF) is the primary format that was necessary to be supported by our Unity-based client.
 
 [#img_SimBlocks-2,reftext='{figure-caption} {counter:figure-num}']
 .OGC GeoVolumes Architecture
@@ -51,7 +51,7 @@ https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/wiki/TIE-Table-and-Rep
 
 
 == Conversion Methods
-This section describes the methods we used to import glTF content into Unity. Because the Unity Editor does not currently directly support 3D Tiles or glTF content, our team reviewed several open source repositories to see how well they worked. Eventually, we included an approach of developing our own 3D tiles importer.
+This section describes the methods we used to import glTF content into Unity. Because the Unity Editor does not currently directly support 3D Tiles or glTF content, our team reviewed several open source repositories to see how well they worked. Eventually, we included an approach of developing our own 3D Tiles importer.
 
 = Method 1 - NASA Unity3DTiles Library
 Our team reviewed the following open source libraries:

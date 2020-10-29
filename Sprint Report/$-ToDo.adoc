@@ -14,43 +14,39 @@ _This section describes items that need to be done in the report so those sectio
 ** CDB
 ** Full Motion Video (FMV)
 ** GeoVolume
+** IANA
 ** jp2
 ** OpenFlight
 ** Pilot
 ** Sprint
+** W3C
 
 === *Tables, Images, & References*
 * +++<s>Review all images for correct syntax use</s>+++
 * +++<s>Review all tables for correct syntax use</s>+++
-** https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points
-** Need reference to _OGC API - Common - Part 2: Geospatial data_. It is used in multiple reports: Ecere, Helyx, 
+* +++<s>https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points</s>+++
+* Need reference to _OGC API - Common - Part 2: Geospatial data_. It is used in multiple reports: Ecere, Helyx, 
 
 
 === *Participant reports*
 * Review for content
 * All Participants (all changes via PR to master)
-** Capitalization
-*** "Sprint"
-*** "3D Tiles"
-*** "glTF"
-*** "GLB"
-** Cognitics
-*** Review all images captions
-** Helyx
-*** Link to SwaggerHub for draft spec. Should be changed to OGC ER
-*** +++<s>Is it "3d" or "3D" Tiles?</s>+++
-*** +++<s>Generate captions for all images</s>+++
-** InfoDao
-*** +++<s>Comment near end for "Insert image here" removed</s>+++
-*** +++<s>Use "glTF". Need to check on "GLB"</s>+++
 ** SimBlocks.io
 *** Please clarify the 2nd paragraph at https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-SimBlocks.adoc#server-testing. Providing examples would be good. You are highlighting an inconsistency in operation that should be cleared up.
 *** Need to provide proper link to TIE Table in Findings section (tbd)
+** Capitalization
+*** +++<s>"Sprint"</s>+++
+*** +++<s>"3D Tiles"</s>+++
+*** +++<s>"glTF"</s>+++
+*** +++<s>"GLB"</s>+++
 ** +++<s>CAE</s>+++
 ** +++<s>Cesium</s>+++
+** +++<s>Cognitics</s>+++
 ** +++<s>Ecere</s>+++
+** +++<s>Helyx</s>+++
+*** +++<s>Link to SwaggerHub for draft spec. Should be changed to OGC ER</s>+++
 ** +++<s>Hexagon</s>+++
-** +++<s>SimBlocks</s>+++
+** +++<s>InfoDao</s>+++
 ** +++<s>Steinbeis</s>+++
 
 === *Findings*

@@ -7,13 +7,13 @@ Within Dragonfly, a user has the ability to send full motion video (FMV) into Ra
 
 Currently, all content produced in this manner is incorporated into the visualization. It lacks any method for organizing the content for user filtering.
 
-In this sprint, we:
+In this Sprint, we:
 
 * Implemented a GeoVolumes service providing Rapid3D result content.
 
 * Implemented a GeoVolumes client in the Dragonfly web interface, allowing a user to select content based on source or geographic area.
 
-This provides a realistic scenario for the sprint while also solving a real SOCOM need.
+This provides a realistic scenario for the Sprint while also solving a real SOCOM need.
 
 
 == Architecture
