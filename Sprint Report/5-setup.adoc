@@ -72,7 +72,7 @@ image::images/OGC-Pilot-ResourceArchitecture.jpg[width=600,align="center"]
 
 This figure is presented as an illustration of possible connections. It is not intended to be a complete illustration of all connections, nor possible data sets.
 
-=== Discussion of scenarios
+=== Discussion of Scenarios
 
 The CfP described three possible scenarios cite:[SprintCfP]. Participants could choose to work on any number of these, any variant of these, or one (or more) of their choosing.
 

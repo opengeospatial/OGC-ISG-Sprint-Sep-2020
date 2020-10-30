@@ -1,5 +1,5 @@
-[[Overview]]
-== Overview
+[[Findings]]
+== Findings
 
 [NOTE]
 .Instructions
@@ -7,8 +7,156 @@
 This section describes the Sprint findings. It does discuss issues and results from several participants and other items of importance.
 ====
 
-Detailed discussion of basic resources available to all participants. This includes the San Diego CDB plus other GeoVolume API services and how the particpants used those resource to address the scenarios.
 
-Discussion by scenario of results.
+_Discussion by scenario of results._
 
-Sprint management discussion.
+=== Introduction
+
+This section describes findings of the Sprint participants. All findings presented here are significant in that there were reported by at least two participants or serious issues reported by a single participant. 
+
+Due to the nature of the Sprint, not all participants investigated the same aspects of the draft Specification. This is considered a positive aspect of the Sprint in that with limited resources a fairly expansive coverage of the draft Specification was performed.
+
+=== Aspects of Investigation
+
+Each participant was free to choose which one (or more) scenarios to pursue. <<discussion-of-scenarios,Three scenarios>> were discussed in the CfP. Particiapnts could also create their own. OGC reviewed each participants proposal and suggested revisions to better align with the goals of the Sprint, interest of the Sponsor, and coverage by the other participants. <<table-particiapnt-scenarios>> shows the coverage of scenarios by the participants.
+
+[#table-particiapnt-scenarios,reftext='{table-caption} {counter:table-num}']
+.The pre-declared the scenarios for each particiapnt. These are the primary areas of work, though their work may have touched on other scenarios. Cognitics worked with creating models from full-motion video (FMV), and SimBlocks worked with their Unity integration. The participant name links to their report section.
+[cols="2,^1,^1,^1,^1",options="header",align="center"]
+|===
+|*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
+|<<cae,*CAE*>>                             |*&check;* | | |
+|<<cesium,*Cesium*>>                       |*&check;* | | |
+|<<cognitics-sprint-report,*Cognitics*>>   | | | |*&check;*
+|<<ecere,*Ecere*>>                         |*&check;* | | |
+|<<helyx-sprint-report,*Helyx*>>           | |*&check;* | |
+|<<hexagon-gsp,*Hexagon*>>                 |*&check;* | | |
+|<<infodao-sprint-report,*InfoDao*>>       | |*&check;* |*&check;* |
+|<<simblocksio-sprint-report,*SimBlocks*>> | | | |*&check;*
+|<<steinbeis-sprint-report,*Steinbeis*>>   |*&check;* | |*&check;* |
+|===
+
+=== Cooperative Efforts
+
+All participants cooperated with each other in various aspects of the Sprint. This included a team entry, providing data services for the Sprint, and use and testing of other OGC API services.
+
+Two teams were formed. Three particpants teamed together for the Sprint to produce a combined result. These were CAE, Cesium, and Cognitics. This was done with the knowledge and approval of the sponsor. A two participant team (Ecere and Steinbeis) was formed to test the insertion, modification, and deletion of 3D objects and terrain into the base scene.
+
+All participants cooperated and included the test and use of other particiapnts services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and use (clients).
+
+[#table-tie-summary,reftext='{table-caption} {counter:table-num}']
+.The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&check;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
+[cols="1,2,2,2,2",options="header",align="center"]
+|===
+>| *Client ->* .2+^| *Hexagon* .2+^| *InfoDao* .2+^| *SimBlocks* .2+^| *Steinbeis*
+<| *Service*
+
+| *Cesium*
+  | *&check;* (+ fdbk)
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+
+| *Cognitics*
+  | *&check;* [pilot]
+  | NA
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+
+| *Ecere*
+  | *&check;* [San Diego]
+  | *&check;* [San Diego]
+  | *&check;* [San Diego]
+  | *&check;* [San Diego]
+
+|  _(Pilot functions)_ *Ecere*
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+
+| *PyGeoAPI-InfoDao*
+  | *&check;*
+  | using CDB server
+  | NA
+  | not pass
+
+| *Helyx*
+  | *&check;* [pilot, San Diego]
+  | *&check;* [pilot, San Diego]
+  | *&check;* [pilot, San Diego]
+  | *&check;* [pilot, San Diego]
+
+| *Steinbeis New*
+
+  | *&check;*(+ fdbk)
+  | *&check;* [San Diego]
+  | *&check;* [San Diego]
+  | *&check;* [San Diego]
+
+| _(Pilot functions)_ *Steinbeis Existing*
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+  | *&check;* [pilot]
+
+|===
+
+=== General Results
+
+The work done for the Sprint was closely tied to the work done for the Pilot, even though some of the participants were different between the two projects. The mix of participants allowed some with extensive experience in GeoVolumes to dig deeper into areas that were not fully explored during the Pilot. The participants without the Pilot brought a fresh read to the document and potential solutions.
+
+No defects in the draft specification were discovered, though several items need further investigation. These are discussed in the <<Discovered Inconsistencies>> section. Several participants discussed the importance of GeoVolumes following the OGC API Core, Volume 2: 3D Data specification to ensure compatibility throughout the suite of OGC APIs.
+
+In addition to the results shown in <<table-tie-summary>> the participants were able to use their existing GeoVolume client sofware to access data-stores that had not been previously used by OGC and OGC projects. These data-stores included data in CDB and other formats that either were served directly (as 3D Tiles static files) or generated on-the-fly from CDB and other sources.
+
+It is worth mentioning that two participants (CAE & Cognitics) have hosted their services on Amazon Web Services (AWS) to improve through-put and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads or load balancing capabilities or performance.
+
+=== Dynamic Dataset Updates
+
+Several of the participants developed the capability to update part of the dataset during operation. These updates do not require regeneration of the entire dataset from the data-store. There are mechanisms to ensure that any generated and cached files are appropriately rebuilt on the next request. 
+
+Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily iedal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did not that getting the models to allign with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
+
+=== Performance Issues
+
+Nearly all of the participants noted that conversion of CDB to 3D Tiles was an expensive operation and needed to be avoided especially for on-the-fly requests. Cesium noted that in addition to the performance issues associated with conversion, the high-detailed building files are (generally) very large (50-100MB), and improving the tiling scheme is needed to maintain performance of the server and client.
+
+=== Discovered Inconsistencies
+
+Several of the participants discovered various issues related to HTTP transactions. These include issues in the URL, request method, content-type, and, request attributes. The issues and possible solutions are inter-related. Each issue is linked to the section of the participants report where it is discussed in detail.
+
+==== URLs
+
+Issues with the URL were noted by several participants. These include 
+
+* Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon) [Helyx: <<A note on Path Format>>].
+* {SimBlocks -- server inconsitencies}
+* {Ecere - need better way for merging?}
+* {InfoDao}
+
+_End-point definition be URL-path, search parameters, or something else {Helyx}
+
+==== Request Methods
+
+Use of request methods may not agree with W3C definitions
+
+* {Helyx}
+* {Ecere - model state change}
+
+
+==== Content-type
+
+Discusses use of content-type to indicate what is being returned. Tied in with client provided content accepted list
+
+* {Helyx}, also mentioned by 1 or 2 others
+
+==== Request attributes
+
+* {Helyx - alternate distributions, especially with different content types}
+
+
+=== Other ???
+
+SimBlocks.io work on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would be a similar amount of work.
+
