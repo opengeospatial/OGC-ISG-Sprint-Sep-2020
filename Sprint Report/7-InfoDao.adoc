@@ -7,7 +7,7 @@ All participants were given access to the San Diego CDB, and the standards for t
 
 As a quick summary, InfoDao was able to use the GeoVolumes API to quickly and reliably retrieve information. The ease of query generation coupled with the accessibility of 3D Tiles (e.g. glTF/GLB as 3D data and Transform matrix as location data) allowed InfoDao's clients to visualize the CDB data with minimal development overhead. When compared to a standard like the CDB, the simplicity and accessibility of the data were greatly highlighted; taking implementation from 1 week for CDB to less than a day for 3D Tiles.
 
-Resulting from the conversion of CDB to 3D tiles, a theme arose in discussion about how to ameliorate the differences among these standards. For instance, while InfoDao's client was able to access and display content from a CDB (utilizing the STAC specification from an OGC API implementation), it was not immediately accessible from a GeoVolumes perspective. On the other hand, CAE produced a seperate 3D Tiles distribution that allowed participants to more easily serve the GeoVolumes API. This worked well for the purposes of the Sprint, however, there is a question of the methods of supply multiple data distributions from one source of data. 
+Resulting from the conversion of CDB to 3D tiles, a theme arose in discussion about how to ameliorate the differences among these standards. For instance, while InfoDao's client was able to access and display content from a CDB (utilizing the STAC specification from an OGC API implementation), it was not immediately accessible from a GeoVolumes perspective. On the other hand, CAE produced a seperate 3D Tiles distribution that allowed participants to more easily serve the GeoVolumes API. This worked well for the purposes of the Sprint, however, there is a question of the methods of supply multiple data distributions from one source of data.
 Helyx's Sprint report contains great starting discussion on the various formats and delivery methods the OGC has standardized, and conversations with Ecere also highlight the similarities and potential future work actions that could resolve these issues.
 
 But before we get into the weeds, let's show the results.
@@ -20,27 +20,27 @@ Here are the images from the TIE table
 .Ecere's San Diego 3D Tiles
 image::images/InfoDao/ecereSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-2,reftext='{figure-caption} {counter:figure-num}']
 .Ecere's New York 3D Tiles
 image::images/InfoDao/ecereNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-3,reftext='{figure-caption} {counter:figure-num}']
 .Steinbeis' New York 3D Tiles
 image::images/InfoDao/steinbeisNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-4,reftext='{figure-caption} {counter:figure-num}']
 .Steinbeis' San Diego 3D Tiles
 image::images/InfoDao/steinbeisSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-5,reftext='{figure-caption} {counter:figure-num}']
 .Helyx's San Diego 3D Tiles
 image::images/InfoDao/helyxSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-6,reftext='{figure-caption} {counter:figure-num}']
 .Helyx's New York 3D Tiles
 image::images/InfoDao/helyxNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-7,reftext='{figure-caption} {counter:figure-num}']
 .Cesium's New York 3D Tiles
 image::images/InfoDao/cesiumNewYorkPassing.png[width=800,align="center"]
 
@@ -56,19 +56,17 @@ InfoDao stood up a test server to quickly simulate server client transactions fo
     2. Fetch raster tiles that were available at specific LODs. Because of the data formats of the tiles (JPEG2000 for raster imagery, and TIFF for elevation data), InfoDao also stood up a small conversion service that would convert imagery into a consumable format
     3. Fetch Geometry from the server. The 3D models were in OpenFlight format and not immediately accessible for 3D rendering in our clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
     4. Display converted geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
-    
+
 In comparison, we used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:
 
-    0. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
-    1. Fetch Raster tiles at a specific LOD, no conversion needed since two supported distributions were available (.jpg and .png)
-    2. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and glTF were available.
+    1. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
+    2. Fetch Raster tiles at a specific LOD, no conversion needed since two supported distributions were available (.jpg and .png)
+    3. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and glTF were available.
 
 While the CDB and GeoVolumes API are two separate OGC standards, participants showed that these standards have a pathway to become interoperable together rather than interoperability among members in each standard. During implementation of the CDB layer highlighted two problems:
 
     1. The server does not know what the CDB standard is. This leaves clients to understand how to access geospatial information in the CDB without any guidance or helper functions from the server.
     2. The client does not know what the data formats inside the CDB are. It was helpful to have an on-the-fly converter endpoint for images (e.g. JPEG2000 to JPEG/PNG), and it could be extended to other helper functions for 3D geometry, etc.
-    
+
 ==== Wrapping it up
 In this Sprint, GeoVolume API's straight forward approach to 3D data along with flexible helper functions at the core (bbox querys and data distribution methods) enabled the participants to consume data in convenient ways. There are great concurrent discussions about the more technical aspects of this proposition. Helyx's Sprint report features investigations on how to handle multiple data distributions and which should be supported. Also, Ecere's works also highlight parallels between GeoVolumes and other OGC APIs like the Tiles and Features APIs. As a newcomer to the OGC, GeoVolumes API was straightforward to consume and did not lend itself to errors due to easily accessible data formats and the lack of conversion.
-
-
