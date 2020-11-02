@@ -20,27 +20,27 @@ Here are the images from the TIE table
 .Ecere's San Diego 3D Tiles
 image::images/InfoDao/ecereSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-2,reftext='{figure-caption} {counter:figure-num}']
 .Ecere's New York 3D Tiles
 image::images/InfoDao/ecereNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-3,reftext='{figure-caption} {counter:figure-num}']
 .Steinbeis' New York 3D Tiles
 image::images/InfoDao/steinbeisNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-4,reftext='{figure-caption} {counter:figure-num}']
 .Steinbeis' San Diego 3D Tiles
 image::images/InfoDao/steinbeisSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-5,reftext='{figure-caption} {counter:figure-num}']
 .Helyx's San Diego 3D Tiles
 image::images/InfoDao/helyxSanDiegoPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-6,reftext='{figure-caption} {counter:figure-num}']
 .Helyx's New York 3D Tiles
 image::images/InfoDao/helyxNewYorkPassing.png[width=800,align="center"]
 
-[#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
+[#img_InfoDao-7,reftext='{figure-caption} {counter:figure-num}']
 .Cesium's New York 3D Tiles
 image::images/InfoDao/cesiumNewYorkPassing.png[width=800,align="center"]
 
@@ -59,9 +59,9 @@ InfoDao stood up a test server to quickly simulate server client transactions fo
     
 In comparison, we used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:
 
-    0. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
+    1. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
     1. Fetch Raster tiles at a specific LOD, no conversion needed since two supported distributions were available (.jpg and .png)
-    2. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and glTF were available.
+    1. Fetch Geometry tiles at a specific LOD, no conversion needed since GeoJSON and glTF were available.
 
 While the CDB and GeoVolumes API are two separate OGC standards, participants showed that these standards have a pathway to become interoperable together rather than interoperability among members in each standard. During implementation of the CDB layer highlighted two problems:
 

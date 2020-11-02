@@ -7,6 +7,57 @@ _This section describes items that need to be done in the report so those sectio
 267 Oct: 20:15-20:45
 ====
 
+=== *Futures*
+* Updates for glTF
+* Extract and summarize particpants
+* *CAE* (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-CAE.adoc#recommendations)
+** Dealing with data disparity issues between CDB, 3D Tiles, and glTF
+** Batch converter from CDB models to glTF
+** Handling geoposition information for glTF
+* *Cesium*
+** Rendering performance can be improved if multiple 3D models are combined into a single OpenFlight file
+* *Cognitics*
+** _none stated_
+* *Ecere*
+** Improve (optimize) 3D Tiles tileset generation
+** Implement change/update transactions, including change history
+** _Note: there seems to be some confusion between the HTTP PUT and HTTP Patch request methods. The example shown in Figures 29&30 could be better done with a *Patch* request._
+** Registration of non-experimental, non-vendor media types (also Helyx)
+** Need to better define and name API to reflect what it actually does and delivers
+* *Helyx*
+** Improved understanding and definition of the system of OGC API systems so that there is spec-level consistency to the request URI when accessing resources across the various implementations of OGC APIs.
+* *Hexagon*
+** On the fly tiling of CDB to eliminate need to pre-process CDB to 3D Tiles and provide a better solution to data-store updates
+* *InfoDao*
+** Further investigation is necessary along lines of Helyx's and Ecere's comments.
+* *SimBlocks.io*
+** Improve Unity loading of content (glTF, 3D Tiles)
+** Additional investigation of GeoVolumes bounding volume queries
+* *Steinbeis*
+** New API for "Feature Transaction" that covers updates to scenes when features within a scene undergo an update. [Note: Other participants indicate that this needs to include terrain updates.]
+** Batch conversion of CDB to 3D Tiles. 
+** GeoVolumes may need a bounding box with a hole as described in https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#1-3d-geovolumes-api-query---polygon-with-a-hole
+** Potential inconsistency in naming conventions when looking at resolutions finer than region. See https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#2-3d-geovolumes-api-organization-different-semantic-parts
+
+
+
+
+=== *Summary*
+* +++<s>Subject (2-3 sentences)</s>+++
+* Executive Summary
+
+=== *Bibliography*
+* Extract and assemble from all sections
+* *+++<s>Setup</s>+++*
+* *+++<s>References</s>+++*
+
+
+'''
+== Everything below here is complete
+
+=== *Overview*
+* Update after draft version written
+
 === *Terms*
 * Add terms and definitions
 ** 3D Tiles
@@ -21,13 +72,6 @@ _This section describes items that need to be done in the report so those sectio
 ** Sprint
 ** URL/URI
 ** W3C
-
-=== *Tables, Images, & References*
-* +++<s>Review all images for correct syntax use</s>+++
-* +++<s>Review all tables for correct syntax use</s>+++
-* +++<s>https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points</s>+++
-* Need reference to _OGC API - Common - Part 2: Geospatial data_. It is used in multiple reports: Ecere, Helyx, 
-
 
 === *Participant reports*
 * Review for content
@@ -103,51 +147,8 @@ _This section describes items that need to be done in the report so those sectio
 ** Conversion from CDB (data-store format) to 3D Tiles (rendering format) is complex and time-consuming
 ** Able to add or delete structures
 
-
-
-=== *Futures*
-* Updates for glTF
-* Extract and summarize particpants
-* *CAE* (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-CAE.adoc#recommendations)
-** Dealing with data disparity issues between CDB, 3D Tiles, and glTF
-** Batch converter from CDB models to glTF
-** Handling geoposition information for glTF
-* *Cesium*
-** Rendering performance can be improved if multiple 3D models are combined into a single OpenFlight file
-* *Cognitics*
-** _none stated_
-* *Ecere*
-** Improve (optimize) 3D Tiles tileset generation
-** Implement change/update transactions, including change history
-** _Note: there seems to be some confusion between the HTTP PUT and HTTP Patch request methods. The example shown in Figures 29&30 could be better done with a *Patch* request._
-** Registration of non-experimental, non-vendor media types (also Helyx)
-** Need to better define and name API to reflect what it actually does and delivers
-* *Helyx*
-** Improved understanding and definition of the system of OGC API systems so that there is spec-level consistency to the request URI when accessing resources across the various implementations of OGC APIs.
-* *Hexagon*
-** On the fly tiling of CDB to eliminate need to pre-process CDB to 3D Tiles and provide a better solution to data-store updates
-* *InfoDao*
-** Further investigation is necessary along lines of Helyx's and Ecere's comments.
-* *SimBlocks.io*
-** Improve Unity loading of content (glTF, 3D Tiles)
-** Additional investigation of GeoVolumes bounding volume queries
-* *Steinbeis*
-** New API for "Feature Transaction" that covers updates to scenes when features within a scene undergo an update. [Note: Other participants indicate that this needs to include terrain updates.]
-** Batch conversion of CDB to 3D Tiles. 
-** GeoVolumes may need a bounding box with a hole as described in https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#1-3d-geovolumes-api-query---polygon-with-a-hole
-** Potential inconsistency in naming conventions when looking at resolutions finer than region. See https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/7-Steinbeis.adoc#2-3d-geovolumes-api-organization-different-semantic-parts
-
-
-
-
-=== *Overview*
-* Update after draft version written
-
-=== *Summary*
-* Subject (2-3 sentences)
-* Executive Summary
-
-=== *Bibliography*
-* Extract and assemble from all sections
-* *+++<s>Setup</s>+++*
-* *+++<s>References</s>+++*
+=== *Tables, Images, & References*
+* +++<s>Review all images for correct syntax use</s>+++
+* +++<s>Review all tables for correct syntax use</s>+++
+* +++<s>https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/dr-1006/Sprint%20Report/1-summary.adoc#document-contributor-contact-points</s>+++
+* Need reference to _OGC API - Common - Part 2: Geospatial data_. It is used in multiple reports: Ecere, Helyx, 
