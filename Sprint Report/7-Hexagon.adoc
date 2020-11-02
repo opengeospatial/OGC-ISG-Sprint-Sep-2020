@@ -1,9 +1,11 @@
 == Hexagon GSP
+
 [#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB meshes converted and served by the Luciad Fusion platform.
 image::images/Hexagon/TitleScreen.png[]
 
 === Abstract
+
 This chapter investigates how model and terrain updates, originating from a CDB data
 store and delivered as glTF or elevation, are integrated with background elevation and OGC 3D Tiles
 into the client environment.
@@ -29,6 +31,7 @@ dataset to create a single coherent OGC 3DTiles tileset.
 image::images/Hexagon/CommunicationDiagram.png[align="center"]
 
 === Test Data
+
 The research is based on the San Diego CDB sample dataset provided for this Sprint. It provides imagery, elevation, 3D
 models and a variety of vector data.
 
@@ -37,9 +40,11 @@ models and a variety of vector data.
 image::images/Hexagon/SanDiegoCDBFileSystem.png[]
 
 === Organization of CDB for 3D Models
+
 This section recaps the organization of CDB data for 3D models.
 
 ==== GSFeatures and GSModelGeometry
+
 GSFeatures and GSModelGeometry are two folders containing matching Level Of Detail (LOD) folders.
 In the GSModelGeometry folder, OpenFlight files are zipped in groups corresponding to a tiling schema.
 
@@ -53,14 +58,17 @@ OpenFlight format. This is not the full path or even relative path to the geomet
 matched with one of the files (zipped) at the corresponding LOD level if present at all.
 
 ===== SHP and DBF files
+
 GSFeature folder is made up of Esri SHP files linking to DBF files where the DBF files have many-to-one relationships
 amongst themselves.
 
 ==== GTFeature and GTModelGeometry
+
 GTFeatures are similar to GSFeatures except that the GTmodels are instanced and a single GTModel can be referenced by
 many GTFeatures.
 
 ==== CDB Technical Specification Recommendations
+
 Based on the San Diego CDB data set, the compression of
 OpenFlight data through zip leads to a minimal gain in hard-drive memory usage (on the order of 5%).
 
@@ -103,7 +111,6 @@ image::images/Hexagon/3DTilesWithoutMap.png[align="center"]
 The pre-processed tileset can display more buildings at low LODs than would be possible by loading the raw files from
 the CDB data store even if the distant buildings are simplified meshes with just a basic texture.
 
-
 ==== Mesh Simplification
 
 [#img_MESH_SIMPLIFICATION,reftext='{figure-caption} {counter:figure-num}']
@@ -143,18 +150,22 @@ color of a texture and using it instead. This gives the tileset a rather cartoon
 certain postFX.
 
 ==== Tile size
+
 Every tile at every LOD uses approximately the same size in memory.
 At any given point of view, the client application will load roughly the same amount of data.
 
 ==== Metadata and selection
+
 The tiling may cut buildings in pieces but this does not impact selection or access to metadata because an index is
 encoded inside the mesh faces linking them to the original model they belong to.
 
 ==== Conversion speed
+
 The drawback of this approach is the time it takes. It's currently impossible to achieve this conversion on the fly and
 converting the entire San Diego dataset took several hours.
 
 ==== Referencing
+
 CDB provides referencing and orientation of 3D models through point features. The height of the 3D models is either
 given as a parameter of the point-features or can be inferred from elevation data provided in the CDB data store.
 
@@ -162,6 +173,7 @@ The referencing information is used but the heights is dismissed during creation
 inferred at render time through GPU evaluated expressions on any loaded elevation data.
 
 ==== 3D data organization recommendations
+
 The ideal pre-processed dataset doesn't use the raw files but rather simplifies, splits
 and merges them into tiles of varying levels of detail. The LODs embedded inside OpenFlight files cannot be used
 because the ideal level of simplification for a given tile depends on the entire dataset. This removes the need for a
@@ -187,6 +199,7 @@ In this scenario, the mesh files are also made up of several parts but because t
 generating a tile only requires loading one file at a time.
 
 === Serving OGC 3DTiles from CDB with on the fly tiling
+
 Serving 3D Models on the fly means that whenever a client application looks at the data from a certain angle, it will
 send a request to the server that must gather the data to be visualized and convert it to glTF on the fly. This task
 has not been completed within the Sprint but will help handle updates more easily than using the previously
@@ -207,9 +220,11 @@ The approach of simplifying meshes for lower LODs cannot be done in real-time be
 out smaller buildings for lower LODs will have to be used.
 
 ==== Speed
+
 The speed of the server is expected to be good enough to call real-time.
 
 ==== Quality
+
 Mesh simplification will be too slow to generate tiles on the fly. Instead, dropping out smaller models at low LODs
 must be used.
 If the tiles are additive, it is impossible to use different levels of detail for
@@ -217,6 +232,7 @@ textures. It's expected that a compromise would have to be done in respect to te
 will be better suited but requires more computation on the server.
 
 ==== Updates
+
 Updates may be implemented by having a file watcher on the CDB GSFeature and GTFeature folders.
 An update would trigger rebuilding the tileset.json and a notification to the client application.
 
@@ -228,14 +244,17 @@ It's also possible to rebuild only certain branches of the LOD tree in case of a
 for deep trees because the gain is minimal in comparison to the complexity of the implementation.
 
 ==== Server Caching
+
 Tiles are automatically cached on the client using the browser's cache. Tiles may also be cached on the server.
 
 ==== Data Structure
+
 Depending on the dataset, an octree, quadTree or even an R-tree can be used for the LOD structure. Another data
 structure that is ideal for frequent updates is a regular grid of cells. The grid of cells doesn't need to be rebuilt
 for every update but it is uncertain if such a structure can be leveraged to serve 3D-tiles efficiently.
 
 ==== CDB 3D data organization recommendations
+
 In this approach, a tileset.json tree is generated on the fly at startup of the server or when an update happens.
 The tiles themselves are generated upon request.
 Having OpenFlight meshes that are already organized in coherent LODs can improve the time it takes to build the
@@ -269,6 +288,7 @@ The image on the left shows a mismatch between the elevation model and the 3DTil
 perfect match between the two.
 
 ==== Proxy Server Approach
+
 The solution is to start by processing the 3D Meshes to OGC 3DTiles without taking the elevation into
 account. Buildings are therefore on the ellipsoid with the assumption that the ellipsoid stays constant. When the
 client requests tiles, they are automatically shifted up or down according to a loaded elevation model, therefore
@@ -290,6 +310,7 @@ The disadvantage of this approach is that the proxy server needs to be made awar
 the client.
 
 ==== GPU Expression Approach
+
 It is possible to match 3DTiles with elevation without a proxy server by using GPU evaluated expressions to
 shift vertices up or down at render time, although this was not achieved. This is a similar approach to the one used
 to handle <<Handling CDB Model Updates,CDB model updates>>.
@@ -303,6 +324,7 @@ has access to both at the same time. It would take deeper modifications to the r
 this.
 
 === Handling CDB Model Updates
+
 3D Meshes can be displaced at render time using GPU evaluated expressions. This technique allows handling 3D model
 updates and ensuring that there is no overlap or mismatch between data sets.
 
@@ -323,20 +345,24 @@ flexibility.
 image::images/Hexagon/AddUpdateDelete.png[align="center"]
 
 ==== Deleted Model
+
 When a model is deleted, it should be removed from the pre-processed background dataset. This can be achieved by pushing
 the vertices that correspond to the deleted model down.
 
 ==== Updated Model
+
 In the case where a model is updated with a newer version, the new version is processed in a separate 3DTiles tileset.
 The new tileset cannot simply be loaded alongside the background 3DTiles because it would overlap with the previous
 version of itself. To resolve this, the vertices of the background
 data set that are inside the bounding box of the new model are squashed below the new one.
 
 ==== Added Model
+
 In the case that a completely new model is added, it is converted into a separate OGC 3DTiles tileset and loaded
 alongside the background data. this conversion to 3D Tiles is very fast for small models.
 
 === Future Work
+
 On the fly tiling of CDB 3D data is the next step and although it couldn't be achieved in this Sprint, there is
 no blocking issue going forward. On the fly tiling will remove the overhead of the slow conversion to OGC 3DTiles and
 will offer a more elegant solution to handling data-store model updates.

@@ -1,6 +1,5 @@
-[[Overview]]
+[[SetupOverview]]
 == Overview
-
 
 === Call for Participation
 
@@ -30,13 +29,13 @@ The San Diego CDB was available for download by all participants. Many of the pa
 
 === 3D GeoVolume Servers
 
-Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data. 
+Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data.
 
 [#table_summary-servers,reftext='{table-caption} {counter:table-num}']
 .Servers providing GeoVolume API access to the indicated dataset
 [cols="2,4,8a",options="header",align="center"]
 |===
-|*Organization* |*URL*  |*Notes* 
+|*Organization* |*URL*  |*Notes*
 |Cesium |https://3d.hypotheticalhorse.com | Server
 |Cesium | https://map.hypotheticalhorse.com/ | Client
 |Cognitics |http://cdb.cognitics.net:3000/ | _n/a_
@@ -45,8 +44,8 @@ Several of the Sprint participants also participated in the Pilot. These organiz
 |Helyx |http://helyxapache2.eastus.azurecontainer.io/ | _n/a_
 |InfoDao |http://pygeoapi.isg-sprint-hub.infodaollc.com/stac | PyGeoAPI serving San Diego and Copenhagen CDB (base url has rest of API)
 |Skymantics |http://13.82.99.186:5050/ | _n/a_
-.4+|Steinbeis |https://steinbeis-3dps.eu/3DGeoVolumes | New Steinbeis 3D GeoVolumes server for OGC-ISG 
- |http://steinbeis-3dps.eu:8080/3DContainerTile/ | Existing Steinbeis 3D GeoVolumes server from the 3D Container and Tiles pilot, containing New York City 3D Tiles dataset, New York City I3S dataset 
+.4+|Steinbeis |https://steinbeis-3dps.eu/3DGeoVolumes | New Steinbeis 3D GeoVolumes server for OGC-ISG
+ |http://steinbeis-3dps.eu:8080/3DContainerTile/ | Existing Steinbeis 3D GeoVolumes server from the 3D Container and Tiles pilot, containing New York City 3D Tiles dataset, New York City I3S dataset
  |http://steinbeis-3dps.eu/STT3DClient/ |STT 3D Client (based on CesiumJS & ArcGIS for JavaScript)
  |https://ogc3dc.igd.fraunhofer.de/ |STT 3D Client (by Fraunhofer and GeoRocket)
 |===
@@ -58,13 +57,13 @@ The entirity of the 3D Data Container and Tiles API Pilot engineering report (ak
 
 === Architecture diagrams
 
-These architecture diagrams were provided with the CfP. Figure <<#img_ServiceArchitecture>> illustrate the service architecture of the 3D Data Container and Tiles environment that includes the GeoVolume API. Figure <<#img_ResourceArchitecture>> illistrates access to city-based datasets (in particular for New York, US and Montreal, CA), but only showing the detail for New York City. 
+These architecture diagrams were provided with the CfP. Figure <<#img_ServiceArchitecture>> illustrate the service architecture of the 3D Data Container and Tiles environment that includes the GeoVolume API. Figure <<#img_ResourceArchitecture>> illistrates access to city-based datasets (in particular for New York, US and Montreal, CA), but only showing the detail for New York City.
 
 [#img_ServiceArchitecture,reftext='{figure-caption} {counter:figure-num}']
 .The architecture of the various Pilot capabilities is shown with connecting arrows indicating request flow. Each client has a built-in Globe model that provides a base coordinate system for all additional data.
 image::images/OGC-Pilot-ServiceArchitecture.jpg[width=600,align="center"]
 
-Arrows show the potential paths of requests from the clients; data flow is in the reverse direction. The connecting lines indicate conceptual requests and data flows. The actual connections may be distributed across several physical devices. 
+Arrows show the potential paths of requests from the clients; data flow is in the reverse direction. The connecting lines indicate conceptual requests and data flows. The actual connections may be distributed across several physical devices.
 
 [#img_ResourceArchitecture,reftext='{figure-caption} {counter:figure-num}']
 .Pilot data architecture illustrating access to datasets for two North American cities (Montreal and New York). The architecture supporting New York City is shown in detail.
@@ -88,4 +87,3 @@ The CfP described three possible scenarios cite:[SprintCfP]. Participants could 
 .. How are features (buildings, vegetation, transportation networks, etc.) structured in the data store? Are they layers in geo-political sets, or are geo-political data layers in feature sets?
 
 These scenarios were designed to test and explore portions of the draft GeoVolumes specification that OGC and the sponsors felt were not sufficiently explored in the Pilot. They derive directly from the discussion from Chapter 10 of the Extended Executive Summary cite:[ExtendedExecutiveSummary]. In addition to the listed scenarios, participants were invited to explore other areas that fit within the oppotunities described in Chapter 10. Some of the participants did use this option to explore other capabilities, especially related to game-engine integration. The Findings chapter of this report discusses the participant's scenario choices.
-

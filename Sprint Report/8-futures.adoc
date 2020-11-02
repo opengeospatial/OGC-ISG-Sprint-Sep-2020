@@ -1,12 +1,10 @@
-[[Overview]]
-== Overview
+[[FutureRecommendations]]
+== Future Recommendations
 
 [NOTE]
 .Instructions
 ====
-This section discusses future work and lessons learned from the Sprint. 
+This section provides recommendations that sponsors might be interested in funding for future work.
 ====
 
-Items that should be further investigated
-
-Lessons learned
+Recommendations that sponsors might be interested in funding for future work.
