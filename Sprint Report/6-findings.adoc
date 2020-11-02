@@ -133,34 +133,30 @@ Several of the participants discovered various issues related to HTTP transactio
 
 Issues with the URL were noted by several participants. These include 
 
-* Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon).  [Helyx: <<A note on Path Format>>].
-
-NOTE: "Uniform Resource Identifier (URI): Generic Syntax" site:[RFC3986] specifies that the colon (":") is a reserved character and needs to be URL-encoded.
-
 * _SimBlocks -- server inconsitencies_
 * _Ecere - need better way for merging?_
 * _InfoDao_
+* Clarity of requirements for endpoints. Helyx observed (<<representing-alternate-distributions-at-the-collections-level,Representing Alternate Distributions at the Collection(s) Level>>) that there is a lack of clarity in how to specify the alternet distributions. It may be specified as the final element in a path (endpoint), via search parameters, or through content-type negotiation.
+* Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon).  [Helyx: <<A note on Path Format>>].
 
-_End-point definition be URL-path, search parameters, or something else {Helyx}
+NOTE: "Uniform Resource Identifier (URI): Generic Syntax" site:[RFC3986] specifies that the colon (":") is a reserved character and needs to be URL-encoded. This requirement may be sufficient for URI access, but if the system needs to support static file-mode access; there may be issues with Windows-based servers.
 
 ==== Request Methods
 
 Use of request methods may not agree with W3C definitions
 
-* _Helyx_
 * _Ecere - model state change_
 
 
-==== Content-type
+==== Media Type
 
-Discusses use of content-type to indicate what is being returned. Tied in with client provided content accepted list
+The HTTP specification allows the client to specify the allowed media types that the server is allowed to return. The server may return a "Not Found" or other responses if the requested media type for that content is not available. If the various 3D data types have unique media types, the client may request a specific one through this mechanism. Helyx discussed some of these options in <<Representing Alternate Distributions as Media Types>>.
 
-* _Helyx, also mentioned by 1 or 2 others_
+NOTE: Content types do not have to be IANA approved. There are provision for experimental and vendor-specific content types. It is generally easier to get IANA approval after a specification is approved by standards organization.
 
 ==== Request attributes
 
-* _Helyx - alternate distributions, especially with different content types_
-
+HTTP allows for an alternate or roll-over reference. This allows for the client code to indicate alternate distributions of the content-equivalent data. For example the primary reference may be 3D Tiles with a roll-over of i3s and CDB. Helyx discussed some of the issues and options in <<Representing Alternate Distributions within one API - Link Relations>>.
 
 === Game Engine Interface
 
