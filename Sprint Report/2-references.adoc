@@ -7,4 +7,5 @@ The following normative documents are referenced in this document.
 * https://www.ogc.org/standards/cdb[CDB V1.0 Standard. (c)2016, Open Geospatial Consortium]
 * https://github.com/KhronosGroup/glTF/tree/master/specification/2.0[glTF V2.0 Specification, 9 June 2017. (c) 2017, The Khronos Group]
 * https://portal.ogc.org/files/?artifact_id=94029[GeoVolumes API Draft Specification. (c)2020, Open Geospatial Consortium]
+* https://tools.ietf.org/html/rfc3986[Uniform Resource Identifier (URI): Generic Syntax. RFC 3986, IETF.]
 
