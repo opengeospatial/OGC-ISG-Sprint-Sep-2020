@@ -167,7 +167,7 @@ include::8-Futures.adoc[]
 // Editors add or remove annexes as necessary.
 // *****************************************************************************
 
-// include::annex-a.adoc[]
+include::annex-a.adoc[]
 
 // include::annex-b.adoc[]
 
