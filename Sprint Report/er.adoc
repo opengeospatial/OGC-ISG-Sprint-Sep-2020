@@ -137,7 +137,9 @@ include::4-overview.adoc[]
 
 include::5-setup.adoc[]
 
-include::6-findings.adoc[]
+include::6a-findings.adoc[]
+
+include::6b-conclusions.adoc[]
 
 include::7-CAE.adoc[]
 
