@@ -28,15 +28,15 @@ Each participant was free to choose which one (or more) scenarios to pursue. <<d
 [cols="2,^1,^1,^1,^1",options="header",align="center"]
 |===
 |*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
-|<<cae,*CAE*>>                             ^|*&check;* | | |
-|<<cesium,*Cesium*>>                       ^|*&check;* | | |
-|<<cognitics-sprint-report,*Cognitics*>>   ^| | ^|*&check;* ^|*1*
-|<<ecere,*Ecere*>>                         ^|*&check;* | | |
-|<<helyx-sprint-report,*Helyx*>>           ^| ^|*&check;* | |
-|<<hexagon-gsp,*Hexagon*>>                 ^|*&check;* | | |
-|<<infodao-sprint-report,*InfoDao*>>       ^| ^|*&check;* ^|*&check;* |
+|<<cae,*CAE*>>                             ^|*&#10003;* | | |
+|<<cesium,*Cesium*>>                       ^|*&#10003;* | | |
+|<<cognitics-sprint-report,*Cognitics*>>   ^| | ^|*&#10003;* ^|*1*
+|<<ecere,*Ecere*>>                         ^|*&#10003;* | | |
+|<<helyx-sprint-report,*Helyx*>>           ^| ^|*&#10003;* | |
+|<<hexagon-gsp,*Hexagon*>>                 ^|*&#10003;* | | |
+|<<infodao-sprint-report,*InfoDao*>>       ^| ^|*&#10003;* ^|*&#10003;* |
 |<<simblocksio-sprint-report,*SimBlocks*>> ^| | | ^|*2*
-|<<steinbeis-sprint-report,*Steinbeis*>>   ^|*&check;* | ^|*&check;* |
+|<<steinbeis-sprint-report,*Steinbeis*>>   ^|*&#10003;* | ^|*&#10003;* |
 |===
 
 === Cooperative Efforts
@@ -48,60 +48,60 @@ Two teams were formed. Three particpants teamed together for the Sprint to produ
 All participants cooperated and included the test and use of other particiapnts services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and use (clients).
 
 [#table-tie-summary,reftext='{table-caption} {counter:table-num}']
-.The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&check;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
+.The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&#10003;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
 [cols="1,2,2,2,2",options="header",align="center"]
 |===
 >| *Client ->* .2+^| *Hexagon* .2+^| *InfoDao* .2+^| *SimBlocks* .2+^| *Steinbeis*
 <| *Service*
 
 | *Cesium*
-  | *&check;* (+ fdbk)
-  | *&check;* [pilot]
-  | *&check;* [pilot]
-  | *&check;* [pilot]
+  | *&#10003;* (+ fdbk)
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
 
 | *Cognitics*
-  | *&check;* [pilot]
+  | *&#10003;* [pilot]
   | NA
-  | *&check;* [pilot]
-  | *&check;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
 
 | *Ecere*
-  | *&check;* [San Diego]
-  | *&check;* [San Diego]
-  | *&check;* [San Diego]
-  | *&check;* [San Diego]
+  | *&#10003;* [San Diego]
+  | *&#10003;* [San Diego]
+  | *&#10003;* [San Diego]
+  | *&#10003;* [San Diego]
 
 |  _(Pilot functions)_ *Ecere*
-  | *&check;* [pilot]
-  | *&check;* [pilot]
-  | *&check;* [pilot]
-  | *&check;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
 
 | *PyGeoAPI-InfoDao*
-  | *&check;*
+  | *&#10003;*
   | using CDB server
   | NA
   | not pass
 
 | *Helyx*
-  | *&check;* [pilot, San Diego]
-  | *&check;* [pilot, San Diego]
-  | *&check;* [pilot, San Diego]
-  | *&check;* [pilot, San Diego]
+  | *&#10003;* [pilot, San Diego]
+  | *&#10003;* [pilot, San Diego]
+  | *&#10003;* [pilot, San Diego]
+  | *&#10003;* [pilot, San Diego]
 
 | *Steinbeis New*
 
-  | *&check;*(+ fdbk)
-  | *&check;* [San Diego]
-  | *&check;* [San Diego]
-  | *&check;* [San Diego]
+  | *&#10003;*(+ fdbk)
+  | *&#10003;* [San Diego]
+  | *&#10003;* [San Diego]
+  | *&#10003;* [San Diego]
 
 | _(Pilot functions)_ *Steinbeis Existing*
-  | *&check;* [pilot]
-  | *&check;* [pilot]
-  | *&check;* [pilot]
-  | *&check;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
+  | *&#10003;* [pilot]
 
 |===
 
