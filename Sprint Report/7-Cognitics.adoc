@@ -44,7 +44,7 @@ As the user zooms in, the bounding box encompasses only the area shown in the us
 .Damascus bounding box extent highlighted
 image::images/CogniticsDragonflyDamascus.png[width=800,align="center"]
 
-== Damascus, Syria Vricon SurfaceMesh
+=== Damascus, Syria Vricon SurfaceMesh
 
 The Vricon SurfaceMesh of Damascus, Syria is static 3D content in the Dragonfly datastore. The figures below show the data in directly overhead and oblique views.
 
