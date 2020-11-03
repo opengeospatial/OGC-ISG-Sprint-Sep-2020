@@ -28,15 +28,15 @@ Each participant was free to choose which one (or more) scenarios to pursue. <<d
 [cols="2,^1,^1,^1,^1",options="header",align="center"]
 |===
 |*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
-|<<cae,*CAE*>>                             |*&check;* | | |
-|<<cesium,*Cesium*>>                       |*&check;* | | |
-|<<cognitics-sprint-report,*Cognitics*>>   | | |*&check;* |*1*
-|<<ecere,*Ecere*>>                         |*&check;* | | |
-|<<helyx-sprint-report,*Helyx*>>           | |*&check;* | |
-|<<hexagon-gsp,*Hexagon*>>                 |*&check;* | | |
-|<<infodao-sprint-report,*InfoDao*>>       | |*&check;* |*&check;* |
-|<<simblocksio-sprint-report,*SimBlocks*>> | | | |*2*
-|<<steinbeis-sprint-report,*Steinbeis*>>   |*&check;* | |*&check;* |
+|<<cae,*CAE*>>                             ^|*&check;* | | |
+|<<cesium,*Cesium*>>                       ^|*&check;* | | |
+|<<cognitics-sprint-report,*Cognitics*>>   ^| | ^|*&check;* ^|*1*
+|<<ecere,*Ecere*>>                         ^|*&check;* | | |
+|<<helyx-sprint-report,*Helyx*>>           ^| ^|*&check;* | |
+|<<hexagon-gsp,*Hexagon*>>                 ^|*&check;* | | |
+|<<infodao-sprint-report,*InfoDao*>>       ^| ^|*&check;* ^|*&check;* |
+|<<simblocksio-sprint-report,*SimBlocks*>> ^| | | ^|*2*
+|<<steinbeis-sprint-report,*Steinbeis*>>   ^|*&check;* | ^|*&check;* |
 |===
 
 === Cooperative Efforts
@@ -164,16 +164,3 @@ InfoDao noted that (<<GeoVolumes API Discussion: CDB comparisons and OGC API dis
 === Game Engine Interface
 
 SimBlocks.io work on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would be a similar amount of work.
-
-
-=== Conclusions
-
-The basics of the GeoVolume draft specification are complete and well-specificed (consistent and complete). There may still be some edge cases that are poorly defined there were not investigated in the Sprint. A number of the participants indicated the importance of GeoVolumes and other OGC APIs to retain full consistency and compatibility with OGC Common API, especially Part 2 - 3D Data.
-
-Several participants noted issues with URLs and other HTTP issues. In a review of the statements by the participants and OGC API documents, it appears that various HTTP capabilities are not fully, correctly, or completely specified. This is highlighted in the <<Discovered Inconsistencies>> section. HTTP provides definitions for URLs, request methods, content types, and request attributes. Their use does not appear to be fully defined in the various OGC APIs. 
-
-Perhaps a more serious problem is with the location and data content naming convention. There appears to be substantial flexibility in the naming of locations and data that two different servers could have significantlly different naming for the same data at the same location. If there is an intent to form a large federation of servers from different organization, that naming convention needs further definition.
-
-OGC needs to be aware of Best Current Practice "URI Design and Ownership" cite:[RFC8820] that state the the best practice is to not specify the path of an application as that is the responsibility of the URI owner (generally the owner of the [sub-]domain).
-
-Finally it was shown that GeoVolumes could be integrated with a game engine (Unity). This would allow other clients to easily access the API with the need for extensive graphics development. It was hypothesized that the effort to integrate with Unreal would be similar. 
