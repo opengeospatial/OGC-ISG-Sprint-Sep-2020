@@ -1,7 +1,6 @@
 == Subject
 
-The goal of the Sprint was to advance the use of relevant OGC and Khronos standards in the modeling and simulation community through practical exercise and testing of the OGC API - GeoVolumes draft specification produced by the 3D Data Container and Tiles API Pilot ("Pilot"). Of particular interest is the handling and integration of glTF models coming from multiple sources (see Sprint Scenario). There is secondary interest in the spec’s implementability, consistency, completeness, and maturity. 
-
+The OGC Interoperable Simulation and Gaming Sprint advanced the use of relevant OGC and Khronos standards in the modeling and simulation community through practical exercise and testing of the OGC API - GeoVolumes draft specification produced by the https://docs.ogc.org/per/20-031.html[3D Data Container and Tiles API Pilot]. Of particular interest was the handling and integration of glTF models coming from multiple sources, but the sprint also examined the specification’s implementability, consistency, completeness, and maturity.
 
 == Executive Summary
 
