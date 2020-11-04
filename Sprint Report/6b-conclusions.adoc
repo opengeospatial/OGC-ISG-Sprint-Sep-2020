@@ -7,6 +7,6 @@ Several participants noted issues with URLs and other HTTP issues. In a review o
 
 Perhaps a more serious problem is with the location and data content naming convention. There appears to be substantial flexibility in the naming of locations and data that two different servers could have significantlly different naming for the same data at the same location. If there is an intent to form a large federation of servers from different organization, that naming convention needs further definition.
 
-OGC needs to be aware of Best Current Practice "URI Design and Ownership" cite:[RFC8820] that state the the best practice is to not specify the path of an application as that is the responsibility of the URI owner (generally the owner of the [sub-]domain).
+OGC needs to be aware of Best Current Practice "URI Design and Ownership" cite:[RFC8820] which states that the best practice is to not specify the path of an application as that is the responsibility of the URI owner (generally the owner of the [sub-]domain).
 
 Finally it was shown that GeoVolumes could be integrated with a game engine (Unity). This would allow other clients to easily access the API with the need for extensive graphics development. It was hypothesized that the effort to integrate with Unreal would be similar. 
