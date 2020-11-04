@@ -2,19 +2,12 @@
 [[RevisionHistory]]
 = Revision History
 
-[NOTE]
-.Example History (Delete this note).
-===============================================
-replace below entries as needed
-===============================================
-
 .Revision History
 [width="90%",options="header"]
 |====================
 |Date |Editor |Release | Primary clauses modified |Descriptions
-|June 15, 2016 |I. Simonis | .1 |all |initial version
-|July 22, 2016 |I. Simonis | .9 |all |comments integrate
-|September 7, 2016 |S. Simmons |1.0|various |preparation for publication
-|March 23, 2017 |I. Simonis | 2.0 |all |template simplified
-|January 18, 2018 |S. Serich | 2.1 |all |additional guidance to Editors; clean up headings in appendices
+|October 30, 2020 |L. Daly | .1 |all |initial version
+|November 4, 2020 |S. Serich | .2 |many |Serich review, including repair of compiler error messages
+|TBD |S. Serich | .3 |all |integrate review comments
+|TBD |TBD |1.0|all |preparation for publication
 |====================
