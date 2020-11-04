@@ -1,13 +1,10 @@
 [appendix]
-[[Technology Integration Experiments Table]]
+[[TechnologyIntegrationExperimentsTable]]
+= Technology Integration Experiment (TIE) Table
 
-= Technology Integration Experiments (TIE)
+*Introduction*
 
-NOTE: We skip level 2 headers so that asciidoc correctly numbers the subsections in the appendix.
-
-=== Introduction
-
-The Pilot started tracking the abaility of a client from one organization to correctly access the server from another. This data was collected into a table (https://github.com/opengeospatial/3D-Data-Container-Tile-API-Pilot/wiki/TIE-Table-and-Reports[Pilot TIE Table]) to easily illustrate the extent of cross-organzation integration. 
+The Pilot started tracking the abaility of a client from one organization to correctly access the server from another. This data was collected into a table (https://github.com/opengeospatial/3D-Data-Container-Tile-API-Pilot/wiki/TIE-Table-and-Reports[Pilot TIE Table]) to easily illustrate the extent of cross-organzation integration.
 
 The concept of this table is populated in <<table-tie>> for the Sprint participants.
 
@@ -19,60 +16,56 @@ The concept of this table is populated in <<table-tie>> for the Sprint participa
 
 | *https://3d.hypotheticalhorse.com/[Cesium]*
 
-  | link:#Hexagon-Cesium[pass (+ fdbk)]
-  | link:#InfoDao-Cesium[pass with pilot contents]
-  | link:#SimBlocks-Cesium[pass with pilot contents]
-  | link:#Steinbeis-Cesium[pass with pilot contents]
+  | pass (+ fdbk)
+  | pass with pilot contents
+  | pass with pilot contents
+  | pass with pilot contents
 | *http://cdb.cognitics.net:3000/[Cognitics]*
 
-  | link:#Hexagon-Cognitics[pass with pilot contents]
-  | link:#InfoDao-Cognitics[NA]
-  | link:#SimBlocks-Cognitics[pass with pilot contents]
-  | link:#Steinbeis-Cognitics[pass with pilot contents]
+  | pass with pilot contents
+  | NA
+  | pass with pilot contents
+  | pass with pilot contents
 | *http://maps.ecere.com/ogcapi[Ecere]*
 
-  | link:#Hexagon-Ecere[pass with San Diego contents]
-  | link:#InfoDao-Ecere[pass with San Diego contents]
-  | link:#SimBlocks-Ecere[pass with San Diego contents]
-  | link:#Steinbeis-Ecere[pass with San Diego contents]
+  | pass with San Diego contents
+  | pass with San Diego contents
+  | pass with San Diego contents
+  | pass with San Diego contents
 |  _(Pilot functions)_ *https://maps.ecere.com/3DAPI/[Ecere]*
 
-  | link:#Hexagon-Ecere_Pilot[pass with pilot contents]
-  | link:#InfoDao-Ecere_Pilot[pass with pilot contents]
-  | link:#SimBlocks-Ecere_Pilot[pass with pilot contents]
-  | link:#Steinbeis-Ecere_Pilot[pass with pilot contents]
+  | pass with pilot contents
+  | pass with pilot contents
+  | pass with pilot contents
+  | pass with pilot contents
 | *http://pygeoapi.isg-sprint-hub.infodaollc.com/stac/[PyGeoAPI-InfoDao]*
 
-  | link:#Hexagon-InfoDao[pass]
-  | link:#InfoDao-InfoDao[using CDB server]
-  | link:#SimBlocks-InfoDao[NA]
-  | link:#Steinbeis-InfoDao[not pass]
+  | pass
+  | using CDB server
+  | NA
+  | not pass
 | *http://helyxisg.eastus.azurecontainer.io[Helyx]*
 
-  | link:#Hexagon-Helyx[pass with pilot and San Diego contents]
-  | link:#InfoDao-Helyx[pass with pilot and San Diego contents]
-  | link:#SimBlocks-Helyx[pass with pilot and San Diego contents]
-  | link:#Steinbeis-Helyx[pass with pilot and San Diego contents]
+  | pass with pilot and San Diego contents
+  | pass with pilot and San Diego contents
+  | pass with pilot and San Diego contents
+  | pass with pilot and San Diego contents
 | *https://steinbeis-3dps.eu/3DGeoVolumes[Steinbeis New]*
 
-  | link:#Hexagon-Steinbeis_New[pass (+ fdbk)]
-  | link:#InfoDao-Steinbeis_New[pass with San Diego contents]
-  | link:#SimBlocks-Steinbeis_New[pass with San Diego contents]
-  | link:#Steinbeis-Steinbeis_New[pass with San Diego contents]
+  | pass (+ fdbk)
+  | pass with San Diego contents
+  | pass with San Diego contents
+  | pass with San Diego contents
 | _(Pilot functions)_ *http://steinbeis-3dps.eu:8080/3DContainerTile/[Steinbeis Existing]*
 
-  | link:#Hexagon-Steinbeis_Existing[pass with pilot contents]
-  | link:#InfoDao-Steinbeis_Existing[pass with pilot contents]
-  | link:#SimBlocks-Steinbeis_Existing[pass with pilot contents]
-  | link:#Steinbeis-Steinbeis_Existing[pass with pilot contents]
+  | pass with pilot contents
+  | pass with pilot contents
+  | pass with pilot contents
+  | pass with pilot contents
 
 |===
 
-= TIE Reports
-
-== *Hexagon*
-
-anchor:Hexagon-Cesium[]
+*TIE Report: Hexagon*
 
 .*Hexagon-Cesium*
 20.10.06::
@@ -83,121 +76,83 @@ anchor:Hexagon-Cesium[]
 * Waratah Station: stuck at decoding the tileset.json.
 * Note: the problems are with the 3DTiles tilesets, not with the GeoVolumes API.
 
-anchor:Hexagon-Cognitics[]
-
 .*Hexagon-Cognitics*
-20.09.21:: TBD
-
-anchor:Hexagon-Ecere[]
+20.09.21:: N/A
 
 .*Hexagon-Ecere*
-20.09.21:: TBD
-
-anchor:Hexagon-Ecere_Pilot[]
+20.09.21:: N/A
 
 .*Hexagon-Ecere_Pilot*
-20.09.21:: TBD
-
-anchor:Hexagon-Helyx[]
+20.09.21:: N/A
 
 .*Hexagon-Helyx*
-20.09.21:: TBD
-
-anchor:Hexagon-InfoDao[]
+20.09.21:: N/A
 
 .*Hexagon-InfoDao*
-20.09.21:: TBD
-
-anchor:Hexagon-Steinbeis_New[]
+20.09.21:: N/A
 
 .*Hexagon-Steinbeis New*
 20.10.06:: Problem with absolute references in tileset.json files (expected relative) which might be a problem in the Hexagon client.
 
-anchor:Hexagon-Steinbeis_Existing[]
-
 .*Hexagon-Steinbeis Existing*
-20.09.21:: TBD
+20.09.21:: N/A
 
-== *InfoDao*
-
-anchor:InfoDao-Cesium[]
+*TIE Report: InfoDao*
 
 .*InfoDao-Cesium*
-20.09.21:: 
-* Passing New York 
+20.09.21::
+* Passing New York
 ** https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/cesiumNewYorkPassing.png
-
-anchor:InfoDao-Cognitics[]
 
 .*InfoDao-Cognitics*
 20.09.21:: N/A
 
-anchor:InfoDao-Ecere[]
-
 .*InfoDao-Ecere*
-20.09.21:: 
+20.09.21::
 * Passing, able to display and localize the 3D Tiles Properly
 ** https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/ecereSanDiegoPassing.png
 
-anchor:InfoDao-Ecere_Pilot[]
-
 .*InfoDao-Ecere_Pilot*
-20.09.21:: 
+20.09.21::
 * Passing, able to display and localize the 3D Tiles Properly
 ** https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/ecereNewYorkPassing.png
 
-anchor:InfoDao-Helyx[]
-
 .*InfoDao-Helyx*
-20.09.21:: 
+20.09.21::
 * Passing, able to display and localize the 3D Tiles Properly
 ** New York: https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/helyxNewYorkPassing.png
 ** San Diego: https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/helyxSanDiegoPassing.png
 
-
-anchor:InfoDao-InfoDao[]
-
 .*InfoDao-InfoDao*
-20.09.21:: 
+20.09.21::
 * Serving CDB using STAC, no GeoVolumes implementation in PyGeoAPI yet
 
-anchor:InfoDao-Steinbeis_New[]
-
 .*InfoDao-Steinbeis New*
-20.09.21:: 
+20.09.21::
 * Passing, able to display and localize the 3D Tiles Properly
 ** https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/steinbeisSanDiegoPassing.png
 
-anchor:InfoDao-Steinbeis_Existing[]
-
 .*InfoDao-Steinbeis Existing*
-20.09.21:: 
+20.09.21::
 * Passing, able to display and localize the 3D Tiles Properly
 ** New York: https://raw.githubusercontent.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/master/Sprint%20Report/images/InfoDao/steinbeisNewYorkPassing.png
 
-== *SimBlocks*
-
-anchor:SimBlocks-Cesium[]
+*TIE Report: SimBlocks*
 
 .*SimBlocks-Cesium*
-20.09.24::  
+20.09.24::
 * Able to communicate with the server to extract the b3dm files
 * Working:
 ** https://3d.hypotheticalhorse.com/collections/NewYorkBuildings/3dtiles/
 
-
-anchor:SimBlocks-Cognitics[]
-
 .*SimBlocks-Cognitics*
-20.09.24::  
+20.09.24::
 * Able to communicate with the server to extract the b3dm files
 * Working:
 ** http://cdb.cognitics.net:3000/collections/NewYorkBuildings/3DTiles/
 
-anchor:SimBlocks-Ecere[]
-
 .*SimBlocks-Ecere*
-20.09.24::  
+20.09.24::
 * Working:
 ** http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/3DTiles/tileset.json
 ** http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/3DTiles/tileset.json
@@ -205,31 +160,22 @@ anchor:SimBlocks-Ecere[]
 ** Conformance and Api are Unsupported
 ** Uri json values contain strings referencing b3dm files. In this case, the Uri values are relative to the domain. For all other servers, the Uri value is relative to the current page Url.
 
-anchor:SimBlocks-Ecere_Pilot[]
-
 .*SimBlocks-Ecere_Pilot*
-20.09.24::  
+20.09.24::
 * Able to communicate with the server to extract the b3dm files
 * Working:
 ** https://maps.ecere.com/3DAPI/collections/NewYork/3DTiles/
 
-
-anchor:SimBlocks-Helyx[]
-
 .*SimBlocks-Helyx*
-20.09.24::  
+20.09.24::
 * Able to communicate with the server to extract the b3dm files
 * Working:
 ** http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/3dTiles/
 * Issues
 ** Api is Unsupported
 
-anchor:Simblocks-InfoDao[]
-
 .*SimBlocks-InfoDao*
-20.09.24::
-
-anchor:SimBlocks-Steinbeis_New[]
+20.09.24:: N/A
 
 .*SimBlocks-Steinbeis New*
 20.09.24::
@@ -237,80 +183,62 @@ anchor:SimBlocks-Steinbeis_New[]
 * Working:
 ** https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DModelsWithTextures/3dtiles/
 
-anchor:SimBlocks-Steinbeis_Existing[]
-
 .*SimBlocks-Steinbeis Existing*
 20.09.24::
 * Able to communicate with the server to extract the b3dm files
 * Working:
 ** http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/
 
-== *Steinbeis*
-
-anchor:Steinbeis-Cesium[]
+*TIE Report: Steinbeis*
 
 .*Steinbeis-Cesium*
-23.09.21:: 
+23.09.21::
 * Able to load NYC content. (Just like in the pilot)
 * Able to load 3D Tiles L0D1 OSM globally from https://3d.hypotheticalhorse.com/collections/Buildings/CesiumOSMBuildings/
 ** Example in San Diego area/ Screenshot: https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Cesium-server-OSM-LOD1-SanDiego.png
 * No new content from San Diego CDB yet.
 
-anchor:Steinbeis-Cognitics[]
-
 .*Steinbeis-Cognitics*
-23.09.21:: 
+23.09.21::
 * Able to load NYC content. (Just like in the pilot)
 * No new content from San Diego CDB yet.
 
-anchor:Steinbeis-Ecere[]
-
 .*Steinbeis-Ecere*
-23.09.21:: 
-* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB) 
-** tileset url: http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/3DTiles/tileset.json 
+23.09.21::
+* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB)
+** tileset url: http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/3DTiles/tileset.json
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Ecere-Server-LoD2Texture.png)
 
-anchor:Steinbeis-Ecere_Pilot[]
-
 .*Steinbeis-Ecere_Pilot*
-23.09.21:: 
+23.09.21::
 * Tested the 3D Tiles content NYC Model
 ** tileset url:  https://maps.ecere.com/3DAPI/collections/NewYork/3DTiles/
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-EcerePilot-Server-NYC.png)
 
-anchor:Steinbeis-Helyx[]
-
 .*Steinbeis-Helyx*
 23.09.21::
-* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB) 
-** tileset url: http://helyxisg.eastus.azurecontainer.io/collections/SanDiego/SanDiego-data/3dTiles/ 
+* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB)
+** tileset url: http://helyxisg.eastus.azurecontainer.io/collections/SanDiego/SanDiego-data/3dTiles/
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Helyx-Server-LoD2Texture.png)
 
-anchor:Steinbeis-InfoDao[]
-
 .*Steinbeis-InfoDao*
-23.09.21:: 
+23.09.21::
 * Not possible to render the original CDB dataset.
 
-anchor:Steinbeis-Steinbeis_New[]
-
 .*Steinbeis-Steinbeis New*
-23.09.21:: 
-* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB) 
-** tileset url: https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DModelsWithTextures/3dtiles/ 
+23.09.21::
+* Tested the 3D Tiles content San Diego 3D Tiles models with textures (Converted from CDB)
+** tileset url: https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DModelsWithTextures/3dtiles/
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Steinbeis-Server-LoD2Texture.png)
 
-* Test the San Diego 3D Building Models - 3D Tiles - LoD1 (from OSM) 
-** tileset url: https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DBuildings_LoD1/3dtiles/ 
+* Test the San Diego 3D Building Models - 3D Tiles - LoD1 (from OSM)
+** tileset url: https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DBuildings_LoD1/3dtiles/
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Steinbeis-Server-LoD1.PNG)
 
-anchor:Steinbeis-Steinbeis_Existing[]
-
 .*Steinbeis-Steinbeis Existing*
-23.09.21:: TBD
+23.09.21:: N/A
 
-* Test the NYC 3D Tile models 
+* Test the NYC 3D Tile models
 **  tileset url: http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/
 ** Screenshot:  (https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/blob/master/Sprint%20Report/images/Steinbeis-Client-to-Steinbeis-server-existing-NYC.png)
 
