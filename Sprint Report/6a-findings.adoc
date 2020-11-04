@@ -49,7 +49,7 @@ All participants cooperated and included the test and use of other particiapnts 
 
 [#table-tie-summary,reftext='{table-caption} {counter:table-num}']
 .The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&#10003;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
-[cols="1,2,2,2,2",options="header",align="center"]
+[cols="2,3,3,3,3",options="header",align="center"]
 |===
 >| *Client ->* .2+^| *Hexagon* .2+^| *InfoDao* .2+^| *SimBlocks* .2+^| *Steinbeis*
 <| *Service*
