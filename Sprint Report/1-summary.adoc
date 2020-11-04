@@ -8,6 +8,8 @@ The OGC Interoperable Simulation and Gaming Sprint advanced the use of relevant 
 
 (( **This can only be written after the Findings and Future Recommendations.** ))
 
+NOTE: (from Scott Serich to Leonard) The Finding section seemed particularly strong, so certainly create summary content from that section. But also include material from the Conclusion and Future Recommendations. I'd avoid going to deep into the weeds (for example, the content of the participant chapters, TIE table, etc.).
+
 (( The Executive Summary clause shall contain the key findings and results in a concise form. A more detailed description of the findings should be in the body of the report. ))
 
 (( The Executive Summary shall contain a business value statement that should describe the value of this Engineering Report to improve interoperability, advance location-based technologies or realize innovations. ))
