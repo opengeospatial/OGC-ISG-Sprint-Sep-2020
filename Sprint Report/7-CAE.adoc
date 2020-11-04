@@ -118,7 +118,7 @@ the Cesium3DTileset object was created with the property imageBasedLightingFacto
  
 [#img_CAE-13,reftext='{figure-caption} {counter:figure-num}']
 .3D Tile Dark Rendering
-image::images/CAE_tile dark.JPG[width=500,align="center"]
+image::images/CAE_tile_dark.JPG[width=500,align="center"]
 
 [#img_CAE-14,reftext='{figure-caption} {counter:figure-num}']
 .3D Tile Modified Rendering
