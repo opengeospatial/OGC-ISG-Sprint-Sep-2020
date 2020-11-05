@@ -7,7 +7,7 @@
 |====================
 |Date |Editor |Release | Primary clauses modified |Descriptions
 |October 30, 2020 |L. Daly | .1 |all |initial version
-|November 4, 2020 |S. Serich | .2 |many |Serich review, including repair of compiler error messages
+|November 5, 2020 |S. Serich | .2 |many |General rework and repair of compiler error messages
 |TBD |S. Serich | .3 |all |integrate review comments
 |TBD |TBD |1.0|all |preparation for publication
 |====================

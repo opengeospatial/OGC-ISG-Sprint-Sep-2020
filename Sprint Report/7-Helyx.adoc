@@ -1,4 +1,4 @@
-== Helyx Sprint Report
+== Component Implementation: Helyx
 
 For the OGC Interoperable Simulation and Gaming (ISG) Sprint with glTF, Helyx took 3D Tiles data, that had been converted from CDB data by CAE, and incorporated this 3D Tiles dataset (around San Diego) into our Server, helyxisg.eastus.azurecontainer.io.
 The San Diego dataset was incorporated in two formats, in the 3D Tiles format and the CDB format. This is alongside the previously added data for New York and Montreal, in the i3s and 3D Tiles format. The API used to expose the data in the server is the draft specification of the GeoVolumes API cite:[GeoVolumesAPI].

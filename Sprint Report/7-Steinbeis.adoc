@@ -1,4 +1,4 @@
-== Steinbeis Sprint Report
+== Component Implementation: Steinbeis
 
 === Overview
 

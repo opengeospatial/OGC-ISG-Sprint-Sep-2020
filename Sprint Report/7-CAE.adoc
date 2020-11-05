@@ -1,10 +1,10 @@
-== CAE
+== Component Implementation: CAE
 
 === Introduction
 The focus of the analysis of data was centered upon the generation of 3D Tiles and glTF models from a CDB data store. This activity
-exercised the National Geospatial Intelligence Agency's Foundation in GEOINT 3D (FG3D) pipeline and the United States Special 
-Operation Command Rapid 3D (R3D) architecture. The resultant data was reviewed for anomalies encountered with those 3D formats 
-from the original CDB content. 
+exercised the National Geospatial Intelligence Agency's Foundation in GEOINT 3D (FG3D) pipeline and the United States Special
+Operation Command Rapid 3D (R3D) architecture. The resultant data was reviewed for anomalies encountered with those 3D formats
+from the original CDB content.
 
 [#img_CAE-1,reftext='{figure-caption} {counter:figure-num}']
 .CAE High Level Workflow
@@ -23,8 +23,8 @@ The CDB coverage is considered Medium Resolution and contains a High Resolution 
 image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
 
 
-The CDB dataset contained elevation (GeoTIFF), imagery (jpeg2000), 3D models with textures (Openflight), road and hydrography 
-vectors (ESRI shapefiles). The 3D models were a mixture of GSFeature and GTFeature representations.  
+The CDB dataset contained elevation (GeoTIFF), imagery (jpeg2000), 3D models with textures (Openflight), road and hydrography
+vectors (ESRI shapefiles). The 3D models were a mixture of GSFeature and GTFeature representations.
 The base imagery is populated in the high resolution area to CDB Level of Detail 9; equivalent to 0.0212354 meter resolution.
 
 [#img_CAE-3,reftext='{figure-caption} {counter:figure-num}']
@@ -69,7 +69,7 @@ image::images/CAE_Workflow.png[width=1100,align="center"]
 
 
 ==== CDB to OGC 3D Tiles
-The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from within the Rapid3D architecture.  
+The CDB to 3D tile workflow utilized a FG3D 3D Tile microservice initiated from within the Rapid3D architecture.
 
 [#img_CAE-8,reftext='{figure-caption} {counter:figure-num}']
 .CAE R3D 3D Tile CDB Conversion
@@ -92,7 +92,7 @@ image::images/CAE_GRID_Export_Data.png[width=400,align="center"]
 
 
 The 3D Tiles and the glTF model were then brought together for rendering.  The glTF model was geopositioned at coordinate N32.704 W117.164 in order to reside
-within the same San Diego focus area for the experiment. 
+within the same San Diego focus area for the experiment.
 
 === Analysis
 Original CDB content rendered in Presagis VegaPrime shows no apparent content loss once the data was converted to 3D Tile.
@@ -113,9 +113,9 @@ image::images/CAE_Tile_sd_petco_ion.png[width=1100,align="center"]
 image::images/CAE_CDB_sd_petco_dragonfly.png[width=1100,align="center"]
 
 
-Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness 
-the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set. 
- 
+Our initial 3D Tile rendering in Dragonfly appeared too dark compared to the original content and surrounding basemap. To mitigate the noticeable difference in brightness
+the Cesium3DTileset object was created with the property imageBasedLightingFactor: new Cesium.Cartesian2(5,5) set.
+
 [#img_CAE-13,reftext='{figure-caption} {counter:figure-num}']
 .3D Tile Dark Rendering
 image::images/CAE_tile_dark.JPG[width=500,align="center"]

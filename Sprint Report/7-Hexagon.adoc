@@ -1,4 +1,4 @@
-== Hexagon GSP
+== Component Implementation: Hexagon GSP
 
 [#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB meshes converted and served by the Luciad Fusion platform.

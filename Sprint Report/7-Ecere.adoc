@@ -1,4 +1,4 @@
-== Ecere
+== Component Implementation: Ecere
 
 [#Ecere-Client-0,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB data visualized in Ecere's GNOSIS Cartographer (Petco Park)
