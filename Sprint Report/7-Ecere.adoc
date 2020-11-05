@@ -184,7 +184,7 @@ including support for textures.
 
 In both variations, as well as in the 3D Tiles tileset approach, the tiles and individual models reference shared textures at the `/textures` end-point.
 Those textures are also available in different formats, e.g. pre-compressed as ETC2 mipmaps series (when requesting `etc2` format), and
-different resolutions (currently implemented by appending `-512` or `-256` for 512 x 512 and 256 x 256 versions of the texture).
+different resolutions (currently implemented by appending a `?resolution=512` or `?resolution=256` query parameter for 512 x 512 and 256 x 256 versions of the texture).
 
 The Ecere service also serves other data layers (from the San Diego CDB dataset as well as others) using the Tiles API, including elevation data coverages,
 imagery, vector features, and tiled rendered maps.
@@ -274,7 +274,7 @@ image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
 '''
 
 _Currently, model identifiers are stored in `model::id` property of vector points, while orientation is stored in `model::orientation`, and scaling
-in `model::scaling`._
+in `model::scale`._
 
 Example texture: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/textures/59.png
 
@@ -312,14 +312,14 @@ Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/defau
 
 [#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB roads map
-image::images/Ecere/roads.jpg[align="center",height="1000"]
+image::images/Ecere/roads.jpg[align="center",height="900"]
 '''
 
 Imagery Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL09/map/default.png
 
 [#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB medium resolution imagery
-image::images/Ecere/imagery7.jpg[align="center",height="1000"]
+image::images/Ecere/imagery7.jpg[align="center",height="900"]
 '''
 
 [#Ecere-API-Imagery9,reftext='{figure-caption} {counter:figure-num}']
