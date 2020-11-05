@@ -103,7 +103,7 @@ TIP: It is recommended that the DWG discuss and provide more guidance on endpoin
 
 === A note on path format
 
-It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[ColonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
+It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[CommonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
 
 TIP: It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
 
