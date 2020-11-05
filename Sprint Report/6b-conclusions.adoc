@@ -1,7 +1,7 @@
 [[Conclusions]]
 == Conclusions
 
-The basics of the GeoVolume draft specification are complete and well-specified (consistent and complete). There may still be some edge cases that are poorly defined there were not investigated in the Sprint. A number of the participants indicated the importance of GeoVolumes and other OGC APIs to retain full consistency and compatibility with OGC Common API, especially Part 2 - 3D Data.
+The basics of the GeoVolume draft specification are complete and well-specified (consistent and complete). There may still be some edge cases that are poorly defined there were not investigated in the Sprint. A number of the participants indicated the importance of GeoVolumes and other OGC APIs to retain full consistency and compatibility with OGC API - Common, especially http://docs.opengeospatial.org/DRAFTS/20-024.html[Draft OGC API - Common - Part 2: Geospatial Data].
 
 Several participants noted issues with URLs and other HTTP issues. In a review of the statements by the participants and OGC API documents, it appears that various HTTP capabilities are not fully, correctly, or completely specified. This is highlighted in the <<Discovered Inconsistencies>> section. HTTP provides definitions for URLs, request methods, content types, and request attributes. Their use does not appear to be fully defined in the various OGC APIs.
 
