@@ -1,4 +1,4 @@
-== InfoDao Sprint Report
+== Component Implementation: InfoDao
 
 === GeoVolumes API and its role in the ISG Sprint
 GeoVolumes API is a standardized API that allows for querying geospatial data based on properties like bounding box, data format, and other extents of the data. The main goal of the ISG Sprint was to test interoperability among various server-client interactions facilitated via GeoVolumes API. In short, participants tested how the GeoVolumes API could be served to reliably request and display data among different clients.

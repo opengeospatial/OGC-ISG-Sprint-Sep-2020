@@ -1,16 +1,18 @@
 [[Overview]]
 == Overview
 
-Section 5 describes the *Material and Purpose* of the Sprint. All of the material that was provided to the participants is either included here or refrenced.
+Section 6 describes the *Material and Purpose* of the Sprint. All of the material that was provided to the participants is either included here or referenced.
 
-Section 6a discusses the over-all *Findings* from the Sprint. The discussion includes material learned from all participants and the Sprint leadership team in carrying out the Sprint. 
+Section 7 presents the overall *Findings* from the Sprint. The discussion includes material learned from all participants and the Sprint leadership team in carrying out the Sprint.
 
-Section 6b discusses the *Conclusions* from the Sprint. This represents the collective knowledge and experience of the participants and editor.
+Section 8 presents the major *Conclusions* from the Sprint. This represents the collective knowledge and experience of the participants and editor.
 
-Section 7 contains the *Participant Detailed Reports*.
+Sections 9-17 contain the *Participant Detailed Reports*.
 
-Section 8 contains the collected *Future Recommendations* from everyone involved in the Sprint, including participants, Sprint leadership, and sponsors.
+Section 18 contains the consolidated *Future Recommendations*. Much of this content was gathered from participant detailed reports.
 
-Annex A is the full *Technology Integration Experiments (TIE)* data with additional notes and comments.
+Appendix A contains a copy of the Sprint *Technology Integration Experiments (TIE) Table*, with additional notes and comments.
 
-Annex B ... _nothing yet identified_
+Appendix B contains the document Revision History.
+
+Appendix C contains the document Bibliography.

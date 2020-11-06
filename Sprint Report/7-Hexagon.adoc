@@ -1,4 +1,4 @@
-== Hexagon GSP
+== Component Implementation: Hexagon GSP
 
 [#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB meshes converted and served by the Luciad Fusion platform.
@@ -37,7 +37,7 @@ models and a variety of vector data.
 
 [#img_CDB_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
 .CDB organization in file system.
-image::images/Hexagon/SanDiegoCDBFileSystem.png[]
+image::images/Hexagon/SanDiegoCDBFileSystem.png[width=40%]
 
 === Organization of CDB for 3D Models
 

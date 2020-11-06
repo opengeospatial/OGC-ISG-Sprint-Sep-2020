@@ -1,10 +1,6 @@
 == Terms and definitions
 
-
-
 For the purposes of this report, the definitions specified in Clause 4 of the OWS Common Implementation Standard https://portal.opengeospatial.org/files/?artifact_id=38867&version=2[OGC 06-121r9] shall apply. In addition, the following terms and definitions apply.
-
-.NOTE: Delete the first three terms because they are examples.
 
 &#9679; OGC Pilot ::
 
@@ -13,7 +9,6 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
  &#9679; OGC Sprint ::
 
   OGC Sprints experiment with emerging ideas in the context of geospatial standards, help improve interoperability of existing standards by experimenting with new extensions or profiles, are used as proof of concept for other OGC Innovation Program initiatives, or support OGC Standards Program activities. OGC Sprints are very short and focused initiatives that are often executed within few days to weeks. Sprints put most of their emphasis on the agile development phase that is usually executed during a physical meeting.
-
 
 &#9679; 3D Tiles ::
 
@@ -40,13 +35,3 @@ At one time Uniform Resource Location (URL) was a subset of Uniform Resource Ide
 
 &#9679; W3C ::
 World Wide Web Consortium is responsbile for all standards that make the Web operate, including URIs, HTTP, etc.
-
-&#9679; term name ::
-
- text of the definition
-
-&#9679; term name|synonym  ::
-
- text of the definition
-
-

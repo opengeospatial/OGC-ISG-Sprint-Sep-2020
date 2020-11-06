@@ -1,4 +1,4 @@
-== Cesium
+== Component Implementation: Cesium
 
 === Introduction
 In this Sprint, we focused on investigating the optimal method of serving 3D content from a CDB dataset into a web viewer. We achieved this by developing a CDB to 3D Tiles converter and evaluating runtime performance by loading the converted San Diego test data in CesiumJS. The idea of converting the test data to 3D Tiles on-the-fly with partial updates was explored, however, there was not enough time to implement that in this Sprint.
@@ -36,7 +36,7 @@ image::images/Cesium-San-Diego-Tiling-Scheme.png[width="700", align="center"]
 
 ===== Elevation and Imagery Conversion
 
-The Elevation and Imagery are converted together into one tileset. The heightmap of each tile in the Elevation layer is triangulated into a mesh, and the imagery of the tile is used as the texture of the mesh. 
+The Elevation and Imagery are converted together into one tileset. The heightmap of each tile in the Elevation layer is triangulated into a mesh, and the imagery of the tile is used as the texture of the mesh.
 
 [#img_Cesium-3,reftext='{figure-caption} {counter:figure-num}']
 .San-Diego terrain and imagery
@@ -46,7 +46,7 @@ image::images/Cesium-San-Diego-Terrain-Imagery.png[width="700",align="center"]
 There are 2 edge cases for the above tiling scheme. It is noticed that for the Elevation layer, the child nodes do not necessarily cover the full area occupied by the parent. As the camera zooms in close to the surface, there are holes appearing due to missing data for higher levels. The solution for this case is to sample the parent’s vertices where the child node doesn’t have data. This solution, however, is wasteful.
 
 [#img_Cesium-4,reftext='{figure-caption} {counter:figure-num}']
-.Gaps between tiles appear due to missing data in the higher levels 
+.Gaps between tiles appear due to missing data in the higher levels
 image::images/Cesium-San-Diego-Terrain-Holes.png[width="700", align="center"]
 
 {nbsp} +

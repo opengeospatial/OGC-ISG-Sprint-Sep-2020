@@ -4,6 +4,9 @@ The OGC Interoperable Simulation and Gaming Sprint advanced the use of relevant 
 
 == Executive Summary
 
+NOTE: (from Scott Serich to Leonard) The Finding section seemed particularly strong, so certainly create summary content from that section. But also include material from the Conclusion and Future Recommendations. I'd avoid going to deep into the weeds (for example, the content of the participant chapters, TIE table, etc.).
+
+(( The Executive Summary clause shall contain the key findings and results in a concise form. A more detailed description of the findings should be in the body of the report. ))
 
 === Introduction
 

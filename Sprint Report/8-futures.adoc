@@ -1,71 +1,71 @@
 [[FutureRecommendations]]
 == Future Recommendations
 
-== Introduction
+=== Introduction
 
 The nature of this proejct was to investigate the GeoVolumes draft Specification and identify additional areas of investigate for future work. As a result this project generated a large number of recommendations for future work for a project of this size. Most of the  recommendations come from the participants. They are all listed below with similar items grouped into sections.
 
 This section presuppose familarity of the <<findings, Findings Chapter>>, especially the <<Discovered Inconsistencies>> section and the <<conclusions, Conclusions Chapter>>.
 
-== Topics of Future Work
+=== Topics of Future Work
 
-=== External to OGC
+==== External to OGC
 This section describes enhancements that may be needed to items (including specifications) that are external to OGC. This includes work or enhancements that belong to the domain of various partners on the project. It may also include work being done by those external organizations that can be fed back into OGC projects and specifications.
 
-==== glTF (Khronos Group)
+===== glTF (Khronos Group)
 
 There are three items relating to glTF (3D model format). Only the first one is work that would be done by Khronos Group. The other two are to highlight existing capabilities of glTF that OGC may need to use at some point in the future.
 
-1. glTF models currently exist in a local model space generally not connected to any other model or physical reality. For purposes of OGC, these models need to be referenced to a specific location (at least at an instant) on Earth. Having the ability to geo-reference models, including local terrain elevation would be very useful. It may be that the work done in OGC's GeoPose Standards Working Group covers this case. It is important to harmonize this work between several internal OGC groups and Khronos Group.
-1. glTF rendering capabilities are signifincatly more advanced that what is currently being used by the work for this project and the Pilot. It may be that the rendering capability is sufficient for these purposes; however, there are building where the correct (physical) appearance requires these advanced capabilities. This needs to be decided on a case-by-case basis and may be only appropriate for particular high-value models in the scene.
-1. At this stage of development, none of the models in the scene are individually animated. Steinbeis did introduce animation of personal vehicle models, where the model as a single entity moved through the scene. In the future it may be necessary to individually animated models (probably not buildings). glTF already has this capability.
+. glTF models currently exist in a local model space generally not connected to any other model or physical reality. For purposes of OGC, these models need to be referenced to a specific location (at least at an instant) on Earth. Having the ability to geo-reference models, including local terrain elevation would be very useful. It may be that the work done in OGC's GeoPose Standards Working Group covers this case. It is important to harmonize this work between several internal OGC groups and Khronos Group.
+. glTF rendering capabilities are signifincatly more advanced that what is currently being used by the work for this project and the Pilot. It may be that the rendering capability is sufficient for these purposes; however, there are building where the correct (physical) appearance requires these advanced capabilities. This needs to be decided on a case-by-case basis and may be only appropriate for particular high-value models in the scene.
+. At this stage of development, none of the models in the scene are individually animated. Steinbeis did introduce animation of personal vehicle models, where the model as a single entity moved through the scene. In the future it may be necessary to individually animated models (probably not buildings). glTF already has this capability.
 
-==== Game Engines
+===== Game Engines
 
-One participant used Unity to manage their display. It was necessary to develop client-side converters for OGC data and APIs in order for this to work. While this work is not strictly external to OGC by virture of using OGC Specifications and APIs, the target platform (primarily Unity and Unreal) are public and in some cases open source. 
+One participant used Unity to manage their display. It was necessary to develop client-side converters for OGC data and APIs in order for this to work. While this work is not strictly external to OGC by virture of using OGC Specifications and APIs, the target platform (primarily Unity and Unreal) are public and in some cases open source.
 
 [start=4]
-1. A seed effort to develop an open source importer for Unity and Unreal would provide a baseline for all organiations looking to use OGC APIs. The game engine communities may provide valuable assistance for further development.
+. A seed effort to develop an open source importer for Unity and Unreal would provide a baseline for all organiations looking to use OGC APIs. The game engine communities may provide valuable assistance for further development.
 
-=== OGC Projects
+==== OGC Projects
 
-This section discusses potential future work within OGC because it deals with OGC data formats and/or APIs. 
+This section discusses potential future work within OGC because it deals with OGC data formats and/or APIs.
 
-==== Data
+===== Data
 Many of the participants noted the difficult and poor performance when working with the multiple data formats. The data was provided for the Sprint as CDB with models in OpenFlight format. Converting this data to 3D Tiles and glTF took a considerable amount of time, partially because of the size of the data involved. The time was large enough to prevent runtime conversion per request. This has implications for scene updates getting incorporated into the response on a request. It was suggested that perhaps even a tiling of CDB would provide a considerable reduction in processing time.
 
 Specifically the following items were identified:
 
 [start=5]
-1. Batch conversion of CDB to 3D Tiles
-1. Conversion of the CDB models to glTF
-1. Conversion of multiple 3D models to a single OpenFlight file
+. Batch conversion of CDB to 3D Tiles
+. Conversion of the CDB models to glTF
+. Conversion of multiple 3D models to a single OpenFlight file
 
-==== API
+===== API
 The GeoVolumes draft specification was mostly found to be complete and correct in its current form. The <<Findings>> chapter discusses the full details. The items listed here are features that were discovered that the draft specification did not address.
 
 [start=8]
-1. Further investigate GeoVolumes bounding volume queries. This is fundamentally important to the correct operation of the API that additional time and effort spent testing these queries (both general and edge cases) is vitally important
-1. The bounding volume query set needs the capability to describe a hole in the otherwise convex volume. This is needed to optimumly handle requests for surrounding overlapped data after high resolution data has been identified. This has implications for client performance and scene updates.
-1. There is no required consistency when (URL) naming different semantic content within a scene. Steinbeis provides a partial example at <<2-3d-geovolumes-api-organization-different-semantic-parts,3D GeoVolumes API Organization Different Semantic Parts>>. This needs to be addressed  so clients can work with multiple servers and in support of <<Feature Changes>>.
+. Further investigate GeoVolumes bounding volume queries. This is fundamentally important to the correct operation of the API that additional time and effort spent testing these queries (both general and edge cases) is vitally important
+. The bounding volume query set needs the capability to describe a hole in the otherwise convex volume. This is needed to optimumly handle requests for surrounding overlapped data after high resolution data has been identified. This has implications for client performance and scene updates.
+. There is no required consistency when (URL) naming different semantic content within a scene. Steinbeis provides a partial example at <<2-3d-geovolumes-api-organization-different-semantic-parts,3D GeoVolumes API Organization Different Semantic Parts>>. This needs to be addressed  so clients can work with multiple servers and in support of <<Feature Changes>>.
 
-==== Feature Changes
+===== Feature Changes
 
-These items are not part of GeoVolumes API, but are either in OGC's Feature API or needed as enhancements or extensions. GeoVolumes needs to ensure that it is compatible with these expanded capabilities. Three  of the particapnts (Ecere, Hexagon, and Steinbeis) worked on changing the features in the scene. This work included adding new items, changing (properties and whole-sale replacing) existing items, and deleting items. In the work that they did items included 3D models and terrain. 
+These items are not part of GeoVolumes API, but are either in OGC's Feature API or needed as enhancements or extensions. GeoVolumes needs to ensure that it is compatible with these expanded capabilities. Three  of the particapnts (Ecere, Hexagon, and Steinbeis) worked on changing the features in the scene. This work included adding new items, changing (properties and whole-sale replacing) existing items, and deleting items. In the work that they did items included 3D models and terrain.
 
 [start=11]
-1. Investigate the optimal means for changing 3D models. The changes need to fit in with the overall data store architecture and account for neighboring models and terrain.
-1. Signicaint terrain changes are not frequent, but have a large impact to the neighborhood of the change. This neighborhood may be quite large for certain type of changes including earthquakes and floods. The optimal process for including these changes into the scene and data stores needs to be investigated.
-1. The change history and its procince have not been previously addressed. Incorporting this information needs to be investigated and included into the GeoVolumes specification.
-1. The means to share scenes so that Feature Changes made in one client cause other clients sharing the same scene to update to the latest release has not been addressed. This particular research topic needs to be investigated so that multiple parties may work on the same scene and all provide updates.
+. Investigate the optimal means for changing 3D models. The changes need to fit in with the overall data store architecture and account for neighboring models and terrain.
+. Signicaint terrain changes are not frequent, but have a large impact to the neighborhood of the change. This neighborhood may be quite large for certain type of changes including earthquakes and floods. The optimal process for including these changes into the scene and data stores needs to be investigated.
+. The change history and its procince have not been previously addressed. Incorporting this information needs to be investigated and included into the GeoVolumes specification.
+. The means to share scenes so that Feature Changes made in one client cause other clients sharing the same scene to update to the latest release has not been addressed. This particular research topic needs to be investigated so that multiple parties may work on the same scene and all provide updates.
 
-==== Infrastructure
+===== Infrastructure
 
 The last section refers to work necessary for the entire GeoVolumes eco-system to properly function within the larger eco-system of of OGC specifications/APIs and the Web. Some of these may not require a project to complete, but can be done as part of a Domain or Standards Working Group. Some of these items could normally be handled by one of the above tasks - they are called out here to make clear that they need to be done.
 
 [start=15]
-1. Define the media types for various forms of the 3D data that might be sent to a client. This needs to include CDB and 3D Tiles, but may also include other OGC data. Once defined, the media types should be registered with IANA. Note that glTF already has its own media type. 
+. Define the media types for various forms of the 3D data that might be sent to a client. This needs to include CDB and 3D Tiles, but may also include other OGC data. Once defined, the media types should be registered with IANA. Note that glTF already has its own media type.
 
-1. There are several issues described in the <<urls, Findings Chapter, URLs>> that need to be resolved. The proper solution will require investigation to determine the correct URL pattern, request method, request attributes, and media type. The answers will resolve open issues related to alternative distributions, requesting semantic content, and content updates.
+. There are several issues described in the <<urls, Findings Chapter, URLs>> that need to be resolved. The proper solution will require investigation to determine the correct URL pattern, request method, request attributes, and media type. The answers will resolve open issues related to alternative distributions, requesting semantic content, and content updates.
 
-1. Investigate the ways in which resources and operations are named, especially with consideration to IETF's URI Design and Ownership cite:[RFC8820]. A federation (as discussed in Conclusions) or shared scene updates (discussed in #14) need to have an expected consistency. This becomes especially important so clients do not need to be aware of the details for alternate data sources.
+. Investigate the ways in which resources and operations are named, especially with consideration to IETF's URI Design and Ownership cite:[RFC8820]. A federation (as discussed in Conclusions) or shared scene updates (discussed in #14) need to have an expected consistency. This becomes especially important so clients do not need to be aware of the details for alternate data sources.

@@ -1,4 +1,4 @@
-== Ecere
+== Component Implementation: Ecere
 
 [#Ecere-Client-0,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB data visualized in Ecere's GNOSIS Cartographer (Petco Park)
@@ -83,7 +83,7 @@ but as there was not enough time to complete this during the Sprint, it will be 
 
 Ecere also grasped a better understanding of the vertical datum implications of CDB and 3D Tiles, clarifying with the help of other participants that
 the elevation model is always relative to the WGS84 ellipsoid. However, for the generated 3D Tiles of 3D models from the San Diego CDB to sit properly
-on the CesiumJS world terrain mesh (_terrainProvider: worldTerrain_), the ECF coordinates translation tranformation for the 3D Tiles specified in the tileset
+on the CesiumJS world terrain mesh (a terrain provider created by the _Cesium.createWorldTerrain()_ method), the ECF coordinates translation tranformation for the 3D Tiles specified in the tileset
 had to be based on the geoid (i.e. adding the geoid offset from the ellipsoid). This seems odd, as it would have been expected to be based on the ellipsoid,
 since CDB elevation, and all transforms are Earth centric. It is still not clear whether this is an issue with the San Diego CDB, with the CesiumJS
 _worldTerrain_ terrain provider, or a misunderstanding on Ecere's part.
@@ -184,7 +184,7 @@ including support for textures.
 
 In both variations, as well as in the 3D Tiles tileset approach, the tiles and individual models reference shared textures at the `/textures` end-point.
 Those textures are also available in different formats, e.g. pre-compressed as ETC2 mipmaps series (when requesting `etc2` format), and
-different resolutions (currently implemented by appending `-512` or `-256` for 512 x 512 and 256 x 256 versions of the texture).
+different resolutions (currently implemented by appending a `?resolution=512` or `?resolution=256` query parameter for 512 x 512 and 256 x 256 versions of the texture).
 
 The Ecere service also serves other data layers (from the San Diego CDB dataset as well as others) using the Tiles API, including elevation data coverages,
 imagery, vector features, and tiled rendered maps.
@@ -264,17 +264,17 @@ Coronado Bridge 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDi
 image::images/Ecere/glbBridge.jpg[align="center",width="800"]
 '''
 
-Petco Park (Buildings) 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.e3d
+Petco Park (Buildings) 3D Model (E3D): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.e3d
 
-Petco Park (Buildings) 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb
+Petco Park (Buildings) 3D Model (glTF): https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.glb
 
 [#Ecere-API-BuildingModel,reftext='{figure-caption} {counter:figure-num}']
-.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101215.glb[glTF model viewer]
+.glTF 3D building visualized in https://gltf-viewer.donmccurdy.com/#model=https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/models/1208101246.glb[glTF model viewer]
 image::images/Ecere/glbBuilding.jpg[align="center",width="800"]
 '''
 
 _Currently, model identifiers are stored in `model::id` property of vector points, while orientation is stored in `model::orientation`, and scaling
-in `model::scaling`._
+in `model::scale`._
 
 Example texture: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/textures/59.png
 
@@ -312,14 +312,14 @@ Roads Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Roads/map/defau
 
 [#Ecere-API-Roads,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB roads map
-image::images/Ecere/roads.jpg[align="center",height="1000"]
+image::images/Ecere/roads.jpg[align="center",height="900"]
 '''
 
 Imagery Map: https://maps.ecere.com/ogcapi/collections/SanDiegoCDB:ImageryL09/map/default.png
 
 [#Ecere-API-Imagery7,reftext='{figure-caption} {counter:figure-num}']
 .San Diego CDB medium resolution imagery
-image::images/Ecere/imagery7.jpg[align="center",height="1000"]
+image::images/Ecere/imagery7.jpg[align="center",height="900"]
 '''
 
 [#Ecere-API-Imagery9,reftext='{figure-caption} {counter:figure-num}']
@@ -476,7 +476,7 @@ The following GeoJSON was used to describe the feature to be added:
       ]
    },
    "properties": {
-      "model::id": 1745156142,
+      "model::id": 1745156899,
       "model::orientation": [ 0, 0, 0 ]
    }
 }
@@ -502,7 +502,7 @@ The following GeoJSON was used to update the feature:
       ]
    },
    "properties": {
-      "model::id": 1745156142,
+      "model::id": 1745156899,
       "model::orientation": [ 180, 0, 0 ]
    }
 }

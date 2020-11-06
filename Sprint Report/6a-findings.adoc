@@ -3,13 +3,13 @@
 
 === Introduction
 
-This section describes findings of the Sprint participants. All findings presented here are significant in that there were reported by at least two participants or serious issues reported by a single participant. 
+This section describes findings of the Sprint participants. Each finding presented here is significant in that is was reported by at least two participants or it was a serious issue reported by a single participant.
 
-Due to the nature of the Sprint, not all participants investigated the same aspects of the draft Specification. This is considered a positive aspect of the Sprint in that with limited resources a fairly expansive coverage of the draft Specification was performed.
+Not all participants investigated the same aspects of the draft Specification. This approach enabled fairly expansive testing of the draft Specification and related areas.
 
 === Aspects of Investigation
 
-Each participant was free to choose which one (or more) scenarios to pursue. <<discussion-of-scenarios,Three scenarios>> were discussed in the Call for Proposals (CfP) cite:[SprintCfP]. Participants could also create their own. OGC reviewed each participants proposal and suggested revisions to better align with the goals of the Sprint, interest of the Sponsor, and coverage by the other participants. <<table-scenario-summary>> provides a summary description of the scenarios used during the Sprint. <<table-particiapnt-scenarios>> shows the coverage of scenarios by the participants.
+Each participant was free to choose which one (or more) scenarios to pursue. <<discussion-of-scenarios,Three scenarios>> were discussed in the Call for Proposals (CfP) cite:[SprintCfP]. Participants could also create their own scenario. OGC reviewed each participant's proposal and suggested revisions to better align with the goals of the Sprint, interest of the Sponsor, and coverage by the other participants. <<table-scenario-summary>> provides a summary description of the selected scenarios. <<table-particiapnt-scenarios>> shows the coverage of scenarios by the participants.
 
 [#table-scenario-summary,reftext='{table-caption} {counter:table-num}']
 .A summary of the scenarios used during the Sprint. Scenarios 1-3 were in the Call for Proposals. Other-1 and Other-2 were proposed by Cognitics and SimBlocks, respectively.
@@ -17,14 +17,14 @@ Each participant was free to choose which one (or more) scenarios to pursue. <<d
 |===
 |Scenario ^|Summary Desription
 |1 | Investigate model and terrain updates
-|2 | Investigate alternate and multiple distributions 
+|2 | Investigate alternate and multiple distributions
 |3 | Investigate organization of underlying 3D data
 |Other-1 | Investigate integration with Rapid3D (Full Motion Video)
 |Other-2 | Investigate the integration of GeoVolumes API with Unity game engine
 |===
 
 [#table-particiapnt-scenarios,reftext='{table-caption} {counter:table-num}']
-.The pre-declared the scenarios for each particiapnt. These are the primary areas of work, though their work may have touched on other scenarios. Cognitics worked with creating models from full-motion video (Other-1), and SimBlocks worked with their Unity integration (Other-2). The participant name links to their report section.
+.The pre-declared the scenarios for each participant. These are the primary areas of work, though their work may have touched on other scenarios. Cognitics worked with creating models from full-motion video (Other-1), and SimBlocks worked with their Unity integration (Other-2). The participant name links to their report section.
 [cols="2,^1,^1,^1,^1",options="header",align="center"]
 |===
 |*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
@@ -43,9 +43,9 @@ Each participant was free to choose which one (or more) scenarios to pursue. <<d
 
 All participants cooperated with each other in various aspects of the Sprint. This included a team entry, providing data services for the Sprint, and use and testing of other OGC API services.
 
-Two teams were formed. Three particpants teamed together for the Sprint to produce a combined result. These were CAE, Cesium, and Cognitics. This was done with the knowledge and approval of the sponsor. A two participant team (Ecere and Steinbeis) was formed to test the insertion, modification, and deletion of 3D objects and terrain into the base scene.
+Two teams were formed. Three participants,  CAE, Cesium, and Cognitics, teamed together to produce a combined result. This was done with the knowledge and approval of the sponsor. A two participant team (Ecere and Steinbeis) was formed to test the insertion, modification, and deletion of 3D objects and terrain into the base scene.
 
-All participants cooperated and included the test and use of other particiapnts services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and use (clients).
+All participants cooperated and included the test and use of other participant services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and uses (clients).
 
 [#table-tie-summary,reftext='{table-caption} {counter:table-num}']
 .The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&#10003;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
@@ -107,21 +107,21 @@ All participants cooperated and included the test and use of other particiapnts 
 
 === General Results
 
-The work done for the Sprint was closely tied to the work done for the Pilot, even though some of the participants were different between the two projects. The mix of participants allowed some with extensive experience in GeoVolumes to dig deeper into areas that were not fully explored during the Pilot. The participants without the Pilot brought a fresh read to the document and potential solutions.
+The work done for the Sprint was closely tied to the work done for the Pilot, even though some of the participants were different between the two initiatives. The mix of participants allowed some with extensive experience in GeoVolumes to dig deeper into areas that were not fully explored during the Pilot. Participants who were not part of the Pilot brought a fresh read to the document along with potential solutions.
 
 No defects in the draft specification were discovered, though several items need further investigation. These are discussed in the <<Discovered Inconsistencies>> section. Several participants discussed the importance of GeoVolumes following the OGC API Core, Volume 2: 3D Data specification to ensure compatibility throughout the suite of OGC APIs.
 
-In addition to the results shown in <<table-tie-summary>> the participants were able to use their existing GeoVolume client sofware to access data-stores that had not been previously used by OGC and OGC projects. These data-stores included data in CDB and other formats that either were served directly (as 3D Tiles static files) or generated on-the-fly from CDB and other sources.
+In addition to the results shown in <<table-tie-summary>> the participants were able to use their existing GeoVolume client software to access data-stores that had not been previously used by OGC and OGC projects. These data-stores included data in CDB and other formats that either were served directly (as 3D Tiles static files) or generated on-the-fly from CDB and other sources.
 
 Steinbeis extended one of the scenarios to include the integration of SensorThings API cite:[SensorThings] to illustrate how these two APIs could work together (<<SensorThings API Server for Urban Mobility>>). There were no inconsistencies or other issues found.
 
-It is worth mentioning that two participants (CAE & Cognitics) have hosted their services on Amazon Web Services (AWS) to improve through-put and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads, load balancing capabilities, or performance.
+It is worth mentioning that two participants (CAE & Cognitics) have hosted their services on Amazon Web Services (AWS) to improve throughput and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads, load balancing capabilities, or performance.
 
 === Dynamic Dataset Updates
 
-Several of the participants developed the capability to update part of the dataset during operation. These updates do not require regeneration of the entire dataset from the data-store. There are mechanisms to ensure that any generated and cached files are appropriately rebuilt on the next request. 
+Several of the participants developed the capability to update part of the dataset during operation. These updates do not require regeneration of the entire dataset from the data-store. There are mechanisms to ensure that any generated and cached files are appropriately rebuilt on the next request.
 
-Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily iedal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did not that getting the models to allign with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
+Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily ideal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did not that getting the models to align with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
 
 === Performance Comments
 
@@ -131,21 +131,21 @@ Another issue noted by Ecere and Cesium (among others) was handling the creation
 
 === Discovered Inconsistencies
 
-Several of the participants discovered various issues related to HTTP transactions. These include issues in the URL, request method, content-type, and, request attributes. The issues and possible solutions are inter-related. Each issue is linked to the section of the participants report where it is discussed in detail.
+Several of the participants discovered various issues related to HTTP transactions. These include issues in the URL, request method, content-type, and, request attributes. The issues and possible solutions are interrelated. Each issue is linked to the section of the participants report where it is discussed in detail.
 
 ==== URLs
 
-Issues with the URL were noted by several participants. These include 
+Issues with the URL were noted by several participants. These include
 
 * Different servers using GeoVolumes API use different relative URLs for models. In some cases it is a full path, other cases it is relative to the current document. It is consistent within a sever. SimBlocks discusses this in <<Server Testing>>.
-* The end-point requirements for are not always sufficiently clear. Helyx observed (<<representing-alternate-distributions-at-the-collections-level,Representing Alternate Distributions at the Collection(s) Level>>) that there is a lack of clarity in how to specify the alternet distributions. It may be specified as the final element in a path (endpoint), via search parameters, or through content-type negotiation.
+* The end-point requirements for are not always sufficiently clear. Helyx observed (<<representing-alternate-distributions-at-the-collections-level,Representing Alternate Distributions at the Collection(s) Level>>) that there is a lack of clarity in how to specify the alternate distributions. It may be specified as the final element in a path (endpoint), via search parameters, or through content-type negotiation.
 * Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon).  [Helyx: <<A note on Path Format>>].
 
 NOTE: "Uniform Resource Identifier (URI): Generic Syntax" cite:[RFC3986] specifies that the colon (":") is a reserved character and needs to be URL-encoded. This requirement may be sufficient for URI access, but if the system needs to support static file-mode access; there may be issues with Windows-based servers.
 
 ==== Request Methods
 
-Ecere, Steinbeis, and Hexagon investigated providing model and terrain change services. These include adding a new model, changing and existing model or terrain, deleting an existing model, replaceing an existing model. From the discussion in the particpant reports, there was no standard for executing those operations. The HTTP standard defines the methods `GET` (retrieve), `POST` (add new), `PUT` (replace existing), `PATCH` (update), and `DELETE` (delete) request methods that can be used for these operations. Ecere discusses the operation in detail in <<Updating the 3D content>>.
+Ecere, Steinbeis, and Hexagon investigated providing model and terrain change services. These include adding a new model, changing and existing model or terrain, deleting an existing model, replacing an existing model. From the discussion in the participant reports, there was no standard for executing those operations. The HTTP standard defines the methods `GET` (retrieve), `POST` (add new), `PUT` (replace existing), `PATCH` (update), and `DELETE` (delete) request methods that can be used for these operations. Ecere discusses the operation in detail in <<Updating the 3D content>>.
 
 ==== Media Type
 
@@ -153,7 +153,7 @@ The HTTP specification allows the client to specify the allowed media types that
 
 NOTE: Media types do not have to be approved by Internet Assigned Numbers Authority (IANA). There are provision for experimental and vendor-specific content types. It is generally easier to get IANA approval after a specification is approved by standards organization.
 
-==== Request attributes
+==== Request Attributes
 
 HTTP allows for an alternate or roll-over reference. This allows for the client code to indicate alternate distributions of the content-equivalent data. For example the primary reference may be 3D Tiles with a roll-over of i3s and CDB. Helyx discussed some of the issues and options in <<Representing Alternate Distributions within one API - Link Relations>>.
 
