@@ -26,8 +26,7 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 | Name | Organization | Role
-| Scott Serich | Open Geospatial Consortium | Contributor & Editor
-| Leonard Daly | Khronos Group / Daly Realism | Contributor & Editor
+| Leonard Daly | Daly Realism representing Khronos Group  | Contributor & Editor
 | Holly Black | CAE | Contributor
 | Sean Lilley | Cesium | Contributor
 | Michala Hill | Cognitics | Contributor
@@ -44,6 +43,7 @@ All questions regarding this document should be directed to the editor or the co
 | Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart | Contributor
 | Harpreet Singh                  | Steinbeis, HFT Stuttgart | Contributor
 | Patrick Würstle                 | Steinbeis, HFT Stuttgart | Contributor
+| Scott Serich | Open Geospatial Consortium | Contributor & Editor
 |====================
 
 
