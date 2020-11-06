@@ -9,7 +9,7 @@ The CfP specified a schedule from kickoff meeting (1 September) through the Spri
 
 === Data Sets
 
-The primary data set for the Sprint is known as San Diego CDB. It was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
+The primary data set for the Sprint is known as San Diego CDB (licensed under the _SanGIS Legal Notice - SanGIS GIS Data End User Use Agreement and Disclaimer for Data Released to the Public_ cite:[SanGISCDBLicense]). It was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
 
 [#img_SanDiegoOverview,reftext='{figure-caption} {counter:figure-num}']
 .An  overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
