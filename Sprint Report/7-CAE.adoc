@@ -1,3 +1,4 @@
+[[CAE]]
 == Component Implementation: CAE
 
 === Introduction
@@ -23,7 +24,7 @@ The CDB coverage is considered Medium Resolution and contains a High Resolution 
 image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
 
 
-The CDB dataset contained elevation (GeoTIFF), imagery (jpeg2000), 3D models with textures (Openflight), road and hydrography
+The CDB dataset contained elevation (GeoTIFF), imagery (jpeg2000), 3D models with textures (Openflight cite:[OpenFlight]), road and hydrography
 vectors (ESRI shapefiles). The 3D models were a mixture of GSFeature and GTFeature representations.
 The base imagery is populated in the high resolution area to CDB Level of Detail 9; equivalent to 0.0212354 meter resolution.
 

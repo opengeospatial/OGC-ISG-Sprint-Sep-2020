@@ -30,6 +30,8 @@ It is an advanced lossy compression algorithm for representing 2D data. It is cu
 
 &#9679; OpenFlight ::
 
+ cite:[OpenFlight]
+
 &#9679; URL/URI ::
 At one time Uniform Resource Location (URL) was a subset of Uniform Resource Identifier (URI). Now both are considered the same cite:[URIURL].
 

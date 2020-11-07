@@ -1,3 +1,4 @@
+[[Hexagon]]
 == Component Implementation: Hexagon GSP
 
 [#img_Title_HEXAGON,reftext='{figure-caption} {counter:figure-num}']
@@ -46,7 +47,7 @@ This section recaps the organization of CDB data for 3D models.
 ==== GSFeatures and GSModelGeometry
 
 GSFeatures and GSModelGeometry are two folders containing matching Level Of Detail (LOD) folders.
-In the GSModelGeometry folder, OpenFlight files are zipped in groups corresponding to a tiling schema.
+In the GSModelGeometry folder, OpenFlight cite:[OpenFlight] files are zipped in groups corresponding to a tiling schema.
 
 GSModelGeometry items are unique in the sense that OpenFlight files are used only once (one file per building) while
 textures can be reused many times.

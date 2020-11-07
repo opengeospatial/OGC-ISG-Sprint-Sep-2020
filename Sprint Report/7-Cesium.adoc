@@ -1,3 +1,4 @@
+[[Cesium]]
 == Component Implementation: Cesium
 
 === Introduction
@@ -17,7 +18,7 @@ The San Diego CDB database’s size is approximately 26 GB. It contains a single
 
 - Elevation layer, which is approximately 1.7 GB and stored in the TIF format
 - Imagery layer, which is approximately 17.2 GB and stored in the jp2 format
-- 3D Model layer, which is approximately 6.0 GB and stored in the OpenFlight format. Their features, orientations, and positions are stored in GSFeatures and GTFeatures directories, in the ESRI Shapefile format
+- 3D Model layer, which is approximately 6.0 GB and stored in the OpenFlight cite:[OpenFlight] format. Their features, orientations, and positions are stored in GSFeatures and GTFeatures directories, in the ESRI Shapefile format
 - Vector layer, which is approximately 128 MB and describes road and hydrography networks. They are stored in the ESRI Shapefile format
 
 Each layer is organized according to the same level of detail scheme. Each negative level will cover the entire GeoCell area. However, the positive levels are organized as a quadtree data structure. Each positive level subdivides the area into 4 smaller sections at the subsequent level. The amount of data stored in each level is specified differently for each layer by the CDB specification. However, generally, higher levels will contain more data to increase the detail of the layer.

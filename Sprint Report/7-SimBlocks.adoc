@@ -1,3 +1,4 @@
+[[SimBlocks]]
 == Component Implementation: SimBlocks.io
 
 === Subject
@@ -10,7 +11,7 @@ The purpose of the OGC Interoperable Simulation and Gaming Sprint was to advance
 
 === Previous Work
 
-SimBlocks specializes in connecting commercial gaming technologies with real-time 3D visualization applications by supporting industry standards for geospatial terrains, 3D models, and communication interoperability. SimBlocks has created a whole-earth visualization tool using the COTS Unity game engine capable of rendering the entire globe at any location at multiple levels of detail for imagery and elevation data. The One World SDK for Unity can consume geospatial data from cloud providers using web services APIs to process imagery, elevation data, and vector data. We have tested ingesting data over web services including as Microsoft Bing Maps, OpenStreetMap, and a CDB web service provider. The One World SDK for Unity also supports direct loading of high-detailed content insets using a variety of modeling formats, including OpenFlight, CDB, and GeoPackage. We have also recently prototyped solutions to integrate 3D Tiles and glTF models in Unity by connecting to Cesium Ion. Our team has found that Unity is a very capable development tool that is well suited for prototyping visual applications with deployment capabilities for virtual reality and augment reality devices.
+SimBlocks specializes in connecting commercial gaming technologies with real-time 3D visualization applications by supporting industry standards for geospatial terrains, 3D models, and communication interoperability. SimBlocks has created a whole-earth visualization tool using the COTS Unity game engine capable of rendering the entire globe at any location at multiple levels of detail for imagery and elevation data. The One World SDK for Unity can consume geospatial data from cloud providers using web services APIs to process imagery, elevation data, and vector data. We have tested ingesting data over web services including as Microsoft Bing Maps, OpenStreetMap, and a CDB web service provider. The One World SDK for Unity also supports direct loading of high-detailed content insets using a variety of modeling formats, including OpenFlight cite:[OpenFlight], CDB, and GeoPackage. We have also recently prototyped solutions to integrate 3D Tiles and glTF models in Unity by connecting to Cesium Ion. Our team has found that Unity is a very capable development tool that is well suited for prototyping visual applications with deployment capabilities for virtual reality and augment reality devices.
 
 [#img_SimBlocks-1,reftext='{figure-caption} {counter:figure-num}']
 .One World SDK for Unity

@@ -1,3 +1,4 @@
+[[InfoDao]]
 == Component Implementation: InfoDao
 
 === GeoVolumes API and its role in the ISG Sprint
@@ -54,7 +55,7 @@ InfoDao stood up a test server to quickly simulate server client transactions fo
 
     1. Access the Metadata to get the extents of the data set. This was usually the boundaries as a polygon of LatLng points. Needed to convert from XML to JSON and also reference the CDB spec.
     2. Fetch raster tiles that were available at specific LODs. Because of the data formats of the tiles (JPEG2000 for raster imagery, and TIFF for elevation data), InfoDao also stood up a small conversion service that would convert imagery into a consumable format
-    3. Fetch Geometry from the server. The 3D models were in OpenFlight format and not immediately accessible for 3D rendering in our clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
+    3. Fetch Geometry from the server. The 3D models were in OpenFlight cite:[OpenFlight] format and not immediately accessible for 3D rendering in our clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
     4. Display converted geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
 
 In comparison, we used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:

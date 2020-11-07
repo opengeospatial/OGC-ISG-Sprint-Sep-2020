@@ -1,3 +1,4 @@
+[[Steinbeis]]
 == Component Implementation: Steinbeis
 
 === Overview
@@ -127,7 +128,7 @@ image::images/Steinbeis-Client-to-Steinbeis-SensorThings-ArealTaxi3.PNG[width=80
 
 === Automatic Updates
 
-With the update pipeline, existing 3D Tiles will be updated as the changes are made to the input 3D dataset. CDB data store has been used as the primary dataset in this sprint. The building models are stored in OpenFlight (* .flt) format within CDB store.  It was required to setup the OpenFlight to 3D Tiles conversion. FME is used for this purpose. In the following section this conversion from CDB (* .flt) to 3D tiles is discussed.
+With the update pipeline, existing 3D Tiles will be updated as the changes are made to the input 3D dataset. CDB data store has been used as the primary dataset in this sprint. The building models are stored in OpenFlight cite:[OpenFlight] (* .flt) format within CDB store.  It was required to setup the OpenFlight to 3D Tiles conversion. FME is used for this purpose. In the following section this conversion from CDB (* .flt) to 3D tiles is discussed.
 
 ==== CDB to 3D Tiles Using FME:
 

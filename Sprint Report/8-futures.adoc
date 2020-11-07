@@ -32,7 +32,7 @@ One participant used Unity to manage their display. It was necessary to develop 
 This section discusses potential future work within OGC because it deals with OGC data formats and/or APIs.
 
 ===== Data
-Many of the participants noted the difficult and poor performance when working with the multiple data formats. The data was provided for the Sprint as CDB with models in OpenFlight format. Converting this data to 3D Tiles and glTF took a considerable amount of time, partially because of the size of the data involved. The time was large enough to prevent runtime conversion per request. This has implications for scene updates getting incorporated into the response on a request. It was suggested that perhaps even a tiling of CDB would provide a considerable reduction in processing time.
+Many of the participants noted the difficult and poor performance when working with the multiple data formats. The data was provided for the Sprint as CDB with models in OpenFlight cite:[OpenFlight] format. Converting this data to 3D Tiles and glTF took a considerable amount of time, partially because of the size of the data involved. The time was large enough to prevent runtime conversion per request. This has implications for scene updates getting incorporated into the response on a request. It was suggested that perhaps even a tiling of CDB would provide a considerable reduction in processing time.
 
 Specifically the following items were identified:
 

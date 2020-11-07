@@ -1,3 +1,4 @@
+[[Ecere]]
 == Component Implementation: Ecere
 
 [#Ecere-Client-0,reftext='{figure-caption} {counter:figure-num}']
@@ -422,7 +423,7 @@ referencing a model, and an optional transformation including scaling and/or ori
 
 To add a whole new 3D model, a model encoded in a supported format could be submitted via `POST` to the `/models` end-point
 (also used with GET for retrieving referenced individual models in the _OGC API - Tiles_ extension for 3D data discussed above).
-Once added, the model could be retrieved in a different format than it was submitted as, e.g. an OpenFlight 3D model could be uploaded, which
+Once added, the model could be retrieved in a different format than it was submitted as, e.g. an OpenFlight cite:[OpenFlight] 3D model could be uploaded, which
 the GNOSIS Map Server converts to its native E3D format internally, and a client could request and retrieve the model in binary glTF.
 The `PUT` and `DELETE` methods could also be supported at the `/models/{modelID}` end-point.
 

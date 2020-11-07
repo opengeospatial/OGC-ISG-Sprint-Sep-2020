@@ -1,3 +1,4 @@
+[[Helyx]]
 == Component Implementation: Helyx
 
 For the OGC Interoperable Simulation and Gaming (ISG) Sprint with glTF, Helyx took 3D Tiles data, that had been converted from CDB data by CAE, and incorporated this 3D Tiles dataset (around San Diego) into our Server, helyxisg.eastus.azurecontainer.io.

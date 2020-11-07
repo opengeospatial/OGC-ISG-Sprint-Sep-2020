@@ -7,6 +7,7 @@ The https://portal.ogc.org/files/?artifact_id=94059[ISG Sprint: Call for Partici
 
 The CfP specified a schedule from kickoff meeting (1 September) through the Sprint Week (21-25 September), and participant final report inputs (5 October). The Sprint was originally desired to be in-person; however, pandemic lockdown restrictions required that all participant work be done remotely during the sprint week. This decision was made prior to the due date for proposals.
 
+[[DataSets]]
 === Data Sets
 
 The primary data set for the Sprint is known as San Diego CDB (licensed under the _SanGIS Legal Notice - SanGIS GIS Data End User Use Agreement and Disclaimer for Data Released to the Public_ cite:[SanGISCDBLicense]). It was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
