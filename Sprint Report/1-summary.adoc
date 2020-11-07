@@ -6,7 +6,9 @@ The OGC Interoperable Simulation and Gaming Sprint advanced the use of relevant 
 
 The Interactive Simulation and Gaming Sprint ("Sprint") was undertaken by OGC to verify the results of the 3D Data Container and Tiles API Pilot ("Pilot"). The Pilot produced the OGC GeoVolumes API draft specification] ("draft spec" cite:[GeoVolumesAPI). The Sprint was specifically designed to test the coverage and consistency of the draft spec and with respect to other OGC APIs. It was expected that the Sprint would uncover no major issues with the draft spec, but would identify interoperability issues with multiple data stores and between other OGC APIs. The Sprint was not designed as a full-coverage verification and validation of the draft spec.
 
-An important component in the Sprint was the use of 3D models in graphics language transmission format (glTF cite:[glTF]). This format is of particular to OGC because of its emergence as a common (i.e. de facto standard) web transmission model format. The format is developed and supported by the Khronos Group, which was a partner in the Sprint.
+As indicated in the OGC _3D Data Container and Tiles API Pilot Summary Engineering Report_ cite:[ExtendedExecutiveSummary], it was important from a business perspective that additional integration tests and real-world deployment demonstrations further explore the potential of the GeoVolumes API draft spec. The implementation and testing work conducted in this initiative went a long way toward resolving any outstanding interoperability issues and exploring best practices for the organization of GeoVolumes within the interoperable simulation and gaming domain.
+
+Another important component in the Sprint was the use of 3D models in graphics language transmission format (glTF cite:[glTF]). This format is of particular to OGC because of its emergence as a common (i.e. de facto standard) web transmission model format. The format is developed and supported by the Khronos Group, which was a partner in the Sprint.
 
 === Operation
 
