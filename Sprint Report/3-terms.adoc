@@ -4,36 +4,47 @@ For the purposes of this report, the definitions specified in Clause 4 of the OW
 
 &#9679; OGC Pilot ::
 
- OGC Pilots apply and test OGC standards in real world environments. Pilot projects are an opportunity for users to understand how to best address their requirements using standards-based architectures. A Pilot evaluates the feasibility of implementing a standards-based architecture and provides valuable requirements for defining and developing solicitations or tenders for implementation of an operational system. Pilots usually work with prototypes or pre-production products that are explored in realistic scenarios.
+OGC Pilots apply and test OGC standards in real world environments. Pilot projects are an opportunity for users to understand how to best address their requirements using standards-based architectures. A Pilot evaluates the feasibility of implementing a standards-based architecture and provides valuable requirements for defining and developing solicitations or tenders for implementation of an operational system. Pilots usually work with prototypes or pre-production products that are explored in realistic scenarios.
 
- &#9679; OGC Sprint ::
+&#9679; OGC Sprint ::
 
-  OGC Sprints experiment with emerging ideas in the context of geospatial standards, help improve interoperability of existing standards by experimenting with new extensions or profiles, are used as proof of concept for other OGC Innovation Program initiatives, or support OGC Standards Program activities. OGC Sprints are very short and focused initiatives that are often executed within few days to weeks. Sprints put most of their emphasis on the agile development phase that is usually executed during a physical meeting.
+OGC Sprints experiment with emerging ideas in the context of geospatial standards, help improve interoperability of existing standards by experimenting with new extensions or profiles, are used as proof of concept for other OGC Innovation Program initiatives, or support OGC Standards Program activities. OGC Sprints are very short and focused initiatives that are often executed within few days to weeks. Sprints put most of their emphasis on the agile development phase that is usually executed during a physical meeting.
 
 &#9679; 3D Tiles ::
 
+3D Tiles cite:[ThreeDTiles] is designed for streaming and rendering massive 3D geospatial content such as Photogrammetry, 3D Buildings, BIM/CAD, Instanced Features, and Point Clouds. It defines a hierarchical data structure and a set of tile formats which deliver renderable content. 3D Tiles does not define explicit rules for visualization of the content; a client may visualize 3D Tiles data however it sees fit.
+
 &#9679; b3dm ::
+
 Batched 3D Models
 
 &#9679; CDB ::
-A dataset standard for ...
+
+The CDB standard cite:[CDB] defines a standardized model and structure for a single, “versionable”, virtual representation of the earth. A CDB structured data store provides for a geospatial content and model definition repository that is plug-and-play interoperable between database authoring workstations.  Moreover, a CDB structured data store can be used as a common online (or runtime) repository from which various simulator client-devices can simultaneously retrieve and modify, in real-time, relevant information to perform their respective runtime simulation tasks. In this case, a CDB is plug-and-play interoperable between CDB-compliant simulators.  A CDB can be readily used by existing simulation client-devices (legacy Image Generators, Radar simulator, Computer Generated Forces, etc.) through a data publishing process that is performed on-demand in real-time.
 
 &#9679; Full Motion Video (FMV) ::
 
-&#9679; GeoVolume ::
+Full Motion Video (FMV)-compliant refers to the combination of a video stream and associated metadata into one video file, which makes the video geospatially aware. The sensor systems collect camera pointing information, platform position and attitude, and other data, and encode it into the video stream so that each video frame is associated with geopositional information cite:[FMV].
+
+&#9679; GeoVolumes ::
+
+GeoVolumes cite:[GeoVolumes] follow one conceptual organization of space applied by humans, which is a nested collection of spaces where every space contains either a number of sub-spaces or a set of objects. As an example, the GeoVolume “Earth” contains a set of child GeoVolumes, one for each continent. Each continent then may have a set of child GeoVolumes for the various countries, or, if countries are irrelevant in that scenario, a number of datasets that represent the topography, rivers, and human settlements.
 
 &#9679; IANA ::
 Internet Assigned Numbers Authority is the organization responsible for oversight of the architecture of the Internet. They are ultimately responsible for assignment of IP addresses and management of Media Types
 
 &#9679; jp2 | JPEG2000 ::
+
 It is an advanced lossy compression algorithm for representing 2D data. It is currently not widely supported in browsers, requiring a (CPU-intensive) conversion to JPEG or PNG/GIF.
 
 &#9679; OpenFlight ::
 
- cite:[OpenFlight]
+OpenFlight cite:[OpenFlight] is a file format originally designed as a nonproprietary 3D geometry model format for use by real-time 3D visual simulation image generators. The OpenFlight file format is used today in the high end real-time visual simulation industry as the standard interchange format between different IG systems, and is currently administrated by Presagis cite:[OpenFlightDescription].
 
 &#9679; URL/URI ::
+
 At one time Uniform Resource Location (URL) was a subset of Uniform Resource Identifier (URI). Now both are considered the same cite:[URIURL].
 
 &#9679; W3C ::
-World Wide Web Consortium is responsbile for all standards that make the Web operate, including URIs, HTTP, etc.
+
+World Wide Web Consortium is responsible for all standards that make the Web operate, including URIs, HTTP, etc.
