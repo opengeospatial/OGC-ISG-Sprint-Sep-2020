@@ -9,4 +9,4 @@ Perhaps a more serious problem is with the location and data content naming conv
 
 OGC should continue to examine Best Current Practice "URI Design and Ownership" cite:[RFC8820] which states that the best practice is to not specify the path of an application as that is the responsibility of the URI owner (generally the owner of the [sub-]domain).
 
-Finally it was shown that GeoVolumes could be integrated with a game engine (Unity). This would allow other clients to easily access the API with the need for extensive graphics development. It was hypothesized that the effort to integrate with Unreal would be similar.
+Finally it was shown that GeoVolumes could be integrated with a game engine (Unity). This would allow Unity to act as a GeoVolumes client that could easily use the API to communicate with multiple GeoVolumes servers and enable other Unity-based applications to utilize the API without the need for extensive graphics development. It was hypothesized that the effort to integrate with Unreal would be similar.

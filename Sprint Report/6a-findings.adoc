@@ -163,4 +163,4 @@ InfoDao noted that (<<GeoVolumes API Discussion: CDB comparisons and OGC API dis
 
 === Game Engine Interface
 
-SimBlocks.io work on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would be a similar amount of work.
+SimBlocks.io worked on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would be a similar amount of work.
