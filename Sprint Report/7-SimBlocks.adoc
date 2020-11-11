@@ -46,8 +46,10 @@ SimBlocks agreed to review communicating with the various servers developed by o
 
 Once the servers were reviewed, the SimBlocks team attempted to retrieve the models from the servers and save the B3DM files. During this process the SimBlocks team confirmed that it was necessary to accommodate whether the server contains their models as URLs (Steinbeis) or URIs (Cesium, Cognitics, Ecere, Helyx, InfoDao). The team identified that some servers with URIs intended for the B3DM files to be relative to the domain (Ecere) and others intended for the files to be appended to the URL of the current endpoint (Cesium, Cognitics, Ecere (Pilot), Helyx, InfoDao).
 
+
+[#table-simblocks-landing-page,reftext='{table-caption} {counter:table-num}']
 .Landing Page Table /
-[width="20%"]
+[cols="1,4",options="header",align="center"]
 |=======
 |              | Landing Page
 |Cesium        | https://3d.hypotheticalhorse.com/
@@ -59,8 +61,9 @@ Once the servers were reviewed, the SimBlocks team attempted to retrieve the mod
 |InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com
 |=======
 
+[#table-simblocks-conformance,reftext='{table-caption} {counter:table-num}']
 .Conformance Table /conformance
-[width="20%"]
+[cols="1,4,4",options="header",align="center"]
 |=======
 |              | Conformance Page                                          | Notes
 |Cesium        | https://3d.hypotheticalhorse.com/conformance/             | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
@@ -72,8 +75,9 @@ Once the servers were reviewed, the SimBlocks team attempted to retrieve the mod
 |InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/conformance | This page links to multiple child conformance pages
 |=======
 
+[#table-simblocks-api,reftext='{table-caption} {counter:table-num}']
 .api Table /api
-[width="20%"]
+[cols="1,6,2",options="header",align="center"]
 |=======
 |              | Conformance Page                                          | Notes
 |Cesium        | https://3d.hypotheticalhorse.com/api                      | 404 Error
@@ -87,8 +91,9 @@ Once the servers were reviewed, the SimBlocks team attempted to retrieve the mod
 
 Some of the landing pages point to service description links that are different from /api. Working links were included in this table.
 
+[#table-simblocks-collections,reftext='{table-caption} {counter:table-num}']
 .Collections Table /collections
-[width="20%"]
+[cols="1,5,3",options="header",align="center"]
 |=======
 |              | Collections Page                                          | Notes
 |Cesium        | https://3d.hypotheticalhorse.com/collections/             | Works
@@ -100,8 +105,9 @@ Some of the landing pages point to service description links that are different 
 |InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac
 |=======
 
+[#table-simblocks-container,reftext='{table-caption} {counter:table-num}']
 .3D Container Table /collections/{3DContainerID}
-[width="20%"]
+[cols="1,5,3",options="header",align="center"]
 |=======
 |              | 3D Container Page                                                          | Notes
 |Cesium        | https://3d.hypotheticalhorse.com/collections/Buildings/NewYorkBuildings/  | Works
@@ -113,8 +119,9 @@ Some of the landing pages point to service description links that are different 
 |InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/stac/ogc-cdb-sandiego | Works
 |=======
 
+[#table-simblocks-b3dm,reftext='{table-caption} {counter:table-num}']
 .3D Tiles - Batched 3D Model Table .b3dm
-[width="20%"]
+[cols="1,4,4",options="header",align="center"]
 |=======
 |              | Batched 3D Model                                                          | Notes
 |Cesium        | https://3d.hypotheticalhorse.com/collections/NewYorkBuildings/3dtiles/  | Works. The building models were referenced from the domain rather than appended to the end as most of the other servers expect. Uri used.
