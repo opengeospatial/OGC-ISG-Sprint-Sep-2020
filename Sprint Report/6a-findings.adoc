@@ -121,7 +121,7 @@ It is worth mentioning that two participants (CAE & Cognitics) have hosted their
 
 Several of the participants developed the capability to update part of the dataset during operation. These updates do not require regeneration of the entire dataset from the data-store. There are mechanisms to ensure that any generated and cached files are appropriately rebuilt on the next request.
 
-Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily ideal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did not that getting the models to align with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
+Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily ideal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did note that getting the models to align with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
 
 === Performance Comments
 
