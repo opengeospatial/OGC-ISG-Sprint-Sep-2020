@@ -87,8 +87,44 @@ Once the servers were reviewed, we attempted to retrieve the models from the ser
 
 Some of the landing pages point to service description links that are different from /api. Working links were included in this table.
 
+.Collections Table /collections
+[width="20%"]
+|=======
+|              | Collections Page                                          | Notes
+|Cesium        | https://3d.hypotheticalhorse.com/collections/             | Works
+|Cognitics     | http://cdb.cognitics.net:3000/collections/                | Works
+|Ecere         | http://maps.ecere.com/ogcapi/collections/                 | Different format from other servers.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/                 | Works
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/ | Works
+|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections | Works
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac  
+|=======
 
+.3D Container Table /collections/{3DContainerID}
+[width="20%"]
+|=======
+|              | 3D Container Page                                                          | Notes
+|Cesium        | https://3d.hypotheticalhorse.com/collections/Buildings/NewYorkBuildings/  | Works
+|Cognitics     | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/               | Works
+|Ecere         | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/  http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/ | Different format from other servers.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/                         | Works
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/ | Works
+|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/stac/ogc-cdb-sandiego | Works
+|=======
 
+.3D Tiles - Batched 3D Model Table .b3dm
+[width="20%"]
+|=======
+|              | Batched 3D Model                                                          | Notes
+|Cesium        | https://3d.hypotheticalhorse.com/collections/NewYorkBuildings/3dtiles/  | Works. The building models were referenced from the domain rather than appended to the end as most of the other servers expect. Uri used.
+|Cognitics     | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/3DTiles/               | Works. Uri used.
+|Ecere         | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/3DTiles/tileset.json | Different format from other servers. Works if uri is relative to domain.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/3DTiles/tileset.json           | Works. Uri used.
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/3dTiles/ | Works. Uri used.
+|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works. Full url used.
+|InfoDao       | | Unable to test.
+|=======
 
 After successfully retrieving models from most of the servers, we developed tools for converting and loading the building content.
 
