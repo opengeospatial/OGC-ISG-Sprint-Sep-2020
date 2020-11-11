@@ -45,6 +45,51 @@ SimBlocks agreed to review communicating with the various servers developed by o
 
 Once the servers were reviewed, we attempted to retrieve the models from the servers and save the B3DM files. During this process we confirmed that we need to accommodate whether the server contains their models as URLs (Steinbeis) or URIs (Cesium, Cognitics, Ecere, Helyx, InfoDao). We identified that some servers with URIs intended for the B3DM files to be relative to the domain (Ecere) and others intended for the files to be appended to the URL of the current endpoint (Cesium, Cognitics, Ecere (Pilot), Helyx, InfoDao).
 
+.Landing Page Table /
+[width="20%"]
+|=======
+|              | Landing Page 
+|Cesium        | https://3d.hypotheticalhorse.com/
+|Cognitics     | http://cdb.cognitics.net:3000/
+|Ecere         | http://maps.ecere.com/ogcapi/
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/
+|Steinbeis     | http://steinbeis-3dps.eu:8080/
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com
+|=======
+
+.Conformance Table /conformance
+[width="20%"]
+|=======
+|              | Conformance Page                                          | Notes
+|Cesium        | https://3d.hypotheticalhorse.com/conformance/             | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
+|Cognitics     | http://cdb.cognitics.net:3000/conformance/                | Missing content. This leads to conformance of []
+|Ecere         | http://maps.ecere.com/ogcapi/conformance/                 | Unsupported
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/conformance                  | Unsupported, blank page
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core 
+|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/conformance | Works
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/conformance | This page links to multiple child conformance pages
+|=======
+
+
+.api Table /api
+[width="20%"]
+|=======
+|              | Conformance Page                                          | Notes
+|Cesium        | https://3d.hypotheticalhorse.com/api                      | 404 Error
+|Cognitics     | http://cdb.cognitics.net:3000/api                         | GET Error
+|Ecere         | http://maps.ecere.com/ogcapi/api                          | Unsupported
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/api                          | Unsupported
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/api          | Unsupported
+|Steinbeis     | http://steinbeis-3dps.eu:8080/api                         | 404 Error
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/openapi     | Works
+|=======
+
+Some of the landing pages point to service description links that are different from /api. Working links were included in this table.
+
+
+
+
 After successfully retrieving models from most of the servers, we developed tools for converting and loading the building content.
 
 The results of our testing can also be found here.
