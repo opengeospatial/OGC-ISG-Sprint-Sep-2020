@@ -19,8 +19,8 @@ image::images/SimBlocks-One-World-SDK.jpg[width=800,align="center"]
 
 SimBlocks has been operating for over 4 years and is located in Orlando, Florida at the University of Central Florida Business Incubation Program at Research Park.
 
-
 === Architecture
+
 The OGC GeoVolumes architecture separates visual client applications from servers holding the 3D model content. The exact format of the models is hidden from the client. From the perspective of the client, the main benefit of the GeoVolumes API is that fewer 3D model formats need to be supported and accessing the models for a known area becomes very simple. From reviewing the 3D models provided by the servers, 3D Tiles content (including glTF) is the primary format that was necessary to be supported by our Unity-based client.
 
 [#img_SimBlocks-2,reftext='{figure-caption} {counter:figure-num}']
@@ -41,14 +41,15 @@ image::images/SimBlocks_ISG_Architecture.PNG[width=800,align="center"]
 * Investigate potential issues with Virtual Reality device deployment.
 
 === Server Testing
+
 SimBlocks agreed to review communicating with the various servers developed by other participants in the Sprint. We first checked if the URLs for the Landing Page, Conformance, api, Collections, and 3D Container pages existed. If so, each of the pages would appear as a webpage in a browser in the form of a human-readable JSON file.
 
-Once the servers were reviewed, we attempted to retrieve the models from the servers and save the B3DM files. During this process we confirmed that we need to accommodate whether the server contains their models as URLs (Steinbeis) or URIs (Cesium, Cognitics, Ecere, Helyx, InfoDao). We identified that some servers with URIs intended for the B3DM files to be relative to the domain (Ecere) and others intended for the files to be appended to the URL of the current endpoint (Cesium, Cognitics, Ecere (Pilot), Helyx, InfoDao).
+Once the servers were reviewed, the SimBlocks team attempted to retrieve the models from the servers and save the B3DM files. During this process the SimBlocks team confirmed that it was necessary to accommodate whether the server contains their models as URLs (Steinbeis) or URIs (Cesium, Cognitics, Ecere, Helyx, InfoDao). The team identified that some servers with URIs intended for the B3DM files to be relative to the domain (Ecere) and others intended for the files to be appended to the URL of the current endpoint (Cesium, Cognitics, Ecere (Pilot), Helyx, InfoDao).
 
 .Landing Page Table /
 [width="20%"]
 |=======
-|              | Landing Page 
+|              | Landing Page
 |Cesium        | https://3d.hypotheticalhorse.com/
 |Cognitics     | http://cdb.cognitics.net:3000/
 |Ecere         | http://maps.ecere.com/ogcapi/
@@ -66,11 +67,10 @@ Once the servers were reviewed, we attempted to retrieve the models from the ser
 |Cognitics     | http://cdb.cognitics.net:3000/conformance/                | Missing content. This leads to conformance of []
 |Ecere         | http://maps.ecere.com/ogcapi/conformance/                 | Unsupported
 |Ecere (Pilot) | https://maps.ecere.com/3DAPI/conformance                  | Unsupported, blank page
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core 
+|Helyx         | http://helyxapache2.eastus.azurecontainer.io/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
 |Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/conformance | Works
 |InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/conformance | This page links to multiple child conformance pages
 |=======
-
 
 .api Table /api
 [width="20%"]
@@ -97,7 +97,7 @@ Some of the landing pages point to service description links that are different 
 |Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/                 | Works
 |Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/ | Works
 |Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections | Works
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac  
+|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac
 |=======
 
 .3D Container Table /collections/{3DContainerID}
@@ -126,25 +126,25 @@ Some of the landing pages point to service description links that are different 
 |InfoDao       | | Unable to test.
 |=======
 
-After successfully retrieving models from most of the servers, we developed tools for converting and loading the building content.
+After successfully retrieving models from most of the servers, the team developed tools for converting and loading the building content.
 
 The results of our testing can also be found here.
 https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/wiki/TIE-Table-and-Reports
 
 === Conversion Methods
 
-This section describes the methods we used to import glTF content into Unity. Because the Unity Editor does not currently directly support 3D Tiles or glTF content, our team reviewed several open source repositories to see how well they worked. Eventually, we included an approach of developing our own 3D Tiles importer.
+This section describes the methods the team used to import glTF content into Unity. Because the Unity Editor does not currently directly support 3D Tiles or glTF content, our team reviewed several open source repositories to see how well they worked. Eventually, the team included an approach of developing our own 3D Tiles importer.
 
 ==== Method 1 - NASA Unity3DTiles Library
 
-Our team reviewed the following open source libraries:
+The team reviewed the following open source libraries:
 
 ** https://github.com/KhronosGroup/UnityGLTF
 ** https://github.com/Siccity/GLTFUtility
 ** https://github.com/ousttrue/UniGLTF
 ** https://github.com/NASA-AMMOS/Unity3DTiles
 
-After reviewing the glTF libraries, our engineers determined that UnityGLTF would work. Additionally, a version of UnityGLTF is included in the Unity3DTiles repository, both of which are written in the C# language, which is preferred by Unity’s scripting system. We assigned one of our interns to test the Unity3DTiles library as part of a summer internship. Eventually, we were successful with connecting to the Cesium Ion web service and visualize glTF models on an island. One drawback of the Unity3DTiles library is that it requires a license to use in commercial applications, which prevented further integration of the library.
+After reviewing the glTF libraries, our engineers determined that UnityGLTF would work. Additionally, a version of UnityGLTF is included in the Unity3DTiles repository, both of which are written in the C# language, which is preferred by Unity’s scripting system. We assigned one of our interns to test the Unity3DTiles library as part of a summer internship. Eventually, the team was successful with connecting to the Cesium Ion web service and visualize glTF models on an island. One drawback of the Unity3DTiles library is that it requires a license to use in commercial applications, which prevented further integration of the library.
 
 [#img_SimBlocks-3,reftext='{figure-caption} {counter:figure-num}']
 .Cesium ion OSM Building
@@ -152,7 +152,7 @@ image::images/SimBlocks_CesiumIon_Unity.PNG[width=800,align="center"]
 
 ==== Method 2 - B3DM to OBJ
 
-Unity is already able to directly load OBJ models, so we pursued a second approach of converting 3DTiles B3DMs (Batched 3D Models) into OBJ files using native C++ code. After parsing the B3DM glTF mesh buffers and accounting for position offsets, conversion to the OBJ format was straightforward. Our algorithm produced multiple OBJ files per B3DM file as each B3DM may contain multiple meshes. We downloaded all of the B3DMs available for a given server and converted the available B3DMs to OBJ files. Then, we imported the OBJ files into the Unity Editor, which requires significant time for large data sets. The scene could be run at interactive rates.
+Unity is already able to directly load OBJ models, so the team pursued a second approach of converting 3DTiles B3DMs (Batched 3D Models) into OBJ files using native C++ code. After parsing the B3DM glTF mesh buffers and accounting for position offsets, conversion to the OBJ format was straightforward. Our algorithm produced multiple OBJ files per B3DM file as each B3DM may contain multiple meshes. We downloaded all of the B3DMs available for a given server and converted the available B3DMs to OBJ files. Then, the team imported the OBJ files into the Unity Editor, which requires significant time for large data sets. The scene could be run at interactive rates.
 
 [#img_SimBlocks-4,reftext='{figure-caption} {counter:figure-num}']
 .B3DM to Obj Conversion in Unity Shown in Unity
@@ -168,10 +168,10 @@ image::images/SimBlocks_3D_Tiles_Unity.PNG[width=800,align="center"]
 
 === Future Work
 
-The SimBlocks team found the OGC GeoVolumes Sprint to be very useful. Additional work items that we would like to continue as we experiment with processing geospatial content using real-time 3D game engine technologies are:
+The SimBlocks team found the OGC GeoVolumes Sprint to be very useful. Additional work items that the team would like to continue experimenting with processing geospatial content using real-time 3D game engine technologies are:
 
 * GeoVolumes bounding volumes queries
 * Runtime conversion performance improvements
 * Terrain clamping improvements
 
-After discussing with Unity’s geospatial team, we have identified a 4th method of conversion that promises to be even faster than Method 3 (Directly load B3DM) while also allowing us to use native C++ code.
+After discussing with Unity’s geospatial team, the SimBlocks team identified a 4th method of conversion that promises to be even faster than Method 3 (Directly load B3DM) while also allowing us to use native C++ code.

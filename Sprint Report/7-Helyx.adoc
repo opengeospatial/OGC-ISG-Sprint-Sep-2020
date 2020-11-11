@@ -28,8 +28,8 @@ TIP: Helyx feels that these questions have not been addressed previously and sho
 
 The formats that were handled by the draft GeoVolumes API in the previous pilot were i3s and 3D Tiles. These are community standards that serve out 3d data through a particular bounding volume hierarchy. But there are a wider range of formats that can be served directly (such as CDB or CityGML), or can be transformed to an intermediate state for easier transmission over the web - for instance a 2D tile matrix set or implicit tiling tileset. The structure of these datasets should lend itself to the OGC Tiles API. So an important question is where is the boundary between APIs in the OGC ecosystem – is it a fuzzy boundary? Is there no problem with having both types of API under the same collection, as long as everyone uses OGC API Common as the core consistently? So far the structure of the GeoVolumes API follows OpenAPI Common Part 2: Geospatial data, which includes a landing page, a list of collections (including filtering by bbox), a collection description (including a link to the data) and filtering on the data itself (e.g. through a bounding box). Any future extensions to this part of the specification should be made with caution so as to not break interoperability with the other nascent OGC APIs.
 
-The term we use here for serving different representations of the same data as different services, formats or links is an alternate distribution. In the sprint we consider some issues around alternate distributions.
-We did this with the assistance of a survey tool, to poll sprint participants on their views of how the draft specification is structured, and what defines an alternate distribution. Unfortunately there was not a lot of uptake of the survey, however some useful information was gained. It is recommended that if this type of survey were used wider it could provide useful insight into the general consensus around specification issues.
+The term used here for serving different representations of the same data as different services, formats or links is an alternate distribution. In the sprint the team considered some issues around alternate distributions.
+This was done with the assistance of a survey tool, to poll sprint participants on their views of how the draft specification was structured, and what defines an alternate distribution. Unfortunately there was not a lot of uptake of the survey, however some useful information was gained. It is recommended that if this type of survey were used more widely, it could provide useful insight into the general consensus around specification issues.
 
 TIP: It is suggested that the OGC community could use these type of polls more to understand the nuances of opinions and consensus when building new specifications.
 
@@ -37,7 +37,7 @@ TIP: It is suggested that the OGC community could use these type of polls more t
 
 At the OpenAPI Common level, alternate distributions are only really discussed in terms of JSON or Html representations of server responses. However, it can be posited that the different OGC API standards are all alternate distributions of a collection of geospatial data. So the same source data could be converted and served in different ways – either with a manual conversion or on the fly (e.g. to 3D Tiles, i3s, a 2D representation of the data, or as features).
 The following sections discuss how alternate representations can be found at different levels, and potential issues and recommendations around this that can be put forward to the DWG.
-The below diagram summaries what we believe to be the different levels of decision point when creating a GeoVolumes resource, of which all of them have the potential to represent the same data in different ways, thus creating alternate distributions.
+The below diagram summaries what is believed to be the different levels of decision point when creating a GeoVolumes resource, of which all of them have the potential to represent the same data in different ways, thus creating alternate distributions.
 
 [#img_Helyx-4,reftext='{figure-caption} {counter:figure-num}']
 .Exploration of alternate distributions throughout the workflow
@@ -61,7 +61,7 @@ In order to bring both 3D Tiles and i3s under the same banner, the draft GeoVolu
 
 The draft specification built in the pilot mainly dealt with the structure of the landing page, what is considered a resource, and provided demonstration services broken out by geography. It concerned itself primarily with 3D Tiles and i3s, with the departure from OGC API Common being the bounding volume hierarchy and specific community standard formats from this point on.
 
-In terms of what is in scope of the GeoVolumes API from an alternate distribution perspective, it is considered that many of the 3d data formats could ultimately be served using the GeoVolumes API, however whether serving them directly as raw data (such as our CDB example) counts we believe needs to be clarified in the draft specification. In addition, there is talk that the GeoVolumes API could be extended with for instance the draft 3D Tiles implicit tiling scheme cite:[ThreeDImplicitTiles] discussed by Cesium. This would be the equivalent of the tiling schemes that fall under the Tiles API, but tailored for working with 3D data. A further discussion should be had to decide whether a 2D Tile map scheme served through the 3D Tiles implicit tiling scheme falls under the GeoVolumes API or not. Key questions are:
+In terms of what is in scope of the GeoVolumes API from an alternate distribution perspective, it is considered that many of the 3d data formats could ultimately be served using the GeoVolumes API, however whether serving them directly as raw data (such as our CDB example) counts that need to be clarified in the draft specification. In addition, there is talk that the GeoVolumes API could be extended with for instance the draft 3D Tiles implicit tiling scheme cite:[ThreeDImplicitTiles] discussed by Cesium. This would be the equivalent of the tiling schemes that fall under the Tiles API, but tailored for working with 3D data. A further discussion should be had to decide whether a 2D Tile map scheme served through the 3D Tiles implicit tiling scheme falls under the GeoVolumes API or not. Key questions are:
 
 •	Whether only the source data needs to be 3D (this doesn’t preclude 2D tiling scheme or raw data being in scope)
 •	Whether what is being served has to have a bounding volume hierarchy (which excludes raw data, the 2D tiling schemes and also the implicit tiling scheme)
@@ -104,13 +104,13 @@ TIP: It is recommended that the DWG discuss and provide more guidance on endpoin
 
 === A note on path format
 
-It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[CommonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
+It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[CommonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardized.
 
-TIP: It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardised.
+TIP: It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardized.
 
 === Representing Alternate Distributions within one API - Link Relations
 
-As discussed, from within a single API, defining a resource or sub-resource as an alternate distribution can typically be done using a link relation. OGC API Common refers to IANA’s definition that an ‘alternate’ link relation is ‘a substitute for this context’. Link relations are also discussed within the 3D Container ER, with a slight extension to include parent and root link relation types cite:[LinkRelations]. If we consider the W3C guidance around link relations, a couple of points are made:
+As discussed, from within a single API, defining a resource or sub-resource as an alternate distribution can typically be done using a link relation. OGC API Common refers to IANA’s definition that an ‘alternate’ link relation is ‘a substitute for this context’. Link relations are also discussed within the 3D Container ER, with a slight extension to include parent and root link relation types cite:[LinkRelations]. If the W3C guidance around link relations are considered, a couple of points are made:
 
 ____
 The *alternate* keyword creates a hyperlink referencing an alternate representation of the current document. The nature of the referenced document is given by the *href*, and type attributes. If the *alternate* keyword is used with the type attribute, it indicates that the referenced document is a reformulation of the current document in the specified format.
@@ -127,7 +127,7 @@ So putting endpoints, parameters and link relations together the endpoint of eac
 
 As discussed above, alongside the ref: alternate link relation, should be a related type attribute, which relates to the media type (previously MIME type). The media types explored in the pilot were predominantly application/json+i3s and application/json+3dTiles. These are not currently registered with IANA, and as such need to be officially / successfully registered to be official.
 Note that this doesn’t preclude other media types being used further down the path (e.g. application/json)
-Ecere suggest that if this were not possible, an alternative would be to use the application/JSON type, with a particular approach agreed upon in OGC API – Common that is common to all, to lay out the schemas in a standardised way.
+Ecere suggest that if this were not possible, an alternative would be to use the application/JSON type, with a particular approach agreed upon in OGC API – Common that is common to all, to lay out the schemas in a standardized way.
 What is suggested based on this understanding is that there is a hierarchy of alternate distributions for 3D content:
 
 -	Data Level Alternative Distribution (gLTF or City GML)
@@ -149,7 +149,7 @@ This could be defined more by the working group to understand better the scope a
 
 === Practical use of alternate distributions at the client side
 
-During the survey, we also asked with the link relation was used by the clients to identify which was an ‘original’ resource or which was an ‘alternate’ distribution. It wasn’t directly used from the small response that we did get, and instead, it would need to be reflected in the resource title or associated metadata. This may need further consideration as servers become larger with many links to alternate distributions, as it might start to become confusing in the client which is the ‘original’ resource if it is not published with it in the title.
+During the survey, the team also asked with the link relation was used by the clients to identify which was an ‘original’ resource or which was an ‘alternate’ distribution. It wasn’t directly used from the small response received, and instead, it would need to be reflected in the resource title or associated metadata. This may need further consideration as servers become larger with many links to alternate distributions, as it might start to become confusing in the client which is the ‘original’ resource if it is not published with it in the title.
 
 === OpenAPI Shapechange Workflow Perspective
 
@@ -157,4 +157,4 @@ The draft specification was also considered to see if it was compatible with the
 
 === Benefits
 
-Having a clear understanding of the alternate distribution options available at each stage of the standardisation process, knowing where to standardise, and where to provide tailored structure for particular distribution types helps to demonstrate how flexible and adaptable the OGC OpenAPI model is. We hope these discussions have highlighted a few areas where questions may occur in future, that could be clarified as part of development of the draft API. It was encouraging that the pieces of OGC API Common fitted well with the 3d data handover in the pilot, and that the conversion from CDB to 3D Tiles has been equally smooth in this sprint, suggesting a promising way forward for the GeoVolumes API.
+Having a clear understanding of the alternate distribution options available at each stage of the standardization process, knowing where to standardize, and where to provide tailored structure for particular distribution types helps to demonstrate how flexible and adaptable the OGC OpenAPI model is. We hope these discussions have highlighted a few areas where questions may occur in future, that could be clarified as part of development of the draft API. It was encouraging that the pieces of OGC API Common fitted well with the 3d data handover in the pilot, and that the conversion from CDB to 3D Tiles has been equally smooth in this sprint, suggesting a promising way forward for the GeoVolumes API.

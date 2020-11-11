@@ -55,7 +55,7 @@ http://manpages.ubuntu.com/manpages/focal/man1/ear.1.html[Ecere archives].
 For 3D models, point geometry tiles encode 3D positions, orientations, scaling and model identifiers to instantiate 3D models.
 The 3D models themselves are encoded following the https://docs.ogc.org/per/18-025.html#E3DSpecs[E3D specifications].
 
-Ecere's GNOSIS Cartographer can import CDB to a GNOSIS Data Store in a preprocesing step.
+Ecere's GNOSIS Cartographer can import CDB to a GNOSIS Data Store in a preprocessing step.
 Issues with this process were identified and resolved during the Sprint.
 Among these issues, one caused an inconsistent data store, which resulted in broken links from the _Features API_ access to the 3D buildings data.
 
@@ -70,10 +70,10 @@ image::images/Ecere/3DTilesGeneration.png[align="center",width="800"]
 One important improvement made to the 3D Tiles and glTF generation for the Sprint is support for textures, including referencing shared external textures
 to minimize the amount of texture memory required, since many buildings in the San Diego CDB dataset re-use the same textures.
 
-Another improvement concerned avoiding to list empty tiles in the tilesets, which resulted in error mesages being printed out in the CesiumJS console when
+Another improvement concerned avoiding to list empty tiles in the tilesets, which resulted in error messages being printed out in the CesiumJS console when
 the library attempted to load these tiles and received an empty file.
 
-The testing by other participants during the Sprint allowed us to identify and resolve other issues with the dymamic 3D data server.
+The testing by other participants during the Sprint allowed us to identify and resolve other issues with the dynamic 3D data server.
 This was a welcomed opportunity as this dynamic server was not ready in time for Technology Integration Experiments during the _3D Container & Tiles_ Pilot.
 
 It was originally planned to improve additional aspects of the 3D Tiles tileset generation,
@@ -84,7 +84,7 @@ but as there was not enough time to complete this during the Sprint, it will be 
 
 Ecere also grasped a better understanding of the vertical datum implications of CDB and 3D Tiles, clarifying with the help of other participants that
 the elevation model is always relative to the WGS84 ellipsoid. However, for the generated 3D Tiles of 3D models from the San Diego CDB to sit properly
-on the CesiumJS world terrain mesh (a terrain provider created by the _Cesium.createWorldTerrain()_ method), the ECF coordinates translation tranformation for the 3D Tiles specified in the tileset
+on the CesiumJS world terrain mesh (a terrain provider created by the _Cesium.createWorldTerrain()_ method), the ECF coordinates translation transformation for the 3D Tiles specified in the tileset
 had to be based on the geoid (i.e. adding the geoid offset from the ellipsoid). This seems odd, as it would have been expected to be based on the ellipsoid,
 since CDB elevation, and all transforms are Earth centric. It is still not clear whether this is an issue with the San Diego CDB, with the CesiumJS
 _worldTerrain_ terrain provider, or a misunderstanding on Ecere's part.
@@ -344,10 +344,10 @@ image::images/Ecere/coverage.jpg[align="center",width="800"]
 
 ==== Technology Integration Experiments
 
-Several of the other Sprint participants were able to succesfully access and display the dynamic 3D Tiles tilest generated from the San Diego CDB
+Several of the other Sprint participants were able to successfully access and display the dynamic 3D Tiles tilest generated from the San Diego CDB
 data on-the-fly by the new Ecere service end-point (https://maps.ecere.com/ogcapi) for the GNOSIS Map Server, specfically the
 https://maps.ecere.com/ogcapi/collections/SanDiegoCDB[San Diego CDB set of data layers].
-Hexagon, InfoDao, Simblocks and Steinbeis all reported that their clients were able to successfully access and visualize the data.
+Hexagon, InfoDao, SimBlocks and Steinbeis all reported that their clients were able to successfully access and visualize the data.
 
 Sample screenshots of some participants clients follow.
 
@@ -427,7 +427,7 @@ Once added, the model could be retrieved in a different format than it was submi
 the GNOSIS Map Server converts to its native E3D format internally, and a client could request and retrieve the model in binary glTF.
 The `PUT` and `DELETE` methods could also be supported at the `/models/{modelID}` end-point.
 
-Once an update is made, the server should either automaticaly trigger re-generation, or if generating on-the-fly any cached 3D Tile should be invalidated
+Once an update is made, the server should either automatically trigger re-generation, or if generating on-the-fly any cached 3D Tile should be invalidated
 so that the next time a client requests the data it will reflect the latest changes. When generating these tiles, if the 3D models position is relative
 to the terrain, they can also be clamped to the latest terrain elevation model.
 
@@ -443,7 +443,7 @@ what best fits its data model:
 
 Regardless of the approach used to update, the server can provide the latest version of the terrain elevation in the same way, whether as 2D coverage tiles, or
 3D Tiles quantized terrain mesh. As of the time of the Sprint, the GNOSIS Map Server only generates 3D Tiles for the models, but support for generating
-quantized terrain mesh from the gridded elevation is planned, based on the internal terrain tesselation capabilities used in Ecere's GNOSIS library.
+quantized terrain mesh from the gridded elevation is planned, based on the internal terrain tessellation capabilities used in Ecere's GNOSIS library.
 
 ==== Change Sets
 

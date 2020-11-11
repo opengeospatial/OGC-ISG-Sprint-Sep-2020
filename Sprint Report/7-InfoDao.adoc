@@ -11,11 +11,11 @@ As a quick summary, InfoDao was able to use the GeoVolumes API to quickly and re
 Resulting from the conversion of CDB to 3D tiles, a theme arose in discussion about how to ameliorate the differences among these standards. For instance, while InfoDao's client was able to access and display content from a CDB (utilizing the STAC specification from an OGC API implementation), it was not immediately accessible from a GeoVolumes perspective. On the other hand, CAE produced a seperate 3D Tiles distribution that allowed participants to more easily serve the GeoVolumes API. This worked well for the purposes of the Sprint, however, there is a question of the methods of supply multiple data distributions from one source of data.
 Helyx's Sprint report contains great starting discussion on the various formats and delivery methods the OGC has standardized, and conversations with Ecere also highlight the similarities and potential future work actions that could resolve these issues.
 
-But before we get into the weeds, let's show the results.
+But before getting into the weeds, here are the results.
 
 === Source Data: Display and Tie Tables
 
-Here are the images from the TIE table
+Here are the images from the TIE table.
 
 [#img_InfoDao-1,reftext='{figure-caption} {counter:figure-num}']
 .Ecere's San Diego 3D Tiles
@@ -51,14 +51,14 @@ GeoVolumes performs well and is easy to implement, however it is not free from i
 
 ==== GeoVolumes API Discussion: CDB comparisons and OGC API discussion
 
-InfoDao stood up a test server to quickly simulate server client transactions for consuming the data. The OGC API compliant PyGeoServer instance was configured to serve San Diego CDB through a STAC interface. Since our client could read CDBs and the dataset was easily traversable through the server's json responses, we could perform various operations of accessing and retrieving CDB data. The operations were
+InfoDao stood up a test server to quickly simulate server client transactions for consuming the data. The OGC API compliant PyGeoServer instance was configured to serve San Diego CDB through a STAC interface. Since our client could read CDBs and the dataset was easily traversable through the server's json responses, various operations of accessing and retrieving CDB data could be performed. The operations were
 
     1. Access the Metadata to get the extents of the data set. This was usually the boundaries as a polygon of LatLng points. Needed to convert from XML to JSON and also reference the CDB spec.
     2. Fetch raster tiles that were available at specific LODs. Because of the data formats of the tiles (JPEG2000 for raster imagery, and TIFF for elevation data), InfoDao also stood up a small conversion service that would convert imagery into a consumable format
     3. Fetch Geometry from the server. The 3D models were in OpenFlight cite:[OpenFlight] format and not immediately accessible for 3D rendering in our clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
     4. Display converted geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
 
-In comparison, we used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:
+In comparison, the InfoDao team used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:
 
     1. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
     2. Fetch Raster tiles at a specific LOD, no conversion needed since two supported distributions were available (.jpg and .png)
