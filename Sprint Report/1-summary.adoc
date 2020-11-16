@@ -22,7 +22,7 @@ image::images/ogc-data-orientation.png[width=755,align="center"]
 
 The participants for the Sprint were (in alphabetical order): <<CAE,CAE>>, <<Cesium,Cesium>>, <<Cognitics,Cognitics>>, <<Ecere,Ecere>>, <<Helyx,Helyx>>, <<Hexagon,Hexagon>>, <<InfoDao,InfoDao>>, <<SimBlocks,SimBlocks>>, and <<Steinbeis,Steinbeis>>. Most participants had experience participating in prior OGC projects. All participants were OGC member organizations.
 
-The Call for Participation (CfP, cite:[SprintCfP]) provided three scenarios. Participants could also construct their own that fit within the guidelines of the Sprint. <<table-scenario-summary>> provides a summary description of the selected scenarios. <<table-particiapnt-scenarios>> shows the coverage of scenarios by the participants.
+The Call for Participation (CfP, cite:[SprintCfP]) provided three scenarios. Participants could also construct their own that fit within the guidelines of the Sprint. <<table-scenario-summary>> provides a summary description of the selected scenarios. <<table-participant-scenarios>> shows the coverage of scenarios by the participants.
 
 ////
 [#table-scenario-summary-count,reftext='{table-caption} {counter:table-num}']
