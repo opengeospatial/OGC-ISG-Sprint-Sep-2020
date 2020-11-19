@@ -3,15 +3,15 @@
 
 === Overview
 
-In the ISG Sprint, the Steinbeis team developed a 3D web application for simulating the modern urban mobility such as air-taxi or E-bike in the 3D urban environment. In this application, the concept and implementation used the GeoVolumes API for managing the standard 2D or 3D static geospatial resources including building models, road network, tree, imageries, and terrain. At the same time, the dynamic moving data such as taxi, air-taxi movement, e-bike movement was managed by the OGC SensorThings API standard.
+In the ISG Sprint, the Steinbeis team developed a 3D web application for simulating modern urban mobility such as air-taxi or E-bike in the 3D urban environment. In this application, the concept and implementation used the GeoVolumes API for managing the standard 2D or 3D static geospatial resources including building models, road network, tree, imageries, and terrain. At the same time, dynamic moving data such as taxi, air-taxi movement, e-bike movement was managed by the OGC SensorThings API standard.
 
 === Server Implementation
 
 ==== GeoVolumes API Server
 
-In OGC 3D Container and Tiles API pilot, Steinbeis had successfully implemented the GeoVolumes API server to deliver geospatial resources supporting 3D Tiles, I3S, and CityGML formats in the area of New York City. This server supports the hierarchy and bounding box query through the collections and containers. This server is available at http://steinbeis-3dps.eu:8080/3DContainerTile/
+In OGC 3D Container and Tiles API pilot, Steinbeis successfully implemented a GeoVolumes API server to deliver geospatial resources supporting 3D Tiles, I3S, and CityGML formats in the area of New York City. This server supports the hierarchy and bounding box query through the collections and containers and is available at http://steinbeis-3dps.eu:8080/3DContainerTile/.
 
-In this ISG Sprint, the team expanded the API mentioned above in the new server (http://steinbeis-3dps.eu/3DGeoVolumes) to serve the provided dataset from the Sprint in the San Diego area and an open-source CityGML dataset of LoD 1 buildings of California. The dataset in the API was available in 3D Tiles format. The available geospatial datasets which were not in the visualization-ready formats such as CDB were first converted before serving through the API. In this sprint, the team was not covering the conversion part and received the ready-converted data from CAE and Ecere.
+In this ISG Sprint, the team expanded the API mentioned above in a new server (http://steinbeis-3dps.eu/3DGeoVolumes) to serve the provided San Diego dataset and an open-source CityGML dataset of LoD 1 buildings of California. The dataset in the API was available in 3D Tiles format. The available geospatial datasets which were not in visualization-ready formats (such as CDB) were first converted before serving through the API. In this sprint, the team was not covering the conversion part and instead received the already-converted data from CAE and Ecere.
 
 The team tested and evaluated the different organizations of the underlying 3D data at the server. Two approaches were compared on the Steinbeis client with the San Diego data set:
 
@@ -30,22 +30,23 @@ The hierarchical collections of Steinbeis GeoVolumes API can be illustrated as s
 image::images/Steinbeis-GeoVolumeServers2.PNG[width=800,align="center"]
 
 ==== SensorThings API Server for Urban Mobility
-In this Sprint, the team used the OGC SensorThings standard (https://docs.opengeospatial.org/is/15-078r6/15-078r6.html) as a specification for managing the synthetic urban mobility data in San Diego city. The data modelling of the SensorThings API server for this sprint is shown in <<Steinbeis-SensorThingsDataModel>>:
+
+In this Sprint, the team used the https://docs.opengeospatial.org/is/15-078r6/15-078r6.html[OGC SensorThings standard] as a specification for managing the synthetic urban mobility data in San Diego city. The data modeling of the SensorThings API server for this sprint is shown in <<Steinbeis-SensorThingsDataModel>>:
 
 [#Steinbeis-SensorThingsDataModel,reftext='{figure-caption} {counter:figure-num}']
 .Steinbies SensorThings Data Modelling.
 image::images/Steinbeis-SensorThingsDataModel.png[width=800,align="center"]
 
-For the server implementation, the team used the FROST-Server (https://github.com/FraunhoferIOSB/FROST-Server); an open-source implementation of SensorThings API part 1: Sensing, developed by the Fraunhofer IOSB as our SensorThings server for managing the dynamic dataset. This server was available at https://steinbeis-3dps.eu/sta-isg-sprint/ collecting the synthetic 3D routes in the area of San Diego.
+For the server implementation, the team used the https://github.com/FraunhoferIOSB/FROST-Server[FROST-Server], an open-source implementation of SensorThings API part 1: Sensing, developed by the Fraunhofer IOSB, as the SensorThings server for managing the dynamic dataset. This server was available at https://steinbeis-3dps.eu/sta-isg-sprint[this link], collecting the synthetic 3D routes in the area of San Diego.
 
 === Client Implementation
 
-The client (https://steinbeis-3dps.eu/STT3DClient/) application was based on CesiumJS framework. It was partially based on the implementation from the Steinbeis OGC 3D Container and Tiles pilot client. The User Interface menu is shown in the image below which allows users to do following interacations:
+The https://steinbeis-3dps.eu/STT3DClient[client application] was based on CesiumJS framework. It was partially based on the implementation from the Steinbeis OGC 3D Container and Tiles pilot client. The User Interface menu is shown in the image below which allows users to do following interactions:
 
 * Load collections from the input 3D GeoVolumes API URL or select from an available list,
 * Render the geospatial contents from the loaded collections/containers,
 * Load and render the mobility route data as a 3D Map animation from the Steinbeis SensorThings server, and
-* Using the 3D Portrayal Services to request the data in the specific boudary area.
+* Using the 3D Portrayal Services to request the data in the specific boundary area.
 
 [#Steinbeis-Client-UI,reftext='{figure-caption} {counter:figure-num}']
 .Steinbeis-Client-UI.
@@ -55,9 +56,9 @@ image::images/Steinbeis-Client-UI.PNG[width=400,align="center"]
 
 In this client application 3D Tiles from different sources are visualized. The 3D Tiles are requested from different servers from Steinbeis and other participants.
 
-To request the tileset the client first accessed the 3D GeoVolumes server (https://steinbeis-3dps.eu/3DGeoVolumes) to load the collections described in the server part. The collections could be restricted with a bounding box, so only certain collections were displayed. This was done by checking the "Content.json" file on the server.
+To request the tileset, the client first accessed the https://steinbeis-3dps.eu/3DGeoVolumes[3D GeoVolumes server] to load the collections described in the server part. The collections could be restricted with a bounding box, so only certain collections were displayed. This was done by checking the "Content.json" file on the server.
 
-The datasets that were referenced in the content.json are shown in the dashboard on the client for a user to pick which one to visualize. By selecting a certain dataset, the user triggered another Post by the client server (Node.js) to the GeoVolumes server requesting the selected dataset. The dataset was then fetched and visualized in the client. The client was tested by loading and rendering the 3D city models of San Diego from the Steinbeis GeoVolumes server and other participants's GeoVolume servers. The following lists show some examples of the geospatial that rendering on the Steinbeis client:
+The datasets that were referenced in the content.json are shown in the dashboard on the client for a user to pick which one to visualize. By selecting a certain dataset, the user triggered another Post by the client server (Node.js) to the GeoVolumes server requesting the selected dataset. The dataset was then fetched and visualized in the client. The client was tested by loading and rendering the 3D city models of San Diego from the Steinbeis GeoVolumes server and other participants' GeoVolume servers. The following lists show some examples of the geospatial rendering on the Steinbeis client:
 
 * Visualizing San Diego Road from the Steinbeis GeoVolumes Server
 +
@@ -94,7 +95,7 @@ image::images/Steinbeis-Client-to-Helyx-Server-LoD2Texture.png[width=800,align="
 
 To show different kinds of mobility, such as bike routes and air taxi routes, different synthetic urban routes were visualized on the client. By adjusting the height of the track to replicate a flight path with starting and landing maneuvers a air taxi route was simulated. The Air Taxi moved presumably around 300 meters above the terrain, except for starting and landing.
 
-To visualize these tracks in Cesium the route data was loaded from the SensorThings server followed by converting into the CZML format on the client side which allowed CesiumJS to visualize the movement of an object by interpolating its position between the two given points. The locations of the objects were stored in the positon property together with the timestamps. These also included the time in seconds based on the starting point of the epoch property.
+To visualize these tracks in Cesium the route data was loaded from the SensorThings server followed by converting into the CZML format on the client side which allowed CesiumJS to visualize the movement of an object by interpolating its position between the two given points. The locations of the objects were stored in the position property together with the timestamps. These also included the time in seconds based on the starting point of the epoch property.
 
 [source,json]
 ----
@@ -133,7 +134,7 @@ image::images/Steinbeis-Client-to-Steinbeis-SensorThings-ArealTaxi3.PNG[width=80
 
 With the update pipeline, existing 3D Tiles were updated as the changes were made to the input 3D dataset. The CDB data store was used as the primary dataset in this sprint. The building models were stored in OpenFlight cite:[OpenFlight] (* .flt) format within CDB store.  It was required to setup the OpenFlight to 3D Tiles conversion. FME was used for this purpose. In the following section this conversion from CDB (* .flt) to 3D tiles is discussed.
 
-==== CDB to 3D Tiles Using FME:
+==== CDB to 3D Tiles Using FME
 
 FLT models were stored in the local coordinate system, which had to be moved to the world coordinate system in order to project models on the actual ground locations. All the models were relative to the instance point which was stored in “GSFeature” or “GTFeature” within the CDB store. The instance point for a model could be found using FACC, FSC and MODL attributes stored in extended attributes file (* .dbf). The following <<FMEWorkbench>> shows the workbench used to convert the FLT models.
 
@@ -178,9 +179,9 @@ This shifted the model to the world coordinate system. After this translation, m
 
 This Workbench successfully translated the FLT models to 3D Tiles, but the issue was, it converted the models one by one. Batch deployment was tried to replicate the workflow for all the models, but it wasn’t successful during the duration of the sprint. This could be a future task to use FME to convert the CDB stored FLT models to 3D Tiles.
 
-==== Automatic Update Workflow:
+==== Automatic Update Workflow
 
-The <<UpdateWorkFlow>> shows the methodology used to update the existing 3D tile dataset. The starting point for this pipeline was an event-based trigger. On receiving the changes in the input datastore, this trigger was executed which will initiate the update process. This <<UpdateWorkFlow>> shows that after receiving the changes, it traversed the existing tile tree to identify which tile(s) were affected because of the change. The respected b3dm tile was updated for the changes and clients could view the changes.
+<<UpdateWorkFlow>> shows the methodology used to update the existing 3D tile dataset. The starting point for this pipeline was an event-based trigger. On receiving the changes in the input datastore, this trigger was executed which will initiate the update process. The figure shows that after receiving the changes, it traversed the existing tile tree to identify which tile(s) were affected because of the change. The respected b3dm tile was updated for the changes and clients could view the changes.
 
 [#UpdateWorkFlow, reftext='{figure-caption} {counter:figure-num}']
 .Live Updates methodology
@@ -188,7 +189,7 @@ image::images/Steinbeis-UpdateWorkflow.png[width=1000,align="center"]
 
 There were two kind of updates handled in this pipeline i.e. (i) Add, and (ii) Delete.
 
-==== Delete:
+==== Delete
 
 It required two inputs (i) the existing 3D tile dataset, and (ii) unique ID for the objects stored inside the tiles. The algorithm traversed the tree to search for object inside the tiles. After finding the tile to be updated, following algorithm was used to change the contents of a b3dm tile.
 
@@ -201,13 +202,15 @@ It required two inputs (i) the existing 3D tile dataset, and (ii) unique ID for 
 
 *Results of Live delete Objects:*
 
+[#Steinbeis-Delete-Object-Before-Image, reftext='{figure-caption} {counter:figure-num}']
 .Delete Object {Before Image}
 image::images/Steinbeis-OriginalObjectImage.PNG[width=1000,align="center"]
 
+[#Steinbeis-Delete-Object-After-Image, reftext='{figure-caption} {counter:figure-num}']
 .Delete Object {After Image}
 image::images/Steinbeis-deleteObjectImage.PNG[width=1000,align="center"]
 
-==== Add:
+==== Add
 
 It required two inputs (i) the existing 3D tile dataset and (ii) new object(s) which were to be introduced into the existing tiles. The tree tile was searched to identify where does the new object fall inside the existing tree. This building was added to a tile only if it fell completely inside the bounding volume of an existing tile. After finding the node to be changed, the following algorithm was used to update the b3dm.
 
@@ -222,9 +225,11 @@ It required two inputs (i) the existing 3D tile dataset and (ii) new object(s) w
 
 *Results of Live Add Objects:*
 
+[#Steinbeis-Add-Object-Before-Image, reftext='{figure-caption} {counter:figure-num}']
 .Add Object {Before Image}
 image::images/Steinbeis-Add_Original.PNG[width=1000,align="center"]
 
+[#Steinbeis-Add-Object-After-Image, reftext='{figure-caption} {counter:figure-num}']
 .Add Object {After Image}
 image::images/Steinbeis-Add_after.PNG[width=1000,align="center"]
 
@@ -234,13 +239,13 @@ Progress was made on the live update methodology which could make changes to the
 
 . *OGC API - Feature Transaction:* As discussed with Ecere (another participant of ISG Sprint), OGC API - Feature transactions will be a good solution to deliver (i) models, and (ii) instance point (geographic reference for the models) to the server and on receiving these features, server can trigger the above mentioned ‘Update methodology’ to make live changes the existing 3D Tiles.
 
-. *Batch deployment of CDB conversion using FME:* As mentioned above, FME has been successfully used to convert CDB to 3D Tiles, but due to time constraint the batch deployment wasn’t done. In future, the batch deployment of CDB to 3D Tile can be established in order to convert the whole CDB OPENFLIGHT models to 3D Tiles.
+. *Batch deployment of CDB conversion using FME:* As mentioned above, FME has been successfully used to convert CDB to 3D Tiles, but due to time constraint the batch deployment wasn’t done. In future, the batch deployment of CDB to 3D Tile can be established in order to convert the whole CDB OpenFlight models to 3D Tiles.
 
 === Discussion
 
-==== 1. 3D GeoVolumes API Query - Polygon with a Hole
+==== 3D GeoVolumes API Query - Polygon with a Hole
 
-During the sprint week, the Steinbeis team loaded and renders numbers of 3D contents from the GeoVolumes API servers to the client. In some cases the team found that the contents intersected each other. For example, <<Steinbeis-Client-intersected-layers>> shows that the 3D Tiles texture layer (covering a smaller area) intersected with the 3D Tiles LoD1 layer (covering a bigger area).
+During the sprint week, the Steinbeis team loaded and rendered a number of 3D contents from the GeoVolumes API servers to the client. In some cases the team found that the contents intersected each other. For example, <<Steinbeis-Client-intersected-layers>> shows that the 3D Tiles texture layer (covering a smaller area) intersected with the 3D Tiles LoD1 layer (covering a bigger area).
 
 [#Steinbeis-Client-intersected-layers,reftext='{figure-caption} {counter:figure-num}']
 .Areal Taxi on Steinbeis Client.
@@ -249,7 +254,7 @@ image::images/Steinbeis-Client-intersected-layers.png[width=800,align="center"]
 In this case, the team did not need the LoD1 layer to be loaded in a smaller bounding area already rendered by the texture layer. The query capability for requesting the contents as a polygon with hole (or donut polygon) would help to filter the content on the server-side and save the bandwidth to client.
 
 [[ThreeDGeoVolumesAPIOrganizationDifferentSemanticParts]]
-==== 2. 3D GeoVolumes API Organization Different Semantic Parts
+==== 3D GeoVolumes API Organization Different Semantic Parts
 
 Currently, there is no concrete rule on how to name the different semantic parts. For example, the building models in the San Diego area can be hosted on:
 
