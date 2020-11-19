@@ -4,7 +4,7 @@
 
 *Introduction*
 
-The Pilot started tracking the ability of a client from one participant to correctly access the server from another. This data was collected into a Technology Integration Experiment (TIE) Table to easily illustrate the extent of cross-organzation integration. A summary version of this table is presented in the <<table-tie>> below.
+The Pilot started tracking the ability of a client from one participant to correctly access the server from another. This data was collected into a Technology Integration Experiment (TIE) Table to easily illustrate the extent of cross-organzation integration. A summary version of this table is presented in <<table-tie>> below.
 
 [#table-tie,reftext='{table-caption} {counter:table-num}']
 .The full Technology Integration Experiment data. This table shows how each participant has integrated with other participants. It was not a requirement that all participants be fully integrated with each other.

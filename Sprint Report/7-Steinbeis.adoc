@@ -248,6 +248,7 @@ image::images/Steinbeis-Client-intersected-layers.png[width=800,align="center"]
 
 In this case, the team did not need the LoD1 layer to be loaded in a smaller bounding area already rendered by the texture layer. The query capability for requesting the contents as a polygon with hole (or donut polygon) would help to filter the content on the server-side and save the bandwidth to client.
 
+[[ThreeDGeoVolumesAPIOrganizationDifferentSemanticParts]]
 ==== 2. 3D GeoVolumes API Organization Different Semantic Parts
 
 Currently, there is no concrete rule on how to name the different semantic parts. For example, the building models in the San Diego area can be hosted on:

@@ -26,14 +26,14 @@ All participants could elect to use other datasets, particularly any of those fr
 .A rendering of a portion of the New York City dataset. The rendering was done by InfoDao using the Ecere data server.
 image::images/InfoDao/ecereNewYorkPassing.png[width=800,align="center"]
 
-The San Diego CDB was available for download by all participants. Many of the participants made that data available to all participants through the GeoVolume API on their servers. New York data was also made available through multiple APIs implemented during the Pilot. See <<table_summary-servers>> for a list of available servers.
+The San Diego CDB was available for download by all participants. Many of the participants made that data available to all participants through the GeoVolumes API on their servers. New York data was also made available through multiple APIs implemented during the Pilot. See <<table_summary-servers>> for a list of available servers.
 
 === 3D GeoVolume Servers
 
 Several of the Sprint participants also participated in the Pilot. These organizations provided their GeoVolumes API servers for use to everyone during the Sprint. These servers were generally populated with both the New York and San Diego data.
 
 [#table_summary-servers,reftext='{table-caption} {counter:table-num}']
-.Servers providing GeoVolume API access to the indicated dataset
+.Servers providing GeoVolumes API access to the indicated dataset
 [cols="2,4,8a",options="header",align="center"]
 |===
 |*Organization* |*URL*  |*Notes*
@@ -52,13 +52,13 @@ Several of the Sprint participants also participated in the Pilot. These organiz
 |===
 
 
-=== GeoVolume API Pilot Engineering Report
+=== GeoVolumes API Pilot Engineering Report
 
 The three 3D Data Container and Tiles API Pilot engineering reports (collectively referred to as "Pilot ER") cite:[PilotExperiences,GeoVolumesAPI,ExtendedExecutiveSummary] were made available to all participants prior to kickoff. Subsequent to the start of the Sprint, the Pilot ER was made publicly available. The draft specification is https://docs.ogc.org/per/20-030.html[part 2] cite:[GeoVolumesAPI] of the document set. This contained the API specification that was the primary target of the Sprint.
 
 === Architecture diagrams
 
-These architecture diagrams were provided with the CfP. <<#img_ServiceArchitecture>> illustrates the service architecture of the 3D Data Container and Tiles environment that includes the GeoVolume API. <<#img_ResourceArchitecture>> illustrates access to city-based datasets (in particular for New York, US and Montreal, CA), but only showing the detail for New York City.
+These architecture diagrams were provided with the CfP. <<#img_ServiceArchitecture>> illustrates the service architecture of the 3D Data Container and Tiles environment that includes the GeoVolumes API. <<#img_ResourceArchitecture>> illustrates access to city-based datasets (in particular for New York, US and Montreal, CA), but only showing the detail for New York City.
 
 [#img_ServiceArchitecture,reftext='{figure-caption} {counter:figure-num}']
 .The architecture of the various Pilot capabilities is shown with connecting arrows indicating request flow. Each client has a built-in Globe model that provides a base coordinate system for all additional data.
