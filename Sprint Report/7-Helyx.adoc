@@ -70,6 +70,7 @@ Our thoughts are that what differentiates the GeoVolumes API is the ‘bounding 
 
 TIP: Our recommendation is that the precise definition and its separation or aggregation with the other related OGC APIs is taken forward to the appropriate DWG.
 
+[[RepresentingAlternateDistributionsAtCollectionsLevel]]
 === Representing Alternate Distributions at the Collection(s) Level.
 
 At the collections and collection level, the response from the API is typically either a JSON or Html response. This is the most common case where alternative distributions are found within many APIs. At this point in the GeoVolumes API, the collections are listed, along with link relations and media types that tell the client what format to expect.
@@ -102,6 +103,7 @@ referenced the 3D Tiles endpoint is not agreed upon. Also please note that this 
 
 TIP: It is recommended that the DWG discuss and provide more guidance on endpoints and parameter use with 3D data and services
 
+[[NoteOnPathFormat]]
 === A note on path format
 
 It has also been discussed that the collectionId cannot contain slashes and the GeoVolumes API is currently not compatible with the OGC API family of standards if they currently allow slashes. A ‘:’ structure has been proposed for hierarchy structures cite:[CommonHierarchy], however for the most simple web servers hosted on Windows, folder names that will be served cannot contain ‘:’ in their name and therefore may cause issues with interoperability. It is suggested this is discussed further in the Domain Working Group as servers become more complicated with different data levels, this will need to be standardized.

@@ -135,8 +135,7 @@ Some of the landing pages point to service description links that are different 
 
 After successfully retrieving models from most of the servers, the team developed tools for converting and loading the building content.
 
-The results of our testing can also be found here.
-https://github.com/opengeospatial/OGC-ISG-Sprint-Sep-2020/wiki/TIE-Table-and-Reports
+The results of our testing can also be found in the <<TechnologyIntegrationExperimentsTable,Technology Integration Experiment (TIE) Table>>.
 
 === Conversion Methods
 

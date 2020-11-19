@@ -26,7 +26,7 @@ The Sprint https://portal.ogc.org/files/?artifact_id=94059[Call for Participatio
 
 ////
 [#table-scenario-summary-count,reftext='{table-caption} {counter:table-num}']
-.A summary of the scenarios used during the Sprint. Scenarios 1-3 were in the Call for Proposals. Other-1 and Other-2 were proposed by Cognitics and SimBlocks, respectively. The total of the *Count* column exceeds the number of participants because some participants choose to work on more than one scenario.
+.A summary of the scenarios used during the Sprint. Scenarios 1-3 were in the Call for Participation. Other-1 and Other-2 were proposed by Cognitics and SimBlocks, respectively. The total of the *Count* column exceeds the number of participants because some participants choose to work on more than one scenario.
 [cols="^1,<5,^1",options="header",align="center"]
 |===
 |Scenario ^|Summary Desription ^|Count

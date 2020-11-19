@@ -9,10 +9,10 @@ Not all participants investigated the same aspects of the draft Specification. T
 
 === Aspects of Investigation
 
-Each participant was free to choose which one (or more) scenarios to pursue. <<discussion-of-scenarios,Three scenarios>> were discussed in the Call for Proposals (CfP) cite:[SprintCfP]. Participants could also create their own scenario. OGC reviewed each participant's proposal and suggested revisions to better align with the goals of the Sprint, interest of the Sponsor, and coverage by the other participants. <<table-scenario-summary>> provides a summary description of the selected scenarios. <<table-participant-scenarios>> shows the coverage of scenarios by the participants.
+Each participant was free to choose which one (or more) scenarios to pursue. https://portal.ogc.org/files/?artifact_id=94059#SprintScenario[Three scenarios] were discussed in the CfP cite:[SprintCfP]. Participants could also create their own scenario. OGC reviewed each participant's proposal and suggested revisions to better align with the goals of the Sprint, the interest of the Sponsor, and the coverage by the other participants. <<table-scenario-summary>> provides a summary description of the selected scenarios. <<table-participant-scenarios>> shows the coverage of scenarios by the participants.
 
 [#table-scenario-summary,reftext='{table-caption} {counter:table-num}']
-.A summary of the scenarios used during the Sprint. Scenarios 1-3 were in the Call for Proposals. Other-1 and Other-2 were proposed by Cognitics and SimBlocks, respectively.
+.A summary of the scenarios used during the Sprint. Scenarios 1-3 were in the Call for Participation. Other-1 and Other-2 were proposed by Cognitics and SimBlocks, respectively.
 [cols="^1,<6",options="header",align="center"]
 |===
 |Scenario ^|Summary Desription
@@ -28,15 +28,15 @@ Each participant was free to choose which one (or more) scenarios to pursue. <<d
 [cols="2,^1,^1,^1,^1",options="header",align="center"]
 |===
 |*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
-|<<cae,*CAE*>>                             ^|*&#10003;* | | |
-|<<cesium,*Cesium*>>                       ^|*&#10003;* | | |
-|<<cognitics-sprint-report,*Cognitics*>>   ^| | ^|*&#10003;* ^|*1*
-|<<ecere,*Ecere*>>                         ^|*&#10003;* | | |
-|<<helyx-sprint-report,*Helyx*>>           ^| ^|*&#10003;* | |
-|<<hexagon-gsp,*Hexagon*>>                 ^|*&#10003;* | | |
-|<<infodao-sprint-report,*InfoDao*>>       ^| ^|*&#10003;* ^|*&#10003;* |
-|<<simblocksio-sprint-report,*SimBlocks*>> ^| | | ^|*2*
-|<<steinbeis-sprint-report,*Steinbeis*>>   ^|*&#10003;* | ^|*&#10003;* |
+|<<CAE,CAE>> ^|*&#10003;* | | |
+|<<Cesium,Cesium>> ^|*&#10003;* | | |
+|<<Cognitics,Cognitics>> ^| | ^|*&#10003;* ^|*1*
+|<<Ecere,Ecere>> ^|*&#10003;* | | |
+|<<Helyx,Helyx>> ^| ^|*&#10003;* | |
+|<<Hexagon,Hexagon>> ^|*&#10003;* | | |
+|<<InfoDao,InfoDao>> ^| ^|*&#10003;* ^|*&#10003;* |
+|<<SimBlocks,SimBlocks>> ^| | | ^|*2*
+|<<Steinbeis,Steinbeis>> ^|*&#10003;* | ^|*&#10003;* |
 |===
 
 === Cooperative Efforts
@@ -48,7 +48,7 @@ Two teams were formed. Three participants,  CAE, Cesium, and Cognitics, teamed t
 All participants cooperated and included the test and use of other participant services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and uses (clients).
 
 [#table-tie-summary,reftext='{table-caption} {counter:table-num}']
-.The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&#10003;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primary New York City). This table summarizes the information presented in <<annex-a,Annex A: TIE Results>>.
+.The inter-participant testing is shown here. The Client is show across the table with the Service provider going down. *&#10003;* means that the server was able to successfully deliver and the client was to successfully receive the data when using the GeoVolume API. The text in brackets indicate the data that was transferred. [pilot] means the data used during the Pilot project (primarily New York City). This table summarizes the information presented in the <<TechnologyIntegrationExperimentsTable,Technology Integration Experiment (TIE) Table>>.
 [cols="2,3,3,3,3",options="header",align="center"]
 |===
 >| *Client ->* .2+^| *Hexagon* .2+^| *InfoDao* .2+^| *SimBlocks* .2+^| *Steinbeis*
@@ -113,7 +113,7 @@ No defects in the draft specification were discovered, though several items need
 
 In addition to the results shown in <<table-tie-summary>> the participants were able to use their existing GeoVolume client software to access data-stores that had not been previously used by OGC and OGC projects. These data-stores included data in CDB and other formats that either were served directly (as 3D Tiles static files) or generated on-the-fly from CDB and other sources.
 
-Steinbeis extended one of the scenarios to include the integration of SensorThings API cite:[SensorThings] to illustrate how these two APIs could work together (<<SensorThings API Server for Urban Mobility>>). There were no inconsistencies or other issues found.
+Steinbeis extended one of the scenarios to include the integration of https://www.ogc.org/standards/sensorthings[SensorThings API] cite:[SensorThings] to illustrate how these two APIs could work together (<<SensorThings API Server for Urban Mobility>>). There were no inconsistencies or other issues found.
 
 It is worth mentioning that two participants (CAE & Cognitics) have hosted their services on Amazon Web Services (AWS) to improve throughput and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads, load balancing capabilities, or performance.
 
@@ -121,7 +121,7 @@ It is worth mentioning that two participants (CAE & Cognitics) have hosted their
 
 Several of the participants developed the capability to update part of the dataset during operation. These updates do not require regeneration of the entire dataset from the data-store. There are mechanisms to ensure that any generated and cached files are appropriately rebuilt on the next request.
 
-Ecere, Steinbeis, and Hexagon addressed the insert/update/removal  models using the _OGC API - Features_. The specified API proved sufficient (but not necessarily ideal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did note that getting the models to align with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
+Ecere, Steinbeis, and Hexagon addressed the insert/update/removal models using the https://www.ogc.org/standards/ogcapi-features[OGC API - Features] standard. The specified API proved sufficient (but not necessarily ideal) to perform these functions within the context of GeoVolume API and the Sprint. Ecere proposed an extension that provided a better interface to refer to models. All of these participants did note that getting the models to align with the local terrain was not a simple matter and required different solutions depending on how the client was designed and configured.
 
 === Performance Comments
 
@@ -138,8 +138,8 @@ Several of the participants discovered various issues related to HTTP transactio
 Issues with the URL were noted by several participants. These include
 
 * Different servers using GeoVolumes API use different relative URLs for models. In some cases it is a full path, other cases it is relative to the current document. It is consistent within a sever. SimBlocks discusses this in <<Server Testing>>.
-* The end-point requirements for are not always sufficiently clear. Helyx observed (<<representing-alternate-distributions-at-the-collections-level,Representing Alternate Distributions at the Collection(s) Level>>) that there is a lack of clarity in how to specify the alternate distributions. It may be specified as the final element in a path (endpoint), via search parameters, or through content-type negotiation.
-* Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon).  [Helyx: <<A note on Path Format>>].
+* The end-point requirements for are not always sufficiently clear. Helyx observed (<<RepresentingAlternateDistributionsAtCollectionsLevel,Representing Alternate Distributions at the Collection(s) Level>>) that there is a lack of clarity in how to specify the alternate distributions. It may be specified as the final element in a path (endpoint), via search parameters, or through content-type negotiation.
+* Conflicts between OGC specifications and operating system requirements for use of the characters `/` (slash) and `:` (colon). See the Helyx <<NoteOnPathFormat,A note on Path Format>>.
 
 NOTE: "Uniform Resource Identifier (URI): Generic Syntax" cite:[RFC3986] specifies that the colon (":") is a reserved character and needs to be URL-encoded. This requirement may be sufficient for URI access, but if the system needs to support static file-mode access; there may be issues with Windows-based servers.
 
@@ -163,4 +163,4 @@ InfoDao noted that (<<GeoVolumes API Discussion: CDB comparisons and OGC API dis
 
 === Game Engine Interface
 
-SimBlocks.io worked on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would be a similar amount of work.
+SimBlocks.io worked on integrating their solution into the Unity game engine. There was quite a bit of work to do bringing in the 3D data as glTF or 3D Tiles into Unity. The solution they developed during the Sprint is sub-optimal, but it did work. They reported that they felt the solution for the Unreal engine would likely require a similar amount of work.

@@ -74,7 +74,7 @@ This figure is presented as an illustration of possible connections. It is not i
 
 === Discussion of Scenarios
 
-The CfP described https://portal.ogc.org/files/?artifact_id=94059#SprintScenario[three possible scenarios cite:[SprintCfP]. Participants could choose to work on any number of these, any variant of these, or one (or more) of their choosing.
+The CfP described https://portal.ogc.org/files/?artifact_id=94059#SprintScenario[three possible scenarios] cite:[SprintCfP]. Participants could choose to work on any number of these, any variant of these, or one (or more) of their choosing.
 
 . Investigate how model and terrain updates, originating (preferred) from a CDB data store and delivered as glTF, are integrated with 3D Tiles into the client environment. The questions to be examined should include:
 .. How are terrain changes handled with existing structures?
