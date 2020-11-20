@@ -33,14 +33,6 @@ It is an advanced lossy compression algorithm for representing 2D data. It is cu
 
 OpenFlight cite:[OpenFlight] is a file format originally designed as a nonproprietary 3D geometry model format for use by real-time 3D visual simulation image generators. The OpenFlight file format is used today in the high end real-time visual simulation industry as the standard interchange format between different IG systems, and is currently administrated by Presagis cite:[OpenFlightDescription].
 
-&#9679; OGC Pilot ::
-
-OGC Pilots apply and test OGC standards in real world environments. Pilot projects are an opportunity for users to understand how to best address their requirements using standards-based architectures. A Pilot evaluates the feasibility of implementing a standards-based architecture and provides valuable requirements for defining and developing solicitations or tenders for implementation of an operational system. Pilots usually work with prototypes or pre-production products that are explored in realistic scenarios.
-
-&#9679; OGC Sprint ::
-
-OGC Sprints experiment with emerging ideas in the context of geospatial standards, help improve interoperability of existing standards by experimenting with new extensions or profiles, are used as proof of concept for other OGC Innovation Program initiatives, or support OGC Standards Program activities. OGC Sprints are very short and focused initiatives that are often executed within few days to weeks. Sprints put most of their emphasis on the agile development phase that is usually executed during a physical meeting.
-
 &#9679; URL/URI ::
 
 At one time Uniform Resource Location (URL) was a subset of Uniform Resource Identifier (URI). Now both are considered the same cite:[URIURL].

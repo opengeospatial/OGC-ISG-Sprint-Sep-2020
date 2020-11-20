@@ -10,6 +10,8 @@ As indicated in the OGC https://docs.ogc.org/per/20-031.html[3D Data Container a
 
 Another important component in the Sprint was the use of 3D models in (https://github.com/KhronosGroup/glTF/tree/master/specification/2.0[graphics language transmission format] (glTF) cite:[glTF]). This format is of particular interest to OGC because of its emergence as a common (i.e., de facto standard) web transmission model format. The format was developed and is supported by the Khronos Group, which was a partner in the Sprint.
 
+Please also visit the https://www.youtube.com/playlist?list=PLQsQNjNIDU87AM0K__5pWfKYvApzA4old[OGC ISG Sprint YouTube Playlist] to view participant video recordings.
+
 === Operation
 
 The Sprint implementation work lasted six weeks, primarily during September 2020. The original plan called for a week-long in-person coding effort; however, due to the Covid-19 pandemic, this was changed to a virtual event with each participant providing their own development support.

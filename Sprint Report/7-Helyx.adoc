@@ -92,7 +92,7 @@ This could then be expanded as other community standards are embraced – for in
 
 http://server.com/collections/SanDiego/SanDiego-buildings/iTiles
 
-(or whatever the implicit tiling scheme is named)
+(or whatever the implicit tiling scheme is named).
 
 === Representing Alternate Distributions within one API – parameters
 
@@ -104,7 +104,7 @@ http://server.com/collections/SanDiego/SanDiego-buildings/bvh?f=i3s
 
 http://server.com/collections/SanDiego/SanDiego-buildings/bvh?f=iTiles
 
-(or whatever name the implicit tiling scheme is named)
+(or whatever name the implicit tiling scheme is named).
 
 The use of parameters for content negotiation of the resource is currently not discussed in the draft GeoVolumes API but could be elaborated upon. Whether this is used in addition to the current API structure, or is even taken back a level so that:
 

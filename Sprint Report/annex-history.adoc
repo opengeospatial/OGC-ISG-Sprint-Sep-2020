@@ -8,6 +8,6 @@
 |Date |Editor |Release | Primary clauses modified |Descriptions
 |October 30, 2020 |L. Daly | .1 |all |initial version
 |November 5, 2020 |S. Serich | .2 |many |General rework and repair of compiler error messages
-|TBD |S. Serich | .3 |all |Final editing before post to Pending
+|November 20, 2020 |S. Serich | .3 |all |Final editing before post to Pending
 |TBD |TBD |1.0|all |prepare for publication
 |====================

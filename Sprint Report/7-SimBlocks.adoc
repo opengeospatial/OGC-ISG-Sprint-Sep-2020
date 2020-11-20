@@ -11,7 +11,9 @@ The purpose of the OGC Interoperable Simulation and Gaming Sprint was to advance
 
 === Previous Work
 
-SimBlocks specializes in connecting commercial gaming technologies with real-time 3D visualization applications by supporting industry standards for geospatial terrains, 3D models, and communication interoperability. SimBlocks has created a whole-earth visualization tool using the COTS Unity game engine capable of rendering the entire globe at any location at multiple levels of detail for imagery and elevation data. The One World SDK for Unity can consume geospatial data from cloud providers using web services APIs to process imagery, elevation data, and vector data. SimBlocks has tested ingesting data over web services including from Microsoft Bing Maps, OpenStreetMap, and a CDB web service provider. The One World SDK for Unity also supports direct loading of high-detailed content insets using a variety of modeling formats, including https://www.presagis.com/en/glossary/detail/openflight[OpenFlight] cite:[OpenFlight], https://www.ogc.org/standards/cdb[OGC CDB] cite:[CDB], and https://www.ogc.org/standards/geopackage[OGC GeoPackage] cite:[GeoPackage]. SimBlocks has also recently prototyped solutions to integrate 3D Tiles and glTF models in Unity by connecting to Cesium Ion. The SimBlocks team has found that Unity is a very capable development tool that is well suited for prototyping visual applications with deployment capabilities for virtual reality and augment reality devices.
+SimBlocks specializes in connecting commercial gaming technologies with real-time 3D visualization applications by supporting industry standards for geospatial terrains, 3D models, and communication interoperability. SimBlocks has created a whole-earth visualization tool using the COTS Unity game engine capable of rendering the entire globe at any location at multiple levels of detail for imagery and elevation data. The One World SDK for Unity can consume geospatial data from cloud providers using web services APIs to process imagery, elevation data, and vector data. SimBlocks has tested ingesting data over web services including from Microsoft Bing Maps, OpenStreetMap, and a CDB web service provider.
+
+The One World SDK for Unity also supports direct loading of high-detailed content insets using a variety of modeling formats, including https://www.presagis.com/en/glossary/detail/openflight[OpenFlight] cite:[OpenFlight], https://www.ogc.org/standards/cdb[OGC CDB] cite:[CDB], and https://www.ogc.org/standards/geopackage[OGC GeoPackage] cite:[GeoPackage]. SimBlocks has also recently prototyped solutions to integrate 3D Tiles and glTF models in Unity by connecting to Cesium Ion. The SimBlocks team has found that Unity is a very capable development tool that is well suited for prototyping visual applications with deployment capabilities for virtual reality and augment reality devices.
 
 [#img_SimBlocks-1,reftext='{figure-caption} {counter:figure-num}']
 .One World SDK for Unity
@@ -136,7 +138,7 @@ Some of the landing pages point to service description links that are different 
 
 After successfully retrieving models from most of the servers, the team developed tools for converting and loading the building content.
 
-Testing results can also be found in the <<TechnologyIntegrationExperimentsTable,Technology Integration Experiment (TIE) Table>>.
+Additional TIE testing results can be found in the <<TechnologyIntegrationExperimentsTable,Technology Integration Experiment (TIE) Table>>.
 
 === Conversion Methods
 
@@ -159,7 +161,7 @@ image::images/SimBlocks_CesiumIon_Unity.PNG[width=800,align="center"]
 
 ==== Method 2 - B3DM to OBJ
 
-Unity is already able to directly load OBJ models, so the team pursued a second approach of converting 3DTiles B3DMs (Batched 3D Models) into OBJ files using native `C++` code. After parsing the B3DM glTF mesh buffers and accounting for position offsets, conversion to the OBJ format was straightforward. The algorithm produced multiple OBJ files per B3DM file as each B3DM may contain multiple meshes. The team downloaded all of the B3DMs available for a given server and converted the available B3DMs to OBJ files. Then the team imported the OBJ files into the Unity Editor, which required significant time for large data sets. The scene could be run at interactive rates.
+Unity is already able to directly load OBJ models, so the team pursued a second approach of converting 3DTiles B3DMs (Batched 3D Models) into OBJ files using native {cpp} code. After parsing the B3DM glTF mesh buffers and accounting for position offsets, conversion to the OBJ format was straightforward. The algorithm produced multiple OBJ files per B3DM file as each B3DM may contain multiple meshes. The team downloaded all of the B3DMs available for a given server and converted the available B3DMs to OBJ files. Then the team imported the OBJ files into the Unity Editor, which required significant time for large data sets. The scene could be run at interactive rates.
 
 [#img_SimBlocks-4,reftext='{figure-caption} {counter:figure-num}']
 .B3DM to Obj Conversion in Unity Shown in Unity
@@ -167,7 +169,7 @@ image::images/SimBlocks_B3DM_Obj_Conversion.PNG[width=800,align="center"]
 
 ==== Method 3 - Directly load B3DM
 
-The purpose of the third approach was to leverage more of the SimBlocks `C++` codebase without requiring a conversion to an intermediate file format. The primary trick with this approach was to solve how to render meshes appropriately using `C++` code with Unity, which exposes a C# scripting system. One of the developers identified that the Unity Native Rendering API could be utilized to solve this problem and was able to complete the direct loading and rendering of B3DM content during the sprint week.
+The purpose of the third approach was to leverage more of the SimBlocks {cpp} codebase without requiring a conversion to an intermediate file format. The primary trick with this approach was to solve how to render meshes appropriately using {cpp} code with Unity, which exposes a C# scripting system. One of the developers identified that the Unity Native Rendering API could be utilized to solve this problem and was able to complete the direct loading and rendering of B3DM content during the sprint week.
 
 [#img_SimBlocks-5,reftext='{figure-caption} {counter:figure-num}']
 .Directly load B3DM Tiles
@@ -181,4 +183,4 @@ The SimBlocks team found the OGC GeoVolumes Sprint to be very useful. Additional
 * Runtime conversion performance improvements, and
 * Terrain clamping improvements.
 
-After discussing with Unity’s geospatial team, the SimBlocks team identified a 4th method of conversion that promises to be even faster than Method 3 (Directly load B3DM) while also allowing use of native `C++` code.
+After discussing with Unity’s geospatial team, the SimBlocks team identified a 4th method of conversion that promises to be even faster than Method 3 (Directly load B3DM) while also allowing use of native {cpp} code.
