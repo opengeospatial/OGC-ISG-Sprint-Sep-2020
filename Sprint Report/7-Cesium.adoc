@@ -2,6 +2,7 @@
 == Component Implementation: Cesium
 
 === Introduction
+
 In this Sprint, the Cesium team focused on investigating the optimal method of serving 3D content from a CDB dataset into a web viewer. The team achieved this by developing a CDB to 3D Tiles converter and evaluating runtime performance by loading the converted San Diego test data in CesiumJS. The idea of converting the test data to 3D Tiles on-the-fly with partial updates was explored, however, there was not enough time to implement that in this Sprint.
 
 A parallel stream of effort involved building on our work in the 3D Container and Tiles API Pilot and integrating the GeoVolumes API into Dragonfly, a web based 2D/3D common operational picture (COP) platform built in support of the Global Situational Awareness (GSA) program.
@@ -9,6 +10,7 @@ A parallel stream of effort involved building on our work in the 3D Container an
 === CDB to OGC 3D Tiles
 
 ==== Organization of Test Data
+
 [#img_Cesium-1,reftext='{figure-caption} {counter:figure-num}']
 .Structure of the San-Diego CDB database
 image::images/Cesium-San-Diego-Structure.png[width="600", align="center"]
@@ -21,7 +23,7 @@ The San Diego CDB database’s size was approximately 26 GB. It contains a singl
 - 3D Model layer, which was approximately 6.0 GB and stored in the OpenFlight cite:[OpenFlight] format. Their features, orientations, and positions were stored in GSFeatures and GTFeatures directories, in the ESRI Shapefile format, and
 - Vector layer, which was approximately 128 MB and describes road and hydrography networks. They were stored in the ESRI Shapefile format.
 
-Each layer was organized according to the same level of detail scheme. Each negative level will cover the entire GeoCell area. However, the positive levels were organized as a quadtree data structure. Each positive level subdivides the area into 4 smaller sections at the subsequent level. The amount of data stored in each level was specified differently for each layer by the CDB specification. However, generally, higher levels will contain more data to increase the detail of the layer.
+Each layer was organized according to the same level of detail scheme. Each negative level covered the entire GeoCell area. However, the positive levels were organized as a quadtree data structure. Each positive level subdivided the area into 4 smaller sections at the subsequent level. The amount of data stored in each level was specified differently for each layer by the CDB specification. However, generally, higher levels contained more data to increase the detail of the layer.
 
 ==== The Converter Architecture
 
@@ -29,7 +31,7 @@ Each layer was organized according to the same level of detail scheme. Each nega
 
 In this Sprint, the team focused only on the Elevation, Imagery, and GSModel layer. Each layer was converted into a separate tileset.
 
-For the 3D Tiles structure, each node that represents a negative level only had one child node with the bounding region being the region of the GeoCell. For positive levels, a node had a maximum of 4 children representing a quadtree data structure. Each child only covered a quarter of the region of the parent node.
+For the 3D Tiles structure, each node representing a negative level only had one child node with the bounding region being the region of the GeoCell. For positive levels, a node had a maximum of 4 children representing a quadtree data structure. Each child only covered a quarter of the region of the parent node.
 
 [#img_Cesium-2,reftext='{figure-caption} {counter:figure-num}']
 .Structure of the converted tileset
@@ -44,14 +46,14 @@ The Elevation and Imagery were converted together into one tileset. The heightma
 image::images/Cesium-San-Diego-Terrain-Imagery.png[width="700",align="center"]
 
 {nbsp} +
-There were 2 edge cases for the above tiling scheme. It was noticed that for the Elevation layer, the child nodes do not necessarily cover the full area occupied by the parent. As the camera zooms in close to the surface, there were holes appearing due to missing data for higher levels. The solution for this case was to sample the parent’s vertices where the child node doesn’t have data. This solution, however, was wasteful.
+There were 2 edge cases for the above tiling scheme. It was noticed that for the Elevation layer, the child nodes did not necessarily cover the full area occupied by the parent. As the camera zoomed in close to the surface, there were holes appearing due to missing data for higher levels. The solution for this case was to sample the parent’s vertices where the child node doesn’t have data. This solution, however, was wasteful.
 
 [#img_Cesium-4,reftext='{figure-caption} {counter:figure-num}']
-.Gaps between tiles appear due to missing data in the higher levels
+.Gaps between tiles appeared due to missing data in the higher levels
 image::images/Cesium-San-Diego-Terrain-Holes.png[width="700", align="center"]
 
 {nbsp} +
-Another edge case that was encountered was that the Imagery layer can have more levels than the Elevation layer. The solution was to repeat the elevation mesh in the child node until there were no more levels for imagery. This was also a wasteful solution.
+Another edge case that was encountered was that the Imagery layer could have more levels than the Elevation layer. The solution was to repeat the elevation mesh in the child node until there were no more levels for imagery. This was also a wasteful solution.
 
 [#img_Cesium-5,reftext='{figure-caption} {counter:figure-num}']
 .Difference in levels of detail between the elevation and imagery dataset.
@@ -59,7 +61,7 @@ image::images/Cesium-San-Diego-Terrain-Imagery-LOD-Diff.png[width="500", align="
 
 ===== GSModel Conversion
 
-For the 3D Model, the team combined multiple OpenFlight files within a tile into one single batched 3D model (b3dm) file and organize the tileset similar to the tileset of terrain and imagery. The team also batch models that have the same material into a single mesh to reduce the number of draw calls at runtime. As a result, the team was able to obtain 40-60 frames per second, which was acceptable. However, the approach of combining multiple files into one single b3dm can yield very large file sizes for tiles at high levels of detail. For example, at level 4, there were b3dm files whose sizes were approximately 50 to 100 MB. As a result, the user has to wait 1 or 2 seconds to see the models appear. Better tiling schemes should be investigated in the future to reduce tile sizes while maintaining low impact on the rendering performance.
+For the 3D Model, the team combined multiple OpenFlight files within a tile into one single batched 3D model (b3dm) file and organized the tileset similar to the tileset of terrain and imagery. The team also batched models that had the same material into a single mesh to reduce the number of draw calls at runtime. As a result, the team was able to obtain 40-60 frames per second, which was acceptable. However, the approach of combining multiple files into one single b3dm can yield very large file sizes for tiles at high levels of detail. For example, at level 4, there were b3dm files whose sizes were approximately 50 to 100 MB. As a result, the user had to wait 1 or 2 seconds to see the models appear. Better tiling schemes should be investigated in the future to reduce tile sizes while maintaining low impact on the rendering performance.
 
 [#img_Cesium-6,reftext='{figure-caption} {counter:figure-num}']
 .San-Diego's GSModels
@@ -69,15 +71,15 @@ image::images/Cesium-San-Diego-GSModels.png[width="500", align="center"]
 
 To support on-the-fly conversion, listed below were some improvements the team would need to make to our conversion pipeline:
 
-- Provide concurrency support. Currently, our converter works on a single thread. The conversion time for the San Diego CDB  was about 35 minutes. With concurrency support, the runtime could be reduced further, and fortunately, the CDB database scheme was suitable for such architecture.
+- Provide concurrency support. Currently, the Cesium converter works on a single thread. The conversion time for the San Diego CDB was about 35 minutes. With concurrency support, the runtime could be reduced further, and fortunately, the CDB database scheme was suitable for such architecture.
 - Since CDB specification defines the fixed extent a tile can cover, tileset.json can be generated quickly without reading into the data files of each layer.
-- We also noticed that the San Diego CDB contains a lot of OpenFlight and Imagery files, so it was essential to reduce the number of IO operations to increase performance of our converter. It also helps if the multiple 3D models can be combined into one single OpenFlight file.
+- The team also noticed that the San Diego CDB contains a lot of OpenFlight and Imagery files, so it was essential to reduce the number of IO operations to increase performance of the converter. It would also help if the multiple 3D models could be combined into one single OpenFlight file.
 
 === GeoVolumes API
 
-In collaboration with Cognitics and CAE, the team aimed to build on our work done in the OGC 3D Container and Tile API Pilot. Our goal was to integrate the GeoVolumes API into Dragonfly, a common operational picture platform built to provide global situational awareness. Dragonfly uses WMS as the vehicle for organizing and serving 2D data, but there was a need for a container for all the 3D data that was available to the user. Our chosen format for 3D data was the OGC 3D Tiles format.
+In collaboration with Cognitics and CAE, the team aimed to build on work done in the OGC 3D Container and Tile API Pilot. The goal was to integrate the GeoVolumes API into Dragonfly, a common operational picture platform built to provide global situational awareness. Dragonfly uses https://ogcapi.ogc.org/maps/[OGC WMS] as the vehicle for organizing and serving 2D data, but there was a need for a container for all the 3D data that was available to the user. The chosen format for 3D data was the https://www.ogc.org/standards/3DTiles[OGC 3D Tiles] format.
 
-On the backend, the team set up the GeoVolumes API to enable querying data on the client side, based on the bounding box of the current view of the map. The second part of our work involved setting up an endpoint to ingest 3D Tiles created by Rapid3D, a tool to used to generate 3D data from full motion video, and adding it to the available GeoVolumes collections. In the user interface, the team added the ability for a user to "discover" the bounding box of a 3D collection by hovering over it in the GeoVolumes list, as shown below.
+On the backend, the team set up the GeoVolumes API to enable querying data on the client side, based on the bounding box of the current view of the map. The second part of the work involved setting up an endpoint to ingest 3D Tiles created by Rapid3D, a tool to used to generate 3D data from full motion video, and adding it to the available GeoVolumes collections. In the user interface, the team added the ability for a user to "discover" the bounding box of a 3D collection by hovering over it in the GeoVolumes list, as shown below.
 
 [#img_Cesium-7,reftext='{figure-caption} {counter:figure-num}']
 .GeoVolumes UI in Dragonfly
@@ -85,6 +87,6 @@ image::images/Cesium-GeoVolumesUI.png[width="700", align="center"]
 
 === Conclusion
 
-Cesium worked on two different tracks during the Sprint - CDB to 3D Tiles conversion and GeoVolumes experimentation in Dragonfly - and a future goal was to see how these two efforts converge, for example, extend the GeoVolumes API to support on-the-fly CDB to 3D Tiles conversion when a particular area of interest was selected.
+Cesium worked on two different tracks during the Sprint - CDB to 3D Tiles conversion and GeoVolumes experimentation in Dragonfly - and a future goal was to see how these two efforts converge. For example, future work could extend the GeoVolumes API to support on-the-fly CDB to 3D Tiles conversion when a particular area of interest was selected.
 
-Another future goal was to explore the conversion process from CDB X to 3D Tiles Next once those specifications were further along. This would improve interoperability between CDB and the Well-Formed Format for One World Terrain. Efforts were already underway to use glTF in both formats, and this Sprint helped us identify other areas that need more convergence - specifically implicit tiling schemes, raster layers, and per-texel metadata.
+Another future goal is to explore the conversion process from CDB X to 3D Tiles next, once those specifications are further along. This would improve interoperability between CDB and the Well-Formed Format for One World Terrain. Efforts were already underway to use glTF in both formats, and this Sprint helped identify other areas that need more convergence - specifically implicit tiling schemes, raster layers, and per-texel metadata.
