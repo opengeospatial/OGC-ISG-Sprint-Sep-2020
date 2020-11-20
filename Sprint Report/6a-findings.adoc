@@ -25,9 +25,9 @@ Each participant was free to choose which one (or more) scenarios to pursue. htt
 
 [#table-participant-scenarios,reftext='{table-caption} {counter:table-num}']
 .The pre-declared the scenarios for each participant. These are the primary areas of work, though their work may have touched on other scenarios. Cognitics worked with creating models from full-motion video (Other-1), and SimBlocks worked with their Unity integration (Other-2). The participant name links to their report section.
-[cols="2,^1,^1,^1,^1",options="header",align="center"]
+[cols="2,^1,^1,^1,^1",options="header",align="center",width="75%"]
 |===
-|*Participant* |*Scenario 1*  |*Scenario 2*  |*Scenario 3*  |*Other*
+|*Participant* |*Scenario 1* |*Scenario 2* |*Scenario 3* |*Other*
 |<<CAE,CAE>> ^|*&#10003;* | | |
 |<<Cesium,Cesium>> ^|*&#10003;* | | |
 |<<Cognitics,Cognitics>> ^| | ^|*&#10003;* ^|*1*
@@ -43,7 +43,7 @@ Each participant was free to choose which one (or more) scenarios to pursue. htt
 
 All participants cooperated with each other in various aspects of the Sprint. This included a team entry, providing data services for the Sprint, and use and testing of other OGC API services.
 
-Two teams were formed. Three participants,  CAE, Cesium, and Cognitics, teamed together to produce a combined result. This was done with the knowledge and approval of the sponsor. A two participant team (Ecere and Steinbeis) was formed to test the insertion, modification, and deletion of 3D objects and terrain into the base scene.
+Two teams were formed. Three participants, CAE, Cesium, and Cognitics, teamed together to produce a combined result. This was done with the knowledge and approval of the sponsor. A two participant team (Ecere and Steinbeis) was formed to test the insertion, modification, and deletion of 3D objects and terrain into the base scene.
 
 All participants cooperated and included the test and use of other participant services during the Sprint. Use and testing was performed by all members agains OGC GeoVolumes API services offered by others. <<table-tie-summary>> shows the interoperation between offered services (servers) and uses (clients).
 
@@ -55,53 +55,53 @@ All participants cooperated and included the test and use of other participant s
 <| *Service*
 
 | *Cesium*
-  | *&#10003;* (+ fdbk)
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
+ | *&#10003;* (+ fdbk)
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
 
 | *Cognitics*
-  | *&#10003;* [pilot]
-  | NA
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | NA
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
 
 | *Ecere*
-  | *&#10003;* [San Diego]
-  | *&#10003;* [San Diego]
-  | *&#10003;* [San Diego]
-  | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
 
-|  _(Pilot functions)_ *Ecere*
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
+| _(Pilot functions)_ *Ecere*
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
 
 | *PyGeoAPI-InfoDao*
-  | *&#10003;*
-  | using CDB server
-  | NA
-  | not pass
+ | *&#10003;*
+ | using CDB server
+ | NA
+ | not pass
 
 | *Helyx*
-  | *&#10003;* [pilot, San Diego]
-  | *&#10003;* [pilot, San Diego]
-  | *&#10003;* [pilot, San Diego]
-  | *&#10003;* [pilot, San Diego]
+ | *&#10003;* [pilot, San Diego]
+ | *&#10003;* [pilot, San Diego]
+ | *&#10003;* [pilot, San Diego]
+ | *&#10003;* [pilot, San Diego]
 
 | *Steinbeis New*
 
-  | *&#10003;*(+ fdbk)
-  | *&#10003;* [San Diego]
-  | *&#10003;* [San Diego]
-  | *&#10003;* [San Diego]
+ | *&#10003;*(+ fdbk)
+ | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
+ | *&#10003;* [San Diego]
 
 | _(Pilot functions)_ *Steinbeis Existing*
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
-  | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
+ | *&#10003;* [pilot]
 
 |===
 

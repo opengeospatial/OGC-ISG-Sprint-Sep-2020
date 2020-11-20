@@ -32,25 +32,25 @@ The Sprint https://portal.ogc.org/files/?artifact_id=94059[Call for Participatio
 [cols="^1,<5,^1",options="header",align="center"]
 |===
 |Scenario ^|Summary Desription ^|Count
-   |1
-   | Investigate model and terrain updates
-   | 5
+ |1
+ | Investigate model and terrain updates
+ | 5
 
-   |2
-   | Investigate alternate and multiple distributions
-   | 2
+ |2
+ | Investigate alternate and multiple distributions
+ | 2
 
-   |3
-   | Investigate organization of underlying 3D data
-   | 3
+ |3
+ | Investigate organization of underlying 3D data
+ | 3
 
-   |Other-1
-   | Investigate integration with Rapid3D (Full Motion Video)
-   | 1
+ |Other-1
+ | Investigate integration with Rapid3D (Full Motion Video)
+ | 1
 
-   |Other-2
-   | Investigate the integration of GeoVolumes API with Unity game engine
-   | 1
+ |Other-2
+ | Investigate the integration of GeoVolumes API with Unity game engine
+ | 1
 |===
 ////
 
@@ -97,7 +97,7 @@ All questions regarding this document should be directed to the editor or the co
 [width="80%",options="header",caption=""]
 |====================
 | Name | Organization | Role
-| Leonard Daly | Daly Realism representing Khronos Group  | Contributor & Editor
+| Leonard Daly | Daly Realism representing Khronos Group | Contributor & Editor
 | Scott Serich | Open Geospatial Consortium | Contributor & Editor
 | Holly Black | CAE | Contributor
 | Sean Lilley | Cesium | Contributor
@@ -106,15 +106,15 @@ All questions regarding this document should be directed to the editor or the co
 | Anneley Hadland | Helyx | Contributor
 | Emeric Beaufays | Hexagon | Contributor
 | Joshua Rentrope | InfoDao | Contributor
-| Jordan Dauble   | SimBlocks.io | Contributor
+| Jordan Dauble | SimBlocks.io | Contributor
 | Patrick Caughey | SimBlocks.io | Contributor
-| Barbara Cotter  | SimBlocks.io | Contributor
-| Glenn Johnson   | SimBlocks.io | Contributor
-| Joseph Kaile    | SimBlocks.io | Contributor
-| Volker Coors                    | Steinbeis, HFT Stuttgart | Contributor
+| Barbara Cotter | SimBlocks.io | Contributor
+| Glenn Johnson | SimBlocks.io | Contributor
+| Joseph Kaile | SimBlocks.io | Contributor
+| Volker Coors | Steinbeis, HFT Stuttgart | Contributor
 | Thunyathep Santhanavanich (Joe) | Steinbeis, HFT Stuttgart | Contributor
-| Harpreet Singh                  | Steinbeis, HFT Stuttgart | Contributor
-| Patrick Würstle                 | Steinbeis, HFT Stuttgart | Contributor
+| Harpreet Singh | Steinbeis, HFT Stuttgart | Contributor
+| Patrick Würstle | Steinbeis, HFT Stuttgart | Contributor
 |====================
 
 

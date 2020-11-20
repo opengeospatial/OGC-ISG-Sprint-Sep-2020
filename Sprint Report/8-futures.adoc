@@ -50,11 +50,11 @@ The GeoVolumes draft specification was mostly found to be complete and correct i
 [start=8]
 . Further investigate GeoVolumes bounding volume queries. This is fundamentally important to the correct operation of the API that additional time and effort spent testing these queries (both general and edge cases) is vitally important
 . The bounding volume query set needs the capability to describe a hole in the otherwise convex volume. This is needed to optimumly handle requests for surrounding overlapped data after high resolution data has been identified. This has implications for client performance and scene updates.
-. There is no required consistency when using URLs to name different semantic content within a scene. Steinbeis provides a partial example at <<ThreeDGeoVolumesAPIOrganizationDifferentSemanticParts,3D GeoVolumes API Organization Different Semantic Parts>>. This needs to be addressed  so clients can work with multiple servers and in support of <<Feature Changes>>.
+. There is no required consistency when using URLs to name different semantic content within a scene. Steinbeis provides a partial example at <<ThreeDGeoVolumesAPIOrganizationDifferentSemanticParts,3D GeoVolumes API Organization Different Semantic Parts>>. This needs to be addressed so clients can work with multiple servers and in support of <<Feature Changes>>.
 
 ===== Feature Changes
 
-These items are not part of GeoVolumes API, but are either in OGC's Feature API or needed as enhancements or extensions. GeoVolumes needs to ensure that it is compatible with these expanded capabilities. Three  of the participants (Ecere, Hexagon, and Steinbeis) worked on changing the features in the scene. This work included adding new items, changing (properties and wholesale replacing) existing items, and deleting items. In the work that they did items included 3D models and terrain.
+These items are not part of GeoVolumes API, but are either in OGC's Feature API or needed as enhancements or extensions. GeoVolumes needs to ensure that it is compatible with these expanded capabilities. Three of the participants (Ecere, Hexagon, and Steinbeis) worked on changing the features in the scene. This work included adding new items, changing (properties and wholesale replacing) existing items, and deleting items. In the work that they did items included 3D models and terrain.
 
 [start=11]
 . Investigate the optimal means for changing 3D models. The changes need to fit in with the overall data store architecture and account for neighboring models and terrain.

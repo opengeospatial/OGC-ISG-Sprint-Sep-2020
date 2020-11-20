@@ -13,7 +13,7 @@ The CfP specified a schedule from kickoff meeting (1 September) through the Spri
 The primary data set for the Sprint is known as San Diego CDB (licensed under the https://www.sangis.org/Legal_Notice.htm[SanGIS Legal Notice - SanGIS GIS Data End User Use Agreement and Disclaimer for Data Released to the Public] cite:[SanGISCDBLicense]). It was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
 
 [#img_SanDiegoOverview,reftext='{figure-caption} {counter:figure-num}']
-.An  overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
+.An overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
 image::images/CAE_CDB_SD_coverage.png[width=400,align="center"]
 
 [#img_SanDiegoRendered,reftext='{figure-caption} {counter:figure-num}']
@@ -36,7 +36,7 @@ Several of the Sprint participants also participated in the Pilot. These organiz
 .Servers providing GeoVolumes API access to the indicated dataset
 [cols="2,4,8a",options="header",align="center"]
 |===
-|*Organization* |*URL*  |*Notes*
+|*Organization* |*URL* |*Notes*
 |Cesium |https://3d.hypotheticalhorse.com | Server
 |Cesium | https://map.hypotheticalhorse.com/ | Client
 |Cognitics |http://cdb.cognitics.net:3000/ | _n/a_

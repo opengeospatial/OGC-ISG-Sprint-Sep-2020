@@ -82,7 +82,7 @@ At the collections and collection level, the response from the API is typically 
 
 === Representing Alternate Distributions within one API – endpoints
 
-Once the data, the service and the API are chosen, there are still more decisions to be made on how to represent alternative distributions within the GeoAPI structure.  In the pilot, each sub-resource on the server had its own endpoint such as the below:
+Once the data, the service and the API are chosen, there are still more decisions to be made on how to represent alternative distributions within the GeoAPI structure. In the pilot, each sub-resource on the server had its own endpoint such as the below:
 
 http://server.com/collections/SanDiego/SanDiego-buildings/3dTiles
 

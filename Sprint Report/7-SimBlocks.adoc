@@ -54,42 +54,42 @@ Page addresses and TIE testing notes are presented in the tables below.
 .Landing Page Table /
 [cols="1,4",options="header",align="center"]
 |=======
-|              | Landing Page
-|Cesium        | https://3d.hypotheticalhorse.com/
-|Cognitics     | http://cdb.cognitics.net:3000/
-|Ecere         | http://maps.ecere.com/ogcapi/
+| | Landing Page
+|Cesium | https://3d.hypotheticalhorse.com/
+|Cognitics | http://cdb.cognitics.net:3000/
+|Ecere | http://maps.ecere.com/ogcapi/
 |Ecere (Pilot) | https://maps.ecere.com/3DAPI/
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/
-|Steinbeis     | http://steinbeis-3dps.eu:8080/
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/
+|Steinbeis | http://steinbeis-3dps.eu:8080/
+|InfoDao | http://pygeoapi.isg-sprint-hub.infodaollc.com
 |=======
 
 [#table-simblocks-conformance,reftext='{table-caption} {counter:table-num}']
 .Conformance Table /conformance
 [cols="1,4,4",options="header",align="center"]
 |=======
-|              | Conformance Page                                          | Notes
-|Cesium        | https://3d.hypotheticalhorse.com/conformance/             | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
-|Cognitics     | http://cdb.cognitics.net:3000/conformance/                | Missing content. This leads to conformance of []
-|Ecere         | http://maps.ecere.com/ogcapi/conformance/                 | Unsupported
-|Ecere (Pilot) | https://maps.ecere.com/3DAPI/conformance                  | Unsupported, blank page
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
-|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/conformance | Works
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/conformance | This page links to multiple child conformance pages
+| | Conformance Page | Notes
+|Cesium | https://3d.hypotheticalhorse.com/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
+|Cognitics | http://cdb.cognitics.net:3000/conformance/ | Missing content. This leads to conformance of []
+|Ecere | http://maps.ecere.com/ogcapi/conformance/ | Unsupported
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/conformance | Unsupported, blank page
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/conformance/ | This leads to conformance of http://www.opengis.net/spec/OAPI_Common/1.0/req/core
+|Steinbeis | http://steinbeis-3dps.eu:8080/3DContainerTile/conformance | Works
+|InfoDao | http://pygeoapi.isg-sprint-hub.infodaollc.com/conformance | This page links to multiple child conformance pages
 |=======
 
 [#table-simblocks-api,reftext='{table-caption} {counter:table-num}']
 .api Table /api
 [cols="1,6,2",options="header",align="center"]
 |=======
-|              | Conformance Page                                          | Notes
-|Cesium        | https://3d.hypotheticalhorse.com/api                      | 404 Error
-|Cognitics     | http://cdb.cognitics.net:3000/api                         | GET Error
-|Ecere         | http://maps.ecere.com/ogcapi/api                          | Unsupported
-|Ecere (Pilot) | https://maps.ecere.com/3DAPI/api                          | Unsupported
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/api          | Unsupported
-|Steinbeis     | http://steinbeis-3dps.eu:8080/api                         | 404 Error
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/openapi     | Works
+| | Conformance Page | Notes
+|Cesium | https://3d.hypotheticalhorse.com/api | 404 Error
+|Cognitics | http://cdb.cognitics.net:3000/api | GET Error
+|Ecere | http://maps.ecere.com/ogcapi/api | Unsupported
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/api | Unsupported
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/api | Unsupported
+|Steinbeis | http://steinbeis-3dps.eu:8080/api | 404 Error
+|InfoDao | http://pygeoapi.isg-sprint-hub.infodaollc.com/openapi | Works
 |=======
 
 Some of the landing pages point to service description links that are different from /api. Working links were included in this table.
@@ -98,42 +98,42 @@ Some of the landing pages point to service description links that are different 
 .Collections Table /collections
 [cols="1,5,3",options="header",align="center"]
 |=======
-|              | Collections Page                                          | Notes
-|Cesium        | https://3d.hypotheticalhorse.com/collections/             | Works
-|Cognitics     | http://cdb.cognitics.net:3000/collections/                | Works
-|Ecere         | http://maps.ecere.com/ogcapi/collections/                 | Different format from other servers.
-|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/                 | Works
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/ | Works
-|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections | Works
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac
+| | Collections Page | Notes
+|Cesium | https://3d.hypotheticalhorse.com/collections/ | Works
+|Cognitics | http://cdb.cognitics.net:3000/collections/ | Works
+|Ecere | http://maps.ecere.com/ogcapi/collections/ | Different format from other servers.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/ | Works
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/collections/ | Works
+|Steinbeis | http://steinbeis-3dps.eu:8080/3DContainerTile/collections | Works
+|InfoDao | http://pygeoapi.isg-sprint-hub.infodaollc.com/collections | An additional link is http://pygeoapi.isg-sprint-hub.infodaollc.com/stac
 |=======
 
 [#table-simblocks-container,reftext='{table-caption} {counter:table-num}']
 .3D Container Table /collections/{3DContainerID}
 [cols="1,5,3",options="header",align="center"]
 |=======
-|              | 3D Container Page                                                          | Notes
-|Cesium        | https://3d.hypotheticalhorse.com/collections/Buildings/NewYorkBuildings/  | Works
-|Cognitics     | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/               | Works
-|Ecere         | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/  http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/ | Different format from other servers.
-|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/                         | Works
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/ | Works
-|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works
-|InfoDao       | http://pygeoapi.isg-sprint-hub.infodaollc.com/stac/ogc-cdb-sandiego | Works
+| | 3D Container Page | Notes
+|Cesium | https://3d.hypotheticalhorse.com/collections/Buildings/NewYorkBuildings/ | Works
+|Cognitics | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/ | Works
+|Ecere | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/ http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Buildings/ | Different format from other servers.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/ | Works
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/ | Works
+|Steinbeis | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works
+|InfoDao | http://pygeoapi.isg-sprint-hub.infodaollc.com/stac/ogc-cdb-sandiego | Works
 |=======
 
 [#table-simblocks-b3dm,reftext='{table-caption} {counter:table-num}']
 .3D Tiles - Batched 3D Model Table .b3dm
 [cols="1,4,4",options="header",align="center"]
 |=======
-|              | Batched 3D Model                                                          | Notes
-|Cesium        | https://3d.hypotheticalhorse.com/collections/NewYorkBuildings/3dtiles/  | Works. The building models were referenced from the domain rather than appended to the end as most of the other servers expect. Uri used.
-|Cognitics     | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/3DTiles/               | Works. Uri used.
-|Ecere         | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/3DTiles/tileset.json | Different format from other servers. Works if uri is relative to domain.
-|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/3DTiles/tileset.json           | Works. Uri used.
-|Helyx         | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/3dTiles/ | Works. Uri used.
-|Steinbeis     | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works. Full url used.
-|InfoDao       | | Unable to test.
+| | Batched 3D Model | Notes
+|Cesium | https://3d.hypotheticalhorse.com/collections/NewYorkBuildings/3dtiles/ | Works. The building models were referenced from the domain rather than appended to the end as most of the other servers expect. Uri used.
+|Cognitics | http://cdb.cognitics.net:3000/collections/NewYorkBuildings/3DTiles/ | Works. Uri used.
+|Ecere | http://maps.ecere.com/ogcapi/collections/SanDiegoCDB:Trees/3DTiles/tileset.json | Different format from other servers. Works if uri is relative to domain.
+|Ecere (Pilot) | https://maps.ecere.com/3DAPI/collections/NewYork/3DTiles/tileset.json | Works. Uri used.
+|Helyx | http://helyxapache2.eastus.azurecontainer.io/collections/NewYork/NewYork-buildings/3dTiles/ | Works. Uri used.
+|Steinbeis | http://steinbeis-3dps.eu:8080/3DContainerTile/collections/NewYork/3DTiles/ | Works. Full url used.
+|InfoDao | | Unable to test.
 |=======
 
 After successfully retrieving models from most of the servers, the team developed tools for converting and loading the building content.

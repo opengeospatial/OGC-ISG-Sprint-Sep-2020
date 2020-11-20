@@ -35,7 +35,7 @@ When the user was zoomed out to the globe level, the effective bounding box was 
 .Dragonfly in 3D mode showing all available GeoVolume overlays.
 image::images/CogniticsDragonflyGlobe.png[width=800,align="center"]
 
-As the user zoomed in, the bounding box encompassed only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown. In the figure below, the bounding box includes Beirut and Damascus.  When the user hovered over a GeoVolumes overlay, the extent of that overlay was highlighted, as seen in the figure below of the Damascus overlay.
+As the user zoomed in, the bounding box encompassed only the area shown in the user interface and only the corresponding GeoVolumes overlays are shown. In the figure below, the bounding box includes Beirut and Damascus. When the user hovered over a GeoVolumes overlay, the extent of that overlay was highlighted, as seen in the figure below of the Damascus overlay.
 
 [#img_Cognitics-4,reftext='{figure-caption} {counter:figure-num}']
 .Damascus bounding box extent highlighted
