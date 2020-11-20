@@ -7,24 +7,15 @@ image::images/Hexagon/TitleScreen.png[]
 
 === Abstract
 
-This chapter investigates how model and terrain updates, originating from a CDB data
-store and delivered as glTF or elevation, were integrated with background elevation and OGC 3D Tiles
-into the client environment.
+This chapter investigates how model and terrain updates, originating from a CDB data store and delivered as glTF or elevation, were integrated with background elevation and OGC 3D Tiles into the client environment.
 
-For a large data set, all the meshes from the CDB data store were converted to an OGC 3DTiles tileset.
-Displaying the resulting pre-processed OGC 3DTiles offers performance and visual quality advantages over reading the
-CDB data store directly. The increased efficiency was due to a better tiling scheme and mesh simplification.
+For a large data set, all the meshes from the CDB data store were converted to an OGC 3DTiles tileset. Displaying the resulting pre-processed OGC 3DTiles offers performance and visual quality advantages over reading the CDB data store directly. The increased efficiency was due to a better tiling scheme and mesh simplification.
 
 Generating tiles on the fly was attempted with mixed results.
 
-OGC 3DTiles can be automatically adapted to elevation updates, whether they come from a CDB data store or another source.
-This was achieved through a proxy service that reads B3DM files and
-adjusts the height of the vertices before forwarding them to the client. The possibility to do this at render time,
-on the client, using GPU evaluated expressions was also explored.
+OGC 3DTiles can be automatically adapted to elevation updates, whether they come from a CDB data store or another source. This was achieved through a proxy service that reads B3DM files and adjusts the height of the vertices before forwarding them to the client. The possibility to do this at render time, on the client, using GPU evaluated expressions was also explored.
 
-Using GPU evaluated expressions, deletions/updates/additions in the CDB data store were handled by pushing down
-background OGC 3DTiles. The old and new models integrated seamlessly, and there was no need to reprocess the entire
-dataset to create a single coherent OGC 3DTiles tileset.
+Using GPU evaluated expressions, deletions/updates/additions in the CDB data store were handled by pushing down background OGC 3DTiles. The old and new models integrated seamlessly, and there was no need to reprocess the entire dataset to create a single coherent OGC 3DTiles tileset.
 
 [#img_Architecture,reftext='{figure-caption} {counter:figure-num}']
 .Architecture of the OGC server with proxy for on the fly 3DTiles height adjustment.
@@ -32,8 +23,7 @@ image::images/Hexagon/CommunicationDiagram.png[align="center"]
 
 === Test Data
 
-The research was based on the San Diego CDB sample dataset provided for this Sprint. It provided imagery, elevation, 3D
-models and a variety of vector data.
+The research was based on the San Diego CDB sample dataset provided for this Sprint. It provided imagery, elevation, 3D models and a variety of vector data.
 
 [#img_CDB_ORGANIZATION,reftext='{figure-caption} {counter:figure-num}']
 .CDB organization in file system.
@@ -45,81 +35,66 @@ This section recaps the organization of CDB data for 3D models.
 
 ==== GSFeatures and GSModelGeometry
 
-GSFeatures and GSModelGeometry were two folders containing matching Level Of Detail (LOD) folders.
-In the GSModelGeometry folder, OpenFlight cite:[OpenFlight] files were zipped in groups corresponding to a tiling schema.
+GSFeatures and GSModelGeometry were two folders containing matching Level Of Detail (LOD) folders. In the GSModelGeometry folder, OpenFlight cite:[OpenFlight] files were zipped in groups corresponding to a tiling schema.
 
-GSModelGeometry items were unique in the sense that OpenFlight files were used only once (one file per building) while
-textures could be reused many times.
+GSModelGeometry items were unique in the sense that OpenFlight files were used only once (one file per building) while textures could be reused many times.
 
 LOD folders were additive, meaning that each LOD adds more data relative to it's parent rather than replacing it.
 
-The GSFeature folder contains point features that have a parameter "MODL" giving the name of a model geometry in the
-OpenFlight format. This was not the full path or even relative path to the geometry but rather a name that must be
-matched with one of the files (zipped) at the corresponding LOD level if present at all.
+The GSFeature folder contains point features that have a parameter "MODL" giving the name of a model geometry in the OpenFlight format. This was not the full path or even relative path to the geometry but rather a name that must be matched with one of the files (zipped) at the corresponding LOD level if present at all.
 
 ===== SHP and DBF files
 
-GSFeature folder was made up of Esri SHP files linking to DBF files where the DBF files had many-to-one relationships
-amongst themselves.
+GSFeature folder was made up of Esri SHP files linking to DBF files where the DBF files had many-to-one relationships amongst themselves.
 
 ==== GTFeature and GTModelGeometry
 
-GTFeatures were similar to GSFeatures except that the GTmodels were instanced and a single GTModel could be referenced by
-many GTFeatures.
+GTFeatures were similar to GSFeatures except that the GTmodels were instanced and a single GTModel could be referenced by many GTFeatures.
 
 ==== CDB Technical Specification Recommendations
 
-Based on the San Diego CDB data set, the compression of
-OpenFlight data through zip led to a minimal gain in hard-drive memory usage (on the order of 5%).
+Based on the San Diego CDB data set, the compression of OpenFlight data through zip led to a minimal gain in hard-drive memory usage (on the order of 5%).
 
-A much greater compression could be achieved on textures that in this case were mostly encoded in SGI .rgb format.
-The SGI .rgb format isn't a default format like JPEG or PNG which means developers will usually need to
-include 3rd party libraries or write extra code.
+A much greater compression could be achieved on textures that in this case were mostly encoded in SGI .rgb format. The SGI .rgb format isn't a default format like JPEG or PNG which means developers will usually need to include 3rd party libraries or write extra code.
 
-The relative path to the 3D model could be inserted in the parameters of the GSFeatures rather than
-a short name. This would waste a few bytes of memory but would reduce the complexity of the decoder code.
+The relative path to the 3D model could be inserted in the parameters of the GSFeatures rather than a short name. This would waste a few bytes of memory but would reduce the complexity of the decoder code.
 
-A flat single DBF file accompanying every feature SHP file could be envisaged rather than multiple ones with
-many-to-one relations. This would help with the limited capabilities offered by some APIs relative to this format and
-this might be a case where it was better to waste a few bytes of data for the sake of simplifying decoder code.
+A flat single DBF file accompanying every feature SHP file could be envisaged rather than multiple ones with many-to-one relations. This would help with the limited capabilities offered by some APIs relative to this format and this might be a case where it was better to waste a few bytes of data for the sake of simplifying decoder code.
 
+[[PreProcessingCDB3DModelsToOGC3DTiles]]
 === Pre-processing CDB 3D Models to OGC 3DTiles
 
 [#img_SANDIEGO_ILLUSTRATION_1,reftext='{figure-caption} {counter:figure-num}']
 .San Diego as 3DTiles with background imagery.
 image::images/Hexagon/3DTilesWithMap.png[align="center"]
 
-CDB uses a tiling system where higher Levels Of Detail (LOD) add more mesh models. Single buildings also had
-several LODs embedded in a single file. While CBD has the flexibility to achieve anything visually, it was complex to
-decode on the client or to process on the fly. This section describes an approach to convert the entire CDB 3D
-models to a more efficient OGC 3DTiles tileset through a pre-processing stage.
+CDB uses a tiling system where higher Levels Of Detail (LOD) add more mesh models. Single buildings also had several LODs embedded in a single file. While CBD has the flexibility to achieve anything visually, it was complex to decode on the client or to process on the fly. This section describes an approach to convert the entire CDB 3D models to a more efficient OGC 3DTiles tileset through a pre-processing stage.
 
-When converting to 3DTiles, only the highest LOD for every 3D model was taken into account to re-generate a complete
-tileset.
+When converting to 3DTiles, only the highest LOD for every 3D model was taken into account to re-generate a complete tileset.
 
 [#img_Octree,reftext='{figure-caption} {counter:figure-num}']
 .Octree data structure
 image::images/Hexagon/octree.png[width=800,align="center"]
+
 The new LOD structure was an octree where child nodes entirely replaced parent nodes.
 
-Creating this structure was a recursive process that repeated the following steps:
-tiling -> grouping tiles -> simplifying -> re-texture
+Creating this structure was a recursive process that repeated the following steps: tiling -> grouping tiles -> simplifying -> re-texture.
 
 [#img_SANDIEGO_ILLUSTRATION_2,reftext='{figure-caption} {counter:figure-num}']
 .San Diego as 3DTiles with background imagery.
 image::images/Hexagon/3DTilesWithoutMap.png[align="center"]
-The pre-processed tileset could display more buildings at low LODs than would be possible by loading the raw files from
-the CDB data store even if the distant buildings were simplified meshes with just a basic texture.
+
+The pre-processed tileset could display more buildings at low LODs than would be possible by loading the raw files from the CDB data store even if the distant buildings were simplified meshes with just a basic texture.
 
 ==== Mesh Simplification
 
 [#img_MESH_SIMPLIFICATION,reftext='{figure-caption} {counter:figure-num}']
 .Mesh simplification
 image::images/Hexagon/simplification.png[width=800,align="center"]
+
 For lower LODs, the models were simplified using quadric edge collapse decimation.
 
-Cluster simplification or dropping out smaller independent groups of faces were faster alternatives but less visually
-appealing.
+Cluster simplification or dropping out smaller independent groups of faces were faster alternatives but less visually appealing.
 
 ==== Parameterization and texture baking
 
@@ -127,101 +102,64 @@ appealing.
 .Mesh parameterization
 image::images/Hexagon/Parameterization.png[align="center"]
 
-Meshes were re-parametrized (compute new texture coordinates). This was a
-process of unfolding 3D meshes to 2D space while splitting them in the least amount of pieces and wasting the least
-amount of space. This step was necessary because after simplification, the UV coordinates did not match with the mesh
-anymore.
+Meshes were re-parametrized (compute new texture coordinates). This was a process of unfolding 3D meshes to 2D space while splitting them in the least amount of pieces and wasting the least amount of space. This step was necessary because after simplification, the https://en.wikipedia.org/wiki/UV_mapping[UV texture coordinates] did not match with the mesh anymore.
 
 [#img_TEXTURE_BAKING,reftext='{figure-caption} {counter:figure-num}']
 .Texture baking
 image::images/Hexagon/baking.png[align="center"]
 
-Texture baking is the process of creating a texture for a mesh once it has been parameterized. Using bits and pieces
-from the original textures a texture atlas was generated. Having a
-single texture per tile rather than one or more texture for every building decreases the overhead of having to pass
-several textures to the GPU and therefore increased performance.
+Texture baking is the process of creating a texture for a mesh once it has been parameterized. Using bits and pieces from the original textures a texture atlas was generated. Having a single texture per tile rather than one or more texture for every building decreases the overhead of having to pass several textures to the GPU and therefore increased performance.
 
 [#img_Repeating textures,reftext='{figure-caption} {counter:figure-num}']
 .Examples of repeating textures.
 image::images/Hexagon/repeatingTextures.png[align="center"]
-This task was made more complex by the use of repeating textures where UV texture coordinates went beyond the normal
-0 to 1 range as in the example above. Repeating textures were common in the dataset. They are appealing because they
-can cover a large area with apparent detail. However, they cannot not be used directly to create texture atlases.
-To handle this use-case, the mesh parts with repeating textures, at the highest level of detail, were tiled in
-separate tiles, not respecting the overall octree data-structure.
+This task was made more complex by the use of repeating textures where UV texture coordinates went beyond the normal 0 to 1 range as in the example above. Repeating textures were common in the dataset. They are appealing because they can cover a large area with apparent detail. However, they cannot not be used directly to create texture atlases. To handle this use-case, the mesh parts with repeating textures, at the highest level of detail, were tiled in separate tiles, not respecting the overall octree data-structure.
 
-Another approach to solving repeating textures was to convert textures to a single color by taking the average pixel
-color of a texture and using it instead. This gave the tileset a rather cartoony feel which could be amplified with
-certain postFX.
+Another approach to solving repeating textures was to convert textures to a single color by taking the average pixel color of a texture and using it instead. This gave the tileset a rather cartoony feel which could be amplified with certain postFX.
 
 ==== Tile size
 
-Every tile at every LOD used approximately the same size in memory.
-At any given point of view, the client application loaded roughly 20 megabytes of data.
+Every tile at every LOD used approximately the same size in memory. At any given point of view, the client application loaded roughly 20 megabytes of data.
 
 ==== Metadata and selection
 
-The tiling may have cut buildings in pieces but this did not impact selection or access to metadata because
-an index was encoded inside the mesh faces linking them to the original model they belonged to. We therefore
-maintained the ability to select objects and retrieve metadata.
+The tiling may have cut buildings in pieces but this did not impact selection or access to metadata because an index was encoded inside the mesh faces linking them to the original model they belonged to. We therefore maintained the ability to select objects and retrieve metadata.
 
 ==== Conversion speed
 
-The drawback of this approach was the time it took.
-It was impossible to achieve this conversion on the fly and converting the entire San Diego dataset took several hours.
+The drawback of this approach was the time it took. It was impossible to achieve this conversion on the fly and converting the entire San Diego dataset took several hours.
 
 ==== Referencing
 
-CDB provided referencing and orientation of 3D models through point features. The height of the 3D models was either
-given as a parameter of the point-features or could be inferred from elevation data provided in the CDB data store.
+CDB provided referencing and orientation of 3D models through point features. The height of the 3D models was either given as a parameter of the point-features or could be inferred from elevation data provided in the CDB data store.
 
-The referencing information was used but the heights were dismissed during creation of OGC 3DTiles. The height was
-inferred at render time through a proxy service that would adjust the height of meshes based on an elevation model. See
-<<Handling terrain updates>> for more detail.
+The referencing information was used but the heights were dismissed during creation of OGC 3DTiles. The height was inferred at render time through a proxy service that would adjust the height of meshes based on an elevation model. See <<Handling terrain updates>> for more detail.
 
 ==== 3D data organization recommendations
 
-The pre-processed dataset didn't use the raw 3D files directly but rather simplified, split and merged them into tiles
-of varying levels of detail. The LODs embedded inside OpenFlight files were not used.
+The pre-processed dataset didn't use the raw 3D files directly but rather simplified, split and merged them into tiles of varying levels of detail. The LODs embedded inside the OpenFlight files were not used.
 
-This approach effectively removed the need for a complex structure within the CDB data store. There are still certain
-recommendations that could help improve the pre-processing speed.
+This approach effectively removed the need for a complex structure within the CDB data store. There are still certain recommendations that could help improve the pre-processing speed.
 
-As a general recommendation, it does help to deal with files that have a moderate size. When dealing with millions of files
-that are just a few kilobytes, the overhead of reading from the hard drive can become a bottleneck. At the same time,
-dealing with very large files can use too much memory and they need to be split in advance.
+As a general recommendation, it does help to deal with files that have a moderate size. When dealing with millions of files that are just a few kilobytes, the overhead of reading from the hard drive can become a bottleneck. At the same time, dealing with very large files can use too much memory and they need to be split in advance.
 
 === Serving OGC 3DTiles from CDB with on the fly tiling
 
-Serving 3D Models on the fly meant that whenever a client application looked at the data from a certain angle, it would
-send a request to the server that must gather the data to be visualized and convert it to glTF on the fly.
+Serving 3D Models on the fly meant that whenever a client application looked at the data from a certain angle, it would send a request to the server that must gather the data to be visualized and convert it to glTF on the fly.
 
-On the fly 3DTiles also means that updates to the CDB data-store would be directly taken into account without needing
-to reprocess the entire CDB data-store every time.
+On the fly 3DTiles also meant that updates to the CDB data-store would be directly taken into account without needing to reprocess the entire CDB data-store every time.
 
-At startup or when an update was detected, the (on-the-fly) server created a tileset.json file by decoding and indexing
-the bounds of all the 3D models into an octree structure. This process took around 5 minutes on the San Diego
-Dataset which contains about 6Gb of mesh data.
-Each node was given a name and a tileset.json file was generated. The client therefore requested tiles that didn't
-exist yet because the server generates them on the fly.
+At startup or when an update was detected, the (on-the-fly) server created a tileset.json file by decoding and indexing the bounds of all the 3D models into an octree structure. This process took around 5 minutes on the San Diego Dataset which contained about 6Gb of mesh data. Each node was given a name and a tileset.json file was generated. The client therefore requested tiles that didn't exist yet because the server generated them on the fly.
 
-The LOD structure of the CDB data store wasn't used because in this particular case, it was inadequate. If the CDB
-data store LOD structure could be used, the process would become almost instantaneous. A good LOD structure is one
-that is deep and has small tiles of approximately the same size.
+The LOD structure of the CDB data store wasn't used because in this particular case, it was inadequate. If the CDB data store LOD structure could be used, the process would become almost instantaneous. A good LOD structure is one that is deep and has small tiles of approximately the same size.
 
-When a tile was requested, the relevant meshes would be loaded, converted to glTF, wrapped in a B3DM file and sent
-back to the client. The approach of simplifying meshes for lower LODs cannot be done in real-time because it is too
-slow. Simply dropping out smaller buildings for lower LODs would have to be used.
+When a tile was requested, the relevant meshes would be loaded, converted to glTF, wrapped in a B3DM file and sent back to the client. The approach of simplifying meshes for lower LODs could not be done in real-time because it was too slow. Simply dropping out smaller buildings for lower LODs would have to be used.
 
 ==== CDB 3D data organization recommendations
 
-In this approach, a tileset.json tree was generated on the fly at startup of the server or when an update happened.
-The tiles themselves were generated upon request.
-Having OpenFlight meshes that were already organized in coherent LODs would have improve the time it takes to build the
-tileset.json.
+In this approach, a tileset.json tree was generated on the fly at startup of the server or when an update happened. The tiles themselves were generated upon request. Having OpenFlight meshes that were already organized in coherent LODs would have improved the time it takes to build the tileset.json.
 
-A general recommendation for CDB data-stores is to split LODs into a regular grid of cells and to make sure that cells
-are small (about 500Kb).
+A general recommendation for CDB data-stores is to split LODs into a regular grid of cells and to make sure that cells are small (about 500Kb).
 
 === Handling terrain updates
 
@@ -229,68 +167,48 @@ A common issue was mismatch between terrain and 3D models that were typically se
 
 In order to circumvent this issue, CDB datastores provided the elevation model that the 3D meshes should fit onto.
 
-However, In order to serve very large 3D mesh datasets, they are typically pre-processed with embedded elevation.
-This meant that updating the elevation model would cause a mismatch with the 3D meshes.
+However, In order to serve very large 3D mesh datasets, they are typically pre-processed with embedded elevation. This meant that updating the elevation model would cause a mismatch with the 3D meshes.
 
 [#img_ELEVATION_MISMATCH,reftext='{figure-caption} {counter:figure-num}']
 .Mismatch between the elevation and the meshes on the left vs perfect match on the right.
 image::images/Hexagon/ElevationMissmatch.png[align="center"]
-The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a
-perfect match between the two.
+
+The image on the left shows a mismatch between the elevation model and the 3DTiles. The image on the right shows a perfect match between the two.
 
 ==== Proxy Server Approach
 
-The solution was to start by processing the 3D Meshes to OGC 3DTiles without taking the elevation into
-account. Buildings were therefore on the ellipsoid with the assumption that the ellipsoid would stay constant. When
-the client requested tiles, they were automatically shifted up or down according to a loaded elevation model, therefore
-providing a perfect match without any re-processing of the 3D data.
+The solution was to start by processing the 3D Meshes to OGC 3DTiles without taking the elevation into account. Buildings were therefore on the ellipsoid with the assumption that the ellipsoid would stay constant. When the client requested tiles, they were automatically shifted up or down according to a loaded elevation model, therefore providing a perfect match without any re-processing of the 3D data.
 
-Practically, this was achieved through a proxy server that forwarded requests to the OGC 3DTiles dataset but before
-returning the B3DM files, shifted all the vertices according to an elevation model.
+Practically, this was achieved through a proxy server that forwarded requests to the OGC 3DTiles dataset but before returning the B3DM files, shifting all the vertices according to an elevation model.
 
 The server also had to decode the tileset.json files and shift the bounding boxes of the tiles.
 
 [#img_On_THE_FLY_ELEVATION,reftext='{figure-caption} {counter:figure-num}']
 .Adapting pre-processed 3DTiles to an elevation model on the fly.
 image::images/Hexagon/AutomaticElevation.png[align="center"]
-The top image shows the raw OGC 3DTiles that had no elevation. The bottom image shows the same dataset that
-automatically adapted to the loaded elevation model on the fly.
 
-The result was minimal performance impact.
+The top image shows the raw OGC 3DTiles that had no elevation. The bottom image shows the same dataset that automatically adapted to the loaded elevation model on the fly.
 
-The disadvantage of this approach was that the proxy server needed to be made aware of the elevation model loaded in
-the client.
+The result was a minimal performance impact.
+
+The disadvantage of this approach was that the proxy server needed to be made aware of the elevation model loaded in the client.
 
 ==== GPU Expression Approach
 
-It was possible to match 3DTiles with elevation without a proxy server by using GPU evaluated expressions to
-shift vertices up or down at render time. This was a similar approach to the
-one used to handle <<Handling CDB Model Updates,CDB model updates>>.
+It was possible to match 3DTiles with elevation without a proxy server by using GPU evaluated expressions to shift vertices up or down at render time. This was a similar approach to the one used to handle <<Handling CDB Model Updates,CDB model updates>>.
 
-A Proxy server wasn't needed anymore and the client could consume the original 3DTiles.
-The solution was also more efficient since the vertex shifting operation would be done on the highly efficient GPU.
+A Proxy server wasn't needed anymore and the client could consume the original 3DTiles. The solution was also more efficient since the vertex shifting operation would be done on the highly efficient GPU.
 
 Good results couldn't be achieved. The GPU needed to have access to the elevation when
-rendering a 3D tile but in the system used, elevation and meshes were rendered in different passes and the GPU never
-had access to both at the same time. It would take deeper modifications to the rendering engine in order to achieve
-this properly.
+rendering a 3D tile, but in the system used, elevation and meshes were rendered in different passes and the GPU never had access to both at the same time. It would take deeper modifications to the rendering engine in order to achieve this properly.
 
 === Handling CDB Model Updates
 
-3D Meshes can be displaced at render time using GPU evaluated expressions. This technique allowed handling 3D model
-updates and ensuring that there was no overlap or mismatch between data sets.
+3D Meshes could be displaced at render time using GPU evaluated expressions. This technique allowed handling 3D model updates and ensuring that there was no overlap or mismatch between data sets.
 
-When 3D data was served <<Serving OGC 3DTiles from CDB with on the fly tiling, on the fly>> from a CDB data store,
-updates were taken into account automatically.
-However, <<Pre-processing CDB 3D models to OGC 3DTiles, pre-processing>> a large data set has several advantages in
-terms of visual appearance and performance. In addition, model updates may originate from other sources than the CDB
-store itself.
+When 3D data was served <<Serving OGC 3DTiles from CDB with on the fly tiling, on the fly>> from a CDB data store, updates were taken into account automatically. However, <<PreProcessingCDB3DModelsToOGC3DTiles, pre-processing>> a large data set has several advantages in terms of visual appearance and performance. In addition, model updates might originate from other sources than the CDB store itself.
 
-On the fly vertex displacement offered a solution for small model updates where the new data was processed into a
-separate 3DTiles tileset. The original vertices that were part of the base 3DTiles tileset were squashed below the new
-data and the result was a perfect integration. This tactic was only usable for smaller updates like a single building
-or a small area. For a more general solution, <<Serving OGC 3DTiles from CDB with on the fly tiling>> offered the most
-flexibility.
+On the fly vertex displacement offered a solution for small model updates where the new data was processed into a separate 3DTiles tileset. The original vertices that were part of the base 3DTiles tileset were squashed below the new data and the result was a perfect integration. This tactic was only usable for smaller updates like a single building or a small area. For a more general solution, <<Serving OGC 3DTiles from CDB with on the fly tiling>> offered the most flexibility.
 
 [#img_ADD_UPDATE_DELETE,reftext='{figure-caption} {counter:figure-num}']
 .Small updates to the CDB datastore could be handled in separate 3DTiles tilesets.
@@ -298,15 +216,12 @@ image::images/Hexagon/AddUpdateDelete.png[align="center"]
 
 ==== Deleted Model
 
-When a model was deleted, it needed to be removed from the pre-processed background dataset. This was achieved by pushing
-the vertices that correspond to the deleted model down.
+When a model was deleted, it needed to be removed from the pre-processed background dataset. This was achieved by pushing the vertices that correspond to the deleted model down.
 
 ==== Updated Model
 
-In the case where a model was updated with a newer version, the new version was processed in a separate 3DTiles tileset.
-The new tileset could not simply be loaded alongside the background 3DTiles because it would have overlapped with the previous version of itself. To resolve this, the vertices of the background data set that were inside the bounding box of the new model were squashed below the new one.
+In the case where a model was updated with a newer version, the new version was processed in a separate 3DTiles tileset. The new tileset could not simply be loaded alongside the background 3DTiles because it would have overlapped with the previous version of itself. To resolve this, the vertices of the background data set that were inside the bounding box of the new model were squashed below the new one.
 
 ==== Added Model
 
-In the case that a completely new model was added, it was converted into a separate OGC 3DTiles tileset and loaded
-alongside the background data. This conversion to 3D Tiles was very fast for small models.
+In the case that a completely new model was added, it was converted into a separate OGC 3DTiles tileset and loaded alongside the background data. This conversion to 3D Tiles was very fast for small models.
