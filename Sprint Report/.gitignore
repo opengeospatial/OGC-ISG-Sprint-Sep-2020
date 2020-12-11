@@ -1,7 +1,7 @@
 # compiled documents
-*.html
-*.pdf
 *.original.zip
+*.html
+# *.pdf
 
 # mac
 .DS_Store
