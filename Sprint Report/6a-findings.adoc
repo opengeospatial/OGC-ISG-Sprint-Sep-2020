@@ -115,7 +115,7 @@ In addition to the results shown in <<table-tie-summary>> the participants were 
 
 Steinbeis extended one of the scenarios to include the integration of https://www.ogc.org/standards/sensorthings[SensorThings API] cite:[SensorThings] to illustrate how these two APIs could work together (<<SensorThings API Server for Urban Mobility>>). There were no inconsistencies or other issues found.
 
-It is worth mentioning that two participants (CAE & Cognitics) have hosted their services on Amazon Web Services (AWS) to improve throughput and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads, load balancing capabilities, or performance.
+It is worth mentioning that two participants (CAE and Cognitics) have hosted their services on Amazon Web Services (AWS) to improve throughput and allow for easy load expansion when needed. The use of cloud services was smooth and without issues. These were not tested for heavy loads, load balancing capabilities, or performance.
 
 === Dynamic Dataset Updates
 

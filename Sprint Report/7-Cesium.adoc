@@ -69,7 +69,7 @@ image::images/Cesium-San-Diego-GSModels.png[width="500", align="center"]
 
 ==== Future Improvements
 
-To support on-the-fly conversion, listed below were some improvements the team would need to make to our conversion pipeline:
+To support on-the-fly conversion, listed below were some improvements the team would need to make to its conversion pipeline.
 
 - Provide concurrency support. Currently, the Cesium converter works on a single thread. The conversion time for the San Diego CDB was about 35 minutes. With concurrency support, the runtime could be reduced further, and fortunately, the CDB database scheme was suitable for such architecture.
 - Since CDB specification defines the fixed extent a tile can cover, tileset.json can be generated quickly without reading into the data files of each layer.

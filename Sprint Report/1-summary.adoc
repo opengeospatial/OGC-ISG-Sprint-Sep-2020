@@ -83,7 +83,7 @@ Issues with Request Methods addressed how a data change should be made to the da
 
 === Recommendations
 
-Seventeen recommendations were made for future work. These items are generally referred to as "projects", but they could be fairly brief and small undertakings by a Domain or Standards Working Group or as part of another effort (Sprint, Pilot, Testbed, etc) within OGC. Items not directly part of OGC could also be addressed through appropriate joint projects or liaison arrangements with external organizations/groups.
+Seventeen recommendations were made for future work. These items are generally referred to as "projects," but they could be fairly brief and small undertakings by a Domain or Standards Working Group or as part of another effort (Sprint, Pilot, Testbed, etc.) within OGC. Items not directly part of OGC could also be addressed through appropriate joint projects or liaison arrangements with external organizations/groups.
 
 These range from projects external to OGC (four projects) generally carried out by other organizations or community efforts, three data based projects (generally conversion from one format to another), three projects to enhance the GeoVolumes API draft spec, four projects to develop a clear definition of feature (model or terrain) change (part to HTTP Request Method discussed above), and three on API infrastructure (to address the URL and HTTP issues described above).
 

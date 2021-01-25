@@ -10,7 +10,7 @@ The CfP specified a schedule from kickoff meeting (1 September) through the Spri
 [[DataSets]]
 === Data Sets
 
-The primary data set for the Sprint is known as San Diego CDB (licensed under the https://www.sangis.org/Legal_Notice.htm[SanGIS Legal Notice - SanGIS GIS Data End User Use Agreement and Disclaimer for Data Released to the Public] cite:[SanGISCDBLicense]). It was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
+The primary data set for the Sprint is known as San Diego CDB (licensed under the https://www.sangis.org/Legal_Notice.htm[SanGIS Legal Notice - SanGIS GIS Data End User Use Agreement and Disclaimer for Data Released to the Public] cite:[SanGISCDBLicense]). This data set was collected using a number of sensors and methods from <start> to <end> and encompassed nearly all of the downtown San Diego and vicinity, including the port, sports stadium, recreational facilities, commercial, and housing areas.
 
 [#img_SanDiegoOverview,reftext='{figure-caption} {counter:figure-num}']
 .An overview of the coverage of the San Diego CDB V4.1. It is a single geocell with the southwest corner at N33 V118.
@@ -51,7 +51,6 @@ Several of the Sprint participants also participated in the Pilot. These organiz
  |https://ogc3dc.igd.fraunhofer.de/ |STT 3D Client (by Fraunhofer and GeoRocket)
 |===
 
-
 === GeoVolumes API Pilot Engineering Report
 
 The three 3D Data Container and Tiles API Pilot engineering reports (collectively referred to as "Pilot ER") cite:[PilotExperiences,GeoVolumesAPI,ExtendedExecutiveSummary] were made available to all participants prior to kickoff. Subsequent to the start of the Sprint, the Pilot ER was made publicly available. The draft specification is https://docs.ogc.org/per/20-030.html[part 2] cite:[GeoVolumesAPI] of the document set. This contained the API specification that was the primary target of the Sprint.
@@ -76,7 +75,7 @@ This figure is presented as an illustration of possible connections. It is not i
 
 The CfP described https://portal.ogc.org/files/?artifact_id=94059#SprintScenario[three possible scenarios] cite:[SprintCfP]. Participants could choose to work on any number of these, any variant of these, or one (or more) of their choosing.
 
-. Investigate how model and terrain updates, originating (preferred) from a CDB data store and delivered as glTF, are integrated with 3D Tiles into the client environment. The questions to be examined should include:
+. Investigate how model and terrain updates, originating (preferred) from a CDB data store and delivered as glTF, are integrated with 3D Tiles into the client environment. The questions to be examined should include the following.
 .. How are terrain changes handled with existing structures?
 .. How are new models integrated with existing elevation terrain?
 .. How are existing models handled when CDB updates indicate change (additions/deletions/configurations)?

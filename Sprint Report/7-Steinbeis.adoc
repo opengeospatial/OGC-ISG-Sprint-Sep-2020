@@ -13,7 +13,7 @@ In OGC 3D Container and Tiles API pilot, Steinbeis successfully implemented a Ge
 
 In this ISG Sprint, the team expanded the API mentioned above in a new server (http://steinbeis-3dps.eu/3DGeoVolumes) to serve the provided San Diego dataset and an open-source CityGML dataset of LoD 1 buildings of California. The dataset in the API was available in 3D Tiles format. The available geospatial datasets which were not in visualization-ready formats (such as CDB) were first converted before serving through the API. In this sprint, the team was not covering the conversion part and instead received the already-converted data from CAE and Ecere.
 
-The team tested and evaluated the different organizations of the underlying 3D data at the server. Two approaches were compared on the Steinbeis client with the San Diego data set:
+The team tested and evaluated the different organizations of the underlying 3D data at the server. Two approaches were compared on the Steinbeis client with the San Diego data set.
 
 * Case 1: Organize the data on the server in one single bounding volume hierarchy containing all features.
 ** San Diego 3D models (3D Buildings, Tree, Imagery, Terrain): https://steinbeis-3dps.eu/3DGeoVolumes/collections/California/SanDiego3DModelsWithTextures/3dtiles/
@@ -93,7 +93,7 @@ image::images/Steinbeis-Client-to-Helyx-Server-LoD2Texture.png[width=800,align="
 
 ==== Mobility Routes
 
-To show different kinds of mobility, such as bike routes and air taxi routes, different synthetic urban routes were visualized on the client. By adjusting the height of the track to replicate a flight path with starting and landing maneuvers a air taxi route was simulated. The Air Taxi moved presumably around 300 meters above the terrain, except for starting and landing.
+To show different kinds of mobility, such as bike routes and air taxi routes, different synthetic urban routes were visualized on the client. By adjusting the height of the track to replicate a flight path with starting and landing maneuvers, an air taxi route was simulated. The Air Taxi moved presumably around 300 meters above the terrain, except for starting and landing.
 
 To visualize these tracks in Cesium the route data was loaded from the SensorThings server followed by converting into the CZML format on the client side which allowed CesiumJS to visualize the movement of an object by interpolating its position between the two given points. The locations of the objects were stored in the position property together with the timestamps. These also included the time in seconds based on the starting point of the epoch property.
 
@@ -142,14 +142,14 @@ FLT models were stored in the local coordinate system, which had to be moved to 
 .FME workbench for OPENFLIGHT to 3D Tile conversion.
 image::images/Steinbeis-FMEWorkbench.png[width=1200,align="center"]
 
-All the inputs, transformers and the output ports of the above shown workbench are described in detail in the following section:
+All the inputs, transformers and the output ports of the above shown workbench are described in detail in the following section.
 
 . *Input:* There were 3 input ports used in the workbench.
 .. *FLT Reader:* It was used to read the OPENFLIGHT models. Within CDB store objects like buildings, vegetation, bridges etc. were stored in this format. One of the building models was selected to be converted in this workbench to be used as input.
 .. *ESRI Shape Reader:* It was used to read the shape file format. Shape files were stored within “GSFeature” and “GTFeature”. These files contained instance point for the input object models.
 .. *DBF Reader:* It was used to read the extended feature attributes that were required to join the instance point to FLT models. As mentioned above, FACC, FSC and MODL attributes were used to establish a join.
 
-. *Transformers:* The transformers used in this workbench are discussed below:
+. *Transformers:* The transformers used in this workbench are discussed below.
 
 .. *Substring Extractor:* This transformer was used to extract the part of the filename that was used to join the extended attributes.
 .. *ESRI Reprojector:* with this transformer shape files were reprojected from WGS84 to WGS84/ UTM Zone 11N (EPSG:32611).
@@ -191,7 +191,7 @@ There were two kind of updates handled in this pipeline i.e. (i) Add, and (ii) D
 
 ==== Delete
 
-It required two inputs (i) the existing 3D tile dataset, and (ii) unique ID for the objects stored inside the tiles. The algorithm traversed the tree to search for object inside the tiles. After finding the tile to be updated, following algorithm was used to change the contents of a b3dm tile.
+Delete required two inputs (i) the existing 3D tile dataset, and (ii) unique ID for the objects stored inside the tiles. The algorithm traversed the tree to search for object inside the tiles. After finding the tile to be updated, following algorithm was used to change the contents of a b3dm tile.
 
 *Algorithm for Deleting a Building*
 
@@ -212,7 +212,7 @@ image::images/Steinbeis-deleteObjectImage.PNG[width=1000,align="center"]
 
 ==== Add
 
-It required two inputs (i) the existing 3D tile dataset and (ii) new object(s) which were to be introduced into the existing tiles. The tree tile was searched to identify where does the new object fall inside the existing tree. This building was added to a tile only if it fell completely inside the bounding volume of an existing tile. After finding the node to be changed, the following algorithm was used to update the b3dm.
+Add required two inputs (i) the existing 3D tile dataset and (ii) new object(s) which were to be introduced into the existing tiles. The tree tile was searched to identify where does the new object fall inside the existing tree. This building was added to a tile only if it fell completely inside the bounding volume of an existing tile. After finding the node to be changed, the following algorithm was used to update the b3dm.
 
 *Algorithm for adding a Building*
 
@@ -235,7 +235,7 @@ image::images/Steinbeis-Add_after.PNG[width=1000,align="center"]
 
 ==== Future Recommendations
 
-Progress was made on the live update methodology which could make changes to the existing 3D Tile dataset with which clients would get updated 3D model data, but a few questions remain which need to be solved. Recommendations for future work follow:
+Progress was made on the live update methodology which could make changes to the existing 3D Tile dataset with which clients would get updated 3D model data, but a few questions remain which need to be solved. Recommendations for future work are as follows.
 
 . *OGC API - Feature Transaction:* As discussed with Ecere (another participant of ISG Sprint), OGC API - Feature transactions will be a good solution to deliver (i) models, and (ii) instance point (geographic reference for the models) to the server and on receiving these features, server can trigger the above mentioned ‘Update methodology’ to make live changes the existing 3D Tiles.
 

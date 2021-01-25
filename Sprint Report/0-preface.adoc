@@ -8,7 +8,7 @@
 
 *COPYRIGHT*
 
-Copyright ©2020, Open Geospatial Consortium.
+Copyright ©2021, Open Geospatial Consortium.
 To obtain additional rights of use, visit http://www.opengeospatial.org/
 
 

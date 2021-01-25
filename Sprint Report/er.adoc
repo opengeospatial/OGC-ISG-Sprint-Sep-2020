@@ -1,80 +1,20 @@
-
-// *****************************************************************************
-// In general, please adhere to the following guidelines
-// (and ensure that all contributing authors follow them also):
-//
-// - Leave no empty sections.
-// - Author the document (including spelling) in idiomatic U.S. English.
-// - Start each section with a paragraph (not a figure, table, or list).
-// - Spell out each acronym on first use (with the acronym in parentheses).
-// - Avoid domain-specific buzzwords.
-// - Write in 3rd person voice; avoid using "we".
-// - Ensure correct Grammar and use direct language.
-// - Use a colon (:) to introduce bulleted lists.
-// - Avoid pronouns with ambiguous antecedents (the problem with "it").
-//
-// Please also ensure that all Figures have numbers and captions.
-// Here's an example to follow:
-//
-//  [#id_of_image,reftext='{figure-caption} {counter:figure-num}']
-//  .Image caption goes here
-//  image::images/overview.png[width=600]
-// *****************************************************************************
-
-// *****************************************************************************
-// Editors please provide the following front-matter elements:
-// *****************************************************************************
-
-// *****************************************************************************
-// Provide the document title (ER or user guide name) after the colon.
-// The <initiative_title> will be provided by the initiative manager to ensure
-//    consistent use throughout an initiative. Same applies for the short name
-// The title here should match the title on the first page.
-// *****************************************************************************
-
 :title: Interoperable Simulation and Gaming Sprint Engineering Report
 
 :initiative_short_name: ISG Sprint
 
-// *****************************************************************************
-// Document identifier, with format "OGC YY-nnn" (e.g., OGC 17-067).
-// An identifier can be obtained in the OGC Portal at:
-// https://portal.opengeospatial.org/?m=public&subtab=request&tab=1.
-// *****************************************************************************
-
 :docReference: OGC 20-087
 
-// *****************************************************************************
-// Date posted to OGC Portal>Pending Documents, with format: yyyy-mm-dd.
-// *****************************************************************************
-
-:submissionDate: YYYY-MM-DD
-
-// *****************************************************************************
-// Names of all editors, comma-separated (e.g., John Doe, Sue Smith)
-// *****************************************************************************
+:submissionDate: 2020-11-20
 
 :editor: Leonard Daly, Scott Serich
 
-// *****************************************************************************
-// Proposed working group for review (e.g. Architecture DWG, WCS SWG)
-// *****************************************************************************
-
 :workingGroup: SWG/DWG for Review: Interoperable Simulation and Gaming DWG
 
-// *****************************************************************************
-// End of Editor's front-matter elements.
-// Editors please continue at "include::2-references.adoc[]" below.
-// *****************************************************************************
-
-// *****************************************************************************
-// Editors please do not alter the administrative front matter below.
-// *****************************************************************************
 :category: OGC Public Engineering Report
 :publicationDate: YYYY-MM-DD
-:approvalDate: YYYY-MM-DD
+:approvalDate: 2020-12-11
 :referenceURLID: ID
-:copyrightYear: 2020
+:copyrightYear: 2021
 //
 :titletext: {title}
 :doctype: book
@@ -107,7 +47,7 @@ Reference URL for this document: http://www.opengis.net/doc/PER/{initiative_shor
 
 Category: {category}
 
-Editor: {editor}
+Editors: {editor}
 
 Title: {titletext}
 

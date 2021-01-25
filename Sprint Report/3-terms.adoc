@@ -12,7 +12,7 @@ Batched 3D Model (b3dm) cite:[Batched3DModel] allows offline batching of heterog
 
 &#9679; CDB ::
 
-The CDB standard cite:[CDB] defines a standardized model and structure for a single, “versionable”, virtual representation of the earth. A CDB structured data store provides for a geospatial content and model definition repository that is plug-and-play interoperable between database authoring workstations. Moreover, a CDB structured data store can be used as a common online (or runtime) repository from which various simulator client-devices can simultaneously retrieve and modify, in real-time, relevant information to perform their respective runtime simulation tasks. In this case, a CDB is plug-and-play interoperable between CDB-compliant simulators. A CDB can be readily used by existing simulation client-devices (legacy Image Generators, Radar simulator, Computer Generated Forces, etc.) through a data publishing process that is performed on-demand in real-time.
+The CDB standard cite:[CDB] defines a standardized model and structure for a single, “versionable,” virtual representation of the earth. A CDB structured data store provides for a geospatial content and model definition repository that is plug-and-play interoperable between database authoring workstations. Moreover, a CDB structured data store can be used as a common online (or runtime) repository from which various simulator client-devices can simultaneously retrieve and modify, in real-time, relevant information to perform their respective runtime simulation tasks. In this case, a CDB is plug-and-play interoperable between CDB-compliant simulators. A CDB can be readily used by existing simulation client-devices (legacy Image Generators, Radar simulator, Computer Generated Forces, etc.) through a data publishing process that is performed on-demand in real-time.
 
 &#9679; Full Motion Video (FMV) ::
 
@@ -23,7 +23,7 @@ Full Motion Video (FMV)-compliant refers to the combination of a video stream an
 GeoVolumes cite:[GeoVolumes] follow one conceptual organization of space applied by humans, which is a nested collection of spaces where every space contains either a number of sub-spaces or a set of objects. As an example, the GeoVolume “Earth” contains a set of child GeoVolumes, one for each continent. Each continent then may have a set of child GeoVolumes for the various countries, or, if countries are irrelevant in that scenario, a number of datasets that represent the topography, rivers, and human settlements.
 
 &#9679; IANA ::
-Internet Assigned Numbers Authority is the organization responsible for oversight of the architecture of the Internet. They are ultimately responsible for assignment of IP addresses and management of Media Types
+Internet Assigned Numbers Authority is the organization responsible for oversight of the architecture of the Internet. They are ultimately responsible for assignment of IP addresses and management of Media Types.
 
 &#9679; jp2 | JPEG2000 ::
 

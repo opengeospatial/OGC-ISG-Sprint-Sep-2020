@@ -53,20 +53,20 @@ GeoVolumes performs well and is easy to implement, however it is not free from i
 
 ==== GeoVolumes API Discussion: CDB comparisons and OGC API discussion
 
-InfoDao stood up a test server to quickly simulate server client transactions for consuming the data. The OGC API compliant PyGeoServer instance was configured to serve San Diego CDB data through a STAC interface. Since the InfoDao client could read CDBs and the dataset was easily traversable through the server's json responses, various operations of accessing and retrieving CDB data could be performed. The operations were:
+InfoDao stood up a test server to quickly simulate server client transactions for consuming the data. The OGC API compliant PyGeoServer instance was configured to serve San Diego CDB data through a STAC interface. Since the InfoDao client could read CDBs and the dataset was easily traversable through the server's json responses, various operations of accessing and retrieving CDB data could be performed. The operations were as follows.
 
     1. Access the Metadata to get the extents of the data set. This was usually the boundaries as a polygon of LatLng points. It was necessary to convert from XML to JSON and also reference the CDB spec.
     2. Fetch raster tiles that were available at specific LODs. Because of the data formats of the tiles (JPEG2000 for raster imagery, and TIFF for elevation data), InfoDao also stood up a small conversion service that would convert imagery into a consumable format.
     3. Fetch Geometry from the server. The 3D models were in OpenFlight cite:[OpenFlight] format and not immediately accessible for 3D rendering in the InfoDao clients. However, the related .flt and .rgb models were downloaded as described in the spec and converted on disk.
     4. Display converted geometry from the server and check for localization errors. Using the .dbf, .dbx, and .shp files, Geometry was able to be loaded and placed to the correct locations.
 
-In comparison, the InfoDao team used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were:
+In comparison, the InfoDao team used the GNOSIS server hosted by Ecere to access the GeoVolumes version of the data during the Sprint. The operations were as follows.
 
     1. Query the root api to get metadata about the layers. This included bounding box information and a general short description.
     2. Fetch Raster tiles at a specific LOD. No conversion was needed since two supported distributions were available (.jpg and .png).
     3. Fetch Geometry tiles at a specific LOD. No conversion was needed since GeoJSON and glTF were available.
 
-While the CDB and GeoVolumes API are two separate OGC standards, participants showed that these standards have a pathway to become interoperable together rather than interoperability among members in each standard. Implementation of the CDB layer highlighted two problems:
+While the CDB and GeoVolumes API are two separate OGC standards, participants showed that these standards have a pathway to become interoperable together rather than interoperability among members in each standard. Implementation of the CDB layer highlighted two problems.
 
     1. The server does not know what the CDB standard is. This leaves clients to understand how to access geospatial information in the CDB without any guidance or helper functions from the server.
     2. The client does not know what the data formats inside the CDB are. It was helpful to have an on-the-fly converter endpoint for images (e.g. JPEG2000 to JPEG/PNG), and it could be extended to other helper functions for 3D geometry, etc.
